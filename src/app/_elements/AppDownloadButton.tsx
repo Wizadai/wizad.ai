@@ -1,0 +1,38 @@
+import Image from "next/image";
+
+import AppStoreDownload from "@/assets/download-appstore.svg";
+import PlayStoreDownload from "@/assets/download-playstore.png";
+
+const StoreButton = {
+  appstore: AppStoreDownload,
+  playstore: PlayStoreDownload,
+};
+
+export const StoreLinks = {
+  appstore: process.env.NEXT_PUBLIC_APP_APPSTORE_URL!,
+  playstore: process.env.NEXT_PUBLIC_APP_PLAYSTORE_URL!,
+};
+
+type Store = keyof typeof StoreButton;
+
+export default function AppDownloadButton({ store }: { store: Store }) {
+  return (
+    <a
+      href={StoreLinks[store]}
+      target="_blank"
+      rel="noopener"
+      className="rounded-2xl p-2 md:p-5 bg-white/10"
+    >
+      <Image
+        src={StoreButton[store]}
+        height={56}
+        alt={`Download from ${
+          {
+            appstore: "Apple App Store",
+            playstore: "Google Play Store",
+          }[store]
+        }`}
+      />
+    </a>
+  );
+}
