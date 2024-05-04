@@ -162,7 +162,7 @@ export default function Features() {
         </div>
       </section>
 
-      <section className="flex flex-col items-center justify-center md:w-full mx-4 md:mx-auto my-12 max-w-screen-2xl rounded-3xl bg-gradient-to-br from-[#FAECFF] to-[#2CF3A6] text-black overflow-clip">
+      {/* <section className="flex flex-col items-center justify-center md:w-full mx-4 md:mx-auto my-12 max-w-screen-2xl rounded-3xl bg-gradient-to-br from-[#FAECFF] to-[#2CF3A6] text-black overflow-clip">
         <h2 className="font-hero text-4xl px-4 md:text-7xl font-bold italic max-w-5xl text-center py-6 md:pt-28 md:pb-5">
           Get started for free & Generate designs instantly!
         </h2>
@@ -191,7 +191,7 @@ export default function Features() {
             alt="Features"
           />
         </div>
-      </section>
+      </section> */}
 
       <section className="flex flex-col gap-8 md:gap-20 w-full max-w-screen-2xl px-4 py-12 md:px-60 md:py-32 mx-auto overflow-clip">
         <div className="flex flex-col justify-center items-center gap-12 text-white/70">
