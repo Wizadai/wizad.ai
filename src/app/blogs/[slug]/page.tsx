@@ -125,7 +125,7 @@ export default async function Page({ params }: Props) {
           <div>
             <span className="text-2xl font-hero">Read next</span>
           </div>
-          <ul>
+          <ul className="flex flex-col gap-8 md:gap-12">
             {otherBlogs.map((blog) => (
               <li key={blog.slug} id={blog.slug}>
                 <BlogTile blog={blog} />

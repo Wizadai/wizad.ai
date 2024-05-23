@@ -27,7 +27,7 @@ export default async function Page() {
       </section>
 
       <section className="flex flex-col max-w-7xl mx-auto md:px-20 md:py-24 py-10 px-4">
-        <ul>
+        <ul className="flex flex-col gap-8 md:gap-12">
           {blogs.map((blog) => (
             <li key={blog.slug} id={blog.slug}>
               <BlogTile blog={blog} />

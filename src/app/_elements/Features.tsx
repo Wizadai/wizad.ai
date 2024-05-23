@@ -2,10 +2,6 @@ import FeaturesScreen1 from "@/assets/feature-screen1.png";
 import FeaturesScreen2 from "@/assets/feature-screen2.png";
 import FeaturesScreen3 from "@/assets/feature-screen3.png";
 import FeaturesScreen4 from "@/assets/feature-screen4.png";
-import GetStartedDesktop1 from "@/assets/get-started-1.png";
-import GetStartedDesktop2 from "@/assets/get-started-2.png";
-import GetStartedDesktop3 from "@/assets/get-started-3.png";
-import GetStartedMobile from "@/assets/get-started-mobile.png";
 import TestimonialHighlightAuthor from "@/assets/testimonial-highlight-author-avatar.png";
 
 import Image from "next/image";
