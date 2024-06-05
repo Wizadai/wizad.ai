@@ -23,7 +23,7 @@ const exo = Exo({ style: "italic", weight: ["600"], subsets: ["latin"] });
 export default function Features() {
   return (
     <div className="px-4 md:px-28 md:py-20">
-      <section className="flex w-full max-w-screen-2xl flex-wrap items-center justify-center gap-6 md:gap-20">
+      <section className="flex w-full max-w-screen-2xl flex-wrap items-center justify-center gap-6 py-12 md:gap-20">
         <div className="w-full md:w-2/5">
           <div className="flex flex-col pb-5">
             <h1 className="text-xl font-medium md:text-6xl/tight">

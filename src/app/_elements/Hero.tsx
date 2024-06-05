@@ -7,17 +7,19 @@ export default function HeroSection() {
   return (
     <section className="flex w-full flex-col bg-hero-gradient bg-cover bg-center">
       <div className="mx-auto mt-24 flex max-w-6xl flex-col gap-6 px-4 text-center md:gap-10">
-        <h1 className="font-hero text-4xl font-bold md:text-9xl">
-          Never run out of social media designs, anymore.
+        <h1 className="max-w-[825px] font-hero text-4xl font-bold md:text-8xl">
+          <div>Never run out</div>
+          <div>of social media</div>
+          <div>designs, anymore.</div>
         </h1>
-        <span className="text-base font-medium text-white/70 md:text-2xl">
+        <span className="text-base font-medium text-white md:text-xl">
           <p>
             Still messing with long prompts or spending hours editing canva
             templates?
           </p>
           <p>
-            Wizad gives you design in a click. Start creating form your mobile
-            now!
+            Wizad gives you on brand posters in a click. Start creating form
+            your mobile now.
           </p>
         </span>
         <div className="mx-auto flex flex-col items-center gap-4 md:flex-row md:gap-10">

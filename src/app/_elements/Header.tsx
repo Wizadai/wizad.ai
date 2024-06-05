@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { FaWhatsapp } from "react-icons/fa";
 import { IoMenu } from "react-icons/io5";
+import WhatsApp from "@/assets/whatsapp.png";
 
 import logo from "@/assets/logo-full.png";
 import { useState } from "react";
@@ -34,23 +34,27 @@ export default function Header() {
             src={logo}
             alt="Logo of Wizad"
             width={284}
-            className="w-24 md:w-72"
+            className="w-24 md:w-56"
           />
-          <nav className="hidden md:flex md:items-center md:gap-10">
+          <nav className="hidden md:flex md:items-center md:gap-10 md:text-[0.8rem]">
             <NavLinks />
           </nav>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex h-10 items-center justify-center gap-3 rounded-lg bg-[#181818]">
           <Link
             href={process.env.NEXT_PUBLIC_WHATSAPP_CHAT_URL || ""}
-            className="flex items-center gap-3 p-3 md:px-6"
+            className="flex items-center gap-2 p-3 md:px-5"
           >
-            <span className="hidden md:block">Chat with us</span>
-            <FaWhatsapp className="size-5 md:size-6" />
+            <span className="hidden md:block md:text-sm md:font-normal">
+              Chat with us on
+            </span>
+            <div className="size-5 md:size-6">
+              <Image src={WhatsApp} alt="whatsapp" />
+            </div>
           </Link>
           <button
-            className="block p-3 md:hidden"
+            className="block md:hidden"
             onClick={() => setDrawerOpened(true)}
           >
             <IoMenu className="size-5 md:size-6" />
