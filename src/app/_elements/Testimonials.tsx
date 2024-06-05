@@ -20,20 +20,20 @@ export default function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="flex flex-col gap-6 md:gap-12 w-full max-w-screen-2xl px-4 py-12 md:px-32 md:py-32 mx-auto"
+      className="mx-auto flex w-full max-w-screen-2xl flex-col gap-6 px-4 py-12 md:gap-12 md:px-32 md:py-32"
     >
-      <h1 className="text-2xl md:text-6xl font-medium text-white/90 text-center md:pb-12 md:px-18">
+      <h1 className="md:px-18 text-center text-2xl font-medium text-white/90 md:pb-12 md:text-6xl">
         See why people love wizad
       </h1>
 
-      <ul className="flex md:hidden flex-col gap-4">
+      <ul className="flex flex-col gap-4 md:hidden">
         {TestimonialsData.slice(1, 8).map((obj) => (
           <li key={obj.ref}>
             <TestimonialCard data={obj} />
           </li>
         ))}
       </ul>
-      <ul className="hidden md:flex flex-col flex-wrap gap-4 max-h-[80vh] overflow-x-auto">
+      <ul className="hidden max-h-[80vh] flex-col flex-wrap gap-4 overflow-x-auto md:flex">
         {TestimonialsData.slice(1, 14).map((obj) => (
           <li key={obj.ref}>
             <TestimonialCard data={obj} />
@@ -47,7 +47,7 @@ export default function Testimonials() {
 const TestimonialCard = ({ data }: { data: Testimonial }) => {
   return (
     <a href={data.ref} target="_blank" rel="noopener">
-      <div className="flex flex-col gap-4 bg-[#131313] rounded-3xl md:max-w-96 p-6">
+      <div className="flex flex-col gap-4 rounded-3xl bg-[#131313] p-6 md:max-w-96">
         <div className="flex justify-between">
           <div className="flex flex-row gap-4">
             <Image
@@ -55,11 +55,11 @@ const TestimonialCard = ({ data }: { data: Testimonial }) => {
               alt="Avatar of author"
               width={48}
               height={48}
-              className="md:size-12 rounded-full overflow-clip"
+              className="overflow-clip rounded-full md:size-12"
             />
             <span>
-              <p className="text-white/80 font-semibold">{data.authorName}</p>
-              <p className="text-white/60 font-mono text-sm">
+              <p className="font-semibold text-white/80">{data.authorName}</p>
+              <p className="font-mono text-sm text-white/60">
                 @{data.authorAlias}
               </p>
             </span>

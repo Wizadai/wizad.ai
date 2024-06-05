@@ -10,9 +10,9 @@ export default function AppDownloadQRCode() {
 
   return (
     <>
-      <div className="flex gap-6 mx-auto pb-6">
+      <div className="mx-auto flex gap-6 pb-6">
         <button
-          className={`rounded-lg text-lg flex gap-3 justify-center items-center px-3 py-2 ${
+          className={`flex items-center justify-center gap-3 rounded-lg px-3 py-2 text-lg ${
             selected === "appstore"
               ? "bg-[#282828] text-white"
               : "bg-[#1D1D1D] bg-opacity-50 text-zinc-500"
@@ -23,7 +23,7 @@ export default function AppDownloadQRCode() {
           <span>App Store</span>
         </button>
         <button
-          className={`rounded-lg text-lg flex gap-3 justify-center items-center px-2 py-1 ${
+          className={`flex items-center justify-center gap-3 rounded-lg px-2 py-1 text-lg ${
             selected === "playstore"
               ? "bg-[#282828] text-white"
               : "bg-[#1D1D1D] bg-opacity-50 text-white/60"
@@ -35,7 +35,7 @@ export default function AppDownloadQRCode() {
         </button>
       </div>
 
-      <div className="p-8 bg-white rounded-xl">
+      <div className="rounded-xl bg-white p-8">
         <Image
           className="size-72"
           src={`https://api.qrserver.com/v1/create-qr-code/?size=288x288&data=${StoreLinks[selected]}`}
@@ -46,7 +46,7 @@ export default function AppDownloadQRCode() {
         />
       </div>
 
-      <span className="text-white/70 text-2xl mx-auto text-center pt-6">
+      <span className="mx-auto pt-6 text-center text-2xl text-white/70">
         Scan QR to download the mobile app
       </span>
     </>

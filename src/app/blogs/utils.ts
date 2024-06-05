@@ -37,7 +37,7 @@ async function getMDXFiles(dir: string) {
       .filter((file) => path.extname(file) === ".mdx")
       .map(async (file) => {
         const { data: metadata, content } = matter(
-          await readFile(path.join(dir, file), "utf-8")
+          await readFile(path.join(dir, file), "utf-8"),
         );
 
         return {
@@ -46,7 +46,7 @@ async function getMDXFiles(dir: string) {
           readingDuration: getReadingDuration(content),
           content,
         };
-      })
+      }),
   );
 }
 

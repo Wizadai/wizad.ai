@@ -5,12 +5,12 @@ import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <section className="flex flex-col w-full bg-hero-gradient bg-cover bg-center">
-      <div className="flex flex-col gap-6 md:gap-10 mt-24 mx-auto text-center px-4 max-w-6xl">
-        <h1 className="text-4xl md:text-9xl font-bold font-hero">
+    <section className="flex w-full flex-col bg-hero-gradient bg-cover bg-center">
+      <div className="mx-auto mt-24 flex max-w-6xl flex-col gap-6 px-4 text-center md:gap-10">
+        <h1 className="font-hero text-4xl font-bold md:text-9xl">
           Never run out of social media designs, anymore.
         </h1>
-        <span className="font-medium text-base md:text-2xl text-white/70">
+        <span className="text-base font-medium text-white/70 md:text-2xl">
           <p>
             Still messing with long prompts or spending hours editing canva
             templates?
@@ -20,7 +20,7 @@ export default function HeroSection() {
             now!
           </p>
         </span>
-        <div className="flex flex-col md:flex-row gap-4 items-center md:gap-10 mx-auto">
+        <div className="mx-auto flex flex-col items-center gap-4 md:flex-row md:gap-10">
           <AppDownloadButton store="playstore" />
           <AppDownloadButton store="appstore" />
         </div>
@@ -29,7 +29,7 @@ export default function HeroSection() {
         <Image
           src={PostersDesktop}
           alt="Posters made with Wizad"
-          className="w-full hidden md:block"
+          className="hidden w-full md:block"
         />
         <Image
           src={PostersMobile}

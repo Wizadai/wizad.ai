@@ -2,12 +2,12 @@ import { requestCustomerSupport } from "@/app/actions";
 
 export default function CustomerSupport() {
   return (
-    <section className="flex flex-col md:flex-row md:justify-between md:w-full gap-10 md:gap-12 mx-4 md:mx-auto my-12 p-5 md:p-20 max-w-screen-2xl rounded-3xl bg-gradient-to-br from-[#FAECFF] to-[#38CEFB]">
-      <div className="flex flex-col gap-6 md:gap-20 md:max-w-3xl md:py-10">
-        <h2 className="font-hero text-3xl md:text-7xl font-bold italic text-black">
+    <section className="mx-4 my-12 flex max-w-screen-2xl flex-col gap-10 rounded-3xl bg-gradient-to-br from-[#FAECFF] to-[#38CEFB] p-5 md:mx-auto md:w-full md:flex-row md:justify-between md:gap-12 md:p-20">
+      <div className="flex flex-col gap-6 md:max-w-3xl md:gap-20 md:py-10">
+        <h2 className="font-hero text-3xl font-bold italic text-black md:text-7xl">
           Still need dedicated support to manage your social media?
         </h2>
-        <span className="text-lg md:text-2xl text-black">
+        <span className="text-lg text-black md:text-2xl">
           We have a group of social media experts to help and guide you. Request
           a call back now, to know more about the tailored services and packages
           we have for you.
@@ -22,7 +22,7 @@ export default function CustomerSupport() {
 const CustomerSupportForm = () => {
   return (
     <form
-      className="flex flex-col gap-6 rounded-3xl text-zinc-100 bg-zinc-950 p-6 md:p-10 w-full max-w-md"
+      className="flex w-full max-w-md flex-col gap-6 rounded-3xl bg-zinc-950 p-6 text-zinc-100 md:p-10"
       action={requestCustomerSupport}
     >
       <h2 className="text-xl font-semibold">Request a call back</h2>
@@ -34,7 +34,7 @@ const CustomerSupportForm = () => {
         <input
           id="support-form-name"
           name="name"
-          className="p-4 bg-[#1D1D1D] placeholder:text-zinc-500 outline-none focus:ring-2 focus:ring-zinc-700 transition-all duration-200 ease-in-out rounded-lg w-full"
+          className="w-full rounded-lg bg-[#1D1D1D] p-4 outline-none transition-all duration-200 ease-in-out placeholder:text-zinc-500 focus:ring-2 focus:ring-zinc-700"
           placeholder="Enter your name"
         />
       </div>
@@ -47,7 +47,7 @@ const CustomerSupportForm = () => {
           id="support-form-phone"
           name="phone"
           type="tel"
-          className="p-4 bg-[#1D1D1D] placeholder:text-zinc-500 outline-none focus:ring-2 focus:ring-zinc-700 transition-all duration-200 ease-in-out rounded-lg w-full"
+          className="w-full rounded-lg bg-[#1D1D1D] p-4 outline-none transition-all duration-200 ease-in-out placeholder:text-zinc-500 focus:ring-2 focus:ring-zinc-700"
           placeholder="Enter your mobile number"
         />
       </div>
@@ -60,14 +60,14 @@ const CustomerSupportForm = () => {
           id="support-form-email"
           name="email"
           type="email"
-          className="p-4 bg-[#1D1D1D] placeholder:text-zinc-500 outline-none focus:ring-2 focus:ring-zinc-700 transition-all duration-200 ease-in-out rounded-lg w-full"
+          className="w-full rounded-lg bg-[#1D1D1D] p-4 outline-none transition-all duration-200 ease-in-out placeholder:text-zinc-500 focus:ring-2 focus:ring-zinc-700"
           placeholder="Enter your email id"
         />
       </div>
 
       <button
         type="submit"
-        className="mt-4 px-6 py-4 bg-white/10 hover:bg-white/20 rounded-lg font-medium transition-all duration-200 ease-in-out"
+        className="mt-4 rounded-lg bg-white/10 px-6 py-4 font-medium transition-all duration-200 ease-in-out hover:bg-white/20"
       >
         Request a call back
       </button>

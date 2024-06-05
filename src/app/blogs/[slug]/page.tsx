@@ -72,10 +72,10 @@ export default async function Page({ params }: Props) {
     <main className="flex flex-col">
       <Header />
 
-      <section className="flex flex-col w-full py-10 px-4 md:py-24">
-        <div className="flex flex-col gap-10 w-full mx-auto items-center px-4 max-w-7xl">
+      <section className="flex w-full flex-col px-4 py-10 md:py-24">
+        <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-10 px-4">
           <div className="flex flex-col items-center gap-5">
-            <span className="text-zinc-500 text-sm space-x-1">
+            <span className="space-x-1 text-sm text-zinc-500">
               <span>{blog.readingDuration} Min</span>
               <span> • </span>
               <time dateTime={blog.metadata.publishedAt}>
@@ -86,22 +86,22 @@ export default async function Page({ params }: Props) {
                 {blog.metadata.category}
               </span>
             </span>
-            <h1 className="text-3xl md:text-7xl/tight font-medium bg-gradient-to-r from-[#E293FE] to-[#38CEFB] inline-block text-transparent bg-clip-text text-center">
+            <h1 className="inline-block bg-gradient-to-r from-[#E293FE] to-[#38CEFB] bg-clip-text text-center text-3xl font-medium text-transparent md:text-7xl/tight">
               {blog.metadata.title}
             </h1>
           </div>
           <div className="flex flex-col items-center justify-center gap-4">
-            <span className="text-white/65 font-light">Share to</span>
+            <span className="font-light text-white/65">Share to</span>
             <ShareLinks />
           </div>
         </div>
       </section>
 
-      <section className="flex flex-col w-full py-3 px-4">
-        <div className="flex flex-col md:gap-12 gap-6 bg-zinc-900 rounded-2xl py-5 px-3 md:py-10 md:px-60 max-w-7xl mx-auto">
+      <section className="flex w-full flex-col px-4 py-3">
+        <div className="mx-auto flex max-w-7xl flex-col gap-6 rounded-2xl bg-zinc-900 px-3 py-5 md:gap-12 md:px-60 md:py-10">
           {blog.metadata.image && (
             <Image
-              className="rounded-2xl overflow-hidden w-full"
+              className="w-full overflow-hidden rounded-2xl"
               src={blog.metadata.image}
               alt="blog cover image"
               width={320}
@@ -109,21 +109,21 @@ export default async function Page({ params }: Props) {
             />
           )}
 
-          <article className="prose md:mx-auto md:prose-xl prose-zinc prose-invert">
+          <article className="prose prose-zinc prose-invert md:prose-xl md:mx-auto">
             <Markdown content={blog.content} />
           </article>
 
           <div className="flex items-center justify-end gap-4">
-            <span className="text-white/65 font-light">Share to</span>
+            <span className="font-light text-white/65">Share to</span>
             <ShareLinks />
           </div>
         </div>
       </section>
 
       {!!otherBlogs.length && (
-        <section className="flex flex-col max-w-7xl mx-auto md:px-20 md:py-24 py-10 px-4 gap-10">
+        <section className="mx-auto flex max-w-7xl flex-col gap-10 px-4 py-10 md:px-20 md:py-24">
           <div>
-            <span className="text-2xl font-hero">Read next</span>
+            <span className="font-hero text-2xl">Read next</span>
           </div>
           <ul className="flex flex-col gap-8 md:gap-12">
             {otherBlogs.map((blog) => (
@@ -143,7 +143,7 @@ export default async function Page({ params }: Props) {
 
 const ShareLinks = () => {
   return (
-    <div className="flex gap-6 items-center text-white/70">
+    <div className="flex items-center gap-6 text-white/70">
       <button>
         <FaLink className="size-6" />
       </button>

@@ -22,14 +22,14 @@ export default function Header() {
         dialogClass="w-full max-w-sm sm:max-w-md md:max-w-[1200px]"
       >
         <div className="h-screen">
-          <nav className="flex flex-col h-full items-center gap-10 text-white p-20">
+          <nav className="flex h-full flex-col items-center gap-10 p-20 text-white">
             <NavLinks />
           </nav>
         </div>
       </Slideover>
 
-      <div className="flex justify-between items-center p-4 md:mx-44">
-        <div className="flex gap-10 items-center">
+      <div className="flex items-center justify-between p-4 md:mx-44">
+        <div className="flex items-center gap-10">
           <Image
             src={logo}
             alt="Logo of Wizad"
@@ -41,16 +41,16 @@ export default function Header() {
           </nav>
         </div>
 
-        <div className="flex gap-3 items-center">
+        <div className="flex items-center gap-3">
           <Link
             href={process.env.NEXT_PUBLIC_WHATSAPP_CHAT_URL || ""}
-            className="flex items-center p-3 md:px-6 gap-3"
+            className="flex items-center gap-3 p-3 md:px-6"
           >
             <span className="hidden md:block">Chat with us</span>
             <FaWhatsapp className="size-5 md:size-6" />
           </Link>
           <button
-            className="block md:hidden p-3"
+            className="block p-3 md:hidden"
             onClick={() => setDrawerOpened(true)}
           >
             <IoMenu className="size-5 md:size-6" />

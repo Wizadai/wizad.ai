@@ -21,7 +21,7 @@ export default function AppDownloadButton({ store }: { store: Store }) {
       href={StoreLinks[store]}
       target="_blank"
       rel="noopener"
-      className="rounded-2xl p-2 md:p-5 bg-white/10"
+      className="rounded-2xl bg-white/10 p-2 md:p-5"
     >
       <Image
         src={StoreButton[store]}
