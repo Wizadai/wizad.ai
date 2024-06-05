@@ -16,51 +16,57 @@ import {
 import { FaPiggyBank } from "react-icons/fa6";
 import { IoGameController } from "react-icons/io5";
 import { TbCardsFilled } from "react-icons/tb";
-import { Exo } from "next/font/google";
+import { Andada_Pro, Exo } from "next/font/google";
 
 const exo = Exo({ style: "italic", weight: ["600"] });
 
 export default function Features() {
   return (
-    <>
-      <section className="flex flex-col gap-6 md:gap-12 w-full max-w-screen-2xl px-4 py-12 md:px-60 md:py-32 mx-auto">
-        <div className="flex flex-col gap-2">
-          <h1 className="text-2xl md:text-7xl/tight font-medium">
-            Built for one purpose.
-          </h1>
-          <h1 className="text-2xl md:text-7xl/tight font-medium bg-gradient-to-r from-[#E293FE] to-[#38CEFB] inline-block text-transparent bg-clip-text">
-            To grow your brand.
-          </h1>
-        </div>
-
-        <div className="flex flex-col md:flex-row md:justify-between gap-12">
-          <div className="flex flex-col gap-6 justify-between w-full">
-            <span className="text-base md:text-2xl text-white/80 md:max-w-md md:pt-5">
-              Generate designs instantly, based on your poster type requirement
-              on brand.
-            </span>
-
-            <div className="flex flex-col space-y-4 divide-y max-w-min whitespace-nowrap">
-              {[
-                ["0", "Zero Dependency on resources"],
-                ["5s", "Generate multiple options in seconds"],
-                ["100%", "Unique and creative licensing"],
-              ].map(([first, second], key) => (
-                <p key={key} className="flex gap-4 items-center pt-4">
-                  <span className="font-medium text-xl md:text-3xl">
-                    {first}
-                  </span>
-                  <span className="font-light md:text-xl">{second}</span>
-                </p>
-              ))}
-            </div>
+    <div className="px-4 md:py-20 md:px-28">
+      <section className="flex flex-wrap gap-6 w-full max-w-screen-2xl items-center justify-center">
+        <div className="w-full md:w-2/5">
+          <div className="flex flex-col pb-5">
+            <h1 className="text-xl md:text-7xl/tight font-medium">
+              Built for one purpose -
+            </h1>
+            <h1 className="text-xl md:text-7xl/tight font-medium bg-gradient-to-r from-[#E293FE] to-[#38CEFB] inline-block text-transparent bg-clip-text">
+              To grow your brand.
+            </h1>
           </div>
 
-          <Image src={FeaturesScreen1} alt="Features" />
+          <div className="flex flex-col md:flex-row md:justify-between gap-12">
+            <div className="flex flex-col  justify-between w-full">
+              <span className="text-base md:text-2xl text-white/80 md:max-w-md md:pt-5">
+                Wizad ensures brand identity by generating designs specific to
+                your industry by keeping the Colors, Fonts, Tone and Imagery in
+                mind.
+              </span>
+
+              <div className="flex flex-col space-y-4 divide-y max-w-min whitespace-nowrap">
+                {[
+                  "100% Unique and creative licensing",
+                  "Generate multiple options in seconds",
+                  "Keep brand uniformity across all designs",
+                ].map((text, key) => (
+                  <p key={key} className="flex gap-4 items-center pt-4">
+                    {/* <span className="font-medium text-xl md:text-3xl">
+                      {first}
+                    </span> */}
+                    <span className="font-light md:text-xl">{text}</span>
+                  </p>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
+        <Image
+          className="max-w-[680px] min-w-80 w-full md:w-2/5"
+          src={FeaturesScreen1}
+          alt="Features"
+        />
       </section>
 
-      <section className="flex flex-col md:flex-row-reverse md:items-center gap-6 md:gap-20 w-full max-w-screen-2xl px-4 pt-12 pb-10 md:px-60 md:pt-32 md:pb-24 mx-auto">
+      <section className="flex flex-col items-center justify-center md:flex-row-reverse md:items-center gap-6 md:gap-20 w-full max-w-screen-2xl px-4 pt-12 pb-10 md:px-60 md:pt-32 md:pb-24">
         <div className="flex-1 flex flex-col justify-between gap-6 md:gap-20">
           <h1 className="text-2xl md:text-5xl font-medium">
             Optimized for all your social media design needs
@@ -80,8 +86,8 @@ export default function Features() {
 
       {/* Don't let trend pass you */}
       <section className="flex flex-col px-4 py-6 items-center justify-center">
-        <div className="flex flex-wrap bg-[#131313] rounded-3xl p-3">
-          <div className="max-w-md">
+        <div className="flex flex-wrap bg-[#131313] rounded-3xl p-3 md:p-10">
+          <div className="w-full md:w-2/5">
             <div className="flex items-center space-x-2">
               <Image src={PartyPopper} alt="Party Popper" />
               <span className={`${exo.className} text-sm`}>
@@ -98,8 +104,8 @@ export default function Features() {
                 topics.
               </p>
               <p>
-                From #NewYear to #Christmas - No matter the occasion, ensure your
-                brand shines bright.
+                From #NewYear to #Christmas - No matter the occasion, ensure
+                your brand shines bright.
               </p>
               <p className="font-semibold text-white">
                 Choose the day -&gt; Generate Designs!
@@ -110,8 +116,8 @@ export default function Features() {
               </p>
             </span>
           </div>
-          <div className="w-full">
-           <Image src={SpecialDays} alt="Special Days" />
+          <div className="w-full md:w-3/5 pt-10 min-w-80 ">
+            <Image src={SpecialDays} alt="Special Days" />
           </div>
         </div>
       </section>
@@ -281,7 +287,7 @@ export default function Features() {
           />
         </div>
       </section>
-    </>
+    </div>
   );
 }
 
@@ -297,9 +303,7 @@ const FeatureTile = ({
   return (
     <div className="flex-1 flex flex-col gap-1 border-t border-white/80 pt-5 md:pt-8">
       <div className="text-2xl pb-4">{icon}</div>
-      <h2 className="font-bold text-3xl md:text-lg font-hero">
-        {title}
-      </h2>
+      <h2 className="font-bold text-3xl md:text-lg font-hero">{title}</h2>
       <span className="font-light text-white/80">{desc}</span>
     </div>
   );
