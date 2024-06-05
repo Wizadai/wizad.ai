@@ -16,9 +16,9 @@ import {
 import { FaPiggyBank } from "react-icons/fa6";
 import { IoGameController } from "react-icons/io5";
 import { TbCardsFilled } from "react-icons/tb";
-import { Andada_Pro, Exo } from "next/font/google";
+import { Exo } from "next/font/google";
 
-const exo = Exo({ style: "italic", weight: ["600"] });
+const exo = Exo({ style: "italic", weight: ["600"], subsets: ["latin"] });
 
 export default function Features() {
   return (
