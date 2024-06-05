@@ -23,13 +23,13 @@ const exo = Exo({ style: "italic", weight: ["600"] });
 export default function Features() {
   return (
     <div className="px-4 md:px-28 md:py-20">
-      <section className="flex w-full max-w-screen-2xl flex-wrap items-center justify-center gap-6">
+      <section className="flex w-full max-w-screen-2xl flex-wrap items-center justify-center gap-6 md:gap-20">
         <div className="w-full md:w-2/5">
           <div className="flex flex-col pb-5">
-            <h1 className="text-xl font-medium md:text-7xl/tight">
+            <h1 className="text-xl font-medium md:text-6xl/tight">
               Built for one purpose -
             </h1>
-            <h1 className="inline-block bg-gradient-to-r from-[#E293FE] to-[#38CEFB] bg-clip-text text-xl font-medium text-transparent md:text-7xl/tight">
+            <h1 className="inline-block bg-gradient-to-r from-[#E293FE] to-[#38CEFB] bg-clip-text text-xl font-medium text-transparent md:text-6xl/tight">
               To grow your brand.
             </h1>
           </div>
@@ -66,9 +66,9 @@ export default function Features() {
         />
       </section>
 
-      <section className="flex w-full max-w-screen-2xl flex-col items-center justify-center gap-6 px-4 pb-10 pt-12 md:flex-row-reverse md:items-center md:gap-20 md:px-60 md:pb-24 md:pt-32">
-        <div className="flex flex-1 flex-col justify-between gap-6 md:gap-20">
-          <h1 className="text-2xl font-medium md:text-5xl">
+      <section className="flex w-full max-w-screen-2xl flex-col items-center justify-center gap-6 pb-10 pt-12 md:flex-row-reverse md:items-center md:gap-20 md:pb-24 md:pt-32">
+        <div className="flex w-full flex-col justify-between gap-6 md:w-2/5 md:gap-20">
+          <h1 className="text-2xl font-medium md:text-6xl/tight">
             Optimized for all your social media design needs
           </h1>
 
@@ -77,15 +77,18 @@ export default function Features() {
               Say goodbye to the hassle of hiring designers or spending hours
               tweaking templates.
             </p>
-            <p>Launch new marketing campaigns faster than ever before.</p>
           </span>
         </div>
 
-        <Image className="flex-1" src={FeaturesScreen2} alt="Features" />
+        <Image
+          className="w-full min-w-80 max-w-[680px] md:w-2/5"
+          src={FeaturesScreen2}
+          alt="Features"
+        />
       </section>
 
       {/* Don't let trend pass you */}
-      <section className="flex flex-col items-center justify-center px-4 py-6">
+      <section className="flex max-w-screen-2xl flex-col items-center justify-center px-4 py-6">
         <div className="flex flex-wrap rounded-3xl bg-[#131313] p-3 md:p-10">
           <div className="w-full md:w-2/5">
             <div className="flex items-center space-x-2">
