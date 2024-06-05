@@ -7,7 +7,7 @@ export default function HeroSection() {
   return (
     <section className="flex flex-col w-full bg-hero-gradient bg-cover bg-center">
       <div className="flex flex-col gap-6 md:gap-10 mt-24 mx-auto text-center px-4 max-w-6xl">
-        <h1 className="text-4xl md:text-9xl font-bold font-hero italic">
+        <h1 className="text-4xl md:text-9xl font-bold font-hero">
           Never run out of social media designs, anymore.
         </h1>
         <span className="font-medium text-base md:text-2xl text-white/70">

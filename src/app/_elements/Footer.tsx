@@ -6,7 +6,6 @@ import {
   BiLogoMeta,
   BiLogoTwitter,
 } from "react-icons/bi";
-import { useState } from "react";
 import SubscribeToNewsletter from "@/app/_elements/SubscribeToNewsletter";
 import AppDownloadQRCode from "@/app/_elements/AppDownloadQR";
 import AppDownloadButton from "@/app/_elements/AppDownloadButton";

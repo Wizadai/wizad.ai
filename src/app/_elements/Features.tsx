@@ -3,7 +3,8 @@ import FeaturesScreen2 from "@/assets/feature-screen2.png";
 import FeaturesScreen3 from "@/assets/feature-screen3.png";
 import FeaturesScreen4 from "@/assets/feature-screen4.png";
 import TestimonialHighlightAuthor from "@/assets/testimonial-highlight-author-avatar.png";
-
+import PartyPopper from "@/assets/party-popper.png";
+import SpecialDays from "@/assets/special-days.png";
 import Image from "next/image";
 import { ReactNode } from "react";
 import {
@@ -15,6 +16,9 @@ import {
 import { FaPiggyBank } from "react-icons/fa6";
 import { IoGameController } from "react-icons/io5";
 import { TbCardsFilled } from "react-icons/tb";
+import { Exo } from "next/font/google";
+
+const exo = Exo({ style: "italic", weight: ["600"] });
 
 export default function Features() {
   return (
@@ -72,6 +76,44 @@ export default function Features() {
         </div>
 
         <Image className="flex-1" src={FeaturesScreen2} alt="Features" />
+      </section>
+
+      {/* Don't let trend pass you */}
+      <section className="flex flex-col px-4 py-6 items-center justify-center">
+        <div className="flex flex-wrap bg-[#131313] rounded-3xl p-3">
+          <div className="max-w-md">
+            <div className="flex items-center space-x-2">
+              <Image src={PartyPopper} alt="Party Popper" />
+              <span className={`${exo.className} text-sm`}>
+                Festival & Trending Days
+              </span>
+            </div>
+            <h1 className="text-3xl font-medium text-wrap py-4">
+              Don&apos;t let a trend pass you by
+            </h1>
+            <span className="text-base text-white/80 md:max-w-md md:pt-5 space-y-6 font-light">
+              <p>
+                Effortlessly captivate your audience with eye-catching designs
+                tailored to festivals, celebrations, special days and trending
+                topics.
+              </p>
+              <p>
+                From #NewYear to #Christmas - No matter the occasion, ensure your
+                brand shines bright.
+              </p>
+              <p className="font-semibold text-white">
+                Choose the day -&gt; Generate Designs!
+              </p>
+              <p className="font-semibold bg-gradient-to-r from-[#E293FE] to-[#38CEFB] inline-block text-transparent bg-clip-text relative">
+                Get started now
+                <span className="absolute inset-x-0 bottom-0 h-[0.25] bg-gradient-to-r from-[#E293FE] to-[#38CEFB]"></span>
+              </p>
+            </span>
+          </div>
+          <div className="w-full">
+           <Image src={SpecialDays} alt="Special Days" />
+          </div>
+        </div>
       </section>
 
       <section className="flex flex-col md:flex-row items-start gap-6 md:gap-14 w-full max-w-screen-2xl px-4 pb-12 md:px-60 md:pb-32 mx-auto">
@@ -255,7 +297,7 @@ const FeatureTile = ({
   return (
     <div className="flex-1 flex flex-col gap-1 border-t border-white/80 pt-5 md:pt-8">
       <div className="text-2xl pb-4">{icon}</div>
-      <h2 className="italic font-bold text-3xl md:text-lg font-hero">
+      <h2 className="font-bold text-3xl md:text-lg font-hero">
         {title}
       </h2>
       <span className="font-light text-white/80">{desc}</span>
