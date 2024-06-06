@@ -12,14 +12,19 @@ export default function HeroSection() {
           <div>of social media</div>
           <div>designs, anymore.</div>
         </h1>
-        <span className="text-base font-medium text-white md:text-xl">
+        <span className="text-md font-medium md:font-normal leading-relaxed text-white md:text-xl md:leading-7">
           <p>
             Still messing with long prompts or spending hours editing canva
             templates?
           </p>
-          <p>
+          <p className="hidden md:block">
             Wizad gives you on brand posters in a click. Start creating form
             your mobile now.
+          </p>
+          <p className="block md:hidden">
+            Wizad gives you on brand posters in a click.
+            <br />
+            Start creating form your mobile now.
           </p>
         </span>
         <div className="mx-auto flex flex-col items-center gap-4 md:flex-row md:gap-10">

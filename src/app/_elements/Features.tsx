@@ -26,10 +26,10 @@ export default function Features() {
       <section className="flex w-full max-w-screen-2xl flex-wrap items-center justify-center gap-6 py-12 md:gap-20">
         <div className="w-full md:w-2/5">
           <div className="flex flex-col pb-5">
-            <h1 className="text-xl font-medium md:text-6xl/tight">
+            <h1 className="text-2xl font-medium md:text-6xl/tight">
               Built for one purpose -
             </h1>
-            <h1 className="inline-block bg-gradient-to-r from-[#E293FE] to-[#38CEFB] bg-clip-text text-xl font-medium text-transparent md:text-6xl/tight">
+            <h1 className="inline-block bg-gradient-to-r from-[#E293FE] to-[#38CEFB] bg-clip-text text-2xl font-medium text-transparent md:text-6xl/tight">
               To grow your brand.
             </h1>
           </div>
@@ -66,7 +66,7 @@ export default function Features() {
         />
       </section>
 
-      <section className="flex w-full max-w-screen-2xl flex-col items-center justify-center gap-6 pb-10 pt-12 md:flex-row-reverse md:items-center md:gap-20 md:pb-24 md:pt-32">
+      <section className="flex w-full max-w-screen-2xl flex-col items-center justify-center gap-6 py-12 md:flex-row-reverse md:items-center md:gap-20 md:pb-24 md:pt-32">
         <div className="flex w-full flex-col justify-between gap-6 md:w-2/5 md:gap-20">
           <h1 className="text-2xl font-medium md:text-6xl/tight">
             Optimized for all your social media design needs
@@ -88,7 +88,7 @@ export default function Features() {
       </section>
 
       {/* Don't let trend pass you */}
-      <section className="flex max-w-screen-2xl flex-col items-center justify-center px-4 py-6">
+      <section className="flex max-w-screen-2xl flex-col items-center justify-center py-6">
         <div className="flex flex-wrap rounded-3xl bg-[#131313] p-3 md:p-10">
           <div className="w-full md:w-2/5">
             <div className="flex items-center space-x-2">
@@ -113,7 +113,7 @@ export default function Features() {
               <p className="font-semibold text-white">
                 Choose the day -&gt; Generate Designs!
               </p>
-              <p className="relative inline-block bg-gradient-to-r from-[#E293FE] to-[#38CEFB] bg-clip-text font-semibold text-transparent">
+              <p className="relative inline-block hover:cursor-pointer bg-gradient-to-r from-[#E293FE] to-[#38CEFB] bg-clip-text font-semibold text-transparent">
                 Get started now
                 <span className="absolute inset-x-0 bottom-0 h-[0.25] bg-gradient-to-r from-[#E293FE] to-[#38CEFB]"></span>
               </p>

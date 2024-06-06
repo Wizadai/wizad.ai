@@ -41,10 +41,10 @@ export default function Header() {
           </nav>
         </div>
 
-        <div className="flex h-10 items-center justify-center gap-3 rounded-lg bg-[#181818]">
+        <div className="flex h-10 items-center justify-center gap-3">
           <Link
             href={process.env.NEXT_PUBLIC_WHATSAPP_CHAT_URL || ""}
-            className="flex items-center gap-2 p-3 md:px-5"
+            className="flex items-center gap-2 rounded-lg bg-[#181818] p-2 md:px-5"
           >
             <span className="hidden md:block md:text-sm md:font-normal">
               Chat with us on
@@ -53,12 +53,11 @@ export default function Header() {
               <Image src={WhatsApp} alt="whatsapp" />
             </div>
           </Link>
-          <button
-            className="block md:hidden"
-            onClick={() => setDrawerOpened(true)}
-          >
-            <IoMenu className="size-5 md:size-6" />
-          </button>
+          <div className="flex justify-center items-center h-9 w-9 rounded-lg bg-[#181818] md:hidden">
+            <button onClick={() => setDrawerOpened(true)}>
+              <IoMenu className="size-6 md:size-6" />
+            </button>
+          </div>
         </div>
       </div>
     </>
