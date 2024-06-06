@@ -5,6 +5,7 @@ import FeaturesScreen4 from "@/assets/feature-screen4.png";
 import TestimonialHighlightAuthor from "@/assets/testimonial-highlight-author-avatar.png";
 import PartyPopper from "@/assets/party-popper.png";
 import SpecialDays from "@/assets/special-days.png";
+import SpecialDaysList from "@/assets/special-days-list.png";
 import Image from "next/image";
 import { ReactNode } from "react";
 import {
@@ -88,19 +89,19 @@ export default function Features() {
       </section>
 
       {/* Don't let trend pass you */}
-      <section className="flex max-w-screen-2xl flex-col items-center justify-center py-6">
-        <div className="flex flex-wrap rounded-3xl bg-[#131313] p-3 md:p-10">
+      <section className="flex max-w-screen-2xl flex-col items-center justify-center py-6 md:py-20">
+        <div className="flex flex-wrap rounded-t-3xl bg-[#131313] p-3 md:p-10">
           <div className="w-full md:w-2/5">
             <div className="flex items-center space-x-2">
               <Image src={PartyPopper} alt="Party Popper" />
-              <span className={`${exo.className} text-sm`}>
+              <span className={`${exo.className} text-sm md:text-xl`}>
                 Festival & Trending Days
               </span>
             </div>
-            <h1 className="text-wrap py-4 text-3xl font-medium">
+            <h1 className="text-wrap py-4 text-3xl font-medium md:text-6xl md:leading-tight">
               Don&apos;t let a trend pass you by
             </h1>
-            <span className="space-y-6 text-base font-light text-white/80 md:max-w-md md:pt-5">
+            <span className="space-y-6 text-base font-light text-white/80 md:max-w-md md:pt-5 md:text-lg md:font-normal">
               <p>
                 Effortlessly captivate your audience with eye-catching designs
                 tailored to festivals, celebrations, special days and trending
@@ -113,7 +114,7 @@ export default function Features() {
               <p className="font-semibold text-white">
                 Choose the day -&gt; Generate Designs!
               </p>
-              <p className="relative inline-block hover:cursor-pointer bg-gradient-to-r from-[#E293FE] to-[#38CEFB] bg-clip-text font-semibold text-transparent">
+              <p className="relative inline-block bg-gradient-to-r from-[#E293FE] to-[#38CEFB] bg-clip-text py-1 font-semibold text-transparent hover:cursor-pointer">
                 Get started now
                 <span className="absolute inset-x-0 bottom-0 h-[0.25] bg-gradient-to-r from-[#E293FE] to-[#38CEFB]"></span>
               </p>
@@ -122,6 +123,16 @@ export default function Features() {
           <div className="w-full min-w-80 pt-10 md:w-3/5">
             <Image src={SpecialDays} alt="Special Days" />
           </div>
+        </div>
+        <div className="relative h-[120px] w-full bg-[#131313] md:h-64">
+          <Image
+            // sizes="(max-width: 1536px) 100vw, 33vw"
+            src={SpecialDaysList}
+            fill
+            objectFit="cover"
+            objectPosition="left"
+            alt="Special Days List"
+          />
         </div>
       </section>
 
