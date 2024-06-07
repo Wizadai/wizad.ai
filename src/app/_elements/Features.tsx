@@ -6,6 +6,7 @@ import TestimonialHighlightAuthor from "@/assets/testimonial-highlight-author-av
 import PartyPopper from "@/assets/party-popper.png";
 import SpecialDays from "@/assets/special-days.png";
 import SpecialDaysList from "@/assets/special-days-list.png";
+import Boxes from "@/assets/boxes.png";
 import Image from "next/image";
 import { ReactNode } from "react";
 import {
@@ -17,16 +18,13 @@ import {
 import { FaPiggyBank } from "react-icons/fa6";
 import { IoGameController } from "react-icons/io5";
 import { TbCardsFilled } from "react-icons/tb";
-import { Exo } from "next/font/google";
-
-const exo = Exo({ style: "italic", weight: ["600"], subsets: ["latin"] });
 
 export default function Features() {
   return (
     <div className="px-4 md:px-28 md:py-20">
       <section className="flex w-full max-w-screen-2xl flex-wrap items-center justify-center gap-6 py-12 md:gap-20">
         <div className="w-full md:w-2/5">
-          <h1 className="text-2xl font-medium pb-4 md:text-6xl/tight md:pb-7">
+          <h1 className="pb-4 text-2xl font-medium md:pb-7 md:text-6xl/tight">
             {"Built for one purpose - "}
             <span className="inline-block bg-gradient-to-r from-[#E293FE] to-[#38CEFB] bg-clip-text text-transparent md:inline">
               to grow your brand.
@@ -34,7 +32,7 @@ export default function Features() {
           </h1>
 
           <div className="flex flex-col gap-12 md:flex-row md:justify-between">
-            <div className="flex w-full gap-4 flex-col justify-between md:gap-7">
+            <div className="flex w-full flex-col justify-between gap-4 md:gap-7">
               <span className="text-base text-white/80 md:max-w-md md:pt-5 md:text-lg">
                 Wizad ensures brand identity by generating designs specific to
                 your industry by keeping the Colors, Fonts, Tone and Imagery in
@@ -92,7 +90,7 @@ export default function Features() {
           <div className="w-full md:w-2/5">
             <div className="flex items-center space-x-2">
               <Image src={PartyPopper} alt="Party Popper" />
-              <span className={`${exo.className} text-sm md:text-xl`}>
+              <span className="font-hero font-medium text-sm md:text-xl">
                 Festival & Trending Days
               </span>
             </div>
@@ -112,7 +110,7 @@ export default function Features() {
               <p className="font-semibold text-white">
                 Choose the day -&gt; Generate Designs!
               </p>
-              <p className="relative inline-block bg-gradient-to-r from-[#E293FE] to-[#38CEFB] bg-clip-text py-1 font-semibold text-transparent hover:cursor-pointer">
+              <p className="relative inline-block bg-gradient-to-r from-[#E293FE] to-[#38CEFB] bg-clip-text font-semibold text-transparent hover:cursor-pointer">
                 Get started now
                 <span className="absolute inset-x-0 bottom-0 h-[0.25] bg-gradient-to-r from-[#E293FE] to-[#38CEFB]"></span>
               </p>
@@ -131,6 +129,37 @@ export default function Features() {
             objectPosition="left"
             alt="Special Days List"
           />
+        </div>
+      </section>
+
+      {/* Turn product images in your mobile gallery to professional posters */}
+      <section className="flex max-w-screen-2xl flex-col items-center justify-center py-6 md:py-20">
+        <div className="flex flex-wrap rounded-3xl bg-[#131313] p-3 md:p-10">
+          <div className="w-full md:w-3/5">
+            <div className="flex items-center space-x-2">
+              <Image src={Boxes} alt="Party Popper" />
+              <span className={`font-hero font-medium text-sm md:text-xl`}>
+                Product Photography Posters
+              </span>
+            </div>
+            <h1 className="text-wrap py-4 text-3xl font-medium md:text-6xl md:leading-tight">
+              Turn product images in your mobile gallery to professional
+              posters!
+            </h1>
+            <span className="space-y-6 text-base font-light text-white/80 md:max-w-md md:pt-5 md:text-lg md:font-normal">
+              <p className="md:leading-normal">
+                Save money on professional product photography with Wizad. Stand
+                out with impressive product visuals!
+              </p>
+              <p className="font-semibold text-white">
+                Upload from gallary -&gt; Generate Designs!
+              </p>
+              <p className="relative inline-block bg-gradient-to-r from-[#E293FE] to-[#38CEFB] bg-clip-text font-semibold text-transparent hover:cursor-pointer">
+                Get started now
+                <span className="absolute inset-x-0 bottom-0 h-[0.25] bg-gradient-to-r from-[#E293FE] to-[#38CEFB]"></span>
+              </p>
+            </span>
+          </div>
         </div>
       </section>
 
