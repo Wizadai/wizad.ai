@@ -1,5 +1,5 @@
 import Image from "next/image";
-import logo from "@/assets/logo-footer.png";
+import logo from "../../../public/assets/logo-footer.png";
 import {
   BiLogoInstagramAlt,
   BiLogoLinkedinSquare,

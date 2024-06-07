@@ -1,4 +1,4 @@
-import TestimonialsData from "@/assets/testimonials.json";
+import TestimonialsData from "../../../public/assets/testimonials.json";
 import Image from "next/image";
 import { BiLogoProductHunt } from "react-icons/bi";
 

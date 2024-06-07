@@ -1,12 +1,12 @@
-import FeaturesScreen1 from "@/assets/feature-screen1.png";
-import FeaturesScreen2 from "@/assets/feature-screen2.png";
-import FeaturesScreen3 from "@/assets/feature-screen3.png";
-import FeaturesScreen4 from "@/assets/feature-screen4.png";
-import TestimonialHighlightAuthor from "@/assets/testimonial-highlight-author-avatar.png";
-import PartyPopper from "@/assets/party-popper.png";
-import SpecialDays from "@/assets/special-days.png";
-import SpecialDaysList from "@/assets/special-days-list.png";
-import Boxes from "@/assets/boxes.png";
+import FeaturesScreen1 from "../../../public/assets/feature-screen1.png";
+import FeaturesScreen2 from "../../../public/assets/feature-screen2.png";
+import FeaturesScreen3 from "../../../public/assets/feature-screen3.png";
+import FeaturesScreen4 from "../../../public/assets/feature-screen4.png";
+import TestimonialHighlightAuthor from "../../../public/assets/testimonial-highlight-author-avatar.png";
+import PartyPopper from "../../../public/assets/party-popper.png";
+import SpecialDays from "../../../public/assets/special-days.png";
+import SpecialDaysList from "../../../public/assets/special-days-list.png";
+import Boxes from "../../../public/assets/boxes.png";
 import Image from "next/image";
 import { ReactNode } from "react";
 import {
@@ -160,6 +160,8 @@ export default function Features() {
               </p>
             </span>
           </div>
+          {/* images */}
+
         </div>
       </section>
 
