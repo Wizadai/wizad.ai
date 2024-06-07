@@ -26,18 +26,16 @@ export default function Features() {
     <div className="px-4 md:px-28 md:py-20">
       <section className="flex w-full max-w-screen-2xl flex-wrap items-center justify-center gap-6 py-12 md:gap-20">
         <div className="w-full md:w-2/5">
-          <div className="flex flex-col pb-5">
-            <h1 className="text-2xl font-medium md:text-6xl/tight">
-              Built for one purpose -
-            </h1>
-            <h1 className="inline-block bg-gradient-to-r from-[#E293FE] to-[#38CEFB] bg-clip-text text-2xl font-medium text-transparent md:text-6xl/tight">
-              To grow your brand.
-            </h1>
-          </div>
+          <h1 className="text-2xl font-medium pb-4 md:text-6xl/tight md:pb-7">
+            {"Built for one purpose - "}
+            <span className="inline-block bg-gradient-to-r from-[#E293FE] to-[#38CEFB] bg-clip-text text-transparent md:inline">
+              to grow your brand.
+            </span>
+          </h1>
 
           <div className="flex flex-col gap-12 md:flex-row md:justify-between">
-            <div className="flex w-full flex-col justify-between">
-              <span className="text-base text-white/80 md:max-w-md md:pt-5 md:text-2xl">
+            <div className="flex w-full gap-4 flex-col justify-between md:gap-7">
+              <span className="text-base text-white/80 md:max-w-md md:pt-5 md:text-lg">
                 Wizad ensures brand identity by generating designs specific to
                 your industry by keeping the Colors, Fonts, Tone and Imagery in
                 mind.
@@ -68,7 +66,7 @@ export default function Features() {
       </section>
 
       <section className="flex w-full max-w-screen-2xl flex-col items-center justify-center gap-6 py-12 md:flex-row-reverse md:items-center md:gap-20 md:pb-24 md:pt-32">
-        <div className="flex w-full flex-col justify-between gap-6 md:w-2/5 md:gap-20">
+        <div className="flex w-full flex-col justify-between gap-6 md:w-2/5 md:gap-16">
           <h1 className="text-2xl font-medium md:text-6xl/tight">
             Optimized for all your social media design needs
           </h1>
