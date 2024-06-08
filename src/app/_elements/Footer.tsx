@@ -14,14 +14,16 @@ import { FaCheck } from "react-icons/fa";
 export default function Footer() {
   return (
     <footer id="footer" className="flex w-full flex-col gap-2">
-      <section className="flex flex-col items-center justify-center gap-10 bg-hero-gradient bg-bottom px-4 py-12 md:gap-20 md:bg-cover md:px-60 md:py-32">
-        <div className="mx-auto flex w-full max-w-[1440px] flex-col flex-wrap items-center justify-center gap-6 md:gap-8">
+      <section className="flex flex-col items-center justify-center gap-10 bg-hero-gradient bg-bottom px-4 py-12 md:gap-20 md:bg-cover md:py-32">
+        <div className="flex w-full max-w-[1440px] flex-col flex-wrap items-center justify-center gap-6 md:gap-8">
           <span className="max-w-2xl text-center text-xl font-medium italic md:text-2xl">
             {`"You don't have a choice on whether you do social media, The question is how well you do it"`}
           </span>
 
-          <h2 className="inline-flex max-w-6xl bg-gradient-to-br from-white to-[#4BF5B3] bg-clip-text text-center font-hero text-5xl font-bold italic text-transparent md:text-8xl">
-            Start creating designs with Wizad.
+          <h2 className="md:w-full max-w-6xl bg-gradient-to-br from-white to-[#4BF5B3] bg-clip-text text-center font-hero text-5xl font-bold italic text-transparent md:pb-4 md:text-[7rem]">
+            {"Start creating "}
+            <br className="hidden md:block" />
+            designs with Wizad.
           </h2>
 
           <span className="max-w-52 text-center font-semibold text-white/80 md:max-w-none md:text-2xl">
@@ -60,7 +62,7 @@ export default function Footer() {
             target="_blank"
           >
             <Image
-              src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=453705&theme=dark"
+              src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=453705"
               alt="Wizad - Social&#0032;media&#0032;posters&#0032;in&#0032;one&#0032;click&#0032;with&#0032;GenAI&#0032; | Product Hunt"
               className="h-[54px] w-[250px]"
               width="250"

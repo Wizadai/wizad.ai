@@ -33,7 +33,7 @@ export default function Testimonials() {
           </li>
         ))}
       </ul>
-      <ul className="hidden max-h-[80vh] flex-col flex-wrap gap-4 overflow-x-auto md:flex">
+      <ul className="hidden max-h-[80vh] items-start flex-wrap gap-4 overflow-x-auto md:flex">
         {TestimonialsData.slice(1, 14).map((obj) => (
           <li key={obj.ref}>
             <TestimonialCard data={obj} />
