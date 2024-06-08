@@ -3,7 +3,7 @@ import { subscribeToNewsletter } from "@/app/actions";
 export default function SubscribeToNewsletter() {
   return (
     <form
-      className="flex items-center gap-6 pt-20"
+      className="flex flex-col items-center gap-2 pt-5 md:pt-12"
       action={subscribeToNewsletter}
     >
       <input
@@ -14,7 +14,7 @@ export default function SubscribeToNewsletter() {
       />
       <button
         type="submit"
-        className="rounded-lg bg-white/10 px-6 py-4 font-medium transition-all duration-200 ease-in-out hover:bg-white/20"
+        className="rounded-lg w-full bg-white/10 px-6 py-3 font-medium transition-all duration-200 ease-in-out hover:bg-white/20"
       >
         Subscribe
       </button>

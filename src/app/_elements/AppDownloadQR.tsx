@@ -35,9 +35,9 @@ export default function AppDownloadQRCode() {
         </button>
       </div>
 
-      <div className="rounded-xl bg-white p-8">
+      <div className="rounded-xl mx-auto aspect-square bg-white p-8">
         <Image
-          className="size-72"
+          className="size-auto"
           src={`https://api.qrserver.com/v1/create-qr-code/?size=288x288&data=${StoreLinks[selected]}`}
           title="Scan the QR code to start experiencing Wizad now!"
           alt="QR Code for the selected store"
