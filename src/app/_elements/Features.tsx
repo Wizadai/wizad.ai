@@ -9,7 +9,8 @@ import SpecialDaysList from "../../../public/assets/special-days-list.png";
 import Boxes from "../../../public/assets/boxes.png";
 import Calender from "../../../public/assets/calender.png";
 import Thunderbolt from "../../../public/assets/thunderbolt.png";
-import FeatureScreen5 from "../../../public/assets/feature-screen5.png";
+import Feature5M from "../../../public/assets/feature5-m.svg";
+import Feature5D from "../../../public/assets/feature5-d.png";
 
 import Image from "next/image";
 import { ReactNode } from "react";
@@ -19,7 +20,7 @@ import { TbCardsFilled } from "react-icons/tb";
 
 export default function Features() {
   return (
-    <div className="px-4 md:px-28 md:py-20">
+    <div className="px-4 md:px-28 md:py-20 max-w-[375px] mx-auto md:max-w-[1920px]">
       <section className="flex w-full max-w-screen-2xl flex-wrap items-center justify-center gap-6 py-12 md:gap-20">
         <div className="w-full md:w-2/5">
           <h1 className="pb-4 text-2xl font-medium md:self-start md:pb-7 md:text-6xl/tight">
@@ -117,8 +118,10 @@ export default function Features() {
             // sizes="(max-width: 1536px) 100vw, 33vw"
             src={SpecialDaysList}
             fill
-            objectFit="cover"
-            objectPosition="left"
+            style={{
+              objectFit: "cover",
+              objectPosition: "left",
+            }}
             alt="Special Days List"
           />
         </div>
@@ -192,7 +195,7 @@ export default function Features() {
 
       {/* Take control of your marketing campaigns */}
       <section className="flex max-w-screen-2xl flex-col items-center justify-center py-6 md:py-20">
-        <div className="relative overflow-hidden flex h-[600px] w-full flex-col flex-wrap rounded-3xl bg-neutral-920 px-3 pt-3 md:px-10 md:pt-10">
+        <div className="relative overflow-hidden flex h-[640px] w-full flex-col flex-wrap rounded-3xl bg-neutral-920 px-3 pt-3 md:px-10 md:pt-10 md:min-h-[1000px]">
           <div className="w-full md:w-3/5">
             <div className="flex items-center space-x-2">
               <Image src={Thunderbolt} alt="Thunderbolt" width={16} />
@@ -220,8 +223,11 @@ export default function Features() {
               </p>
             </div>
           </div>
-          <div className="absolute left-0 max-h-[300px] bottom-0 mx-auto w-full min-w-80 pt-10 md:w-2/5">
-            <Image src={FeatureScreen5} alt="Feature Screen 5" />
+          <div className="absolute left-0 max-h-[350px] bottom-0 mx-auto w-full min-w-80 pt-10 md:hidden md:w-0 md:h-0">
+            <Image src={Feature5M} alt="Feature Screen 5" style={{ objectFit: "fill"}}/>
+          </div>
+          <div className="absolute w-0 hidden md:flex justify-end md:bottom-0 md:right-0 md:w-full md:h-[90%]">
+            <Image src={Feature5D} alt="Feature Screen 5" style={{ objectFit: "fill"}}/>
           </div>
         </div>
       </section>
@@ -285,66 +291,14 @@ export default function Features() {
         </div>
       </section>
 
-      {/* <section className="mx-auto flex w-full max-w-screen-2xl flex-col items-start gap-6 px-4 pb-12 md:flex-row md:gap-14 md:px-60 md:pb-32">
-        <FeatureTile
-          icon={<BiSolidCalendar />}
-          title="Post daily"
-          desc="Every day is the best day for market your business. Be in-front of your customers mind everyday."
-        />
-        <FeatureTile
-          icon={<BiSolidParty />}
-          title="Festival & Trending days"
-          desc="Don't miss a trending day or topic without a content from your brand. Announce festival offers without anyones help."
-        />
-        <FeatureTile
-          icon={<BiSolidOffer />}
-          title="Product & Offer posts"
-          desc="Don't miss a trending day or topic without a content from your brand. Announce festival offers without anyones help."
-        />
-        <FeatureTile
-          icon={<IoGameController />}
-          title="Gamified Content"
-          desc="Make people entertained with tailor made games of your brand."
-        />
-      </section> */}
-
       <section className="mx-4 my-12 flex max-w-screen-2xl flex-col items-center justify-center gap-10 rounded-3xl bg-gradient-to-br from-[#FAECFF] to-[#38CEFB] text-black md:mx-auto md:w-full md:gap-12">
         <h2 className="max-w-5xl px-4 py-6 text-center font-hero text-4xl font-bold italic md:pb-10 md:pt-28 md:text-7xl">
           Get multiple design options in a single click.
         </h2>
         <Image className="w-56 md:w-96" src={FeaturesScreen3} alt="Features" />
       </section>
-      {/* <section className="flex flex-col items-center justify-center md:w-full mx-4 md:mx-auto my-12 max-w-screen-2xl rounded-3xl bg-gradient-to-br from-[#FAECFF] to-[#2CF3A6] text-black overflow-clip">
-        <h2 className="font-hero text-4xl px-4 md:text-7xl font-bold italic max-w-5xl text-center py-6 md:pt-28 md:pb-5">
-          Get started for free & Generate designs instantly!
-        </h2>
-        <span>Try Wizad with our free starter plan.</span>
-        <div className="md:hidden flex justify-end w-full">
-          <Image
-            className="w-72 mt-12 antialiased"
-            src={GetStartedMobile}
-            alt="Get Started"
-          />
-        </div>
-        <div className="hidden md:flex gap-20 mt-9">
-          <Image
-            className="w-96 antialiased"
-            src={GetStartedDesktop1}
-            alt="Features"
-          />
-          <Image
-            className="w-96 pt-16 antialiased"
-            src={GetStartedDesktop2}
-            alt="Features"
-          />
-          <Image
-            className="w-96 pt-40 antialiased"
-            src={GetStartedDesktop3}
-            alt="Features"
-          />
-        </div>
-      </section> */}
-      <section className="mx-auto flex w-full max-w-screen-2xl flex-col gap-8 overflow-clip px-4 py-12 md:gap-20 md:px-60 md:py-32">
+      
+      <section className="flex w-full max-w-screen-2xl flex-col gap-8 overflow-clip px-4 py-12 md:gap-20 md:px-20 md:py-32">
         <div className="flex flex-col items-center justify-center gap-12 text-white/70">
           <span className="text-sm font-medium md:text-xl">
             Businesses that already designs with Wizad
@@ -359,8 +313,8 @@ export default function Features() {
           </div>
         </div>
 
-        <div className="md:pr-8">
-          <span className="text-3xl font-medium text-white/80 md:text-5xl/tight">
+        <div>
+          <span className="text-2xl font-medium text-white/80 md:text-5xl/tight">
             <p>
               Wizad is now used by{" "}
               <span className="text-white">10K+ business owners</span> to create
@@ -409,9 +363,11 @@ const FeatureTile = ({
 }) => {
   return (
     <div className="flex flex-1 flex-col gap-1 border-t border-white/80 pt-5 md:pt-8">
-      <div className="pb-4 text-2xl">{icon}</div>
-      <h2 className="font-hero text-3xl font-bold md:text-lg">{title}</h2>
-      <span className="font-light text-white/80">{desc}</span>
+      <div className="w-full md:w-[85%]">
+        <div className="pb-2 text-2xl">{icon}</div>
+        <h2 className="font-hero text-2xl pb-4 font-semibold md:text-3xl">{title}</h2>
+        <span className="font-light text-white/80 md:text-2xl">{desc}</span>
+      </div>
     </div>
   );
 };
