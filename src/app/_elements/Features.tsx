@@ -192,7 +192,7 @@ export default function Features() {
 
       {/* Take control of your marketing campaigns */}
       <section className="flex max-w-screen-2xl flex-col items-center justify-center py-6 md:py-20">
-        <div className="flex w-full flex-col flex-wrap rounded-3xl bg-neutral-920 px-3 pt-3 md:px-10 md:pt-10">
+        <div className="relative overflow-hidden flex h-[600px] w-full flex-col flex-wrap rounded-3xl bg-neutral-920 px-3 pt-3 md:px-10 md:pt-10">
           <div className="w-full md:w-3/5">
             <div className="flex items-center space-x-2">
               <Image src={Thunderbolt} alt="Thunderbolt" width={16} />
@@ -220,7 +220,7 @@ export default function Features() {
               </p>
             </div>
           </div>
-          <div className="w-full min-w-80 pt-10 md:w-2/5">
+          <div className="absolute left-0 max-h-[300px] bottom-0 mx-auto w-full min-w-80 pt-10 md:w-2/5">
             <Image src={FeatureScreen5} alt="Feature Screen 5" />
           </div>
         </div>
