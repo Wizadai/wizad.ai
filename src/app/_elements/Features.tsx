@@ -8,16 +8,13 @@ import SpecialDays from "../../../public/assets/special-days.png";
 import SpecialDaysList from "../../../public/assets/special-days-list.png";
 import Boxes from "../../../public/assets/boxes.png";
 import Calender from "../../../public/assets/calender.png";
+import Thunderbolt from "../../../public/assets/thunderbolt.png";
+import FeatureScreen5 from "../../../public/assets/feature-screen5.png";
+
 import Image from "next/image";
 import { ReactNode } from "react";
-import {
-  BiSolidCalendar,
-  BiSolidOffer,
-  BiSolidParty,
-  BiSolidTimeFive,
-} from "react-icons/bi";
+import { BiSolidTimeFive } from "react-icons/bi";
 import { FaPiggyBank } from "react-icons/fa6";
-import { IoGameController } from "react-icons/io5";
 import { TbCardsFilled } from "react-icons/tb";
 
 export default function Features() {
@@ -84,7 +81,7 @@ export default function Features() {
         <div className="flex flex-wrap rounded-t-3xl bg-neutral-920 p-3 md:p-10">
           <div className="w-full md:w-2/5">
             <div className="flex items-center space-x-2">
-              <Image src={PartyPopper} alt="Party Popper" />
+              <Image src={PartyPopper} alt="Party Popper" width={16} />
               <span className="font-hero text-sm font-medium md:text-xl">
                 Festival & Trending Days
               </span>
@@ -131,7 +128,7 @@ export default function Features() {
         <div className="flex flex-wrap rounded-3xl bg-neutral-920 p-3 md:p-10">
           <div className="w-full md:w-3/5">
             <div className="flex items-center space-x-2">
-              <Image src={Boxes} alt="Boxes" />
+              <Image src={Boxes} alt="Boxes" width={16} />
               <span className={`font-hero text-sm font-medium md:text-xl`}>
                 Product Photography Posters
               </span>
@@ -162,7 +159,7 @@ export default function Features() {
         <div className="flex flex-wrap rounded-3xl bg-neutral-920 p-3 md:p-10">
           <div className="w-full md:w-1/2">
             <div className="flex items-center space-x-2">
-              <Image src={Calender} alt="Calender" />
+              <Image src={Calender} alt="Calender" width={16} />
               <span className={`font-hero text-sm font-medium md:text-xl`}>
                 Post daily
               </span>
@@ -192,13 +189,14 @@ export default function Features() {
           {/* images */}
         </div>
       </section>
+
       {/* Take control of your marketing campaigns */}
       <section className="flex max-w-screen-2xl flex-col items-center justify-center py-6 md:py-20">
-        <div className="flex flex-wrap rounded-3xl bg-neutral-920 p-3 md:p-10">
+        <div className="flex w-full flex-col flex-wrap rounded-3xl bg-neutral-920 px-3 pt-3 md:px-10 md:pt-10">
           <div className="w-full md:w-3/5">
             <div className="flex items-center space-x-2">
-              <Image src={Calender} alt="Calender" />
-              <span className={`font-hero text-sm font-medium md:text-xl`}>
+              <Image src={Thunderbolt} alt="Thunderbolt" width={16} />
+              <span className={`font-hero text-xs font-medium md:text-xl`}>
                 Maximize Impact
               </span>
             </div>
@@ -222,9 +220,12 @@ export default function Features() {
               </p>
             </div>
           </div>
-          {/* images */}
+          <div className="w-full min-w-80 pt-10 md:w-2/5">
+            <Image src={FeatureScreen5} alt="Feature Screen 5" />
+          </div>
         </div>
       </section>
+
       <section className="flex w-full max-w-screen-2xl flex-col gap-6 px-4 py-12 md:gap-0 md:px-20 md:py-28">
         <h1 className="max-w-7xl text-3xl font-medium md:text-6xl/tight">
           {"Made for emerging brand owners, "}
@@ -237,7 +238,7 @@ export default function Features() {
         </h1>
 
         <div className="grid grid-cols-1 gap-10 md:-mt-12 md:grid-cols-2 md:gap-12">
-          <div className="flex font-light text-sm/normal items-end md:pt-20 md:text-xl text-white/80 md:w-[90%]">
+          <div className="flex items-end text-sm/normal font-light text-white/80 md:w-[90%] md:pt-20 md:text-xl">
             <span>
               <p>
                 No need to hire expensive agencies and freelance designers
@@ -251,7 +252,7 @@ export default function Features() {
             </span>
           </div>
 
-          <div className="flex md:flex-grow md:row-span-2 md:items-end md:justify-end md:self-start md:px-6">
+          <div className="flex md:row-span-2 md:flex-grow md:items-end md:justify-end md:self-start md:px-6">
             <Image
               className="md:w-[680px]"
               src={FeaturesScreen4}
@@ -260,7 +261,7 @@ export default function Features() {
           </div>
 
           <div className="flex flex-col items-start justify-end gap-10">
-            <span className="text-xl md:text-2xl font-light md:w-[90%]">
+            <span className="text-xl font-light md:w-[90%] md:text-2xl">
               {`“Best choice if you want to market online. Wizad will create daily posters for posts and stories, so you don’t need to worry on it! Thankyou team Wizad, long way to go!”`}
             </span>
 
@@ -306,7 +307,7 @@ export default function Features() {
           desc="Make people entertained with tailor made games of your brand."
         />
       </section> */}
-      
+
       <section className="mx-4 my-12 flex max-w-screen-2xl flex-col items-center justify-center gap-10 rounded-3xl bg-gradient-to-br from-[#FAECFF] to-[#38CEFB] text-black md:mx-auto md:w-full md:gap-12">
         <h2 className="max-w-5xl px-4 py-6 text-center font-hero text-4xl font-bold italic md:pb-10 md:pt-28 md:text-7xl">
           Get multiple design options in a single click.
