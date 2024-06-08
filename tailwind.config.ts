@@ -15,6 +15,11 @@ const config: Config = {
       backgroundImage: {
         "hero-gradient": "url('/bg-hero-gradient.png')",
       },
+      colors: {
+        neutral: {
+          920: "#131313"
+        }
+      }
     },
   },
   plugins: [require("@tailwindcss/typography")],

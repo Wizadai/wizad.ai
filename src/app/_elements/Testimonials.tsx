@@ -47,7 +47,7 @@ export default function Testimonials() {
 const TestimonialCard = ({ data }: { data: Testimonial }) => {
   return (
     <a href={data.ref} target="_blank" rel="noopener">
-      <div className="flex flex-col gap-4 rounded-3xl bg-[#131313] p-6 md:max-w-96">
+      <div className="flex flex-col gap-4 rounded-3xl bg-neutral-920 p-6 md:max-w-96">
         <div className="flex justify-between">
           <div className="flex flex-row gap-4">
             <Image
