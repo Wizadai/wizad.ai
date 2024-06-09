@@ -18,7 +18,7 @@ export default function HeroSection() {
             templates?
           </p>
           <p className="hidden md:block">
-            Wizad gives you on brand posters in a click. Start creating form
+            Wizad gives you on brand posters in a click. Start creating from
             your mobile now.
           </p>
           <p className="block md:hidden">
