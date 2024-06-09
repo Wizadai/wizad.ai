@@ -1,6 +1,6 @@
 import TestimonialsData from "../../../public/assets/testimonials.json";
 import Image from "next/image";
-import { BiLogoProductHunt } from "react-icons/bi";
+import { TiSocialTwitter } from "react-icons/ti";
 
 type Testimonial = (typeof TestimonialsData)[number];
 
@@ -20,9 +20,9 @@ export default function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="mx-auto flex w-full max-w-screen-2xl flex-col gap-6 px-4 py-12 md:gap-12 md:px-32 md:py-32"
+      className="mx-auto flex w-full max-w-[1920px] flex-col gap-6 px-4 py-12 md:gap-12 md:px-32 md:py-32"
     >
-      <h1 className="md:px-18 text-center text-2xl font-medium text-white/90 md:pb-12 md:text-6xl">
+      <h1 className="md:px-18 text-center text-2xl font-medium text-white/90 md:text-5xl md:font-normal">
         See why people love wizad
       </h1>
 
@@ -33,9 +33,9 @@ export default function Testimonials() {
           </li>
         ))}
       </ul>
-      <ul className="hidden max-h-[80vh] items-start flex-wrap gap-4 overflow-x-auto md:flex">
+      <ul className="hidden items-start md:block md:max-w-[1440px] md:columns-3xs md:px-20">
         {TestimonialsData.slice(1, 14).map((obj) => (
-          <li key={obj.ref}>
+          <li key={obj.ref} className="aspect-video py-2">
             <TestimonialCard data={obj} />
           </li>
         ))}
@@ -46,28 +46,38 @@ export default function Testimonials() {
 
 const TestimonialCard = ({ data }: { data: Testimonial }) => {
   return (
-    <a href={data.ref} target="_blank" rel="noopener">
-      <div className="flex flex-col gap-4 rounded-3xl bg-neutral-920 p-6 md:max-w-96">
-        <div className="flex justify-between">
-          <div className="flex flex-row gap-4">
+    <a
+      href={data.ref}
+      target="_blank"
+      rel="noopener"
+      className="break-inside-avoid"
+    >
+      <div className="flex break-inside-avoid flex-col gap-4 rounded-3xl bg-neutral-920 p-6 md:max-w-96">
+        <div className="flex break-inside-avoid justify-between">
+          <div className="flex break-inside-avoid gap-4">
             <Image
               src={data.authorAvatarUrl}
               alt="Avatar of author"
               width={48}
               height={48}
-              className="overflow-clip rounded-full md:size-12"
+              className="aspect-square overflow-clip rounded-full md:size-12"
+              style={{
+                objectFit: "contain",
+              }}
             />
             <span>
-              <p className="font-semibold text-white/80">{data.authorName}</p>
-              <p className="font-mono text-sm text-white/60">
+              <p className="text-white/80 md:text-sm">{data.authorName}</p>
+              <p className="text-sm text-white/60 md:text-xs">
                 @{data.authorAlias}
               </p>
             </span>
           </div>
-          <BiLogoProductHunt className="text-2xl text-white/70" />
+          <TiSocialTwitter className="text-2xl text-white/70" />
         </div>
 
-        <span className="font-medium">{data.content}</span>
+        <span className="break-inside-avoid md:text-[0.825rem]">
+          {data.content}
+        </span>
       </div>
     </a>
   );
