@@ -226,7 +226,7 @@ export default function Features() {
           <div className="absolute left-0 max-h-[350px] bottom-0 mx-auto w-full min-w-80 pt-10 md:hidden md:w-0 md:h-0">
             <Image src={Feature5M} alt="Feature Screen 5" style={{ objectFit: "fill"}}/>
           </div>
-          <div className="absolute w-0 hidden md:flex justify-end md:bottom-0 md:right-0 md:w-full md:h-[90%]">
+          <div className="absolute w-0 hidden md:flex justify-end md:bottom-0 md:right-0 md:w-[80%]">
             <Image src={Feature5D} alt="Feature Screen 5" style={{ objectFit: "fill"}}/>
           </div>
         </div>
