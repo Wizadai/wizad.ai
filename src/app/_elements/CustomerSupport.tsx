@@ -22,7 +22,7 @@ export default function CustomerSupport() {
 const CustomerSupportForm = () => {
   return (
     <form
-      className="flex w-full max-w-md flex-col gap-4 rounded-3xl bg-[#121212] p-6 text-zinc-100 md:w-[30%] md:p-10"
+      className="flex self-center w-full max-w-md flex-col gap-4 rounded-3xl bg-[#121212] p-6 text-zinc-100 md:w-[30%] md:p-10"
       action={requestCustomerSupport}
     >
       <h2 className="text-xl font-medium md:text-lg">Request a call back</h2>

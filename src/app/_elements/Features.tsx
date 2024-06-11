@@ -20,7 +20,7 @@ import { TbCardsFilled } from "react-icons/tb";
 
 export default function Features() {
   return (
-    <div className="px-4 md:px-28 md:py-20 max-w-[375px] mx-auto md:max-w-[1920px]">
+    <div className="mx-auto max-w-[375px] px-4 md:max-w-[1920px] md:px-28 md:py-20">
       <section className="flex w-full max-w-screen-2xl flex-wrap items-center justify-center gap-6 py-12 md:gap-20">
         <div className="w-full md:w-2/5">
           <h1 className="pb-4 text-2xl font-medium md:self-start md:pb-7 md:text-6xl/tight">
@@ -78,8 +78,8 @@ export default function Features() {
         />
       </section>
       {/* Don't let trend pass you */}
-      <section className="flex max-w-screen-2xl flex-col items-center justify-center py-6 md:py-20">
-        <div className="flex flex-wrap rounded-t-3xl bg-neutral-920 p-3 md:p-10">
+      <section className="flex w-full max-w-screen-2xl flex-col items-center justify-center py-6 md:py-20">
+        <div className="flex w-full flex-wrap rounded-t-3xl bg-neutral-920 p-3 md:p-10">
           <div className="w-full md:w-2/5">
             <div className="flex items-center space-x-2">
               <Image src={PartyPopper} alt="Party Popper" width={16} />
@@ -127,8 +127,8 @@ export default function Features() {
         </div>
       </section>
       {/* Turn product images in your mobile gallery to professional posters */}
-      <section className="flex max-w-screen-2xl flex-col items-center justify-center py-6 md:py-20">
-        <div className="flex flex-wrap rounded-3xl bg-neutral-920 p-3 md:p-10">
+      <section className="flex w-full max-w-screen-2xl flex-col items-center justify-center py-6 md:py-20">
+        <div className="flex w-full flex-wrap rounded-3xl bg-neutral-920 p-3 md:p-10">
           <div className="w-full md:w-3/5">
             <div className="flex items-center space-x-2">
               <Image src={Boxes} alt="Boxes" width={16} />
@@ -158,8 +158,8 @@ export default function Features() {
         </div>
       </section>
       {/* Be in-front of your customers everyday. */}
-      <section className="flex max-w-screen-2xl flex-col items-center justify-center py-6 md:py-20">
-        <div className="flex flex-wrap rounded-3xl bg-neutral-920 p-3 md:p-10">
+      <section className="flex w-full max-w-screen-2xl flex-col items-center justify-center py-6 md:py-20">
+        <div className="flex w-full flex-wrap rounded-3xl bg-neutral-920 p-3 md:p-10">
           <div className="w-full md:w-1/2">
             <div className="flex items-center space-x-2">
               <Image src={Calender} alt="Calender" width={16} />
@@ -194,8 +194,8 @@ export default function Features() {
       </section>
 
       {/* Take control of your marketing campaigns */}
-      <section className="flex max-w-screen-2xl flex-col items-center justify-center py-6 md:py-20">
-        <div className="relative overflow-hidden flex h-[640px] w-full flex-col flex-wrap rounded-3xl bg-neutral-920 px-3 pt-3 md:px-10 md:pt-10 md:min-h-[1000px]">
+      <section className="flex w-full max-w-screen-2xl flex-col items-center justify-center py-6 md:py-20">
+        <div className="relative flex h-[640px] w-full flex-col flex-wrap overflow-hidden rounded-3xl bg-neutral-920 px-3 pt-3 md:min-h-[1000px] md:px-10 md:pt-10">
           <div className="w-full md:w-3/5">
             <div className="flex items-center space-x-2">
               <Image src={Thunderbolt} alt="Thunderbolt" width={16} />
@@ -223,11 +223,19 @@ export default function Features() {
               </p>
             </div>
           </div>
-          <div className="absolute left-0 max-h-[350px] bottom-0 mx-auto w-full min-w-80 pt-10 md:hidden md:w-0 md:h-0">
-            <Image src={Feature5M} alt="Feature Screen 5" style={{ objectFit: "fill"}}/>
+          <div className="absolute bottom-0 left-0 mx-auto max-h-[350px] w-full min-w-80 pt-10 md:hidden md:h-0 md:w-0">
+            <Image
+              src={Feature5M}
+              alt="Feature Screen 5"
+              style={{ objectFit: "fill" }}
+            />
           </div>
-          <div className="absolute w-0 hidden md:flex justify-end md:bottom-0 md:right-0 md:w-[80%]">
-            <Image src={Feature5D} alt="Feature Screen 5" style={{ objectFit: "fill"}}/>
+          <div className="absolute hidden w-0 justify-end md:bottom-0 md:right-0 md:flex md:w-[80%]">
+            <Image
+              src={Feature5D}
+              alt="Feature Screen 5"
+              style={{ objectFit: "fill" }}
+            />
           </div>
         </div>
       </section>
@@ -291,13 +299,13 @@ export default function Features() {
         </div>
       </section>
 
-      <section className="mx-4 my-12 flex max-w-screen-2xl flex-col items-center justify-center gap-10 rounded-3xl bg-gradient-to-br from-[#FAECFF] to-[#38CEFB] text-black md:mx-auto md:w-full md:gap-12">
+      <section className="mx-4 my-12 flex w-full max-w-screen-2xl flex-col items-center justify-center gap-10 rounded-3xl bg-gradient-to-br from-[#FAECFF] to-[#38CEFB] text-black md:mx-auto md:w-full md:gap-12">
         <h2 className="max-w-5xl px-4 py-6 text-center font-hero text-4xl font-bold italic md:pb-10 md:pt-28 md:text-7xl">
           Get multiple design options in a single click.
         </h2>
         <Image className="w-56 md:w-96" src={FeaturesScreen3} alt="Features" />
       </section>
-      
+
       <section className="flex w-full max-w-screen-2xl flex-col gap-8 overflow-clip px-4 py-12 md:gap-20 md:px-20 md:py-32">
         <div className="flex flex-col items-center justify-center gap-12 text-white/70">
           <span className="text-sm font-medium md:text-xl">
@@ -313,7 +321,7 @@ export default function Features() {
           </div>
         </div>
 
-        <div>
+        <div className="w-full">
           <span className="text-2xl font-medium text-white/80 md:text-5xl/tight">
             <p>
               Wizad is now used by{" "}
@@ -330,7 +338,7 @@ export default function Features() {
           </span>
         </div>
 
-        <div className="flex flex-col gap-7 md:flex-row md:gap-20">
+        <div className="flex w-full flex-col gap-7 md:flex-row md:gap-20">
           <FeatureTile
             icon={<BiSolidTimeFive />}
             title="Save your valuable time"
@@ -365,7 +373,9 @@ const FeatureTile = ({
     <div className="flex flex-1 flex-col gap-1 border-t border-white/80 pt-5 md:pt-8">
       <div className="w-full md:w-[85%]">
         <div className="pb-2 text-2xl">{icon}</div>
-        <h2 className="font-hero text-2xl pb-4 font-semibold md:text-3xl">{title}</h2>
+        <h2 className="pb-4 font-hero text-2xl font-semibold md:text-3xl">
+          {title}
+        </h2>
         <span className="font-light text-white/80 md:text-2xl">{desc}</span>
       </div>
     </div>
