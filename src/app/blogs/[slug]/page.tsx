@@ -9,12 +9,12 @@ import { Metadata } from "next";
 import Image from "next/image";
 import {
   FaInstagram,
-  FaLink,
   FaLinkedin,
   FaMeta,
   FaThreads,
   FaTwitter,
 } from "react-icons/fa6";
+import { CgLink } from "react-icons/cg";
 
 type Props = { params: { slug: string } };
 
@@ -75,22 +75,22 @@ export default async function Page({ params }: Props) {
       <section className="flex w-full flex-col px-4 py-10 md:py-24">
         <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-10 px-4">
           <div className="flex flex-col items-center gap-5">
-            <span className="space-x-1 text-sm text-zinc-500">
+            <span className="space-x-1 text-sm text-zinc-500 md:text-xs">
               <span>{blog.readingDuration} Min</span>
               <span> • </span>
               <time dateTime={blog.metadata.publishedAt}>
                 {blog.metadata.publishedAt}
               </time>
               <span> • </span>
-              <span className="uppercase text-white">
+              <span className="uppercase text-white/80">
                 {blog.metadata.category}
               </span>
             </span>
-            <h1 className="inline-block bg-gradient-to-r from-[#E293FE] to-[#38CEFB] bg-clip-text text-center text-3xl font-medium text-transparent md:text-7xl/tight">
+            <h1 className="inline-block bg-gradient-to-r from-[#E293FE] to-[#38CEFB] bg-clip-text text-center text-3xl font-medium text-transparent md:max-w-4xl md:text-6xl/tight">
               {blog.metadata.title}
             </h1>
           </div>
-          <div className="flex flex-col items-center justify-center gap-4">
+          <div className="flex flex-col items-center justify-center gap-4 md:flex-row">
             <span className="font-light text-white/65">Share to</span>
             <ShareLinks />
           </div>
@@ -98,7 +98,7 @@ export default async function Page({ params }: Props) {
       </section>
 
       <section className="flex w-full flex-col px-4 py-3">
-        <div className="mx-auto flex max-w-7xl flex-col gap-6 rounded-2xl bg-zinc-900 px-3 py-5 md:gap-12 md:px-60 md:py-10">
+        <div className="mx-auto flex max-w-[1720px] flex-col gap-6 rounded-2xl bg-neutral-920 px-3 py-5 md:w-[90%] md:gap-12 md:px-60 md:py-10">
           {blog.metadata.image && (
             <Image
               className="w-full overflow-hidden rounded-2xl"
@@ -109,7 +109,7 @@ export default async function Page({ params }: Props) {
             />
           )}
 
-          <article className="prose prose-zinc prose-invert md:prose-xl md:mx-auto">
+          <article className="prose prose-zinc prose-invert md:prose-xl prose-h2:my-4 prose-h2:text-2xl prose-h2:font-medium prose-p:text-base md:mx-auto md:w-[70%] md:prose-h2:my-6 md:prose-p:text-sm/normal">
             <Markdown content={blog.content} />
           </article>
 
@@ -145,7 +145,7 @@ const ShareLinks = () => {
   return (
     <div className="flex items-center gap-6 text-white/70">
       <button>
-        <FaLink className="size-6" />
+        <CgLink className="size-6" />
       </button>
       <button>
         <FaInstagram className="size-6" />

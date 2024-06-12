@@ -9,7 +9,7 @@ type Props = {
 
 export default function BlogTile({ blog }: Props) {
   return (
-    <div className="relative flex flex-col overflow-hidden rounded-2xl bg-zinc-900 md:flex-row">
+    <div className="relative flex flex-col overflow-hidden rounded-2xl bg-neutral-920 md:flex-row">
       <div className="z-10 flex flex-col p-4 md:w-full md:p-8">
         <span className="mb-4 text-sm text-zinc-500">
           {blog.readingDuration} Min •{" "}
@@ -17,10 +17,12 @@ export default function BlogTile({ blog }: Props) {
             {blog.metadata.publishedAt}
           </time>
         </span>
-        <h2 className="mb-4 text-2xl font-medium text-white">
+        <h2 className="mb-4 text-2xl font-medium text-white md:text-4xl">
           {blog.metadata.title}
         </h2>
-        <p className="mb-4 text-white/60">{blog.metadata.summary}</p>
+        <p className="mb-4 line-clamp-3 font-light text-white/60 md:line-clamp-2 md:font-normal">
+          {blog.metadata.summary}
+        </p>
         <Link
           href={`/blogs/${blog.slug}`}
           className="flex items-center gap-1.5 text-white"
