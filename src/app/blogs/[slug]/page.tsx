@@ -98,22 +98,26 @@ export default async function Page({ params }: Props) {
       </section>
 
       <section className="flex w-full flex-col px-4 py-3">
-        <div className="mx-auto flex max-w-[1720px] flex-col gap-6 rounded-2xl bg-neutral-920 px-3 py-5 md:w-[90%] md:gap-12 md:px-60 md:py-10">
+        <div className="mx-auto flex max-w-[1720px] flex-col gap-6 rounded-2xl bg-neutral-920 px-3 py-5 md:w-[90%] md:gap-8 md:px-48 md:py-10">
           {blog.metadata.image && (
-            <Image
-              className="w-full overflow-hidden rounded-2xl"
-              src={blog.metadata.image}
-              alt="blog cover image"
-              width={320}
-              height={124}
-            />
+            <div className="relative w-full h-[500px] rounded-2xl overflow-hidden">
+              <Image
+                fill
+                style={{
+                  objectFit: "cover",
+                  objectPosition: "center",
+                }}
+                src={blog.metadata.image}
+                alt="blog cover image"
+              />
+            </div>
           )}
 
-          <article className="prose prose-zinc prose-invert md:prose-xl prose-h2:my-4 prose-h2:text-2xl prose-h2:font-medium prose-p:text-base md:mx-auto md:w-[70%] md:prose-h2:my-6 md:prose-p:text-sm/normal">
+          <article className="prose prose-zinc prose-invert md:prose-xl prose-h2:my-4 prose-h2:text-2xl prose-h2:font-medium prose-p:text-base md:mx-auto md:w-[60%] md:prose-h2:my-6 md:prose-p:text-sm/normal">
             <Markdown content={blog.content} />
           </article>
 
-          <div className="flex items-center justify-end gap-4">
+          <div className="mx-auto flex items-center justify-end gap-4 md:w-[60%]">
             <span className="font-light text-white/65">Share to</span>
             <ShareLinks />
           </div>
