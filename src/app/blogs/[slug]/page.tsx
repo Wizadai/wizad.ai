@@ -7,14 +7,14 @@ import { baseUrl } from "@/app/sitemap";
 import Markdown from "@/components/Markdown";
 import { Metadata } from "next";
 import Image from "next/image";
+import { FaThreads } from "react-icons/fa6";
+import { BsTwitterX } from "react-icons/bs";
+import RiLink from "@/../public/assets/ri_link-m.png";
 import {
-  FaInstagram,
-  FaLinkedin,
-  FaMeta,
-  FaThreads,
-  FaTwitter,
-} from "react-icons/fa6";
-import { CgLink } from "react-icons/cg";
+  BiLogoInstagramAlt,
+  BiLogoLinkedinSquare,
+  BiLogoFacebookSquare,
+} from "react-icons/bi";
 
 type Props = { params: { slug: string } };
 
@@ -72,7 +72,7 @@ export default async function Page({ params }: Props) {
     <main className="flex flex-col">
       <Header />
 
-      <section className="flex w-full flex-col px-4 py-10 md:py-24">
+      <section className="flex w-full flex-col px-4 py-10 md:pb-12 md:pt-24">
         <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-10 px-4">
           <div className="flex flex-col items-center gap-5">
             <span className="space-x-1 text-sm text-zinc-500 md:text-xs">
@@ -91,7 +91,9 @@ export default async function Page({ params }: Props) {
             </h1>
           </div>
           <div className="flex flex-col items-center justify-center gap-4 md:flex-row">
-            <span className="font-light text-white/65">Share to</span>
+            <span className="font-extralight text-white/70 md:text-sm">
+              Share to
+            </span>
             <ShareLinks />
           </div>
         </div>
@@ -100,7 +102,7 @@ export default async function Page({ params }: Props) {
       <section className="flex w-full flex-col px-4 py-3">
         <div className="mx-auto flex max-w-[1720px] flex-col gap-6 rounded-2xl bg-neutral-920 px-3 py-5 md:w-[90%] md:gap-8 md:px-48 md:py-10">
           {blog.metadata.image && (
-            <div className="relative w-full h-[500px] rounded-2xl overflow-hidden">
+            <div className="relative h-[500px] w-full overflow-hidden rounded-2xl">
               <Image
                 fill
                 style={{
@@ -148,20 +150,20 @@ export default async function Page({ params }: Props) {
 const ShareLinks = () => {
   return (
     <div className="flex items-center gap-6 text-white/70">
-      <button>
-        <CgLink className="size-6" />
+      <button className="bg-neutral-800 rounded p-2">
+        <Image src={RiLink} alt="ri-link" placeholder="blur" className="size-5" />
       </button>
       <button>
-        <FaInstagram className="size-6" />
+        <BiLogoInstagramAlt className="size-6" />
       </button>
       <button>
-        <FaLinkedin className="size-6" />
+        <BiLogoLinkedinSquare className="size-6" />
       </button>
       <button>
-        <FaTwitter className="size-6" />
+        <BsTwitterX className="size-5" />
       </button>
       <button>
-        <FaMeta className="size-6" />
+        <BiLogoFacebookSquare className="size-6" />
       </button>
       <button>
         <FaThreads className="size-6" />
