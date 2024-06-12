@@ -9,7 +9,7 @@ const inter = Inter({
 });
 
 const exo = Exo({
-  style: "italic",
+  style: ["italic", "normal"],
   subsets: ["latin"],
   display: "swap",
   variable: "--font-exo",

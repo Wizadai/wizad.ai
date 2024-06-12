@@ -9,8 +9,8 @@ type Props = {
 
 export default function BlogTile({ blog }: Props) {
   return (
-    <div className="relative flex flex-col overflow-hidden rounded-2xl bg-neutral-920 md:flex-row">
-      <div className="z-10 flex flex-col p-4 md:w-full md:p-8">
+    <div className="relative flex flex-col overflow-hidden rounded-2xl bg-neutral-920 p-3 md:flex-row md:gap-20 md:justify-center md:py-10">
+      <div className="z-10 flex flex-col pb-4 md:pb-0 md:w-1/2">
         <span className="mb-4 text-sm text-zinc-500">
           {blog.readingDuration} Min •{" "}
           <time dateTime={blog.metadata.publishedAt}>
@@ -32,14 +32,13 @@ export default function BlogTile({ blog }: Props) {
         </Link>
       </div>
       {blog.metadata.image && (
-        <div className="relative h-48 md:h-auto md:w-3/5">
+        <div className="relative h-48 overflow-hidden rounded-2xl md:h-auto md:w-1/3">
           <Image
             src={blog.metadata.image}
             alt="blog cover image"
             fill
             className="object-cover"
           />
-          <div className="absolute inset-0 from-transparent to-zinc-900 to-95% md:bg-gradient-to-l"></div>
         </div>
       )}
     </div>

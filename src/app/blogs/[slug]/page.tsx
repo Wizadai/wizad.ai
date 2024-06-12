@@ -127,9 +127,9 @@ export default async function Page({ params }: Props) {
       </section>
 
       {!!otherBlogs.length && (
-        <section className="mx-auto flex max-w-7xl flex-col gap-10 px-4 py-10 md:px-20 md:py-24">
+        <section className="mx-auto flex max-w-[1720px] flex-col gap-10 px-4 py-10 md:px-20 md:py-24">
           <div>
-            <span className="font-hero text-2xl">Read next</span>
+            <span className="font-hero not-italic text-2xl">Read next</span>
           </div>
           <ul className="flex flex-col gap-8 md:gap-12">
             {otherBlogs.map((blog) => (

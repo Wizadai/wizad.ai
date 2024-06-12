@@ -83,7 +83,7 @@ export default function Features() {
           <div className="w-full md:w-2/5">
             <div className="flex items-center space-x-2">
               <Image src={PartyPopper} alt="Party Popper" width={16} />
-              <span className="font-hero text-sm font-medium md:text-xl">
+              <span className="font-hero italic text-sm font-medium md:text-xl">
                 Festival & Trending Days
               </span>
             </div>
@@ -132,7 +132,7 @@ export default function Features() {
           <div className="w-full md:w-3/5">
             <div className="flex items-center space-x-2">
               <Image src={Boxes} alt="Boxes" width={16} />
-              <span className={`font-hero text-sm font-medium md:text-xl`}>
+              <span className={`font-hero italic text-sm font-medium md:text-xl`}>
                 Product Photography Posters
               </span>
             </div>
@@ -163,7 +163,7 @@ export default function Features() {
           <div className="w-full md:w-1/2">
             <div className="flex items-center space-x-2">
               <Image src={Calender} alt="Calender" width={16} />
-              <span className={`font-hero text-sm font-medium md:text-xl`}>
+              <span className={`font-hero italic text-sm font-medium md:text-xl`}>
                 Post daily
               </span>
             </div>
@@ -199,7 +199,7 @@ export default function Features() {
           <div className="w-full md:w-3/5">
             <div className="flex items-center space-x-2">
               <Image src={Thunderbolt} alt="Thunderbolt" width={16} />
-              <span className={`font-hero text-xs font-medium md:text-xl`}>
+              <span className={`font-hero italic text-xs font-medium md:text-xl`}>
                 Maximize Impact
               </span>
             </div>
@@ -373,7 +373,7 @@ const FeatureTile = ({
     <div className="flex flex-1 flex-col gap-1 border-t border-white/80 pt-5 md:pt-8">
       <div className="w-full md:w-[85%]">
         <div className="pb-2 text-2xl">{icon}</div>
-        <h2 className="pb-4 font-hero text-2xl font-semibold md:text-3xl">
+        <h2 className="pb-4 font-hero italic text-2xl font-semibold md:text-3xl">
           {title}
         </h2>
         <span className="font-light text-white/80 md:text-2xl">{desc}</span>
