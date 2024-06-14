@@ -7,7 +7,7 @@ export default function HeroSection() {
   return (
     <section className="flex w-full flex-col bg-hero-gradient bg-cover bg-top">
       <div className="mx-auto mt-24 flex max-w-6xl flex-col gap-6 px-4 text-center md:gap-10">
-        <h1 className="max-w-[825px] font-hero italic text-4xl font-bold md:text-8xl">
+        <h1 className="max-w-[825px] font-hero italic text-4xl font-bold md:text-8xl/none">
           <div>Never run out</div>
           <div>of social media</div>
           <div>designs, anymore.</div>
@@ -36,12 +36,12 @@ export default function HeroSection() {
         <Image
           src={PostersDesktop}
           alt="Posters made with Wizad"
-          className="hidden w-full md:block"
+          className="hidden w-0 md:w-full md:block"
         />
         <Image
           src={PostersMobile}
           alt="Posters made with Wizad"
-          className="w-full md:hidden"
+          className="w-full md:hidden md:w-0"
         />
       </div>
     </section>

@@ -11,6 +11,8 @@ import Calender from "../../../public/assets/calender.png";
 import Thunderbolt from "../../../public/assets/thunderbolt.png";
 import Feature5M from "../../../public/assets/feature5-m.svg";
 import Feature5D from "../../../public/assets/feature5-d.png";
+import EmojiM from "../../../public/assets/emojis-M.png";
+import EmojiD from "../../../public/assets/emojis-D.png";
 
 import Image from "next/image";
 import { ReactNode } from "react";
@@ -83,7 +85,7 @@ export default function Features() {
           <div className="w-full md:w-2/5">
             <div className="flex items-center space-x-2">
               <Image src={PartyPopper} alt="Party Popper" width={16} />
-              <span className="font-hero italic text-sm font-medium md:text-xl">
+              <span className="font-hero text-sm font-medium italic md:text-xl">
                 Festival & Trending Days
               </span>
             </div>
@@ -132,7 +134,9 @@ export default function Features() {
           <div className="w-full md:w-3/5">
             <div className="flex items-center space-x-2">
               <Image src={Boxes} alt="Boxes" width={16} />
-              <span className={`font-hero italic text-sm font-medium md:text-xl`}>
+              <span
+                className={`font-hero text-sm font-medium italic md:text-xl`}
+              >
                 Product Photography Posters
               </span>
             </div>
@@ -159,11 +163,13 @@ export default function Features() {
       </section>
       {/* Be in-front of your customers everyday. */}
       <section className="flex w-full max-w-screen-2xl flex-col items-center justify-center py-6 md:py-20">
-        <div className="flex w-full flex-wrap rounded-3xl bg-neutral-920 p-3 md:p-10">
-          <div className="w-full md:w-1/2">
+        <div className="relative flex w-full h-[750px] overflow-clip rounded-3xl bg-neutral-920 md:h-[850px]">
+          <div className="w-full p-3 md:w-1/2 md:p-10">
             <div className="flex items-center space-x-2">
               <Image src={Calender} alt="Calender" width={16} />
-              <span className={`font-hero italic text-sm font-medium md:text-xl`}>
+              <span
+                className={`font-hero text-sm font-medium italic md:text-xl`}
+              >
                 Post daily
               </span>
             </div>
@@ -172,13 +178,18 @@ export default function Features() {
             </h1>
             <span className="space-y-6 text-base font-light text-white/80 md:max-w-md md:pt-5 md:text-lg md:font-normal">
               <p className="md:leading-normal">
-                Everyone knows consistent posting on social media is key to
-                build brand awareness. But how?
+                {"Everyone knows consistent posting on social media is key to "}
+                <br className="hidden md:block" />
+                {"build brand awareness. But how? "}
               </p>
               <p className="md:leading-normal">
-                Keeping your audience engaged with regular updates to increase
-                your brand visibility is now much easier. Wizad gives you
-                multiple options in different formats like stories posts etc
+                {"Keeping your audience engaged with regular "}
+                <br className="hidden md:block" />
+                {"updates to increase your brand visibility is now "}
+                <br className="hidden md:block" />
+                {"much easier. Wizad gives you multiple options in "}
+                <br className='hidden md:block' />
+                different formats like stories, posts, etc.
               </p>
               <p className="font-semibold text-white">
                 Generate Designs -&gt; Share to the world!
@@ -189,17 +200,32 @@ export default function Features() {
               </p>
             </span>
           </div>
-          {/* images */}
+          <div className="absolute bottom-0 left-0 mx-auto max-h-[350px] w-full min-w-80 pt-10 md:hidden md:h-0 md:w-0">
+            <Image
+              src={EmojiM}
+              alt="Emojis"
+              style={{ objectFit: "fill" }}
+            />
+          </div>
+          <div className="absolute hidden w-0 justify-end md:bottom-0 md:right-0 md:flex md:w-full">
+            <Image
+              src={EmojiD}
+              alt="Emoji"
+              style={{ objectFit: "fill" }}
+            />
+          </div>
         </div>
       </section>
 
       {/* Take control of your marketing campaigns */}
       <section className="flex w-full max-w-screen-2xl flex-col items-center justify-center py-6 md:py-20">
-        <div className="relative flex h-[640px] w-full flex-col flex-wrap overflow-hidden rounded-3xl bg-neutral-920 px-3 pt-3 md:min-h-[1000px] md:px-10 md:pt-10">
+        <div className="relative flex h-[640px] w-full flex-col flex-wrap overflow-hidden rounded-3xl bg-neutral-920 px-3 pt-3 md:h-[1000px] md:px-10 md:pt-10">
           <div className="w-full md:w-3/5">
             <div className="flex items-center space-x-2">
               <Image src={Thunderbolt} alt="Thunderbolt" width={16} />
-              <span className={`font-hero italic text-xs font-medium md:text-xl`}>
+              <span
+                className={`font-hero text-xs font-medium italic md:text-xl`}
+              >
                 Maximize Impact
               </span>
             </div>
@@ -373,7 +399,7 @@ const FeatureTile = ({
     <div className="flex flex-1 flex-col gap-1 border-t border-white/80 pt-5 md:pt-8">
       <div className="w-full md:w-[85%]">
         <div className="pb-2 text-2xl">{icon}</div>
-        <h2 className="pb-4 font-hero italic text-2xl font-semibold md:text-3xl">
+        <h2 className="pb-4 font-hero text-2xl font-semibold italic md:text-3xl">
           {title}
         </h2>
         <span className="font-light text-white/80 md:text-2xl">{desc}</span>
