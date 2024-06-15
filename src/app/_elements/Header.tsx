@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { IoMenu } from "react-icons/io5";
 import WhatsApp from "@/../public/assets/whatsapp.png";
+import { FaYoutube } from "react-icons/fa";
 
 import logo from "@/../public/assets/logo-full.png";
 import { useState } from "react";
@@ -22,7 +23,7 @@ export default function Header() {
       >
         <div className="h-screen">
           <nav className="flex h-full flex-col items-center gap-10 p-20 text-white">
-            <NavLinks onClick={() => setDrawerOpened(false)}/>
+            <NavLinks onClick={() => setDrawerOpened(false)} />
           </nav>
         </div>
       </Slideover>
@@ -43,6 +44,15 @@ export default function Header() {
         </div>
 
         <div className="flex h-10 items-center justify-center gap-3">
+          <Link
+            href={process.env.NEXT_PUBLIC_YOUTUBE_DEMO_LINK || ""}
+            className="flex items-center justify-center gap-2 rounded-lg bg-[#181818] p-2 hover:bg-white/20 md:px-5"
+          >
+            <span className="hidden md:block md:text-sm md:font-normal">
+              Watch demo
+            </span>
+            <FaYoutube className="size-5 text-red-600 md:size-6"/>
+          </Link>
           <Link
             href={process.env.NEXT_PUBLIC_WHATSAPP_CHAT_URL || ""}
             className="flex items-center gap-2 rounded-lg bg-[#181818] p-2 hover:bg-white/20 md:px-5"
