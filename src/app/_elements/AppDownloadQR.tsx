@@ -20,7 +20,7 @@ export default function AppDownloadQRCode() {
           onClick={() => setSelected("appstore")}
         >
           <IoLogoAppleAppstore className="text-2xl" />
-          <span>App Store</span>
+          <span className="text-lg md:text-base">Appstore</span>
         </button>
         <button
           className={`flex items-center justify-center gap-3 rounded-lg px-2 py-1 text-lg ${
@@ -31,7 +31,7 @@ export default function AppDownloadQRCode() {
           onClick={() => setSelected("playstore")}
         >
           <IoLogoGooglePlaystore className="text-2xl" />
-          <span>Play Store</span>
+          <span className="text-lg md:text-base">Playstore</span>
         </button>
       </div>
 

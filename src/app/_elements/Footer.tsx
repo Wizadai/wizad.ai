@@ -16,17 +16,17 @@ export default function Footer() {
     <footer id="footer" className="flex w-full flex-col gap-2">
       <section className="flex flex-col items-center justify-center gap-10 bg-hero-gradient bg-bottom px-4 py-12 md:gap-20 md:bg-cover md:py-32">
         <div className="flex w-full max-w-[1440px] flex-col flex-wrap items-center justify-center gap-6 md:gap-8">
-          <span className="max-w-2xl text-center text-xl font-medium italic md:text-2xl">
+          <span className="max-w-lg text-center text-xl md:text-lg font-medium italic">
             {`"You don't have a choice on whether you do social media, The question is how well you do it"`}
           </span>
 
-          <h2 className="md:w-full max-w-6xl bg-gradient-to-br from-white to-[#4BF5B3] bg-clip-text text-center font-hero text-5xl font-bold italic text-transparent md:pb-4 md:text-[7rem]">
+          <h2 className="md:w-full max-w-6xl bg-gradient-to-br from-white to-[#4BF5B3] bg-clip-text text-center font-hero text-5xl/tight md:text-8xl font-bold italic text-transparent md:pb-4">
             {"Start creating "}
             <br className="hidden md:block" />
             designs with Wizad.
           </h2>
 
-          <span className="max-w-52 text-center font-semibold text-white/80 md:max-w-none md:text-2xl">
+          <span className="max-w-52 text-center font-medium text-white/80 md:max-w-none md:text-xl">
             Take charge of your brand by yourself and fire up.
           </span>
 
@@ -53,7 +53,7 @@ export default function Footer() {
       </section>
       <section className="rid-cols-1 mx-auto grid w-full max-w-[375px] gap-6 px-4 pt-12 md:max-w-[1920px] md:grid-cols-3 md:gap-16 md:px-24 md:pt-32">
         <div className="flex flex-col justify-start rounded-3xl bg-[#121212] p-5 md:rounded-[40px] md:p-14">
-          <h2 className="mb-6 text-2xl font-medium md:text-3xl">
+          <h2 className="mb-6 text-2xl">
             AI designer that knows your brand. Powered by legendary models.
           </h2>
           <a
