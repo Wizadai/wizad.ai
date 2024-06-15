@@ -19,7 +19,7 @@ import { ReactNode } from "react";
 import { BiSolidTimeFive } from "react-icons/bi";
 import { FaPiggyBank } from "react-icons/fa6";
 import { TbCardsFilled } from "react-icons/tb";
-import GetStartedNow from "./GetStartedNow";
+import GetStartedNow from "@/app/_elements/GetStartedNow";
 
 export default function Features() {
   return (
