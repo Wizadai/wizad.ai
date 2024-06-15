@@ -51,7 +51,7 @@ export default function Footer() {
           ))}
         </div>
       </section>
-      <section className="rid-cols-1 mx-auto grid w-full max-w-sm gap-6 px-4 pt-12 md:max-w-11xl md:grid-cols-3 md:gap-16 md:px-24 md:pt-32">
+      <section className="rid-cols-1 mx-auto grid w-full max-w-sm gap-6 px-4 pt-12 md:max-w-11xl lg:grid-cols-3 md:gap-16 md:px-24 md:pt-32">
         <div className="flex flex-col justify-start rounded-3xl bg-[#121212] p-5 md:rounded-[2.5rem] md:p-10">
           <h2 className="mb-6 text-2xl">
             AI designer that knows your brand. Powered by legendary models.
