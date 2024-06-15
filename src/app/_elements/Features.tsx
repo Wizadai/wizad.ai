@@ -90,7 +90,7 @@ export default function Features() {
               </span>
             </div>
             <h1 className="text-wrap py-4 text-3xl font-medium md:text-6xl md:leading-tight">
-              Don&apos;t let a trend pass you by
+              Don&apos;t let trends pass you by
             </h1>
             <span className="space-y-6 text-base font-light text-white/80 md:max-w-md md:pt-5 md:text-lg md:font-normal">
               <p>
@@ -177,12 +177,12 @@ export default function Features() {
               Be in-front of your customers everyday.
             </h1>
             <span className="space-y-6 text-base font-light text-white/80 md:max-w-md md:pt-5 md:text-lg md:font-normal">
-              <p className="md:leading-normal">
+              <p className="md:leading-normal md:text-nowrap">
                 {"Everyone knows consistent posting on social media is key to "}
                 <br className="hidden md:block" />
                 {"build brand awareness. But how? "}
               </p>
-              <p className="md:leading-normal">
+              <p className="md:leading-normal md:text-nowrap">
                 {"Keeping your audience engaged with regular "}
                 <br className="hidden md:block" />
                 {"updates to increase your brand visibility is now "}
@@ -233,7 +233,7 @@ export default function Features() {
               Take control of your marketing campaigns
             </h1>
             <div className="space-y-6 text-base font-light text-white/80 md:pt-5 md:text-lg md:font-normal">
-              <p className="md:leading-normal">
+              <p className="md:leading-normal md:text-nowrap">
                 {"Content wont be your bottle neck anymore. Wizad simplifies "}
                 <br className="hidden md:block" />
                 {"the entire marketing material creation process, empowering "}
@@ -267,7 +267,7 @@ export default function Features() {
       </section>
 
       <section className="flex w-full max-w-screen-2xl flex-col gap-6 px-4 py-12 md:gap-0 md:px-20 md:py-28">
-        <h1 className="max-w-7xl text-3xl font-medium md:text-6xl/tight">
+        <h1 className="max-w-7xl text-3xl font-medium md:text-6xl/tight md:text-nowrap">
           {"Made for emerging brand owners, "}
           <br className="hidden md:block" />
           {"e-commerce, instagram sellers, "}
