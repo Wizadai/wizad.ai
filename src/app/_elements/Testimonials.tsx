@@ -1,4 +1,4 @@
-import TestimonialsData from "../../../public/assets/testimonials.json";
+import TestimonialsData from "@/../public/assets/testimonials.json";
 import Image from "next/image";
 import { TiSocialTwitter } from "react-icons/ti";
 

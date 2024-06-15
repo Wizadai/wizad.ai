@@ -1,6 +1,6 @@
 import AppDownloadButton from "@/app/_elements/AppDownloadButton";
-import PostersDesktop from "../../../public/assets/posters-desktop.png";
-import PostersMobile from "../../../public/assets/posters-mobile.png";
+import PostersDesktop from "@/../public/assets/posters-desktop.png";
+import PostersMobile from "@/../public/assets/posters-mobile.png";
 import Image from "next/image";
 
 export default function HeroSection() {

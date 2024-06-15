@@ -1,11 +1,10 @@
 "use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import { IoMenu } from "react-icons/io5";
-import WhatsApp from "../../../public/assets/whatsapp.png";
+import WhatsApp from "@/../public/assets/whatsapp.png";
 
-import logo from "../../../public/assets/logo-full.png";
+import logo from "@/../public/assets/logo-full.png";
 import { useState } from "react";
 import Slideover from "@/components/Slideover";
 
