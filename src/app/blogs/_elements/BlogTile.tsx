@@ -17,7 +17,7 @@ export default function BlogTile({ blog }: Props) {
             {blog.metadata.publishedAt}
           </time>
         </span>
-        <h2 className="mb-4 text-2xl font-medium text-white md:text-4xl">
+        <h2 className="mb-4 text-2xl/tight font-medium text-white md:text-4xl/none">
           {blog.metadata.title}
         </h2>
         <p className="mb-4 line-clamp-3 font-light text-white/60 md:line-clamp-2 md:font-normal">

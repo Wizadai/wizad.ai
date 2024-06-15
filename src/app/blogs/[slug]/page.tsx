@@ -86,7 +86,7 @@ export default async function Page({ params }: Props) {
                 {blog.metadata.category}
               </span>
             </span>
-            <h1 className="inline-block bg-gradient-to-r from-[#E293FE] to-[#38CEFB] bg-clip-text text-center text-3xl font-medium text-transparent md:max-w-4xl md:text-6xl/tight">
+            <h1 className="inline-block bg-gradient-to-r from-[#E293FE] to-[#38CEFB] bg-clip-text text-center text-3xl/tight font-medium text-transparent md:max-w-4xl md:text-6xl/tight">
               {blog.metadata.title}
             </h1>
           </div>
