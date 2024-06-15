@@ -16,11 +16,11 @@ export default function Footer() {
     <footer id="footer" className="flex w-full flex-col gap-2">
       <section className="flex flex-col items-center justify-center gap-10 bg-hero-gradient bg-bottom px-4 py-12 md:gap-20 md:bg-cover md:py-32">
         <div className="flex w-full max-w-9xl flex-col flex-wrap items-center justify-center gap-6 md:gap-8">
-          <span className="max-w-lg text-center text-xl md:text-lg font-medium italic">
+          <span className="max-w-lg text-center text-xl font-medium italic md:text-lg">
             {`"You don't have a choice on whether you do social media, The question is how well you do it"`}
           </span>
 
-          <h2 className="md:w-full max-w-6xl bg-gradient-to-br from-white to-[#4BF5B3] bg-clip-text text-center font-hero text-5xl/tight md:text-8xl font-bold italic text-transparent md:pb-4">
+          <h2 className="max-w-6xl bg-gradient-to-br from-white to-[#4BF5B3] bg-clip-text text-center font-hero text-5xl/tight font-bold italic text-transparent md:w-full md:pb-4 md:text-8xl">
             {"Start creating "}
             <br className="hidden md:block" />
             designs with Wizad.
@@ -77,7 +77,7 @@ export default function Footer() {
 
           <div className="my-9 h-px bg-zinc-800 md:my-8" />
 
-          <div className="flex flex-wrap justify-between text-sm">
+          <div className="flex flex-wrap gap-4 justify-between text-sm">
             <a
               className="text-zinc-500 transition-all duration-200 ease-in-out hover:text-zinc-400"
               href={process.env.NEXT_PUBLIC_PRIVACY_POLICY_URL}
@@ -162,7 +162,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="hidden aspect-square flex-col justify-start rounded-3xl bg-[#121212] px-14 py-8 md:flex md:rounded-[2.5rem]">
+        <div className="hidden flex-col justify-start rounded-3xl bg-[#121212] px-14 py-8 md:flex md:rounded-[2.5rem]">
           <AppDownloadQRCode />
         </div>
       </section>

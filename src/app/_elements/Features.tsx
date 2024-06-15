@@ -324,7 +324,11 @@ export default function Features() {
         <h2 className="max-w-[59.375rem] px-4 py-6 text-center font-hero text-4xl/none font-bold italic md:pb-10 md:pt-20 md:text-7xl/none">
           Get multiple design options in a single click.
         </h2>
-        <Image className="w-56 md:w-[22rem]" src={FeaturesScreen3} alt="Features" />
+        <Image
+          className="w-56 md:w-[22rem]"
+          src={FeaturesScreen3}
+          alt="Features"
+        />
       </section>
 
       <section className="flex w-full max-w-screen-2xl flex-col gap-8 overflow-clip px-4 py-12 md:gap-20 md:px-20 md:py-32">

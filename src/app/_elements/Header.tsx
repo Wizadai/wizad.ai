@@ -52,7 +52,7 @@ export default function Header() {
               <Image src={WhatsApp} alt="whatsapp" />
             </div>
           </Link>
-          <div className="flex justify-center items-center h-9 w-9 rounded-lg bg-[#181818] md:hidden">
+          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#181818] md:hidden">
             <button onClick={() => setDrawerOpened(true)}>
               <IoMenu className="size-6 md:size-6" />
             </button>

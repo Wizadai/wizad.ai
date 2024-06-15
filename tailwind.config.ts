@@ -28,7 +28,7 @@ const config: Config = {
         "9xl": "90rem",
         "10xl": "107.5rem",
         "11xl": "120rem",
-      }
+      },
     },
     fontSize: {
       xs: "0.75rem",

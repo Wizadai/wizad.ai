@@ -22,7 +22,7 @@ export default function CustomerSupport() {
 const CustomerSupportForm = () => {
   return (
     <form
-      className="flex self-center w-full max-w-md flex-col gap-4 rounded-3xl bg-[#121212] p-6 text-zinc-100 md:w-[30%] md:p-10"
+      className="flex w-full max-w-md flex-col gap-4 self-center rounded-3xl bg-[#121212] p-6 text-zinc-100 md:w-[30%] md:p-10"
       action={requestCustomerSupport}
     >
       <h2 className="text-xl font-medium md:text-lg">Request a call back</h2>
@@ -76,7 +76,7 @@ const CustomerSupportForm = () => {
 
       <button
         type="submit"
-        className="rounded-lg md:rounded-md border-white bg-gradient-to-br from-[#E293FE] to-[#2DEFAE] px-6 py-2 text-lg font-medium text-black transition-all duration-200 ease-in-out hover:from-[#2DEFAE] hover:to-[#E293FE] hover:text-white md:p-3 md:text-sm"
+        className="rounded-lg border-white bg-gradient-to-br from-[#E293FE] to-[#2DEFAE] px-6 py-2 text-lg font-medium text-black transition-all duration-200 ease-in-out hover:from-[#2DEFAE] hover:to-[#E293FE] hover:text-white md:rounded-md md:p-3 md:text-sm"
       >
         Request a call back
       </button>

@@ -129,7 +129,7 @@ export default async function Page({ params }: Props) {
       {!!otherBlogs.length && (
         <section className="mx-auto flex max-w-10xl flex-col gap-10 px-4 py-10 md:px-20 md:py-24">
           <div>
-            <span className="font-hero not-italic text-2xl">Read next</span>
+            <span className="font-hero text-2xl not-italic">Read next</span>
           </div>
           <ul className="flex flex-col gap-8 md:gap-12">
             {otherBlogs.map((blog) => (
@@ -150,8 +150,13 @@ export default async function Page({ params }: Props) {
 const ShareLinks = () => {
   return (
     <div className="flex items-center gap-6 text-white/70">
-      <button className="bg-neutral-800 rounded p-2">
-        <Image src={RiLink} alt="ri-link" placeholder="blur" className="size-5" />
+      <button className="rounded bg-neutral-800 p-2">
+        <Image
+          src={RiLink}
+          alt="ri-link"
+          placeholder="blur"
+          className="size-5"
+        />
       </button>
       <button>
         <BiLogoInstagramAlt className="size-6" />

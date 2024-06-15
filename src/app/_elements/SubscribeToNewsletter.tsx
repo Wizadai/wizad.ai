@@ -14,7 +14,7 @@ export default function SubscribeToNewsletter() {
       />
       <button
         type="submit"
-        className="rounded-lg w-full bg-white/10 px-6 py-3 font-medium transition-all duration-200 ease-in-out hover:bg-white/20"
+        className="w-full rounded-lg bg-white/10 px-6 py-3 font-medium transition-all duration-200 ease-in-out hover:bg-white/20"
       >
         Subscribe
       </button>

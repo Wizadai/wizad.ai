@@ -7,12 +7,12 @@ export default function HeroSection() {
   return (
     <section className="flex w-full flex-col bg-hero-gradient bg-cover bg-top">
       <div className="mx-auto mt-24 flex max-w-6xl flex-col gap-6 px-4 text-center md:gap-10">
-        <h1 className="max-w-[51.5625rem] font-hero italic text-4xl/none font-bold md:text-8xl/none">
+        <h1 className="max-w-[51.5625rem] font-hero text-4xl/none font-bold italic md:text-8xl/none">
           <div>Never run out</div>
           <div>of social media</div>
           <div>designs, anymore.</div>
         </h1>
-        <span className="text-base font-medium md:font-normal leading-relaxed text-white md:text-xl md:leading-7">
+        <span className="text-base font-medium leading-relaxed text-white md:text-xl md:font-normal md:leading-7">
           <p>
             Still messing with long prompts or spending hours editing canva
             templates?
@@ -36,7 +36,7 @@ export default function HeroSection() {
         <Image
           src={PostersDesktop}
           alt="Posters made with Wizad"
-          className="hidden w-0 md:w-full md:block"
+          className="hidden w-0 md:block md:w-full"
         />
         <Image
           src={PostersMobile}
