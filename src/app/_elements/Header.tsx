@@ -22,7 +22,7 @@ export default function Header() {
       >
         <div className="h-screen">
           <nav className="flex h-full flex-col items-center gap-10 p-20 text-white">
-            <NavLinks />
+            <NavLinks onClick={() => setDrawerOpened(false)}/>
           </nav>
         </div>
       </Slideover>
@@ -34,18 +34,18 @@ export default function Header() {
               src={logo}
               alt="Logo of Wizad"
               width={284}
-              className="w-24 md:w-56"
+              className="w-24 transform transition-transform duration-500 hover:scale-110 md:w-56"
             />
           </Link>
           <nav className="hidden md:flex md:items-center md:gap-10 md:text-[0.8rem]">
-            <NavLinks />
+            <NavLinks onClick={() => {}} />
           </nav>
         </div>
 
         <div className="flex h-10 items-center justify-center gap-3">
           <Link
             href={process.env.NEXT_PUBLIC_WHATSAPP_CHAT_URL || ""}
-            className="flex items-center gap-2 rounded-lg bg-[#181818] p-2 md:px-5"
+            className="flex items-center gap-2 rounded-lg bg-[#181818] p-2 hover:bg-white/20 md:px-5"
           >
             <span className="hidden md:block md:text-sm md:font-normal">
               Chat with us on
@@ -65,11 +65,23 @@ export default function Header() {
   );
 }
 
-const NavLinks = () => {
+const NavLinks = ({ onClick }: { onClick: () => void }) => {
   return (
     <>
-      <Link href="/">Home</Link>
-      <Link href="/blogs">Blogs & News</Link>
+      <Link
+        href="/"
+        className="transform transition-transform duration-500 hover:scale-110"
+        onClick={() => onClick()}
+      >
+        Home
+      </Link>
+      <Link
+        href="/blogs"
+        className="transform transition-transform duration-500 hover:scale-110"
+        onClick={() => onClick()}
+      >
+        Blogs & News
+      </Link>
     </>
   );
 };
