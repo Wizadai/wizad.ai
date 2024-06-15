@@ -19,7 +19,7 @@ export default function GetStartedNow() {
 
   return (
     <button
-      className="relative z-10 inline-block bg-gradient-to-r from-[#E293FE] to-[#38CEFB] bg-clip-text font-semibold text-transparent hover:cursor-pointer"
+      className="relative z-10 inline-block bg-gradient-to-r from-[#E293FE] to-[#38CEFB] bg-clip-text font-semibold text-transparent hover:cursor-pointer transform transition-transform duration-500 hover:scale-110"
       onClick={routeToStore}
     >
       Get started now
