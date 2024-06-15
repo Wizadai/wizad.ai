@@ -3,7 +3,6 @@ import Footer from "@/app/_elements/Footer";
 import Header from "@/app/_elements/Header";
 import BlogTile from "@/app/blogs/_elements/BlogTile";
 import { getBlogPosts } from "@/app/blogs/utils";
-import React from "react";
 
 export default async function Page() {
   const blogs = await getBlogPosts();
