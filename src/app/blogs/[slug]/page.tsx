@@ -1,6 +1,5 @@
 import CustomerSupport from "@/app/_elements/CustomerSupport";
 import Footer from "@/app/_elements/Footer";
-import Header from "@/app/_elements/Header";
 import BlogTile from "@/app/blogs/_elements/BlogTile";
 import { getBlogFromSlug, getBlogPosts } from "@/app/blogs/utils";
 import { baseUrl } from "@/app/sitemap";
@@ -153,23 +152,23 @@ const ShareLinks = () => {
           src={RiLink}
           alt="ri-link"
           placeholder="blur"
-          className="size-5"
+          className="size-5 transform transition-transform duration-500 hover:scale-125"
         />
       </button>
       <button>
-        <BiLogoInstagramAlt className="size-6" />
+        <BiLogoInstagramAlt className="size-6 transform transition-transform duration-500 hover:scale-125" />
       </button>
       <button>
-        <BiLogoLinkedinSquare className="size-6" />
+        <BiLogoLinkedinSquare className="size-6 transform transition-transform duration-500 hover:scale-125" />
       </button>
       <button>
-        <BsTwitterX className="size-5" />
+        <BsTwitterX className="size-5 transform transition-transform duration-500 hover:scale-125" />
       </button>
       <button>
-        <BiLogoFacebookSquare className="size-6" />
+        <BiLogoFacebookSquare className="size-6 transform transition-transform duration-500 hover:scale-125" />
       </button>
       <button>
-        <FaThreads className="size-6" />
+        <FaThreads className="size-6 transform transition-transform duration-500 hover:scale-125" />
       </button>
     </div>
   );
