@@ -67,9 +67,7 @@ const NavLinks = () => {
   return (
     <>
       <Link href="/">Home</Link>
-      {/* <Link href="/professional">Professional</Link> */}
       <Link href="/blogs">Blogs & News</Link>
-      {/* <Link href="/pricing">Pricing</Link> */}
     </>
   );
 };

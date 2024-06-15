@@ -3,7 +3,7 @@
 type ContactSupportSubmission = {
   type: "async_customer_support";
   name: string;
-  business: string;
+  email: string;
   phone: string;
 };
 
@@ -38,15 +38,15 @@ export async function subscribeToNewsletter(form: FormData) {
 
 export async function requestCustomerSupport(form: FormData) {
   const name = form.get("name")?.toString() || "";
-  const business = form.get("business")?.toString() || "";
+  const email = form.get("business")?.toString() || "";
   const phone = form.get("phone")?.toString() || "";
 
-  if (!name || (!business && !phone)) return;
+  if (!name || (!email && !phone)) return;
 
   return await callGoogleAppScriptWebhook({
     type: "async_customer_support",
     name,
-    business,
+    email,
     phone,
   });
 }

@@ -47,13 +47,14 @@ const CustomerSupportForm = () => {
           className="p-1 text-sm font-normal text-white/80 md:text-xs"
           htmlFor="support-form-email"
         >
-          Enter business name here
+          Enter email here
         </label>
         <input
           id="support-form-email"
-          name="business"
+          name="email"
+          type="email"
           className="w-full rounded-lg bg-[#1D1D1D] p-4 outline-none transition-all duration-200 ease-in-out placeholder:text-zinc-500 focus:ring-2 focus:ring-zinc-700 md:p-3 md:text-sm"
-          placeholder="Enter your business name"
+          placeholder="Enter your email"
         />
       </div>
 
