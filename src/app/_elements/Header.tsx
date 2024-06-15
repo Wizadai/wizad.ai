@@ -29,12 +29,14 @@ export default function Header() {
 
       <div className="flex items-center justify-between p-4 md:mx-44">
         <div className="flex items-center gap-10">
-          <Image
-            src={logo}
-            alt="Logo of Wizad"
-            width={284}
-            className="w-24 md:w-56"
-          />
+          <Link href="/">
+            <Image
+              src={logo}
+              alt="Logo of Wizad"
+              width={284}
+              className="w-24 md:w-56"
+            />
+          </Link>
           <nav className="hidden md:flex md:items-center md:gap-10 md:text-[0.8rem]">
             <NavLinks />
           </nav>

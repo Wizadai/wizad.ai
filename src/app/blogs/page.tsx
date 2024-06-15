@@ -1,6 +1,5 @@
 import CustomerSupport from "@/app/_elements/CustomerSupport";
 import Footer from "@/app/_elements/Footer";
-import Header from "@/app/_elements/Header";
 import BlogTile from "@/app/blogs/_elements/BlogTile";
 import { getBlogPosts } from "@/app/blogs/utils";
 
@@ -16,8 +15,7 @@ export default async function Page() {
   );
 
   return (
-    <main className="flex flex-col">
-      <Header />
+    <>
       <section className="flex w-full flex-col bg-hero-gradient bg-cover bg-top py-14 md:py-24">
         <div className="mx-auto flex w-full max-w-6xl flex-col items-center gap-6 px-4 md:items-start md:gap-10">
           <h1 className="max-w-3xl font-hero text-4xl/tight font-semibold italic md:text-7xl/none">
@@ -60,6 +58,6 @@ export default async function Page() {
 
       <CustomerSupport />
       <Footer />
-    </main>
+    </>
   );
 }

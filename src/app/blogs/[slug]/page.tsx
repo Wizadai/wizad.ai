@@ -69,9 +69,7 @@ export default async function Page({ params }: Props) {
   }
 
   return (
-    <main className="flex flex-col">
-      <Header />
-
+    <>
       <section className="flex w-full flex-col px-4 py-10 md:pb-12 md:pt-24">
         <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-10 px-4">
           <div className="flex flex-col items-center gap-5">
@@ -143,7 +141,7 @@ export default async function Page({ params }: Props) {
 
       <CustomerSupport />
       <Footer />
-    </main>
+    </>
   );
 }
 

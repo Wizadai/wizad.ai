@@ -11,13 +11,12 @@ import Testimonials from "@/app/_elements/Testimonials";
 
 export default function Home() {
   return (
-    <main className="flex flex-col">
-      <Header />
+    <>
       <HeroSection />
       <Features />
       <CustomerSupport />
       <Testimonials />
       <Footer />
-    </main>
+    </>
   );
 }
