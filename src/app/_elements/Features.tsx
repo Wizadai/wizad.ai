@@ -19,6 +19,7 @@ import { ReactNode } from "react";
 import { BiSolidTimeFive } from "react-icons/bi";
 import { FaPiggyBank } from "react-icons/fa6";
 import { TbCardsFilled } from "react-icons/tb";
+import GetStartedNow from "./GetStartedNow";
 
 export default function Features() {
   return (
@@ -105,10 +106,7 @@ export default function Features() {
               <p className="font-semibold text-white">
                 Choose the day -&gt; Generate Designs!
               </p>
-              <p className="relative inline-block bg-gradient-to-r from-[#E293FE] to-[#38CEFB] bg-clip-text font-semibold text-transparent hover:cursor-pointer">
-                Get started now
-                <span className="absolute inset-x-0 bottom-0 h-[0.25] bg-gradient-to-r from-[#E293FE] to-[#38CEFB]"></span>
-              </p>
+              <GetStartedNow />
             </span>
           </div>
           <div className="w-full min-w-80 pt-10 md:w-3/5">
@@ -154,10 +152,7 @@ export default function Features() {
               <p className="font-semibold text-white">
                 Upload from gallary -&gt; Generate Designs!
               </p>
-              <p className="relative inline-block bg-gradient-to-r from-[#E293FE] to-[#38CEFB] bg-clip-text font-semibold text-transparent hover:cursor-pointer">
-                Get started now
-                <span className="absolute inset-x-0 bottom-0 h-[0.25] bg-gradient-to-r from-[#E293FE] to-[#38CEFB]"></span>
-              </p>
+              <GetStartedNow />
             </span>
           </div>
           // image
@@ -197,10 +192,7 @@ export default function Features() {
               <p className="font-semibold text-white">
                 Generate Designs -&gt; Share to the world!
               </p>
-              <p className="relative inline-block bg-gradient-to-r from-[#E293FE] to-[#38CEFB] bg-clip-text font-semibold text-transparent hover:cursor-pointer">
-                Get started now
-                <span className="absolute inset-x-0 bottom-0 h-[0.25] bg-gradient-to-r from-[#E293FE] to-[#38CEFB]"></span>
-              </p>
+              <GetStartedNow />
             </span>
           </div>
           <div className="absolute bottom-0 left-0 mx-auto max-h-[21.875rem] w-full min-w-80 pt-10 md:hidden md:h-0 md:w-0">
@@ -238,10 +230,7 @@ export default function Features() {
               <p className="font-semibold text-white">
                 Create content -&gt; Distribute!
               </p>
-              <p className="relative inline-block bg-gradient-to-r from-[#E293FE] to-[#38CEFB] bg-clip-text font-semibold text-transparent hover:cursor-pointer">
-                Get started now
-                <span className="absolute inset-x-0 bottom-0 h-[0.25] bg-gradient-to-r from-[#E293FE] to-[#38CEFB]"></span>
-              </p>
+              <GetStartedNow />
             </div>
           </div>
           <div className="absolute bottom-0 left-0 mx-auto max-h-[21.875rem] w-full min-w-80 pt-10 md:hidden md:h-0 md:w-0">
