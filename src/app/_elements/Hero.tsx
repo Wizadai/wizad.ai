@@ -12,7 +12,7 @@ export default function HeroSection() {
           <div>of social media</div>
           <div>designs, anymore.</div>
         </h1>
-        <span className="text-md font-medium md:font-normal leading-relaxed text-white md:text-xl md:leading-7">
+        <span className="text-base font-medium md:font-normal leading-relaxed text-white md:text-xl md:leading-7">
           <p>
             Still messing with long prompts or spending hours editing canva
             templates?

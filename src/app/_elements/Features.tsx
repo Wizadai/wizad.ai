@@ -62,7 +62,7 @@ export default function Features() {
         />
       </section>
       <section className="flex w-full max-w-screen-2xl flex-col items-center justify-center gap-6 py-12 md:flex-row-reverse md:items-center md:gap-20 md:pb-24 md:pt-32">
-        <div className="flex w-full flex-col justify-between gap-6 md:w-2/5 md:gap-16 md:self-start md:pt-6">
+        <div className="flex w-full flex-col justify-between gap-6 md:w-2/5 md:gap-8 md:self-start md:pt-6">
           <h1 className="text-2xl font-medium md:text-6xl/tight">
             Optimized for all your social media design needs
           </h1>
@@ -145,9 +145,10 @@ export default function Features() {
               posters!
             </h1>
             <span className="space-y-6 text-base font-light text-white/80 md:max-w-md md:pt-5 md:text-lg md:font-normal">
-              <p className="md:leading-normal">
-                Save money on professional product photography with Wizad. Stand
-                out with impressive product visuals!
+              <p className="md:text-nowrap md:leading-normal">
+                {"Save money on professional product photography with Wizad. "}
+                <br className="hidden md:block" />
+                Stand out with impressive product visuals!
               </p>
               <p className="font-semibold text-white">
                 Upload from gallary -&gt; Generate Designs!
@@ -163,7 +164,7 @@ export default function Features() {
       </section>
       {/* Be in-front of your customers everyday. */}
       <section className="flex w-full max-w-screen-2xl flex-col items-center justify-center py-6 md:py-20">
-        <div className="relative flex w-full h-[750px] overflow-clip rounded-3xl bg-neutral-920 md:h-[850px]">
+        <div className="relative flex h-[750px] w-full overflow-clip rounded-3xl bg-neutral-920 md:h-[850px]">
           <div className="w-full p-3 md:w-1/2 md:p-10">
             <div className="flex items-center space-x-2">
               <Image src={Calender} alt="Calender" width={16} />
@@ -177,18 +178,18 @@ export default function Features() {
               Be in-front of your customers everyday.
             </h1>
             <span className="space-y-6 text-base font-light text-white/80 md:max-w-md md:pt-5 md:text-lg md:font-normal">
-              <p className="md:leading-normal md:text-nowrap">
+              <p className="md:text-nowrap md:leading-normal">
                 {"Everyone knows consistent posting on social media is key to "}
                 <br className="hidden md:block" />
                 {"build brand awareness. But how? "}
               </p>
-              <p className="md:leading-normal md:text-nowrap">
+              <p className="md:text-nowrap md:leading-normal">
                 {"Keeping your audience engaged with regular "}
                 <br className="hidden md:block" />
                 {"updates to increase your brand visibility is now "}
                 <br className="hidden md:block" />
                 {"much easier. Wizad gives you multiple options in "}
-                <br className='hidden md:block' />
+                <br className="hidden md:block" />
                 different formats like stories, posts, etc.
               </p>
               <p className="font-semibold text-white">
@@ -201,18 +202,10 @@ export default function Features() {
             </span>
           </div>
           <div className="absolute bottom-0 left-0 mx-auto max-h-[350px] w-full min-w-80 pt-10 md:hidden md:h-0 md:w-0">
-            <Image
-              src={EmojiM}
-              alt="Emojis"
-              style={{ objectFit: "fill" }}
-            />
+            <Image src={EmojiM} alt="Emojis" style={{ objectFit: "fill" }} />
           </div>
           <div className="absolute hidden w-0 justify-end md:bottom-0 md:right-0 md:flex md:w-full">
-            <Image
-              src={EmojiD}
-              alt="Emoji"
-              style={{ objectFit: "fill" }}
-            />
+            <Image src={EmojiD} alt="Emoji" style={{ objectFit: "fill" }} />
           </div>
         </div>
       </section>
@@ -233,7 +226,7 @@ export default function Features() {
               Take control of your marketing campaigns
             </h1>
             <div className="space-y-6 text-base font-light text-white/80 md:pt-5 md:text-lg md:font-normal">
-              <p className="md:leading-normal md:text-nowrap">
+              <p className="md:text-nowrap md:leading-normal">
                 {"Content wont be your bottle neck anymore. Wizad simplifies "}
                 <br className="hidden md:block" />
                 {"the entire marketing material creation process, empowering "}
@@ -267,7 +260,7 @@ export default function Features() {
       </section>
 
       <section className="flex w-full max-w-screen-2xl flex-col gap-6 px-4 py-12 md:gap-0 md:px-20 md:py-28">
-        <h1 className="max-w-7xl text-3xl font-medium md:text-6xl/tight md:text-nowrap">
+        <h1 className="max-w-7xl text-3xl font-medium md:text-nowrap md:text-6xl/tight">
           {"Made for emerging brand owners, "}
           <br className="hidden md:block" />
           {"e-commerce, instagram sellers, "}
@@ -278,7 +271,7 @@ export default function Features() {
         </h1>
 
         <div className="grid grid-cols-1 gap-10 md:-mt-12 md:grid-cols-2 md:gap-12">
-          <div className="flex items-end text-sm/normal font-light text-white/80 md:w-[90%] md:pt-20 md:text-xl">
+          <div className="flex items-end text-pretty text-sm/normal font-light text-white/80 md:w-[80%] md:pt-20 md:text-xl">
             <span>
               <p>
                 No need to hire expensive agencies and freelance designers
@@ -325,7 +318,7 @@ export default function Features() {
         </div>
       </section>
 
-      <section className="mx-4 my-12 flex w-full max-w-screen-2xl flex-col items-center justify-center gap-10 rounded-3xl bg-gradient-to-br from-[#FAECFF] to-[#38CEFB] text-black md:mx-auto md:w-full md:gap-12">
+      <section className="mx-4 my-12 flex w-full max-w-screen-2xl flex-col items-center justify-center gap-10 rounded-3xl bg-gradient-to-br from-[#FAECFF] to-[#38CEFB] text-black md:mx-auto md:my-28 md:w-full md:gap-12">
         <h2 className="max-w-5xl px-4 py-6 text-center font-hero text-4xl font-bold italic md:pb-10 md:pt-28 md:text-7xl">
           Get multiple design options in a single click.
         </h2>
@@ -349,14 +342,14 @@ export default function Features() {
 
         <div className="w-full">
           <span className="text-2xl font-medium text-white/80 md:text-5xl/tight">
-            <p>
+            <p className="md:w-[80%]">
               Wizad is now used by{" "}
               <span className="text-white">10K+ business owners</span> to create
               designs, grow their social media and improve the brand positioning
               — without any extensive design knowledge.
             </p>
             <br />
-            <p>
+            <p className="text-balance md:w-[80%]">
               Since we launched, people around the world have created{" "}
               <span className="text-white">200K+ marketing collaterals</span>,{" "}
               inspiring us to make wizad even better.
@@ -399,10 +392,10 @@ const FeatureTile = ({
     <div className="flex flex-1 flex-col gap-1 border-t border-white/80 pt-5 md:pt-8">
       <div className="w-full md:w-[85%]">
         <div className="pb-2 text-2xl">{icon}</div>
-        <h2 className="pb-4 font-hero text-2xl font-semibold italic md:text-3xl">
+        <h2 className="pb-4 font-hero text-2xl font-semibold italic md:text-nowrap">
           {title}
         </h2>
-        <span className="font-light text-white/80 md:text-2xl">{desc}</span>
+        <span className="font-light text-white/80 md:text-lg">{desc}</span>
       </div>
     </div>
   );
