@@ -18,7 +18,7 @@ export default function Header() {
         setOpen={setDrawerOpened}
         slideFrom="right"
         backdropBlur
-        dialogClass="w-full max-w-sm sm:max-w-md md:max-w-[1200px]"
+        dialogClass="w-full max-w-sm sm:max-w-md md:max-w-[75rem]"
       >
         <div className="h-screen">
           <nav className="flex h-full flex-col items-center gap-10 p-20 text-white">

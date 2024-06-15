@@ -15,7 +15,7 @@ export default function Footer() {
   return (
     <footer id="footer" className="flex w-full flex-col gap-2">
       <section className="flex flex-col items-center justify-center gap-10 bg-hero-gradient bg-bottom px-4 py-12 md:gap-20 md:bg-cover md:py-32">
-        <div className="flex w-full max-w-[1440px] flex-col flex-wrap items-center justify-center gap-6 md:gap-8">
+        <div className="flex w-full max-w-9xl flex-col flex-wrap items-center justify-center gap-6 md:gap-8">
           <span className="max-w-lg text-center text-xl md:text-lg font-medium italic">
             {`"You don't have a choice on whether you do social media, The question is how well you do it"`}
           </span>
@@ -51,8 +51,8 @@ export default function Footer() {
           ))}
         </div>
       </section>
-      <section className="rid-cols-1 mx-auto grid w-full max-w-[375px] gap-6 px-4 pt-12 md:max-w-[1920px] md:grid-cols-3 md:gap-16 md:px-24 md:pt-32">
-        <div className="flex flex-col justify-start rounded-3xl bg-[#121212] p-5 md:rounded-[40px] md:p-14">
+      <section className="rid-cols-1 mx-auto grid w-full max-w-sm gap-6 px-4 pt-12 md:max-w-11xl md:grid-cols-3 md:gap-16 md:px-24 md:pt-32">
+        <div className="flex flex-col justify-start rounded-3xl bg-[#121212] p-5 md:rounded-[2.5rem] md:p-14">
           <h2 className="mb-6 text-2xl">
             AI designer that knows your brand. Powered by legendary models.
           </h2>
@@ -64,7 +64,7 @@ export default function Footer() {
             <Image
               src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=453705"
               alt="Wizad - Social&#0032;media&#0032;posters&#0032;in&#0032;one&#0032;click&#0032;with&#0032;GenAI&#0032; | Product Hunt"
-              className="h-[54px] w-[250px]"
+              className="h-[3.375rem] w-[15.625rem]"
               width="250"
               height="54"
             />
@@ -105,7 +105,7 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col gap-6">
-          <div className="flex flex-col justify-start rounded-3xl bg-[#121212] p-5 md:rounded-[40px] md:p-14">
+          <div className="flex flex-col justify-start rounded-3xl bg-[#121212] p-5 md:rounded-[2.5rem] md:p-14">
             <h2 className="mb-6 text-xl font-light text-white/70 md:mb-7 md:text-3xl">
               Blog & Newsletter
             </h2>
@@ -162,7 +162,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="hidden aspect-square flex-col justify-start rounded-3xl bg-[#121212] px-14 py-8 md:flex md:rounded-[40px]">
+        <div className="hidden aspect-square flex-col justify-start rounded-3xl bg-[#121212] px-14 py-8 md:flex md:rounded-[2.5rem]">
           <AppDownloadQRCode />
         </div>
       </section>

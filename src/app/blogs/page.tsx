@@ -33,7 +33,7 @@ export default async function Page() {
       </section>
 
       {socialMediaBlogs.length > 0 && (
-        <section className="mx-auto flex max-w-[1920px] flex-col px-4 py-10 md:px-20 md:py-24">
+        <section className="mx-auto flex max-w-11xl flex-col px-4 py-10 md:px-20 md:py-24">
           <h2 className="pb-8 font-hero text-2xl not-italic">Social Media</h2>
           <ul className="flex flex-col gap-8 md:gap-12">
             {socialMediaBlogs.map((blog) => (
@@ -46,7 +46,7 @@ export default async function Page() {
       )}
 
       {tutorialBlogs.length > 0 && (
-        <section className="mx-auto flex max-w-[1920px] flex-col px-4 py-10 md:px-20 md:py-24">
+        <section className="mx-auto flex max-w-11xl flex-col px-4 py-10 md:px-20 md:py-24">
           <h2 className="pb-8 font-hero text-2xl not-italic">Tutorials</h2>
           <ul className="flex flex-col gap-8 md:gap-12">
             {tutorialBlogs.map((blog) => (

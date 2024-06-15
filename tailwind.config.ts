@@ -20,6 +20,15 @@ const config: Config = {
           920: "#131313",
         },
       },
+      spacing: {
+        30: "7.5rem",
+      },
+      maxWidth: {
+        sm: "23.4375rem",
+        "9xl": "90rem",
+        "10xl": "107.5rem",
+        "11xl": "120rem",
+      }
     },
     fontSize: {
       xs: "0.75rem",

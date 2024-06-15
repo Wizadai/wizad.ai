@@ -20,7 +20,7 @@ export default function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="mx-auto flex w-full max-w-[1920px] flex-col gap-6 px-4 py-12 md:gap-12 md:px-32 md:py-32"
+      className="mx-auto flex w-full max-w-11xl flex-col gap-6 px-4 py-12 md:gap-12 md:px-32 md:py-32"
     >
       <h1 className="md:px-18 text-center text-2xl font-medium text-white/90 md:text-5xl md:font-normal">
         See why people love wizad
@@ -33,7 +33,7 @@ export default function Testimonials() {
           </li>
         ))}
       </ul>
-      <ul className="hidden items-start md:block md:max-w-[1440px] md:columns-3xs md:px-20">
+      <ul className="hidden items-start md:block md:max-w-9xl md:columns-3xs md:px-20">
         {TestimonialsData.slice(1, 14).map((obj) => (
           <li key={obj.ref} className="aspect-video py-2">
             <TestimonialCard data={obj} />

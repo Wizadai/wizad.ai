@@ -2,7 +2,7 @@ import { requestCustomerSupport } from "@/app/actions";
 
 export default function CustomerSupport() {
   return (
-    <section className="mx-4 my-12 flex flex-col gap-10 rounded-3xl bg-gradient-to-br from-[#FAECFF] to-[#38CEFB] p-5 md:mx-auto md:w-[95%] md:max-w-[1720px] md:flex-row md:justify-between md:p-16">
+    <section className="mx-4 my-12 flex flex-col gap-10 rounded-3xl bg-gradient-to-br from-[#FAECFF] to-[#38CEFB] p-5 md:mx-auto md:w-[95%] md:max-w-10xl md:flex-row md:justify-between md:p-16">
       <div className="flex flex-col gap-6 md:max-w-[65%] md:gap-14">
         <h2 className="font-hero text-3xl/tight font-bold italic text-black md:text-7xl">
           Need Industry experts to manage your designs and social media?

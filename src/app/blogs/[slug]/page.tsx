@@ -100,9 +100,9 @@ export default async function Page({ params }: Props) {
       </section>
 
       <section className="flex w-full flex-col px-4 py-3">
-        <div className="mx-auto flex max-w-[1720px] flex-col gap-6 rounded-2xl bg-neutral-920 px-3 py-5 md:w-[90%] md:gap-8 md:px-48 md:py-10">
+        <div className="mx-auto flex max-w-10xl flex-col gap-6 rounded-2xl bg-neutral-920 px-3 py-5 md:w-[90%] md:gap-8 md:px-48 md:py-10">
           {blog.metadata.image && (
-            <div className="relative h-[500px] w-full overflow-hidden rounded-2xl">
+            <div className="relative h-[31.25rem] w-full overflow-hidden rounded-2xl">
               <Image
                 fill
                 style={{
@@ -127,7 +127,7 @@ export default async function Page({ params }: Props) {
       </section>
 
       {!!otherBlogs.length && (
-        <section className="mx-auto flex max-w-[1720px] flex-col gap-10 px-4 py-10 md:px-20 md:py-24">
+        <section className="mx-auto flex max-w-10xl flex-col gap-10 px-4 py-10 md:px-20 md:py-24">
           <div>
             <span className="font-hero not-italic text-2xl">Read next</span>
           </div>

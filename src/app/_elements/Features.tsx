@@ -22,7 +22,7 @@ import { TbCardsFilled } from "react-icons/tb";
 
 export default function Features() {
   return (
-    <div className="mx-auto max-w-[375px] px-4 md:max-w-[1920px] md:px-28 md:py-20">
+    <div className="mx-auto max-w-sm px-4 md:max-w-11xl md:px-28 md:py-20">
       <section className="flex w-full max-w-screen-2xl flex-wrap items-center justify-center gap-6 py-12 md:gap-20">
         <div className="w-full md:w-2/5">
           <h1 className="pb-4 text-3xl/tight font-medium md:self-start md:pb-7 md:text-6xl/tight">
@@ -56,7 +56,7 @@ export default function Features() {
           </div>
         </div>
         <Image
-          className="w-full min-w-80 max-w-[680px] md:w-2/5"
+          className="w-full min-w-80 max-w-2xl md:w-2/5"
           src={FeaturesScreen1}
           alt="Features"
         />
@@ -74,7 +74,7 @@ export default function Features() {
           </span>
         </div>
         <Image
-          className="w-full min-w-80 max-w-[680px] md:w-2/5"
+          className="w-full min-w-80 max-w-2xl md:w-2/5"
           src={FeaturesScreen2}
           alt="Features"
         />
@@ -115,7 +115,7 @@ export default function Features() {
             <Image src={SpecialDays} alt="Special Days" />
           </div>
         </div>
-        <div className="relative h-[120px] w-full bg-neutral-920 md:h-64">
+        <div className="relative h-30 w-full bg-neutral-920 md:h-64">
           <Image
             // sizes="(max-width: 1536px) 100vw, 33vw"
             src={SpecialDaysList}
@@ -165,7 +165,7 @@ export default function Features() {
        */}
       {/* Be in-front of your customers everyday. */}
       <section className="flex w-full max-w-screen-2xl flex-col items-center justify-center py-6 md:py-20">
-        <div className="relative flex h-[750px] w-full overflow-clip rounded-3xl bg-neutral-920 md:h-[850px]">
+        <div className="relative flex h-[46.875rem] w-full overflow-clip rounded-3xl bg-neutral-920 md:h-[59.375rem]">
           <div className="w-full p-3 md:w-1/2 md:p-10">
             <div className="flex items-center space-x-2">
               <Image src={Calender} alt="Calender" width={16} />
@@ -202,7 +202,7 @@ export default function Features() {
               </p>
             </span>
           </div>
-          <div className="absolute bottom-0 left-0 mx-auto max-h-[350px] w-full min-w-80 pt-10 md:hidden md:h-0 md:w-0">
+          <div className="absolute bottom-0 left-0 mx-auto max-h-[21.875rem] w-full min-w-80 pt-10 md:hidden md:h-0 md:w-0">
             <Image src={EmojiM} alt="Emojis" style={{ objectFit: "fill" }} />
           </div>
           <div className="absolute hidden w-0 justify-end md:bottom-0 md:right-0 md:flex md:w-full">
@@ -213,7 +213,7 @@ export default function Features() {
 
       {/* Take control of your marketing campaigns */}
       <section className="flex w-full max-w-screen-2xl flex-col items-center justify-center py-6 md:py-20">
-        <div className="relative flex h-[640px] w-full flex-col flex-wrap overflow-hidden rounded-3xl bg-neutral-920 px-3 pt-3 md:h-[1000px] md:px-10 md:pt-10">
+        <div className="relative flex h-[40rem] w-full flex-col flex-wrap overflow-hidden rounded-3xl bg-neutral-920 px-3 pt-3 md:h-[62.5rem] md:px-10 md:pt-10">
           <div className="w-full md:w-3/5">
             <div className="flex items-center space-x-2">
               <Image src={Thunderbolt} alt="Thunderbolt" width={16} />
@@ -243,7 +243,7 @@ export default function Features() {
               </p>
             </div>
           </div>
-          <div className="absolute bottom-0 left-0 mx-auto max-h-[350px] w-full min-w-80 pt-10 md:hidden md:h-0 md:w-0">
+          <div className="absolute bottom-0 left-0 mx-auto max-h-[21.875rem] w-full min-w-80 pt-10 md:hidden md:h-0 md:w-0">
             <Image
               src={Feature5M}
               alt="Feature Screen 5"
@@ -288,7 +288,7 @@ export default function Features() {
 
           <div className="flex md:row-span-2 md:flex-grow md:items-end md:justify-end md:self-start md:px-6">
             <Image
-              className="md:w-[680px]"
+              className="md:w-[42.5rem]"
               src={FeaturesScreen4}
               alt="Features"
             />
@@ -302,7 +302,7 @@ export default function Features() {
             <div className="flex flex-col gap-4 md:flex-row md:items-center">
               <Image
                 src={TestimonialHighlightAuthor}
-                className="size-[40px] overflow-clip rounded-full"
+                className="size-10 overflow-clip rounded-full"
                 width={52}
                 height={52}
                 alt="Amrutha S Kammath"
@@ -320,7 +320,7 @@ export default function Features() {
       </section>
 
       <section className="mx-4 my-12 flex w-full max-w-screen-2xl flex-col items-center justify-center gap-10 rounded-3xl bg-gradient-to-br from-[#FAECFF] to-[#38CEFB] text-black md:mx-auto md:my-28 md:w-full">
-        <h2 className="max-w-[950px] px-4 py-6 text-center font-hero text-4xl/none font-bold italic md:pb-10 md:pt-20 md:text-7xl/none">
+        <h2 className="max-w-[59.375rem] px-4 py-6 text-center font-hero text-4xl/none font-bold italic md:pb-10 md:pt-20 md:text-7xl/none">
           Get multiple design options in a single click.
         </h2>
         <Image className="w-56 md:w-[22rem]" src={FeaturesScreen3} alt="Features" />
