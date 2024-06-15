@@ -52,12 +52,12 @@ export default function Footer() {
         </div>
       </section>
       <section className="rid-cols-1 mx-auto grid w-full max-w-sm gap-6 px-4 pt-12 md:max-w-11xl md:grid-cols-3 md:gap-16 md:px-24 md:pt-32">
-        <div className="flex flex-col justify-start rounded-3xl bg-[#121212] p-5 md:rounded-[2.5rem] md:p-14">
+        <div className="flex flex-col justify-start rounded-3xl bg-[#121212] p-5 md:rounded-[2.5rem] md:p-10">
           <h2 className="mb-6 text-2xl">
             AI designer that knows your brand. Powered by legendary models.
           </h2>
           <a
-            className="py-6 md:py-14"
+            className="pb-6 md:pb-14"
             href="https://www.producthunt.com/posts/wizad?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-wizad"
             target="_blank"
           >
@@ -105,11 +105,11 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col gap-6">
-          <div className="flex flex-col justify-start rounded-3xl bg-[#121212] p-5 md:rounded-[2.5rem] md:p-14">
-            <h2 className="mb-6 text-xl font-light text-white/70 md:mb-7 md:text-3xl">
+          <div className="flex flex-col justify-start rounded-3xl bg-[#121212] p-5 md:rounded-[2.5rem] md:p-10">
+            <h2 className="mb-6 text-xl font-light text-white/70 md:mb-7 md:text-2xl">
               Blog & Newsletter
             </h2>
-            <span className="text-sm font-light text-white/80 md:text-xl">
+            <span className="text-sm font-light text-white/80 md:text-base">
               Receive must-read articles and trends on social media, branding,
               marketing, and ever changing AI creative industry.
             </span>
@@ -162,7 +162,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="hidden flex-col justify-start rounded-3xl bg-[#121212] px-14 py-8 md:flex md:rounded-[2.5rem]">
+        <div className="hidden flex-col justify-start rounded-3xl bg-[#121212] px-10 py-8 md:flex md:rounded-[2.5rem]">
           <AppDownloadQRCode />
         </div>
       </section>
