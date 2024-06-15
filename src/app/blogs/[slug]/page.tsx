@@ -119,7 +119,7 @@ export default async function Page({ params }: Props) {
             <Markdown content={blog.content} />
           </article>
 
-          <div className="mx-auto flex items-center justify-end gap-4 md:w-[60%]">
+          <div className="mx-auto flex flex-col md:flex-row items-center justify-end gap-4 md:w-[60%]">
             <span className="font-light text-white/65">Share to</span>
             <ShareLinks />
           </div>
