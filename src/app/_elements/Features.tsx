@@ -25,7 +25,7 @@ export default function Features() {
     <div className="mx-auto max-w-[375px] px-4 md:max-w-[1920px] md:px-28 md:py-20">
       <section className="flex w-full max-w-screen-2xl flex-wrap items-center justify-center gap-6 py-12 md:gap-20">
         <div className="w-full md:w-2/5">
-          <h1 className="pb-4 text-2xl font-medium md:self-start md:pb-7 md:text-6xl/tight">
+          <h1 className="pb-4 text-3xl/tight font-medium md:self-start md:pb-7 md:text-6xl/tight">
             {"Built for one purpose - "}
             <span className="inline-block bg-gradient-to-r from-[#E293FE] to-[#38CEFB] bg-clip-text text-transparent md:inline">
               to grow your brand.
@@ -63,7 +63,7 @@ export default function Features() {
       </section>
       <section className="flex w-full max-w-screen-2xl flex-col items-center justify-center gap-6 py-12 md:flex-row-reverse md:items-center md:gap-20 md:pb-24 md:pt-32">
         <div className="flex w-full flex-col justify-between gap-6 md:w-2/5 md:gap-8 md:self-start md:pt-6">
-          <h1 className="text-2xl font-medium md:text-6xl/tight">
+          <h1 className="text-3xl/tight font-medium md:text-6xl/tight">
             Optimized for all your social media design needs
           </h1>
           <span className="space-y-4 text-base font-light text-white/80 md:max-w-md md:pt-5 md:text-xl">
@@ -89,7 +89,7 @@ export default function Features() {
                 Festival & Trending Days
               </span>
             </div>
-            <h1 className="text-wrap py-4 text-3xl font-medium md:text-6xl md:leading-tight">
+            <h1 className="text-wrap py-4 text-3xl/tight font-medium md:text-6xl md:leading-tight">
               Don&apos;t let trends pass you by
             </h1>
             <span className="space-y-6 text-base font-light text-white/80 md:max-w-md md:pt-5 md:text-lg md:font-normal">
@@ -140,7 +140,7 @@ export default function Features() {
                 Product Photography Posters
               </span>
             </div>
-            <h1 className="text-wrap py-4 text-3xl font-medium md:text-6xl md:leading-tight">
+            <h1 className="text-wrap py-4 text-3xl/tight font-medium md:text-6xl md:leading-tight">
               Turn product images in your mobile gallery to professional
               posters!
             </h1>
@@ -174,7 +174,7 @@ export default function Features() {
                 Post daily
               </span>
             </div>
-            <h1 className="text-wrap py-4 text-3xl font-medium md:text-6xl md:leading-tight">
+            <h1 className="text-wrap py-4 text-3xl/tight font-medium md:text-6xl md:leading-tight">
               Be in-front of your customers everyday.
             </h1>
             <span className="space-y-6 text-base font-light text-white/80 md:max-w-md md:pt-5 md:text-lg md:font-normal">
@@ -222,7 +222,7 @@ export default function Features() {
                 Maximize Impact
               </span>
             </div>
-            <h1 className="text-wrap py-4 text-3xl font-medium md:text-6xl md:leading-tight">
+            <h1 className="text-wrap py-4 text-3xl/tight font-medium md:text-6xl md:leading-tight">
               Take control of your marketing campaigns
             </h1>
             <div className="space-y-6 text-base font-light text-white/80 md:pt-5 md:text-lg md:font-normal">
@@ -260,7 +260,7 @@ export default function Features() {
       </section>
 
       <section className="flex w-full max-w-screen-2xl flex-col gap-6 px-4 py-12 md:gap-0 md:px-20 md:py-28">
-        <h1 className="max-w-7xl text-3xl font-medium md:text-nowrap md:text-6xl/tight">
+        <h1 className="max-w-7xl text-3xl/tight font-medium md:text-nowrap md:text-6xl/tight">
           {"Made for emerging brand owners, "}
           <br className="hidden md:block" />
           {"e-commerce, instagram sellers, "}
@@ -318,11 +318,11 @@ export default function Features() {
         </div>
       </section>
 
-      <section className="mx-4 my-12 flex w-full max-w-screen-2xl flex-col items-center justify-center gap-10 rounded-3xl bg-gradient-to-br from-[#FAECFF] to-[#38CEFB] text-black md:mx-auto md:my-28 md:w-full md:gap-12">
-        <h2 className="max-w-5xl px-4 py-6 text-center font-hero text-4xl font-bold italic md:pb-10 md:pt-28 md:text-7xl">
+      <section className="mx-4 my-12 flex w-full max-w-screen-2xl flex-col items-center justify-center gap-10 rounded-3xl bg-gradient-to-br from-[#FAECFF] to-[#38CEFB] text-black md:mx-auto md:my-28 md:w-full">
+        <h2 className="max-w-[950px] px-4 py-6 text-center font-hero text-4xl/none font-bold italic md:pb-10 md:pt-20 md:text-7xl/none">
           Get multiple design options in a single click.
         </h2>
-        <Image className="w-56 md:w-96" src={FeaturesScreen3} alt="Features" />
+        <Image className="w-56 md:w-[22rem]" src={FeaturesScreen3} alt="Features" />
       </section>
 
       <section className="flex w-full max-w-screen-2xl flex-col gap-8 overflow-clip px-4 py-12 md:gap-20 md:px-20 md:py-32">

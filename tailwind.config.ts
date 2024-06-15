@@ -32,7 +32,7 @@ const config: Config = {
       "4xl": "2.25rem",
       "5xl": "2.625rem",
       "6xl": "3.5rem",
-      "7xl": "4.5rem",
+      "7xl": "4.25rem",
       "8xl": "6rem",
       "9xl": "8rem",
     },
