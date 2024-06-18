@@ -35,7 +35,7 @@ export default function AppDownloadQRCode() {
         </button>
       </div>
 
-      <div className="rounded-xl mx-auto bg-white p-8">
+      <div className="mx-auto rounded-xl bg-white p-8">
         <Image
           className="size-auto"
           src={`https://api.qrserver.com/v1/create-qr-code/?size=288x288&data=${StoreLinks[selected]}`}
@@ -46,7 +46,7 @@ export default function AppDownloadQRCode() {
         />
       </div>
 
-      <span className="mx-auto pt-6 text-center text-2xl md:text-xl md:font-light text-white/70">
+      <span className="mx-auto pt-6 text-center text-2xl text-white/70 md:text-xl md:font-light">
         Scan QR to download the mobile app
       </span>
     </>

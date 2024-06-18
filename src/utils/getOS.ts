@@ -15,4 +15,4 @@ export const getOS = (): OS => {
   else {
     return "unknown";
   }
-}
+};

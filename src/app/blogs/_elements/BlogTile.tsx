@@ -25,7 +25,7 @@ export default function BlogTile({ blog }: Props) {
         </p>
         <Link
           href={`/blogs/${blog.slug}`}
-          className="flex items-center gap-1.5 text-white hover:underline w-max"
+          className="flex w-max items-center gap-1.5 text-white hover:underline"
         >
           Learn More
           <TfiArrowTopRight />

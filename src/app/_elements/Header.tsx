@@ -48,7 +48,9 @@ export default function Header() {
             href={process.env.NEXT_PUBLIC_YOUTUBE_DEMO_LINK || ""}
             className="flex items-center justify-center gap-2 rounded-lg bg-[#181818] p-2 px-3 hover:bg-white/20 md:px-5"
           >
-            <span className="block text-xs md:text-sm font-normal">Watch demo</span>
+            <span className="block text-xs font-normal md:text-sm">
+              Watch demo
+            </span>
             <FaYoutube className="hidden size-5 text-red-600 md:block md:size-6" />
           </Link>
           <Link

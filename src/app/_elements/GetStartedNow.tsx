@@ -5,7 +5,7 @@ import { getOS } from "@/utils/getOS";
 
 export default function GetStartedNow() {
   const router = useRouter();
-  
+
   const routeToStore = () => {
     const os = getOS();
     if (os === "iOS") {
@@ -19,7 +19,7 @@ export default function GetStartedNow() {
 
   return (
     <button
-      className="relative z-10 inline-block bg-gradient-to-r from-[#E293FE] to-[#38CEFB] bg-clip-text font-semibold text-transparent hover:cursor-pointer transform transition-transform duration-500 hover:scale-110"
+      className="relative z-10 inline-block transform bg-gradient-to-r from-[#E293FE] to-[#38CEFB] bg-clip-text font-semibold text-transparent transition-transform duration-500 hover:scale-110 hover:cursor-pointer"
       onClick={routeToStore}
     >
       Get started now

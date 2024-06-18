@@ -51,7 +51,7 @@ export default function Footer() {
           ))}
         </div>
       </section>
-      <section className="rid-cols-1 mx-auto grid w-full max-w-sm gap-6 px-4 pt-12 md:max-w-11xl lg:grid-cols-3 md:gap-16 md:px-24 md:pt-32">
+      <section className="rid-cols-1 mx-auto grid w-full max-w-sm gap-6 px-4 pt-12 md:max-w-11xl md:gap-16 md:px-24 md:pt-32 lg:grid-cols-3">
         <div className="flex flex-col justify-start rounded-3xl bg-[#121212] p-5 md:rounded-[2.5rem] md:p-10">
           <h2 className="mb-6 text-2xl">
             AI designer that knows your brand. Powered by legendary models.
@@ -77,7 +77,7 @@ export default function Footer() {
 
           <div className="my-9 h-px bg-zinc-800 md:my-8" />
 
-          <div className="flex flex-wrap gap-4 justify-between text-sm">
+          <div className="flex flex-wrap justify-between gap-4 text-sm">
             <a
               className="text-zinc-500 transition-all duration-200 ease-in-out hover:text-zinc-400"
               href={process.env.NEXT_PUBLIC_PRIVACY_POLICY_URL}
