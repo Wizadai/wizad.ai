@@ -7,6 +7,7 @@ type Metadata = {
   publishedAt: string;
   category: string;
   summary: string;
+  featured?: boolean;
   image?: string;
 };
 
