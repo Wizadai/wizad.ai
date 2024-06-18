@@ -16,6 +16,8 @@
     "@next/mdx": "^14.2.3",
     "@tailwindcss/typography": "^0.5.13",
     "@types/mdx": "^2.0.13",
+    "embla-carousel": "^8.1.5",
+    "embla-carousel-react": "^8.1.5",
     "gray-matter": "^4.0.3",
     "next": "14.2.2",
     "react": "^18",

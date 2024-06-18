@@ -5,6 +5,8 @@ import { getBlogPosts } from "@/app/blogs/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { TfiArrowTopRight } from "react-icons/tfi";
+import FeaturedCarousel from "@/app/blogs/_elements/FeaturedCarousel";
+import CarouselTile from "@/app/blogs/_elements/CarouselTile";
 
 export default async function Page() {
   const blogs = await getBlogPosts();
@@ -35,41 +37,12 @@ export default async function Page() {
         </div>
       </section>
 
-      <section className="flex max-w-11xl flex-col px-4 py-10 md:px-20 md:py-20">
-        <div className="flex items-center justify-center rounded-2xl bg-neutral-920 p-3 w-full md:py-10">
-          <div className="relative flex flex-col overflow-hidden md:justify-center md:w-[89%]">
-            <h2 className="mb-4 w-full text-2xl/tight font-medium text-white md:w-[60%] md:text-4xl/none">
-              {featuredBlogs[0].metadata.title}
-            </h2>
-            {featuredBlogs[0].metadata.image && (
-              <div className="relative h-[16.75rem] md:h-72 w-full overflow-clip rounded-2xl">
-                <Image
-                  src={featuredBlogs[0].metadata.image}
-                  alt="image"
-                  fill
-                  style={{ objectFit: "cover" }}
-                />
-              </div>
-            )}
-            <span className="mb-4 pt-4 text-sm md:text-xs text-zinc-500">
-              {featuredBlogs[0].readingDuration} Min •{" "}
-              <time dateTime={featuredBlogs[0].metadata.publishedAt}>
-                {featuredBlogs[0].metadata.publishedAt}
-              </time>
-              <span> • </span>
-              <span className="uppercase text-white/80">
-                {featuredBlogs[0].metadata.category}
-              </span>
-            </span>
-            <Link
-              href={`/blogs/${featuredBlogs[0].slug}`}
-              className="flex items-center gap-1.5 text-white hover:underline w-max"
-            >
-              Learn More
-              <TfiArrowTopRight />
-            </Link>
-          </div>
-        </div>
+      <section className="flex max-w-11xl flex-col px-4 py-10 md:py-20">
+        <FeaturedCarousel options={{ dragFree: true }}>
+          {featuredBlogs.map((blog) => (
+            <CarouselTile key={blog.slug} blog={blog} />
+          ))}
+        </FeaturedCarousel>
       </section>
 
       {socialMediaBlogs.length > 0 && (
