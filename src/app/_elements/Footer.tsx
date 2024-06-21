@@ -51,8 +51,8 @@ export default function Footer() {
           ))}
         </div>
       </section>
-      <section className="rid-cols-1 mx-auto grid w-full max-w-sm gap-6 px-4 pt-12 md:max-w-11xl md:gap-16 md:px-24 md:pt-32 lg:grid-cols-3">
-        <div className="flex flex-col justify-start rounded-3xl bg-[#121212] p-5 md:rounded-[2.5rem] md:p-10">
+      <section className="mx-auto flex flex-wrap xl:flex-nowrap w-full max-w-sm gap-6 px-4 pt-12 md:max-w-11xl md:gap-16 md:px-24 md:pt-32">
+        <div className="flex flex-col max-w-md justify-start rounded-3xl bg-[#121212] p-5 md:rounded-[2.5rem] md:p-10">
           <h2 className="mb-6 text-2xl">
             AI designer that knows your brand. Powered by legendary models.
           </h2>
@@ -104,7 +104,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-6">
+        <div className="flex max-w-md flex-col gap-6">
           <div className="flex flex-col justify-start rounded-3xl bg-[#121212] p-5 md:rounded-[2.5rem] md:p-10">
             <h2 className="mb-6 text-xl font-light text-white/70 md:mb-7 md:text-2xl">
               Blog & Newsletter
@@ -162,7 +162,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="hidden flex-col justify-start rounded-3xl bg-[#121212] px-10 py-8 md:flex md:rounded-[2.5rem]">
+        <div className="hidden max-w-min flex-col justify-start rounded-3xl bg-[#121212] px-10 py-8 md:flex md:rounded-[2.5rem]">
           <AppDownloadQRCode />
         </div>
       </section>

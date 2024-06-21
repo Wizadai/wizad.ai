@@ -35,14 +35,14 @@ export default function AppDownloadQRCode() {
         </button>
       </div>
 
-      <div className="mx-auto rounded-xl bg-white p-8">
+      <div className="relative aspect-square rounded-xl bg-white p-8">
         <Image
-          className="size-auto"
+          className="p-4"
           src={`https://api.qrserver.com/v1/create-qr-code/?size=288x288&data=${StoreLinks[selected]}`}
           title="Scan the QR code to start experiencing Wizad now!"
           alt="QR Code for the selected store"
-          width={288}
-          height={288}
+          fill
+          style={{ objectFit: "contain" }}
         />
       </div>
 
