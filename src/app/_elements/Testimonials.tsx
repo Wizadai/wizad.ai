@@ -33,13 +33,17 @@ export default function Testimonials() {
           </li>
         ))}
       </ul>
-      <ul className="hidden items-start md:block md:max-w-9xl md:columns-3xs md:px-20">
-        {TestimonialsData.slice(1, 14).map((obj) => (
-          <li key={obj.ref} className="aspect-video py-2">
-            <TestimonialCard data={obj} />
-          </li>
-        ))}
-      </ul>
+      <div className="relative hidden md:block md:max-w-9xl md:h-[50rem] overflow-hidden md:mx-auto">
+        <ul className="items-start md:columns-2 lg:columns-3 xl:columns-4 md:px-20">
+          {TestimonialsData.reverse().map((obj) => (
+            <li key={obj.ref} className="aspect-video py-2">
+              <TestimonialCard data={obj} />
+            </li>
+          ))}
+        </ul>
+        <span className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black to-transparent" />
+      </div>
+      <button className="bg-[#2E2E2E] rounded-md px-6 py-2 max-w-max mx-auto">See more</button>
     </section>
   );
 }
@@ -67,7 +71,7 @@ const TestimonialCard = ({ data }: { data: Testimonial }) => {
             />
             <span>
               <p className="text-white/80 md:text-sm">{data.authorName}</p>
-              <p className="text-sm text-white/60 md:text-xs">
+              <p className="text-sm text-white/60 md:text-xs break-all">
                 @{data.authorAlias}
               </p>
             </span>
