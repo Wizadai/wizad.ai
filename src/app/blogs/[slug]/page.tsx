@@ -112,7 +112,7 @@ export default async function Page({ params }: Props) {
             </div>
           )}
 
-          <article className="prose prose-zinc prose-invert md:prose-xl prose-h2:my-4 prose-h2:text-2xl prose-h2:font-medium prose-p:text-base md:mx-auto md:w-[60%] md:prose-h2:my-6 md:prose-p:text-sm/normal">
+          <article className="prose prose-zinc prose-invert md:prose-xl prose-h2:my-4 prose-h1:my-4 prose-h2:text-2xl prose-h1:text-3xl prose-h1:font-medium prose-h2:font-medium prose-p:text-base prose-ul:text-base md:mx-auto md:w-[60%] md:prose-h2:my-6 md:prose-h1:my-6 md:prose-p:text-sm/normal md:prose-ul:text-sm/normal">
             <Markdown content={blog.content} />
           </article>
 
