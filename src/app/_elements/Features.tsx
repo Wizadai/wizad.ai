@@ -13,6 +13,7 @@ import Feature5M from "@/../public/assets/feature5-m.svg";
 import Feature5D from "@/../public/assets/feature5-d.png";
 import EmojiM from "@/../public/assets/emojis-M.png";
 import EmojiD from "@/../public/assets/emojis-D.png";
+import MagicLogo from "@/../public/assets/magic-logo.png";
 
 import Image from "next/image";
 import { ReactNode } from "react";
@@ -128,8 +129,8 @@ export default function Features() {
       </section>
       {/* Turn product images in your mobile gallery to professional posters */}
       {/* INCOMPLETE!!! it will be completed after getting video to insert here */}
-      {/* <section className="flex w-full max-w-screen-2xl flex-col items-center justify-center py-6 md:py-20">
-        <div className="flex w-full flex-wrap rounded-3xl bg-neutral-920 p-3 md:p-10">
+      <section className="flex w-full max-w-screen-2xl flex-col items-center justify-center py-6 md:py-20">
+        <div className="relative h-[46.875rem] flex w-full flex-wrap rounded-3xl bg-neutral-920 px-3 pt-3 md:px-10 md:pt-10 md:h-[59.375rem]">
           <div className="w-full md:w-3/5">
             <div className="flex items-center space-x-2">
               <Image src={Boxes} alt="Boxes" width={16} />
@@ -139,7 +140,7 @@ export default function Features() {
                 Product Photography Posters
               </span>
             </div>
-            <h1 className="text-wrap py-4 text-3xl/tight font-medium md:text-6xl md:leading-tight">
+            <h1 className="py-4 text-3xl/tight font-medium md:text-6xl md:leading-tight text-balance">
               Turn product images in your mobile gallery to professional
               posters!
             </h1>
@@ -155,10 +156,15 @@ export default function Features() {
               <GetStartedNow />
             </span>
           </div>
-          // image
+          <div className="absolute w-full justify-end bottom-0 md:flex md:w-[65%] md:left-0">
+            <Image src={MagicLogo} alt="MagicLogo" style={{objectFit: "fill"}}/>
+          </div>
+          <div className="h-full w-full justify-end bottom-0 md:flex md:w-[30%] md:right-0 bg-blue-600">
+            {/* <video src={DummyVideo}/> */}
+          </div>
         </div>
       </section>
-       */}
+      
       {/* Be in-front of your customers everyday. */}
       <section className="flex w-full max-w-screen-2xl flex-col items-center justify-center py-6 md:py-20">
         <div className="relative flex h-[46.875rem] w-full overflow-clip rounded-3xl bg-neutral-920 md:h-[59.375rem]">
