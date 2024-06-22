@@ -1,5 +1,4 @@
 import Footer from "@/app/_elements/Footer";
-import Header from "@/app/_elements/Header";
 import HeroSection from "@/app/_elements/Hero";
 import Features from "@/app/_elements/Features";
 import CustomerSupport from "@/app/_elements/CustomerSupport";
