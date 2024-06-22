@@ -22,7 +22,7 @@ export default function TestimonialsWrapper({ children }: { children: React.Reac
         )}
       </div>
       <button
-        className="mx-auto max-w-max rounded-md bg-[#2E2E2E] px-6 py-2"
+        className="mx-auto max-w-max rounded-md bg-[#2E2E2E] px-6 py-2 hover:bg-white/20"
         onClick={handleExpand}
         ref={buttonRef}
       >
