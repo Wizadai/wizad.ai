@@ -130,7 +130,7 @@ export default function Features() {
       {/* Turn product images in your mobile gallery to professional posters */}
       {/* INCOMPLETE!!! it will be completed after getting video to insert here */}
       <section className="flex w-full max-w-screen-2xl flex-col items-center justify-center py-6 md:py-20">
-        <div className="relative h-[46.875rem] flex w-full flex-wrap rounded-3xl bg-neutral-920 px-3 pt-3 md:px-10 md:pt-10 md:h-[59.375rem]">
+        <div className="relative h-[46.875rem] flex w-full flex-wrap rounded-3xl justify-between bg-neutral-920 px-3 pt-3 md:px-10 md:pt-10 md:h-[52.5rem]">
           <div className="w-full md:w-3/5">
             <div className="flex items-center space-x-2">
               <Image src={Boxes} alt="Boxes" width={16} />
@@ -156,11 +156,17 @@ export default function Features() {
               <GetStartedNow />
             </span>
           </div>
-          <div className="absolute w-full justify-end bottom-0 md:flex md:w-[65%] md:left-0">
-            <Image src={MagicLogo} alt="MagicLogo" style={{objectFit: "fill"}}/>
+          <div className="absolute w-full bottom-0 md:flex md:w-[72%] md:left-0">
+            <div className="relative w-full h-full">
+              <Image src={MagicLogo} alt="MagicLogo" style={{objectFit: "fill"}}/>
+              <span className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-neutral-920 to-transparent" />
+            </div>
           </div>
-          <div className="h-full w-full justify-end bottom-0 md:flex md:w-[30%] md:right-0 bg-blue-600">
-            {/* <video src={DummyVideo}/> */}
+          <div className="mx-auto max-w-sm w-1/2 self-end border-x-8 border-t-8 rounded-t-3xl overflow-clip border-[#2A2A2A] justify-self-end bottom-0 md:flex md:w-[25%] md:mx-0">
+            <video autoPlay muted loop>
+              <source src="dummy-video.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       </section>
@@ -246,7 +252,7 @@ export default function Features() {
               style={{ objectFit: "fill" }}
             />
           </div>
-          <div className="absolute hidden w-0 justify-end md:bottom-0 md:right-0 md:flex md:w-[80%]">
+          <div className="absolute hidden w-0 md:bottom-0 md:right-0 md:flex md:w-[80%]">
             <Image
               src={Feature5D}
               alt="Feature Screen 5"
