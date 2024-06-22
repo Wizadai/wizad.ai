@@ -162,7 +162,7 @@ export default function Features() {
               <span className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-neutral-920 to-transparent" />
             </div>
           </div>
-          <div className="mx-auto max-w-sm w-1/2 self-end border-x-8 border-t-8 rounded-t-3xl overflow-clip border-[#2A2A2A] justify-self-end bottom-0 md:flex md:w-[25%] md:mx-0">
+          <div className="mx-auto max-w-sm w-1/2 self-end border-x-4 border-t-4 md:border-x-8 md:border-t-8 rounded-t-3xl overflow-clip border-[#2A2A2A] justify-self-end bottom-0 md:flex md:w-[25%] md:mx-0">
             <video autoPlay muted loop>
               <source src="dummy-video.mp4" type="video/mp4" />
               Your browser does not support the video tag.
