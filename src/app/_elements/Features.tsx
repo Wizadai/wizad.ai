@@ -21,8 +21,10 @@ import { BiSolidTimeFive } from "react-icons/bi";
 import { FaPiggyBank } from "react-icons/fa6";
 import { TbCardsFilled } from "react-icons/tb";
 import GetStartedNow from "@/app/_elements/GetStartedNow";
+import getBusinessLogos from "@/utils/getBusinessLogos";
 
 export default function Features() {
+  const businessLogos = getBusinessLogos();
   return (
     <div className="mx-auto max-w-sm px-4 md:max-w-11xl md:px-28 md:py-20">
       <section className="flex w-full max-w-screen-2xl flex-wrap items-center justify-center gap-6 py-12 md:gap-20">
@@ -333,17 +335,12 @@ export default function Features() {
       </section>
 
       <section className="flex w-full max-w-screen-2xl flex-col gap-8 overflow-clip px-4 py-12 md:gap-20 md:px-20 md:py-32">
-        <div className="flex flex-col items-center justify-center gap-12 text-white/70">
+        <div className="flex flex-col items-center justify-center gap-8 text-white/70">
           <span className="text-sm font-medium md:text-xl">
             Businesses that already designs with Wizad
           </span>
-          <div className="flex gap-10">
-            {[1, 2, 3, 4, 5, 6, 7, 8].map((entry, key) => (
-              <div
-                key={key}
-                className="h-8 w-20 animate-pulse rounded-lg bg-zinc-800"
-              ></div>
-            ))}
+          <div className="relative flex gap-10 h-20 md:h-30 w-full">
+            <Image className="max-w-[6.667rem] md:max-w-40" src={businessLogos[0].src} alt={businessLogos[0].alt} fill style={{ objectFit: "contain"}}/>
           </div>
         </div>
 
