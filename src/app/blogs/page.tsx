@@ -2,9 +2,6 @@ import CustomerSupport from "@/app/_elements/CustomerSupport";
 import Footer from "@/app/_elements/Footer";
 import BlogTile from "@/app/blogs/_elements/BlogTile";
 import { getBlogPosts } from "@/app/blogs/utils";
-import Image from "next/image";
-import Link from "next/link";
-import { TfiArrowTopRight } from "react-icons/tfi";
 import FeaturedCarousel from "@/app/blogs/_elements/FeaturedCarousel";
 import CarouselTile from "@/app/blogs/_elements/CarouselTile";
 
