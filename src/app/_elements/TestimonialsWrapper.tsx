@@ -2,7 +2,11 @@
 
 import React, { useState, useRef } from "react";
 
-export default function TestimonialsWrapper({ children }: { children: React.ReactNode }) {
+export default function TestimonialsWrapper({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const [isExpanded, setIsExpanded] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const handleExpand = () => {
@@ -10,10 +14,10 @@ export default function TestimonialsWrapper({ children }: { children: React.Reac
     if (isExpanded) {
       buttonRef.current?.scrollIntoView({ behavior: "smooth" });
     }
-  }
+  };
   return (
     <>
-    <div
+      <div
         className={`relative ${isExpanded ? "h-auto" : "h-[46.875rem] md:h-[50rem]"} overflow-hidden md:mx-auto md:max-w-9xl`}
       >
         {children}
@@ -28,6 +32,6 @@ export default function TestimonialsWrapper({ children }: { children: React.Reac
       >
         See {isExpanded ? "less" : "more"}
       </button>
-      </>
+    </>
   );
 }

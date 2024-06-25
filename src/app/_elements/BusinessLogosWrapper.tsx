@@ -1,7 +1,7 @@
 "use client";
 import { EmblaOptionsType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
-import AutoScroll from 'embla-carousel-auto-scroll'
+import AutoScroll from "embla-carousel-auto-scroll";
 
 type PropType = {
   children: React.ReactNode;
@@ -14,12 +14,12 @@ export default function BusinessLogosWrapper(props: PropType) {
     AutoScroll({
       playOnInit: true,
       stopOnInteraction: false,
-    })
+    }),
   ]);
 
   return (
-    <div ref={emblaRef} className="overflow-hidden w-full">
-      <div className="backface-hidden flex px-8 w-full gap-2 md:gap-10 relative h-20 md:px-56">
+    <div ref={emblaRef} className="w-full overflow-hidden">
+      <div className="backface-hidden relative flex h-20 w-full gap-2 px-8 md:gap-10 md:px-56">
         {props.children}
       </div>
     </div>

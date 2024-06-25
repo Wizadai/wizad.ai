@@ -10,7 +10,7 @@ const getBusinessLogos = () => {
   );
   try {
     const imageFiles = fs.readdirSync(logosDirPath);
-    
+
     const imageSrcs = imageFiles.map((file) => ({
       src: `/assets/business-logos/${file}`,
       alt: file.replace(/\.[^/.]+$/, ""),

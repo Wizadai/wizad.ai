@@ -6,9 +6,7 @@ export default function BusinessLogos() {
   const businessLogos = getBusinessLogos();
 
   return (
-    <BusinessLogosWrapper 
-    options={{ loop: true }}
-    >
+    <BusinessLogosWrapper options={{ loop: true }}>
       {businessLogos.map((logo, index) => (
         <Image
           className="aspect-video"
