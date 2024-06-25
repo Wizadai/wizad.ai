@@ -25,7 +25,7 @@ import BusinessLogos from "./BusinessLogos";
 
 export default function Features() {
   return (
-    <div className="mx-auto max-w-sm px-4 md:max-w-11xl md:px-28 md:py-20">
+    <div className="mx-auto flex max-w-sm flex-col items-center justify-center px-4 md:max-w-11xl md:px-28 md:py-20">
       <section className="flex w-full max-w-screen-2xl flex-wrap items-center justify-center gap-6 py-12 md:gap-20">
         <div className="w-full md:w-2/5">
           <h1 className="pb-4 text-3xl/tight font-medium md:self-start md:pb-7 md:text-6xl/tight">
@@ -131,7 +131,7 @@ export default function Features() {
       {/* Turn product images in your mobile gallery to professional posters */}
       {/* INCOMPLETE!!! it will be completed after getting video to insert here */}
       <section className="flex w-full max-w-screen-2xl flex-col items-center justify-center py-6 md:py-20">
-        <div className="relative h-[46.875rem] flex w-full flex-wrap rounded-3xl justify-between bg-neutral-920 px-3 pt-3 md:px-10 md:pt-10 md:h-[52.5rem]">
+        <div className="relative flex h-[46.875rem] w-full flex-wrap justify-between rounded-3xl bg-neutral-920 px-3 pt-3 md:h-[52.5rem] md:px-10 md:pt-10">
           <div className="w-full md:w-3/5">
             <div className="flex items-center space-x-2">
               <Image src={Boxes} alt="Boxes" width={16} />
@@ -141,7 +141,7 @@ export default function Features() {
                 Product Photography Posters
               </span>
             </div>
-            <h1 className="py-4 text-3xl/tight font-medium md:text-6xl md:leading-tight text-balance">
+            <h1 className="text-balance py-4 text-3xl/tight font-medium md:text-6xl md:leading-tight">
               Turn product images in your mobile gallery to professional
               posters!
             </h1>
@@ -157,13 +157,17 @@ export default function Features() {
               <GetStartedNow />
             </span>
           </div>
-          <div className="absolute w-full bottom-0 md:flex md:w-[72%] md:left-0">
-            <div className="relative w-full h-full">
-              <Image src={MagicLogo} alt="MagicLogo" style={{objectFit: "fill"}}/>
-              <span className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-neutral-920 to-transparent" />
+          <div className="absolute bottom-0 w-full md:left-0 md:flex md:w-[72%]">
+            <div className="relative h-full w-full">
+              <Image
+                src={MagicLogo}
+                alt="MagicLogo"
+                style={{ objectFit: "fill" }}
+              />
+              <span className="absolute bottom-0 left-0 h-1/2 w-full bg-gradient-to-t from-neutral-920 to-transparent" />
             </div>
           </div>
-          <div className="mx-auto max-w-sm w-1/2 self-end border-x-4 border-t-4 md:border-x-8 md:border-t-8 rounded-t-3xl overflow-clip border-[#2A2A2A] justify-self-end bottom-0 md:flex md:w-[25%] md:mx-0">
+          <div className="bottom-0 mx-auto w-1/2 max-w-sm self-end justify-self-end overflow-clip rounded-t-3xl border-x-4 border-t-4 border-[#2A2A2A] md:mx-0 md:flex md:w-[25%] md:border-x-8 md:border-t-8">
             <video autoPlay muted loop>
               <source src="dummy-video.mp4" type="video/mp4" />
               Your browser does not support the video tag.
@@ -171,7 +175,7 @@ export default function Features() {
           </div>
         </div>
       </section>
-      
+
       {/* Be in-front of your customers everyday. */}
       <section className="flex w-full max-w-screen-2xl flex-col items-center justify-center py-6 md:py-20">
         <div className="relative flex h-[46.875rem] w-full overflow-clip rounded-3xl bg-neutral-920 md:h-[59.375rem]">
