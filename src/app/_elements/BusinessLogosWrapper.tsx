@@ -19,7 +19,7 @@ export default function BusinessLogosWrapper(props: PropType) {
 
   return (
     <div ref={emblaRef} className="overflow-hidden w-full">
-      <div className="backface-hidden flex w-full gap-1 md:gap-10 relative h-20 px-56">
+      <div className="backface-hidden flex px-8 w-full gap-2 md:gap-10 relative h-20 md:px-56">
         {props.children}
       </div>
     </div>
