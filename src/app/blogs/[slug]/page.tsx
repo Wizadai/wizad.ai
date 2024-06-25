@@ -112,7 +112,7 @@ export default async function Page({ params }: Props) {
             </div>
           )}
 
-          <article className="prose prose-zinc prose-invert md:prose-xl prose-h1:my-4 prose-h1:text-3xl prose-h1:font-medium prose-h2:my-4 prose-h2:text-2xl prose-h2:font-medium prose-p:text-base prose-ul:text-base md:mx-auto md:w-[60%] md:prose-h1:my-6 md:prose-h2:my-6 md:prose-p:text-sm/normal md:prose-ul:text-sm/normal">
+          <article className="prose prose-zinc prose-invert prose-img:max-h-[40rem] prose-img:mx-auto md:prose-xl prose-h1:my-4 prose-h1:text-3xl prose-h1:font-medium prose-h2:my-4 prose-h2:text-2xl prose-h2:font-medium prose-p:text-base prose-ul:text-base md:mx-auto md:w-[60%] md:prose-h1:my-6 md:prose-h2:my-6 md:prose-p:text-sm/normal md:prose-ul:text-sm/normal">
             <Markdown content={blog.content} />
           </article>
 
@@ -147,12 +147,13 @@ export default async function Page({ params }: Props) {
 const ShareLinks = () => {
   return (
     <div className="flex items-center gap-6 text-white/70">
-      <button className="rounded bg-neutral-800 p-2">
+      <button className="rounded aspect-square bg-neutral-800 p-2">
         <Image
           src={RiLink}
           alt="ri-link"
           placeholder="blur"
           className="size-5 transform transition-transform duration-500 hover:scale-125"
+          style={{ objectFit: "contain" }}
         />
       </button>
       <button>
