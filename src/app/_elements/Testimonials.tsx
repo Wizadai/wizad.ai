@@ -1,6 +1,7 @@
-import TestimonialsData from "@/assets/testimonials.json";
+import TestimonialsData from "@/../public/assets/testimonials.json";
 import Image from "next/image";
-import { BiLogoProductHunt } from "react-icons/bi";
+import { TiSocialTwitter } from "react-icons/ti";
+import TestimonialsWrapper from "./TestimonialsWrapper";
 
 type Testimonial = (typeof TestimonialsData)[number];
 
@@ -17,57 +18,64 @@ type Testimonial = (typeof TestimonialsData)[number];
 // };
 
 export default function Testimonials() {
+  const reversedTestimonialsData = [...TestimonialsData].reverse();
+
   return (
     <section
       id="testimonials"
-      className="flex flex-col gap-6 md:gap-12 w-full max-w-screen-2xl px-4 py-12 md:px-32 md:py-32 mx-auto"
+      className="mx-auto flex w-full max-w-11xl flex-col gap-6 px-4 py-12 md:gap-12 md:px-32 md:py-32"
     >
-      <h1 className="text-2xl md:text-6xl font-medium text-white/90 text-center md:pb-12 md:px-18">
+      <h1 className="md:px-18 text-center text-2xl font-medium text-white/90 md:text-5xl md:font-normal">
         See why people love wizad
       </h1>
 
-      <ul className="flex md:hidden flex-col gap-4">
-        {TestimonialsData.slice(1, 8).map((obj) => (
-          <li key={obj.ref}>
-            <TestimonialCard data={obj} />
-          </li>
-        ))}
-      </ul>
-      <ul className="hidden md:flex flex-col flex-wrap gap-4 max-h-[80vh] overflow-x-auto">
-        {TestimonialsData.slice(1, 14).map((obj) => (
-          <li key={obj.ref}>
-            <TestimonialCard data={obj} />
-          </li>
-        ))}
-      </ul>
+      <TestimonialsWrapper>
+        <ul className="items-start md:columns-2 md:px-20 lg:columns-3 xl:columns-4">
+          {reversedTestimonialsData.map((obj) => (
+            <li key={obj.ref} className="aspect-video py-2">
+              <TestimonialCard data={obj} />
+            </li>
+          ))}
+        </ul>
+      </TestimonialsWrapper>
     </section>
   );
 }
 
 const TestimonialCard = ({ data }: { data: Testimonial }) => {
   return (
-    <a href={data.ref} target="_blank" rel="noopener">
-      <div className="flex flex-col gap-4 bg-[#131313] rounded-3xl md:max-w-96 p-6">
-        <div className="flex justify-between">
-          <div className="flex flex-row gap-4">
+    <a
+      href={data.ref}
+      target="_blank"
+      rel="noopener"
+      className="break-inside-avoid"
+    >
+      <div className="flex break-inside-avoid flex-col gap-4 rounded-3xl bg-neutral-920 p-6 md:max-w-96">
+        <div className="flex break-inside-avoid justify-between">
+          <div className="flex break-inside-avoid gap-4">
             <Image
               src={data.authorAvatarUrl}
               alt="Avatar of author"
               width={48}
               height={48}
-              className="md:size-12 rounded-full overflow-clip"
+              className="aspect-square overflow-clip rounded-full md:size-12"
+              style={{
+                objectFit: "contain",
+              }}
             />
             <span>
-              <p className="text-white/80 font-semibold">{data.authorName}</p>
-              <p className="text-white/60 font-mono text-sm">
+              <p className="text-white/80 md:text-sm">{data.authorName}</p>
+              <p className="break-all text-sm text-white/60 md:text-xs">
                 @{data.authorAlias}
               </p>
             </span>
           </div>
-          <BiLogoProductHunt className="text-2xl text-white/70" />
+          <TiSocialTwitter className="text-2xl text-white/70" />
         </div>
 
-        <span className="font-medium">{data.content}</span>
+        <span className="break-inside-avoid md:text-[0.825rem]">
+          {data.content}
+        </span>
       </div>
     </a>
   );

@@ -1,20 +1,19 @@
 import CustomerSupport from "@/app/_elements/CustomerSupport";
 import Footer from "@/app/_elements/Footer";
-import Header from "@/app/_elements/Header";
 import BlogTile from "@/app/blogs/_elements/BlogTile";
 import { getBlogFromSlug, getBlogPosts } from "@/app/blogs/utils";
 import { baseUrl } from "@/app/sitemap";
 import Markdown from "@/components/Markdown";
 import { Metadata } from "next";
 import Image from "next/image";
+import { FaThreads } from "react-icons/fa6";
+import { BsTwitterX } from "react-icons/bs";
+import RiLink from "@/../public/assets/ri_link-m.png";
 import {
-  FaInstagram,
-  FaLink,
-  FaLinkedin,
-  FaMeta,
-  FaThreads,
-  FaTwitter,
-} from "react-icons/fa6";
+  BiLogoInstagramAlt,
+  BiLogoLinkedinSquare,
+  BiLogoFacebookSquare,
+} from "react-icons/bi";
 
 type Props = { params: { slug: string } };
 
@@ -69,61 +68,65 @@ export default async function Page({ params }: Props) {
   }
 
   return (
-    <main className="flex flex-col">
-      <Header />
-
-      <section className="flex flex-col w-full py-10 px-4 md:py-24">
-        <div className="flex flex-col gap-10 w-full mx-auto items-center px-4 max-w-7xl">
+    <>
+      <section className="flex w-full flex-col px-4 py-10 md:pb-12 md:pt-24">
+        <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-10 px-4">
           <div className="flex flex-col items-center gap-5">
-            <span className="text-zinc-500 text-sm space-x-1">
+            <span className="space-x-1 text-sm text-zinc-500 md:text-xs">
               <span>{blog.readingDuration} Min</span>
               <span> • </span>
               <time dateTime={blog.metadata.publishedAt}>
                 {blog.metadata.publishedAt}
               </time>
               <span> • </span>
-              <span className="uppercase text-white">
+              <span className="uppercase text-white/80">
                 {blog.metadata.category}
               </span>
             </span>
-            <h1 className="text-3xl md:text-7xl/tight font-medium bg-gradient-to-r from-[#E293FE] to-[#38CEFB] inline-block text-transparent bg-clip-text text-center">
+            <h1 className="inline-block bg-gradient-to-r from-[#E293FE] to-[#38CEFB] bg-clip-text text-center text-3xl/tight font-medium text-transparent md:max-w-4xl md:text-6xl/tight">
               {blog.metadata.title}
             </h1>
           </div>
-          <div className="flex flex-col items-center justify-center gap-4">
-            <span className="text-white/65 font-light">Share to</span>
+          <div className="flex flex-col items-center justify-center gap-4 md:flex-row">
+            <span className="font-extralight text-white/70 md:text-sm">
+              Share to
+            </span>
             <ShareLinks />
           </div>
         </div>
       </section>
 
-      <section className="flex flex-col w-full py-3 px-4">
-        <div className="flex flex-col md:gap-12 gap-6 bg-zinc-900 rounded-2xl py-5 px-3 md:py-10 md:px-60 max-w-7xl mx-auto">
+      <section className="flex w-full flex-col px-4 py-3">
+        <div className="mx-auto flex max-w-10xl flex-col gap-6 rounded-2xl bg-neutral-920 px-3 py-5 md:w-[90%] md:gap-8 md:px-48 md:py-10">
           {blog.metadata.image && (
-            <Image
-              className="rounded-2xl overflow-hidden w-full"
-              src={blog.metadata.image}
-              alt="blog cover image"
-              width={320}
-              height={124}
-            />
+            <div className="relative h-[31.25rem] w-full overflow-hidden rounded-2xl">
+              <Image
+                fill
+                style={{
+                  objectFit: "cover",
+                  objectPosition: "center",
+                }}
+                src={blog.metadata.image}
+                alt="blog cover image"
+              />
+            </div>
           )}
 
-          <article className="prose md:mx-auto md:prose-xl prose-zinc prose-invert">
+          <article className="prose prose-zinc prose-invert prose-img:max-h-[40rem] prose-img:mx-auto md:prose-xl prose-h1:my-4 prose-h1:text-3xl prose-h1:font-medium prose-h2:my-4 prose-h2:text-2xl prose-h2:font-medium prose-p:text-base prose-ul:text-base md:mx-auto md:w-[60%] md:prose-h1:my-6 md:prose-h2:my-6 md:prose-p:text-sm/normal md:prose-ul:text-sm/normal">
             <Markdown content={blog.content} />
           </article>
 
-          <div className="flex items-center justify-end gap-4">
-            <span className="text-white/65 font-light">Share to</span>
+          <div className="mx-auto flex flex-col items-center justify-end gap-4 md:w-[60%] md:flex-row">
+            <span className="font-light text-white/65">Share to</span>
             <ShareLinks />
           </div>
         </div>
       </section>
 
       {!!otherBlogs.length && (
-        <section className="flex flex-col max-w-7xl mx-auto md:px-20 md:py-24 py-10 px-4 gap-10">
+        <section className="mx-auto flex max-w-10xl flex-col gap-10 px-4 py-10 md:px-20 md:py-24">
           <div>
-            <span className="text-2xl font-hero">Read next</span>
+            <span className="font-hero text-2xl not-italic">Read next</span>
           </div>
           <ul className="flex flex-col gap-8 md:gap-12">
             {otherBlogs.map((blog) => (
@@ -137,30 +140,36 @@ export default async function Page({ params }: Props) {
 
       <CustomerSupport />
       <Footer />
-    </main>
+    </>
   );
 }
 
 const ShareLinks = () => {
   return (
-    <div className="flex gap-6 items-center text-white/70">
-      <button>
-        <FaLink className="size-6" />
+    <div className="flex items-center gap-6 text-white/70">
+      <button className="rounded aspect-square bg-neutral-800 p-2">
+        <Image
+          src={RiLink}
+          alt="ri-link"
+          placeholder="blur"
+          className="size-5 transform transition-transform duration-500 hover:scale-125"
+          style={{ objectFit: "contain" }}
+        />
       </button>
       <button>
-        <FaInstagram className="size-6" />
+        <BiLogoInstagramAlt className="size-6 transform transition-transform duration-500 hover:scale-125" />
       </button>
       <button>
-        <FaLinkedin className="size-6" />
+        <BiLogoLinkedinSquare className="size-6 transform transition-transform duration-500 hover:scale-125" />
       </button>
       <button>
-        <FaTwitter className="size-6" />
+        <BsTwitterX className="size-5 transform transition-transform duration-500 hover:scale-125" />
       </button>
       <button>
-        <FaMeta className="size-6" />
+        <BiLogoFacebookSquare className="size-6 transform transition-transform duration-500 hover:scale-125" />
       </button>
       <button>
-        <FaThreads className="size-6" />
+        <FaThreads className="size-6 transform transition-transform duration-500 hover:scale-125" />
       </button>
     </div>
   );

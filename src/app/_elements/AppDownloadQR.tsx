@@ -10,9 +10,9 @@ export default function AppDownloadQRCode() {
 
   return (
     <>
-      <div className="flex gap-6 mx-auto pb-6">
+      <div className="mx-auto flex gap-6 pb-6">
         <button
-          className={`rounded-lg text-lg flex gap-3 justify-center items-center px-3 py-2 ${
+          className={`flex items-center justify-center gap-3 rounded-lg px-3 py-2 text-lg ${
             selected === "appstore"
               ? "bg-[#282828] text-white"
               : "bg-[#1D1D1D] bg-opacity-50 text-zinc-500"
@@ -20,10 +20,10 @@ export default function AppDownloadQRCode() {
           onClick={() => setSelected("appstore")}
         >
           <IoLogoAppleAppstore className="text-2xl" />
-          <span>App Store</span>
+          <span className="text-lg md:text-base">Appstore</span>
         </button>
         <button
-          className={`rounded-lg text-lg flex gap-3 justify-center items-center px-2 py-1 ${
+          className={`flex items-center justify-center gap-3 rounded-lg px-2 py-1 text-lg ${
             selected === "playstore"
               ? "bg-[#282828] text-white"
               : "bg-[#1D1D1D] bg-opacity-50 text-white/60"
@@ -31,22 +31,22 @@ export default function AppDownloadQRCode() {
           onClick={() => setSelected("playstore")}
         >
           <IoLogoGooglePlaystore className="text-2xl" />
-          <span>Play Store</span>
+          <span className="text-lg md:text-base">Playstore</span>
         </button>
       </div>
 
-      <div className="p-8 bg-white rounded-xl">
+      <div className="relative aspect-square rounded-xl bg-white p-8">
         <Image
-          className="size-72"
+          className="p-4"
           src={`https://api.qrserver.com/v1/create-qr-code/?size=288x288&data=${StoreLinks[selected]}`}
           title="Scan the QR code to start experiencing Wizad now!"
           alt="QR Code for the selected store"
-          width={288}
-          height={288}
+          fill
+          style={{ objectFit: "contain" }}
         />
       </div>
 
-      <span className="text-white/70 text-2xl mx-auto text-center pt-6">
+      <span className="mx-auto pt-6 text-center text-2xl text-white/70 md:text-xl md:font-light">
         Scan QR to download the mobile app
       </span>
     </>

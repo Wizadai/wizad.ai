@@ -1,7 +1,7 @@
 import Image from "next/image";
 
-import AppStoreDownload from "@/assets/download-appstore.svg";
-import PlayStoreDownload from "@/assets/download-playstore.png";
+import AppStoreDownload from "@/../public/assets/download-appstore.svg";
+import PlayStoreDownload from "@/../public/assets/download-playstore.png";
 
 const StoreButton = {
   appstore: AppStoreDownload,
@@ -21,7 +21,7 @@ export default function AppDownloadButton({ store }: { store: Store }) {
       href={StoreLinks[store]}
       target="_blank"
       rel="noopener"
-      className="rounded-2xl p-2 md:p-5 bg-white/10"
+      className="transform rounded-2xl bg-white/10 p-2 transition-transform duration-500 hover:scale-110 md:p-5"
     >
       <Image
         src={StoreButton[store]}

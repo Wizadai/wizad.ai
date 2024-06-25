@@ -3,18 +3,18 @@ import { subscribeToNewsletter } from "@/app/actions";
 export default function SubscribeToNewsletter() {
   return (
     <form
-      className="flex gap-6 items-center pt-20"
+      className="flex flex-col items-center gap-2 pt-5 md:pt-12"
       action={subscribeToNewsletter}
     >
       <input
         name="email"
         type="email"
-        className="p-4 bg-[#1D1D1D] placeholder:text-zinc-500 outline-none focus:ring-2 focus:ring-zinc-700 transition-all duration-200 ease-in-out rounded-lg w-full"
+        className="w-full rounded-lg bg-[#1D1D1D] p-4 outline-none transition-all duration-200 ease-in-out placeholder:text-zinc-500 focus:ring-2 focus:ring-zinc-700"
         placeholder="Enter your email id"
       />
       <button
         type="submit"
-        className="px-6 py-4 bg-white/10 hover:bg-white/20 rounded-lg font-medium transition-all duration-200 ease-in-out"
+        className="w-full rounded-lg bg-white/10 px-6 py-3 font-medium transition-all duration-200 ease-in-out hover:bg-white/20"
       >
         Subscribe
       </button>

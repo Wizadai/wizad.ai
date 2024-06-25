@@ -15,6 +15,35 @@ const config: Config = {
       backgroundImage: {
         "hero-gradient": "url('/bg-hero-gradient.png')",
       },
+      colors: {
+        neutral: {
+          920: "#131313",
+        },
+      },
+      spacing: {
+        30: "7.5rem",
+      },
+      maxWidth: {
+        sm: "23.4375rem",
+        "9xl": "90rem",
+        "10xl": "107.5rem",
+        "11xl": "120rem",
+      },
+    },
+    fontSize: {
+      xs: "0.75rem",
+      sm: "0.875rem",
+      base: "1rem",
+      lg: "1.125rem",
+      xl: "1.25rem",
+      "2xl": "1.5rem",
+      "3xl": "1.875rem",
+      "4xl": "2.25rem",
+      "5xl": "2.625rem",
+      "6xl": "3.5rem",
+      "7xl": "4.25rem",
+      "8xl": "6rem",
+      "9xl": "8rem",
     },
   },
   plugins: [require("@tailwindcss/typography")],

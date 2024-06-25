@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Exo } from "next/font/google";
 import "./globals.css";
+import Header from "./_elements/Header";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -9,6 +10,7 @@ const inter = Inter({
 });
 
 const exo = Exo({
+  style: ["italic", "normal"],
   subsets: ["latin"],
   display: "swap",
   variable: "--font-exo",
@@ -27,7 +29,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="bg-black text-white">
       <body className={`${inter.variable} ${exo.variable} font-sans`}>
-        {children}
+        <main className="flex flex-col">
+          <Header />
+          {children}
+        </main>
       </body>
     </html>
   );

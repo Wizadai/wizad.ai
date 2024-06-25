@@ -1,12 +1,11 @@
 import Image from "next/image";
-import logo from "@/assets/logo-footer.png";
+import logo from "@/../public/assets/logo-footer.png";
 import {
   BiLogoInstagramAlt,
   BiLogoLinkedinSquare,
-  BiLogoMeta,
-  BiLogoTwitter,
+  BiLogoFacebookSquare,
 } from "react-icons/bi";
-import { useState } from "react";
+import { BsTwitterX } from "react-icons/bs";
 import SubscribeToNewsletter from "@/app/_elements/SubscribeToNewsletter";
 import AppDownloadQRCode from "@/app/_elements/AppDownloadQR";
 import AppDownloadButton from "@/app/_elements/AppDownloadButton";
@@ -14,28 +13,30 @@ import { FaCheck } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer id="footer" className="flex flex-col gap-2 w-full">
-      <section className="flex flex-col gap-10 md:gap-20 justify-center items-center bg-hero-gradient md:bg-cover bg-bottom px-4 py-12 md:px-60 md:py-32">
-        <div className="flex flex-col justify-center items-center gap-6 md:gap-8 w-full max-w-[1440px] mx-auto">
-          <span className="italic font-medium text-center text-xl md:text-2xl max-w-2xl ">
+    <footer id="footer" className="flex w-full flex-col gap-2">
+      <section className="flex flex-col items-center justify-center gap-10 bg-hero-gradient bg-bottom px-4 py-12 md:gap-20 md:bg-cover md:py-32">
+        <div className="flex w-full max-w-9xl flex-col flex-wrap items-center justify-center gap-6 md:gap-8">
+          <span className="max-w-lg text-center text-xl font-medium italic md:text-lg">
             {`"You don't have a choice on whether you do social media, The question is how well you do it"`}
           </span>
 
-          <h2 className="inline-flex text-5xl md:text-8xl font-hero text-center font-bold italic max-w-6xl">
-            Start creating designs with Wizad.
+          <h2 className="max-w-6xl bg-gradient-to-br from-white to-[#4BF5B3] bg-clip-text text-center font-hero text-5xl/tight font-bold italic text-transparent md:w-full md:pb-4 md:text-8xl">
+            {"Start creating "}
+            <br className="hidden md:block" />
+            designs with Wizad.
           </h2>
 
-          <span className="text-white/80 font-semibold text-center max-w-52 md:max-w-none md:text-2xl">
+          <span className="max-w-52 text-center font-medium text-white/80 md:max-w-none md:text-xl">
             Take charge of your brand by yourself and fire up.
           </span>
 
-          <div className="flex flex-col items-center md:flex-row gap-4 md:gap-10">
-            <AppDownloadButton store="appstore" />
+          <div className="flex flex-col items-center gap-4 md:flex-row md:gap-10">
             <AppDownloadButton store="playstore" />
+            <AppDownloadButton store="appstore" />
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row items-center justify-center gap-5 w-full mx-auto">
+        <div className="mx-auto flex w-full flex-col items-center justify-center gap-5 md:flex-row">
           {[
             "Get started for free",
             "Generate on-brand designs instantly",
@@ -43,41 +44,42 @@ export default function Footer() {
             "Mobile Friendly",
             "Android & Apple",
           ].map((text) => (
-            <div className="flex gap-2 items-center text-white/70" key={text}>
+            <div className="flex items-center gap-2 text-white/70" key={text}>
               <FaCheck />
               <span>{text}</span>
             </div>
           ))}
         </div>
       </section>
-      <section className="grid grid-cols-1 md:grid-cols-3 w-full max-w-[1720px] px-4 pt-12 md:px-24 md:pt-32 mx-auto gap-6 md:gap-16">
-        <div className="flex flex-col bg-[#121212] justify-start rounded-3xl md:rounded-[40px] p-5 md:p-14">
-          <h2 className="text-2xl md:text-3xl font-medium mb-6 md:mb-8">
-            The easiest way to get on brand designs for your business.
+      <section className="mx-auto flex w-full max-w-sm flex-wrap gap-6 px-4 pt-12 md:max-w-11xl md:gap-16 md:px-24 md:pt-32 xl:flex-nowrap">
+        <div className="flex max-w-md flex-col justify-start rounded-3xl bg-[#121212] p-5 md:rounded-[2.5rem] md:p-10">
+          <h2 className="mb-6 text-2xl">
+            AI designer that knows your brand. Powered by legendary models.
           </h2>
           <a
+            className="pb-6 md:pb-14"
             href="https://www.producthunt.com/posts/wizad?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-wizad"
             target="_blank"
           >
             <Image
-              src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=453705&theme=dark"
+              src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=453705"
               alt="Wizad - Social&#0032;media&#0032;posters&#0032;in&#0032;one&#0032;click&#0032;with&#0032;GenAI&#0032; | Product Hunt"
-              className="w-[250px] h-[54px]"
+              className="h-[3.375rem] w-[15.625rem]"
               width="250"
               height="54"
             />
           </a>
-          <span className="flex flex-col justify-start text-zinc-400 text-sm mt-6 md:mt-20">
+          <span className="flex flex-col justify-start text-sm text-zinc-400">
             <p>{process.env.NEXT_PUBLIC_ADDRESS_L1}</p>
             <p>{process.env.NEXT_PUBLIC_ADDRESS_L2}</p>
             <p>{process.env.NEXT_PUBLIC_ADDRESS_L3}</p>
           </span>
 
-          <div className="my-9 md:my-8 h-px bg-zinc-800" />
+          <div className="my-9 h-px bg-zinc-800 md:my-8" />
 
-          <div className="flex flex-wrap justify-between text-sm">
+          <div className="flex flex-wrap justify-between gap-4 text-sm">
             <a
-              className="text-zinc-500 hover:text-zinc-400 transition-all duration-200 ease-in-out"
+              className="text-zinc-500 transition-all duration-200 ease-in-out hover:text-zinc-400"
               href={process.env.NEXT_PUBLIC_PRIVACY_POLICY_URL}
               rel="license"
               target="_blank"
@@ -85,7 +87,7 @@ export default function Footer() {
               Privacy Policy
             </a>
             <a
-              className="text-zinc-500 hover:text-zinc-400 transition-all duration-200 ease-in-out"
+              className="text-zinc-500 transition-all duration-200 ease-in-out hover:text-zinc-400"
               href={process.env.NEXT_PUBLIC_TERMS_AND_CONDITIONS_URL}
               rel="license"
               target="_blank"
@@ -93,7 +95,7 @@ export default function Footer() {
               Terms & Conditions
             </a>
             <a
-              className="text-zinc-500 hover:text-zinc-400 transition-all duration-200 ease-in-out"
+              className="text-zinc-500 transition-all duration-200 ease-in-out hover:text-zinc-400"
               href={`mailto:${process.env.NEXT_PUBLIC_SUPPORT_MAIL}`}
               target="_blank"
             >
@@ -102,12 +104,12 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-11">
-          <div className="flex flex-col bg-[#121212] justify-start rounded-3xl md:rounded-[40px] p-5 md:p-14">
-            <h2 className="text-xl md:text-2xl mb-6 md:mb-7 text-white/70 font-light">
+        <div className="flex max-w-md flex-col gap-6">
+          <div className="flex flex-col justify-start rounded-3xl bg-[#121212] p-5 md:rounded-[2.5rem] md:p-10">
+            <h2 className="mb-6 text-xl font-light text-white/70 md:mb-7 md:text-2xl">
               Blog & Newsletter
             </h2>
-            <span className="text-white/80 font-light">
+            <span className="text-sm font-light text-white/80 md:text-base">
               Receive must-read articles and trends on social media, branding,
               marketing, and ever changing AI creative industry.
             </span>
@@ -115,39 +117,39 @@ export default function Footer() {
             <SubscribeToNewsletter />
           </div>
 
-          <div className="flex flex-row justify-between">
+          <div className="flex flex-row justify-center space-x-2 md:space-x-6">
             {[
               {
                 title: "Instagram",
                 logo: (
-                  <BiLogoInstagramAlt className="size-5 md:size-10 text-zinc-200" />
+                  <BiLogoInstagramAlt className="size-7 text-white/60 md:size-10" />
                 ),
                 link: process.env.NEXT_PUBLIC_SOCIAL_INSTAGRAM,
               },
               {
                 title: "LinkedIn",
                 logo: (
-                  <BiLogoLinkedinSquare className="size-5 md:size-10 text-zinc-200" />
+                  <BiLogoLinkedinSquare className="size-7 text-white/60 md:size-10" />
                 ),
                 link: process.env.NEXT_PUBLIC_SOCIAL_LINKEDIN,
               },
               {
                 title: "X",
                 logo: (
-                  <BiLogoTwitter className="size-5 md:size-10 text-zinc-200" />
+                  <BsTwitterX className="size-7 text-white/60 md:size-10" />
                 ),
                 link: process.env.NEXT_PUBLIC_SOCIAL_X,
               },
               {
                 title: "Meta",
                 logo: (
-                  <BiLogoMeta className="size-5 md:size-10 text-zinc-200" />
+                  <BiLogoFacebookSquare className="size-7 text-white/60 md:size-10" />
                 ),
                 link: process.env.NEXT_PUBLIC_SOCIAL_META,
               },
             ].map((social) => (
               <a
-                className="bg-[#121212] p-7 rounded-3xl"
+                className="flex aspect-square flex-grow items-center justify-center rounded-xl bg-[#121212] p-4 transition-all duration-200 ease-in-out hover:bg-zinc-800"
                 key={social.link}
                 href={social.link}
                 title={`Wizad on ${social.title}`}
@@ -160,7 +162,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="hidden md:flex flex-col bg-[#121212] justify-start rounded-3xl md:rounded-[40px] py-8 px-14">
+        <div className="hidden max-w-min flex-col justify-start rounded-3xl bg-[#121212] px-10 py-8 md:flex md:rounded-[2.5rem]">
           <AppDownloadQRCode />
         </div>
       </section>

@@ -38,7 +38,7 @@ export async function subscribeToNewsletter(form: FormData) {
 
 export async function requestCustomerSupport(form: FormData) {
   const name = form.get("name")?.toString() || "";
-  const email = form.get("email")?.toString() || "";
+  const email = form.get("business")?.toString() || "";
   const phone = form.get("phone")?.toString() || "";
 
   if (!name || (!email && !phone)) return;
