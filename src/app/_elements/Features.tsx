@@ -25,7 +25,7 @@ import BusinessLogos from "./BusinessLogos";
 
 export default function Features() {
   return (
-    <div className="mx-auto flex max-w-sm flex-col items-center justify-center px-4 md:max-w-11xl md:px-28 md:py-20">
+    <div className="mx-auto relative flex max-w-sm flex-col items-center justify-center px-4 md:max-w-11xl md:px-28 md:py-20">
       <section className="flex w-full max-w-screen-2xl flex-wrap items-center justify-center gap-6 py-12 md:gap-20">
         <div className="w-full md:w-2/5">
           <h1 className="pb-4 text-3xl/tight font-medium md:self-start md:pb-7 md:text-6xl/tight">
@@ -339,7 +339,7 @@ export default function Features() {
 
       <section className="flex w-full max-w-screen-xl flex-col gap-8 overflow-clip px-4 py-12 md:gap-20 md:px-20 md:py-32">
         <div className="flex flex-col items-center justify-center gap-8 text-white/70">
-          <span className="text-sm font-medium md:text-xl">
+          <span className="text-sm font-medium md:text-xl mb-20 md:mb-0">
             Businesses that already designs with Wizad
           </span>
           <BusinessLogos />
