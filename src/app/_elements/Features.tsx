@@ -25,7 +25,7 @@ import BusinessLogos from "./BusinessLogos";
 
 export default function Features() {
   return (
-    <div className="relative mx-auto flex w-[90%] max-w-sm flex-col items-center justify-center md:max-w-screen-2xl md:py-20">
+    <div className="relative mx-auto flex w-[90%] min-w-min max-w-sm flex-col items-center justify-center md:max-w-screen-2xl md:py-20">
       <section className="flex w-full flex-wrap items-center justify-evenly gap-6 py-12 md:gap-20">
         <div className="w-full md:w-1/3">
           <h1 className="text-pretty pb-4 text-3xl/tight font-medium md:self-start md:pb-7 md:text-5xl/tight lg:text-6xl/tight">
@@ -56,7 +56,7 @@ export default function Features() {
           </div>
         </div>
         <Image
-          className="w-full min-w-80 max-w-2xl md:w-2/5"
+          className="w-full max-w-2xl md:w-2/5"
           src={FeaturesScreen1}
           alt="Features"
         />
@@ -75,7 +75,7 @@ export default function Features() {
           </span>
         </div>
         <Image
-          className="w-full min-w-80 max-w-2xl md:w-2/5"
+          className="w-full max-w-2xl md:w-2/5"
           src={FeaturesScreen2}
           alt="Features"
         />
@@ -178,7 +178,7 @@ export default function Features() {
 
       {/* Be in-front of your customers everyday. */}
       <section className="flex w-full max-w-screen-2xl flex-col items-center justify-center py-6 md:py-20">
-        <div className="relative flex h-[46.875rem] w-full overflow-clip rounded-3xl bg-neutral-920 md:h-[59.375rem]">
+        <div className="relative flex h-[50rem] w-full overflow-clip rounded-3xl bg-neutral-920 md:h-[59.375rem]">
           <div className="w-full p-3 lg:w-1/2 md:p-10">
             <div className="flex items-center space-x-2">
               <Image src={Calender} alt="Calender" width={16} />
