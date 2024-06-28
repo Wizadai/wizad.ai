@@ -25,10 +25,10 @@ import BusinessLogos from "./BusinessLogos";
 
 export default function Features() {
   return (
-    <div className="mx-auto relative flex max-w-sm flex-col items-center justify-center px-4 md:max-w-11xl md:px-28 md:py-20">
-      <section className="flex w-full max-w-screen-2xl flex-wrap items-center justify-center gap-6 py-12 md:gap-20">
-        <div className="w-full md:w-2/5">
-          <h1 className="pb-4 text-3xl/tight font-medium md:self-start md:pb-7 md:text-6xl/tight">
+    <div className="relative mx-auto flex w-[90%] min-w-min max-w-sm flex-col items-center justify-center md:max-w-screen-2xl md:py-20">
+      <section className="flex w-full flex-wrap items-center justify-evenly gap-6 py-12 md:gap-20">
+        <div className="w-full md:w-1/3">
+          <h1 className="text-pretty pb-4 text-3xl/tight font-medium md:self-start md:pb-7 md:text-5xl/tight lg:text-6xl/tight">
             {"Built for one purpose - "}
             <span className="inline-block bg-gradient-to-r from-[#E293FE] to-[#38CEFB] bg-clip-text text-transparent md:inline">
               to grow your brand.
@@ -48,9 +48,6 @@ export default function Features() {
                   "Keep brand uniformity across all designs",
                 ].map((text, key) => (
                   <p key={key} className="flex items-center gap-4 pt-4">
-                    {/* <span className="font-medium text-xl md:text-3xl">
-                      {first}
-                    </span> */}
                     <span className="font-light md:text-xl">{text}</span>
                   </p>
                 ))}
@@ -59,14 +56,15 @@ export default function Features() {
           </div>
         </div>
         <Image
-          className="w-full min-w-80 max-w-2xl md:w-2/5"
+          className="w-full max-w-2xl md:w-2/5"
           src={FeaturesScreen1}
           alt="Features"
         />
       </section>
+
       <section className="flex w-full max-w-screen-2xl flex-col items-center justify-center gap-6 py-12 md:flex-row-reverse md:items-center md:gap-20 md:pb-24 md:pt-32">
         <div className="flex w-full flex-col justify-between gap-6 md:w-2/5 md:gap-8 md:self-start md:pt-6">
-          <h1 className="text-3xl/tight font-medium md:text-6xl/tight">
+          <h1 className="text-balance text-3xl/tight font-medium md:text-5xl/tight lg:text-6xl/tight">
             Optimized for all your social media design needs
           </h1>
           <span className="space-y-4 text-base font-light text-white/80 md:max-w-md md:pt-5 md:text-xl">
@@ -77,22 +75,23 @@ export default function Features() {
           </span>
         </div>
         <Image
-          className="w-full min-w-80 max-w-2xl md:w-2/5"
+          className="w-full max-w-2xl md:w-2/5"
           src={FeaturesScreen2}
           alt="Features"
         />
       </section>
+
       {/* Don't let trend pass you */}
       <section className="flex w-full max-w-screen-2xl flex-col items-center justify-center py-6 md:py-20">
-        <div className="flex w-full flex-wrap rounded-t-3xl bg-neutral-920 p-3 md:p-10">
-          <div className="w-full md:w-2/5">
+        <div className="flex w-full flex-col rounded-t-3xl bg-neutral-920 p-3 md:p-10 lg:flex-row">
+          <div className="w-full lg:w-2/5">
             <div className="flex items-center space-x-2">
               <Image src={PartyPopper} alt="Party Popper" width={16} />
               <span className="font-hero text-sm font-medium italic md:text-xl">
                 Festival & Trending Days
               </span>
             </div>
-            <h1 className="text-wrap py-4 text-3xl/tight font-medium md:text-6xl md:leading-tight">
+            <h1 className="text-wrap py-4 text-3xl/tight font-medium md:text-5xl md:leading-tight lg:text-6xl">
               Don&apos;t let trends pass you by
             </h1>
             <span className="space-y-6 text-base font-light text-white/80 md:max-w-md md:pt-5 md:text-lg md:font-normal">
@@ -111,7 +110,7 @@ export default function Features() {
               <GetStartedNow />
             </span>
           </div>
-          <div className="w-full min-w-80 pt-10 md:w-3/5">
+          <div className="w-full pt-10 lg:w-3/5">
             <Image src={SpecialDays} alt="Special Days" />
           </div>
         </div>
@@ -128,11 +127,12 @@ export default function Features() {
           />
         </div>
       </section>
+
       {/* Turn product images in your mobile gallery to professional posters */}
       {/* INCOMPLETE!!! it will be completed after getting video to insert here */}
       <section className="flex w-full max-w-screen-2xl flex-col items-center justify-center py-6 md:py-20">
-        <div className="relative flex h-[46.875rem] w-full flex-wrap justify-between rounded-3xl bg-neutral-920 px-3 pt-3 md:h-[52.5rem] md:px-10 md:pt-10">
-          <div className="w-full md:w-3/5">
+        <div className="relative flex min-h-max w-full flex-wrap justify-between rounded-3xl bg-neutral-920 px-3 pt-3 md:px-10 md:pt-10 lg:h-[52.5rem]">
+          <div className="w-full lg:w-3/5">
             <div className="flex items-center space-x-2">
               <Image src={Boxes} alt="Boxes" width={16} />
               <span
@@ -141,14 +141,14 @@ export default function Features() {
                 Product Photography Posters
               </span>
             </div>
-            <h1 className="text-balance py-4 text-3xl/tight font-medium md:text-6xl md:leading-tight">
+            <h1 className="text-balance py-4 text-3xl/tight font-medium md:text-5xl md:leading-tight lg:text-6xl">
               Turn product images in your mobile gallery to professional
               posters!
             </h1>
             <span className="space-y-6 text-base font-light text-white/80 md:max-w-md md:pt-5 md:text-lg md:font-normal">
-              <p className="md:text-nowrap md:leading-normal">
+              <p className="md:leading-normal lg:text-nowrap">
                 {"Save money on professional product photography with Wizad. "}
-                <br className="hidden md:block" />
+                <br className="hidden lg:block" />
                 Stand out with impressive product visuals!
               </p>
               <p className="font-semibold text-white">
@@ -157,7 +157,7 @@ export default function Features() {
               <GetStartedNow />
             </span>
           </div>
-          <div className="absolute bottom-0 w-full md:left-0 md:flex md:w-[72%]">
+          <div className="absolute bottom-0 w-full lg:left-0 lg:flex lg:w-[72%]">
             <div className="relative h-full w-full">
               <Image
                 src={MagicLogo}
@@ -167,7 +167,7 @@ export default function Features() {
               <span className="absolute bottom-0 left-0 h-1/2 w-full bg-gradient-to-t from-neutral-920 to-transparent" />
             </div>
           </div>
-          <div className="bottom-0 mx-auto w-1/2 max-w-sm self-end justify-self-end overflow-clip rounded-t-3xl border-x-4 border-t-4 border-[#2A2A2A] md:mx-0 md:flex md:w-[25%] md:border-x-8 md:border-t-8">
+          <div className="bottom-0 mx-auto mt-10 min-h-max w-1/2 max-w-sm self-end justify-self-end overflow-clip rounded-t-3xl border-x-4 border-t-4 border-[#2A2A2A] md:border-x-8 md:border-t-8 lg:mx-0 lg:flex lg:w-[25%]">
             <video autoPlay muted loop>
               <source src="dummy-video.mp4" type="video/mp4" />
               Your browser does not support the video tag.
@@ -178,8 +178,8 @@ export default function Features() {
 
       {/* Be in-front of your customers everyday. */}
       <section className="flex w-full max-w-screen-2xl flex-col items-center justify-center py-6 md:py-20">
-        <div className="relative flex h-[46.875rem] w-full overflow-clip rounded-3xl bg-neutral-920 md:h-[59.375rem]">
-          <div className="w-full p-3 md:w-1/2 md:p-10">
+        <div className="relative flex h-[50rem] w-full overflow-clip rounded-3xl bg-neutral-920 md:h-[59.375rem]">
+          <div className="w-full p-3 lg:w-1/2 md:p-10">
             <div className="flex items-center space-x-2">
               <Image src={Calender} alt="Calender" width={16} />
               <span
@@ -188,7 +188,7 @@ export default function Features() {
                 Post daily
               </span>
             </div>
-            <h1 className="text-wrap py-4 text-3xl/tight font-medium md:text-6xl md:leading-tight">
+            <h1 className="text-balance py-4 text-3xl/tight font-medium md:text-5xl lg:text-6xl md:leading-tight">
               Be in-front of your customers everyday.
             </h1>
             <span className="space-y-6 text-base font-light text-white/80 md:max-w-md md:pt-5 md:text-lg md:font-normal">
@@ -222,9 +222,9 @@ export default function Features() {
       </section>
 
       {/* Take control of your marketing campaigns */}
-      <section className="flex w-full max-w-screen-2xl flex-col items-center justify-center py-6 md:py-20">
-        <div className="relative flex h-[40rem] w-full flex-col flex-wrap overflow-hidden rounded-3xl bg-neutral-920 px-3 pt-3 md:h-[62.5rem] md:px-10 md:pt-10">
-          <div className="w-full md:w-3/5">
+      <section className="flex w-full flex-col items-center justify-center py-6 md:py-20">
+        <div className="relative flex h-[40rem] w-full flex-col flex-wrap overflow-hidden rounded-3xl bg-neutral-920 px-3 pt-3 md:h-[51rem] lg:h-[62.5rem] md:px-10 md:pt-10">
+          <div className="w-full lg:w-3/5">
             <div className="flex items-center space-x-2">
               <Image src={Thunderbolt} alt="Thunderbolt" width={16} />
               <span
@@ -233,7 +233,7 @@ export default function Features() {
                 Maximize Impact
               </span>
             </div>
-            <h1 className="text-wrap py-4 text-3xl/tight font-medium md:text-6xl md:leading-tight">
+            <h1 className="text-wrap py-4 text-3xl/tight font-medium md:text-5xl lg:text-6xl md:leading-tight">
               Take control of your marketing campaigns
             </h1>
             <div className="space-y-6 text-base font-light text-white/80 md:pt-5 md:text-lg md:font-normal">
@@ -267,14 +267,14 @@ export default function Features() {
         </div>
       </section>
 
-      <section className="flex w-full max-w-screen-2xl flex-col gap-6 px-4 py-12 md:gap-0 md:px-20 md:py-28">
-        <h1 className="max-w-7xl text-3xl/tight font-medium md:text-nowrap md:text-6xl/tight">
+      <section className="flex w-full max-w-screen-2xl flex-col gap-6 px-4 py-12 md:gap-0 md:py-28 lg:px-14 xl:px-20">
+        <h1 className="max-w-7xl text-3xl/tight font-medium md:text-5xl/tight lg:text-6xl/tight xl:text-nowrap">
           {"Made for emerging brand owners, "}
-          <br className="hidden md:block" />
+          <br className="hidden xl:block" />
           {"e-commerce, instagram sellers, "}
-          <br className="hidden md:block" />
+          <br className="hidden xl:block" />
           {"creators, marketers "}
-          <br className="hidden md:block" />
+          <br className="hidden xl:block" />
           and more.
         </h1>
 
@@ -293,12 +293,8 @@ export default function Features() {
             </span>
           </div>
 
-          <div className="flex md:row-span-2 md:flex-grow md:items-end md:justify-end md:self-start md:px-6">
-            <Image
-              className="md:w-[42.5rem]"
-              src={FeaturesScreen4}
-              alt="Features"
-            />
+          <div className="flex md:row-span-2 md:flex-grow md:items-end md:justify-end md:self-center md:px-6">
+            <Image className="md:w-full" src={FeaturesScreen4} alt="Features" />
           </div>
 
           <div className="flex flex-col items-start justify-end gap-10">
@@ -339,7 +335,7 @@ export default function Features() {
 
       <section className="flex w-full max-w-screen-xl flex-col gap-8 overflow-clip px-4 py-12 md:gap-20 md:px-20 md:py-32">
         <div className="flex flex-col items-center justify-center gap-8 text-white/70">
-          <span className="text-sm font-medium md:text-xl mb-20 md:mb-0">
+          <span className="mb-20 text-sm font-medium md:mb-0 md:text-xl">
             Businesses that already designs with Wizad
           </span>
           <BusinessLogos />
@@ -362,7 +358,7 @@ export default function Features() {
           </span>
         </div>
 
-        <div className="flex w-full flex-col gap-7 md:flex-row md:gap-20">
+        <div className="flex w-full flex-col gap-7 xl:flex-row xl:gap-20">
           <FeatureTile
             icon={<BiSolidTimeFive />}
             title="Save your valuable time"
