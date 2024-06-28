@@ -14,6 +14,7 @@ export default async function LogoImage({
     <Image
       {...props}
       placeholder="blur"
+      loading="lazy"
       blurDataURL={blurUrl}
       alt={alt}
       src={src}
