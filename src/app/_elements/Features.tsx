@@ -25,7 +25,7 @@ import BusinessLogos from "./BusinessLogos";
 
 export default function Features() {
   return (
-    <div className="relative mx-auto flex w-[90%] min-w-min max-w-sm flex-col items-center justify-center md:max-w-screen-2xl md:py-20">
+    <div className="relative mx-auto flex w-[90%] max-w-sm flex-col items-center justify-center md:max-w-screen-2xl md:py-20">
       <section className="flex w-full flex-wrap items-center justify-evenly gap-6 py-12 md:gap-20">
         <div className="w-full md:w-1/3">
           <h1 className="text-pretty pb-4 text-3xl/tight font-medium md:self-start md:pb-7 md:text-5xl/tight lg:text-6xl/tight">
