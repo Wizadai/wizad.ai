@@ -61,7 +61,7 @@ export default function Features() {
           alt="Features"
         />
       </section>
-
+      
       <section className="flex w-full max-w-screen-2xl flex-col items-center justify-center gap-6 py-12 md:flex-row-reverse md:items-center md:gap-20 md:pb-24 md:pt-32">
         <div className="flex w-full flex-col justify-between gap-6 md:w-2/5 md:gap-8 md:self-start md:pt-6">
           <h1 className="text-3xl/tight font-medium md:text-5xl/tight lg:text-6xl/tight">
