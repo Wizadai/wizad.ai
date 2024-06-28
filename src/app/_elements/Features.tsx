@@ -26,9 +26,9 @@ import BusinessLogos from "./BusinessLogos";
 export default function Features() {
   return (
     <div className="relative mx-auto flex w-[90%] max-w-sm flex-col items-center justify-center md:max-w-screen-2xl md:py-20">
-      <section className="flex w-full flex-wrap items-center justify-center gap-6 py-12 md:gap-20">
-        <div className="w-full md:w-2/5">
-          <h1 className="pb-4 text-3xl/tight font-medium md:self-start md:pb-7 md:text-5xl/tight lg:text-6xl/tight">
+      <section className="flex w-full flex-wrap items-center justify-evenly gap-6 py-12 md:gap-20">
+        <div className="w-full md:w-1/3">
+          <h1 className="text-pretty pb-4 text-3xl/tight font-medium md:self-start md:pb-7 md:text-5xl/tight lg:text-6xl/tight">
             {"Built for one purpose - "}
             <span className="inline-block bg-gradient-to-r from-[#E293FE] to-[#38CEFB] bg-clip-text text-transparent md:inline">
               to grow your brand.
@@ -61,10 +61,10 @@ export default function Features() {
           alt="Features"
         />
       </section>
-      
+
       <section className="flex w-full max-w-screen-2xl flex-col items-center justify-center gap-6 py-12 md:flex-row-reverse md:items-center md:gap-20 md:pb-24 md:pt-32">
         <div className="flex w-full flex-col justify-between gap-6 md:w-2/5 md:gap-8 md:self-start md:pt-6">
-          <h1 className="text-3xl/tight font-medium md:text-5xl/tight lg:text-6xl/tight">
+          <h1 className="text-balance text-3xl/tight font-medium md:text-5xl/tight lg:text-6xl/tight">
             Optimized for all your social media design needs
           </h1>
           <span className="space-y-4 text-base font-light text-white/80 md:max-w-md md:pt-5 md:text-xl">
