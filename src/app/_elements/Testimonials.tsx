@@ -1,7 +1,7 @@
 import TestimonialsData from "@/../public/assets/testimonials.json";
 import Image from "next/image";
 import { TiSocialTwitter } from "react-icons/ti";
-import TestimonialsWrapper from "./TestimonialsWrapper";
+import TestimonialsWrapper from "@/app/_elements/TestimonialsWrapper";
 
 type Testimonial = (typeof TestimonialsData)[number];
 

@@ -1,6 +1,6 @@
 import getBusinessLogos from "@/utils/getBusinessLogos";
-import BusinessLogosWrapper from "./BusinessLogosWrapper";
-import LogoImage from "./LogoImage";
+import BusinessLogosWrapper from "@/app/_elements/BusinessLogosWrapper";
+import LogoImage from "@/app/_elements/LogoImage";
 
 export default function BusinessLogos() {
   const businessLogos = getBusinessLogos();

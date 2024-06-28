@@ -21,7 +21,7 @@ import { BiSolidTimeFive } from "react-icons/bi";
 import { FaPiggyBank } from "react-icons/fa6";
 import { TbCardsFilled } from "react-icons/tb";
 import GetStartedNow from "@/app/_elements/GetStartedNow";
-import BusinessLogos from "./BusinessLogos";
+import BusinessLogos from "@/app/_elements/BusinessLogos";
 
 export default function Features() {
   return (
