@@ -21,7 +21,7 @@ import { BiSolidTimeFive } from "react-icons/bi";
 import { FaPiggyBank } from "react-icons/fa6";
 import { TbCardsFilled } from "react-icons/tb";
 import GetStartedNow from "@/app/_elements/GetStartedNow";
-import BusinessLogos from "./BusinessLogos";
+import BusinessLogos from "@/app/_elements/BusinessLogos";
 
 export default function Features() {
   return (
@@ -179,7 +179,7 @@ export default function Features() {
       {/* Be in-front of your customers everyday. */}
       <section className="flex w-full max-w-screen-2xl flex-col items-center justify-center py-6 md:py-20">
         <div className="relative flex h-[50rem] w-full overflow-clip rounded-3xl bg-neutral-920 md:h-[59.375rem]">
-          <div className="w-full p-3 lg:w-1/2 md:p-10">
+          <div className="w-full p-3 md:p-10 lg:w-1/2">
             <div className="flex items-center space-x-2">
               <Image src={Calender} alt="Calender" width={16} />
               <span
@@ -188,7 +188,7 @@ export default function Features() {
                 Post daily
               </span>
             </div>
-            <h1 className="text-balance py-4 text-3xl/tight font-medium md:text-5xl lg:text-6xl md:leading-tight">
+            <h1 className="text-balance py-4 text-3xl/tight font-medium md:text-5xl md:leading-tight lg:text-6xl">
               Be in-front of your customers everyday.
             </h1>
             <span className="space-y-6 text-base font-light text-white/80 md:max-w-md md:pt-5 md:text-lg md:font-normal">
@@ -223,7 +223,7 @@ export default function Features() {
 
       {/* Take control of your marketing campaigns */}
       <section className="flex w-full flex-col items-center justify-center py-6 md:py-20">
-        <div className="relative flex h-[40rem] w-full flex-col flex-wrap overflow-hidden rounded-3xl bg-neutral-920 px-3 pt-3 md:h-[51rem] lg:h-[62.5rem] md:px-10 md:pt-10">
+        <div className="relative flex h-[40rem] w-full flex-col flex-wrap overflow-hidden rounded-3xl bg-neutral-920 px-3 pt-3 md:h-[51rem] md:px-10 md:pt-10 lg:h-[62.5rem]">
           <div className="w-full lg:w-3/5">
             <div className="flex items-center space-x-2">
               <Image src={Thunderbolt} alt="Thunderbolt" width={16} />
@@ -233,7 +233,7 @@ export default function Features() {
                 Maximize Impact
               </span>
             </div>
-            <h1 className="text-wrap py-4 text-3xl/tight font-medium md:text-5xl lg:text-6xl md:leading-tight">
+            <h1 className="text-wrap py-4 text-3xl/tight font-medium md:text-5xl md:leading-tight lg:text-6xl">
               Take control of your marketing campaigns
             </h1>
             <div className="space-y-6 text-base font-light text-white/80 md:pt-5 md:text-lg md:font-normal">
