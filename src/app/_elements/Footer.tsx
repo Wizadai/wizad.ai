@@ -9,12 +9,13 @@ import { BsTwitterX } from "react-icons/bs";
 import SubscribeToNewsletter from "@/app/_elements/SubscribeToNewsletter";
 import AppDownloadQRCode from "@/app/_elements/AppDownloadQR";
 import AppDownloadButton from "@/app/_elements/AppDownloadButton";
+import HeroGradient from "@/../public/bg-hero-gradient.png";
 import { FaCheck } from "react-icons/fa";
 
 export default function Footer() {
   return (
     <footer id="footer" className="flex w-full flex-col gap-2">
-      <section className="flex flex-col items-center justify-center gap-10 bg-hero-gradient bg-bottom px-4 py-12 md:gap-20 md:bg-cover md:py-32">
+      <section className="relative flex flex-col items-center justify-center gap-10 px-4 py-12 md:gap-20 md:py-32">
         <div className="flex w-full max-w-9xl flex-col flex-wrap items-center justify-center gap-6 md:gap-8">
           <span className="max-w-lg text-center text-xl font-medium italic md:text-lg">
             {`"You don't have a choice on whether you do social media, The question is how well you do it"`}
@@ -50,6 +51,15 @@ export default function Footer() {
             </div>
           ))}
         </div>
+        <div className="absolute top-0 left-0 w-full h-full -z-50">
+          <Image
+            src={HeroGradient}
+            alt="Hero Gradient"
+            fill
+            quality={1}
+            style={{ objectFit: "cover", objectPosition: "bottom"}}
+          />
+      </div>
       </section>
       <section className="mx-auto flex w-full max-w-sm flex-wrap gap-6 px-4 pt-12 md:max-w-11xl md:gap-16 md:px-24 md:pt-32 xl:flex-nowrap">
         <div className="mx-auto flex max-w-md flex-col justify-start rounded-3xl bg-[#121212] p-5 md:rounded-[2.5rem] md:p-10">
