@@ -2,7 +2,9 @@ import AppDownloadButton from "@/app/_elements/AppDownloadButton";
 import PostersDesktop from "@/../public/assets/posters-desktop.png";
 import PostersMobile from "@/../public/assets/posters-mobile.png";
 import HeroGradient from "@/../public/bg-hero-gradient.png";
+import MadeWithWizad from "@/../public/assets/made-with-wizad.png";
 import Image from "next/image";
+import HoveringLogo from "./HoveringLogo";
 
 export default function HeroSection() {
   return (
@@ -34,25 +36,38 @@ export default function HeroSection() {
         </div>
       </div>
       <div>
-        <Image
-          src={PostersDesktop}
-          alt="Posters made with Wizad"
-          className="hidden w-0 md:block md:w-full"
-        />
+        <div className="hidden w-0 md:block md:w-full">
+          <HoveringLogo
+            logo={
+              <Image
+                src={MadeWithWizad}
+                alt="Made with Wizad"
+                className="pt-10"
+              />
+            }
+          >
+            <Image
+              src={PostersDesktop}
+              alt="Posters made with Wizad"
+              className="hidden w-0 md:block md:w-full"
+            />
+          </HoveringLogo>
+        </div>
         <Image
           src={PostersMobile}
           alt="Posters made with Wizad"
           className="w-full md:hidden md:w-0"
         />
+        <span className="absolute bottom-0 left-0 h-1/2 w-full bg-gradient-to-t from-black to-transparent" />
       </div>
-      <div className="absolute -top-20 md:-top-56 left-0 w-full h-full -z-50">
+      <div className="absolute -top-20 left-0 -z-50 h-full w-full md:-top-56">
         <Image
           src={HeroGradient}
           alt="Hero Gradient"
           fill
           loading="eager"
           quality={1}
-          style={{ objectFit: "cover", objectPosition: "top"}}
+          style={{ objectFit: "cover", objectPosition: "top" }}
         />
       </div>
     </section>
