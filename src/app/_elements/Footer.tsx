@@ -51,15 +51,15 @@ export default function Footer() {
             </div>
           ))}
         </div>
-        <div className="absolute top-0 left-0 w-full h-full -z-50">
+        <div className="absolute left-0 top-0 -z-50 h-full w-full">
           <Image
             src={HeroGradient}
             alt="Hero Gradient"
             fill
             quality={1}
-            style={{ objectFit: "cover", objectPosition: "bottom"}}
+            style={{ objectFit: "cover", objectPosition: "bottom" }}
           />
-      </div>
+        </div>
       </section>
       <section className="mx-auto flex w-full max-w-sm flex-wrap gap-6 px-4 pt-12 md:max-w-11xl md:gap-16 md:px-24 md:pt-32 xl:flex-nowrap">
         <div className="mx-auto flex max-w-md flex-col justify-start rounded-3xl bg-[#121212] p-5 md:rounded-[2.5rem] md:p-10">

@@ -42,7 +42,7 @@ export default function HeroSection() {
               <Image
                 src={MadeWithWizad}
                 alt="Made with Wizad"
-                className="pt-10 w-[40%]"
+                className="w-[40%] pt-10"
                 style={{ objectFit: "contain" }}
               />
             }

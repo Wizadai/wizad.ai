@@ -1,5 +1,10 @@
 "use client";
-import { useScroll, motion, useMotionValueEvent, useSpring } from "framer-motion";
+import {
+  useScroll,
+  motion,
+  useMotionValueEvent,
+  useSpring,
+} from "framer-motion";
 import { useRef } from "react";
 
 export default function HoveringLogo({

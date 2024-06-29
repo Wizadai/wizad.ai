@@ -22,7 +22,7 @@ export default async function Page() {
 
   return (
     <>
-      <section className="relative flex w-full flex-col py-14 overflow-clip">
+      <section className="relative flex w-full flex-col overflow-clip py-14">
         <div className="mx-auto flex w-[80%] flex-col items-center gap-6 px-4 md:items-start md:gap-10">
           <h1 className="max-w-3xl font-hero text-4xl/tight font-semibold italic md:text-7xl/none">
             <div>{"Articles to help "}</div>
@@ -34,7 +34,7 @@ export default async function Page() {
             marketing, and ever changing AI creative industry.
           </span>
         </div>
-        <div className="absolute top-0 left-0 -z-50 h-screen w-full">
+        <div className="absolute left-0 top-0 -z-50 h-screen w-full">
           <Image
             src={HeroGradient}
             alt="Hero Gradient"
