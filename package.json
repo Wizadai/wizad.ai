@@ -19,6 +19,7 @@
     "embla-carousel": "^8.1.5",
     "embla-carousel-auto-scroll": "^8.1.5",
     "embla-carousel-react": "^8.1.5",
+    "framer-motion": "^11.2.12",
     "gray-matter": "^4.0.3",
     "next": "14.2.2",
     "plaiceholder": "^3.0.0",
