@@ -4,6 +4,8 @@ import BlogTile from "@/app/blogs/_elements/BlogTile";
 import { getBlogPosts } from "@/app/blogs/utils";
 import FeaturedCarousel from "@/app/blogs/_elements/FeaturedCarousel";
 import CarouselTile from "@/app/blogs/_elements/CarouselTile";
+import HeroGradient from "@/../public/bg-hero-gradient.png";
+import Image from "next/image";
 
 export default async function Page() {
   const blogs = await getBlogPosts();
@@ -20,8 +22,8 @@ export default async function Page() {
 
   return (
     <>
-      <section className="flex w-full flex-col bg-hero-gradient bg-cover bg-top py-14">
-        <div className="mx-auto flex w-full max-w-6xl flex-col items-center gap-6 px-4 md:items-start md:gap-10">
+      <section className="relative flex w-full flex-col py-14 overflow-clip">
+        <div className="mx-auto flex w-[80%] flex-col items-center gap-6 px-4 md:items-start md:gap-10">
           <h1 className="max-w-3xl font-hero text-4xl/tight font-semibold italic md:text-7xl/none">
             <div>{"Articles to help "}</div>
             <div>you get started</div>
@@ -31,6 +33,15 @@ export default async function Page() {
             <br className="hidden md:block" />
             marketing, and ever changing AI creative industry.
           </span>
+        </div>
+        <div className="absolute top-0 left-0 -z-50 h-screen w-full">
+          <Image
+            src={HeroGradient}
+            alt="Hero Gradient"
+            fill
+            quality={1}
+            style={{ objectFit: "cover", objectPosition: "top" }}
+          />
         </div>
       </section>
 

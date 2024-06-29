@@ -12,9 +12,6 @@ const config: Config = {
         sans: ["var(--font-inter)"],
         hero: ["var(--font-exo)"],
       },
-      backgroundImage: {
-        "hero-gradient": "url('/bg-hero-gradient.png')",
-      },
       colors: {
         neutral: {
           920: "#131313",

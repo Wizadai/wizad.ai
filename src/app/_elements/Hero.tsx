@@ -1,11 +1,12 @@
 import AppDownloadButton from "@/app/_elements/AppDownloadButton";
 import PostersDesktop from "@/../public/assets/posters-desktop.png";
 import PostersMobile from "@/../public/assets/posters-mobile.png";
+import HeroGradient from "@/../public/bg-hero-gradient.png";
 import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <section className="flex w-full flex-col bg-hero-gradient bg-cover bg-top">
+    <section className="relative flex w-full flex-col overflow-clip">
       <div className="mx-auto mt-24 flex max-w-6xl flex-col gap-6 px-4 text-center md:gap-10">
         <h1 className="max-w-[51.5625rem] font-hero text-4xl/none font-bold italic md:text-8xl/none">
           <div>Never run out</div>
@@ -42,6 +43,15 @@ export default function HeroSection() {
           src={PostersMobile}
           alt="Posters made with Wizad"
           className="w-full md:hidden md:w-0"
+        />
+      </div>
+      <div className="absolute -top-20 md:-top-56 left-0 w-full h-full -z-50">
+        <Image
+          src={HeroGradient}
+          alt="Hero Gradient"
+          fill
+          quality={1}
+          style={{ objectFit: "cover", objectPosition: "top"}}
         />
       </div>
     </section>
