@@ -28,7 +28,7 @@ export default function HeroSection() {
             Start creating form your mobile now.
           </p>
         </span>
-        <div className="mx-auto flex flex-col items-center gap-4 md:flex-row md:gap-10">
+        <div className="mx-auto flex flex-col items-center gap-4 md:flex-row md:gap-8">
           <AppDownloadButton store="playstore" />
           <AppDownloadButton store="appstore" />
         </div>
@@ -50,6 +50,7 @@ export default function HeroSection() {
           src={HeroGradient}
           alt="Hero Gradient"
           fill
+          loading="eager"
           quality={1}
           style={{ objectFit: "cover", objectPosition: "top"}}
         />
