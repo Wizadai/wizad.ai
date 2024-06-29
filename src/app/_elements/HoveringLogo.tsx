@@ -29,7 +29,7 @@ export default function HoveringLogo({
   return (
     <div className="relative w-full" ref={containerRef}>
       <motion.div
-        className={`$absolute left-0 right-0 top-0 mx-auto flex h-screen items-center justify-center`}
+        className={`absolute left-0 right-0 top-0 mx-auto flex h-screen items-center justify-center`}
         style={{ translateY: translateYSpring }}
         ref={logoRef}
       >
