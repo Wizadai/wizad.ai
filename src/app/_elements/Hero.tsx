@@ -52,6 +52,7 @@ export default function HeroSection() {
               alt="Posters made with Wizad"
               className="hidden w-0 md:block md:w-full"
             />
+            <span className="absolute bottom-0 left-0 h-1/2 w-full bg-gradient-to-t from-black to-transparent" />
           </HoveringLogo>
         </div>
         <Image
@@ -59,7 +60,6 @@ export default function HeroSection() {
           alt="Posters made with Wizad"
           className="w-full md:hidden md:w-0"
         />
-        <span className="absolute bottom-0 left-0 h-1/2 w-full bg-gradient-to-t from-black to-transparent" />
       </div>
       <div className="absolute -top-20 left-0 -z-50 h-full w-full md:-top-56">
         <Image
