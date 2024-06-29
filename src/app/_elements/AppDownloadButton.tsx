@@ -21,11 +21,11 @@ export default function AppDownloadButton({ store }: { store: Store }) {
       href={StoreLinks[store]}
       target="_blank"
       rel="noopener"
-      className="transform rounded-2xl bg-white/10 p-2 transition-transform duration-500 hover:scale-110 md:p-5"
+      className="transform rounded-2xl bg-white/10 p-2 shadow shadow-gray-600 transition-transform duration-500 hover:scale-110 md:p-4"
     >
       <Image
         src={StoreButton[store]}
-        height={56}
+        height={54}
         alt={`Download from ${
           {
             appstore: "Apple App Store",
