@@ -1,6 +1,7 @@
 import { readFile, readdir } from "fs/promises";
 import matter from "gray-matter";
 import path from "path";
+import fs from "fs";
 
 type Metadata = {
   title: string;
@@ -11,7 +12,7 @@ type Metadata = {
   image?: string;
 };
 
-function getReadingDuration(content: string, wordsPerMinute = 200) {
+export function getReadingDuration(content: string, wordsPerMinute = 200) {
   // Remove HTML tags (e.g., if text was converted from Markdown)
   const plainText = content
     // Remove <code> elements
@@ -58,4 +59,26 @@ export async function getBlogPosts() {
 export async function getBlogFromSlug(slug: string) {
   const blogs = await getBlogPosts();
   return blogs.find((blog) => blog.slug === slug);
+}
+
+export async function getWordCount(dirName: string): Promise<number> {
+  const filePath = path.join(
+    process.cwd(),
+    "src",
+    "app",
+    "bog",
+    "(posts)",
+    dirName,
+    "page.mdx",
+  );
+  try {
+    const content = await fs.promises.readFile(filePath, "utf8");
+    const text = content.replace(/<\/?[^>]+(>|$)/g, ""); // Remove HTML/JSX tags
+    const words = text.trim().split(/\s+/); // Split by whitespace
+    console.log("Word count:", words.length);
+    return words.length;
+  } catch (error) {
+    console.error("Error reading MDX file:", error);
+    return 0;
+  }
 }

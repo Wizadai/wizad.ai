@@ -1,0 +1,95 @@
+import BlogTitle from "../../_components/BlogTitle";
+import path from "path";
+import { getWordCount, getReadingDuration } from "../../../blogs/utils";
+import ContentWrapper from "../../_components/ContentWrapper";
+import { baseUrl } from "@/app/sitemap";
+
+export const wordCount = await getWordCount(path.basename(__dirname));
+
+export const data = {
+  title: "How to optimize your social media profiles for better engagement",
+  publishedAt: "May 24, 2024",
+  summary:
+    "Wizad AI has achieved significant progress in the past quarter, marked by notable milestones across various fronts. Our commitment to innovation, customer satisfaction, and strategic partnerships has fueled our growth and market expansion. Leveraging diverse generative AI models, we've automated numerous processes, enhancing efficiency and scalability. Despite challenges from the competitive landscape and global economic conditions, we remain optimistic about our trajectory and dedicated to delivering value to our stakeholders.",
+  image: "/blog-cover/blog1.png",
+  category: "Social Media",
+  featured: true,
+  readingDuration: Math.ceil(wordCount / 200),
+};
+
+export async function generateMetadata() {
+  const title = data.title;
+  const description = data.summary;
+  const image = data.image;
+
+let ogImage = image
+? image
+: `${baseUrl}/og?title=${encodeURIComponent(title)}`;
+
+return {
+title,
+description,
+openGraph: {
+title,
+description,
+type: "article",
+publishedTime: data.publishedAt,
+url: `${baseUrl}/blogs/${path.basename(__dirname)}`,
+images: [{ url: ogImage }],
+},
+twitter: {
+card: "summary_large_image",
+title,
+description,
+images: [ogImage],
+},
+};
+}
+
+<BlogTitle
+  category={data.category}
+  publishedAt={data.publishedAt}
+  title={data.title}
+  readingDuration={data.readingDuration}
+/>
+
+<ContentWrapper imageSrc={data.image}>
+
+Wizad AI has achieved significant progress in the past quarter, marked by notable milestones across various fronts. Our commitment to innovation, customer satisfaction, and strategic partnerships has fueled our growth and market expansion. Leveraging diverse generative AI models, we've automated numerous processes, enhancing efficiency and scalability. Despite challenges from the competitive landscape and global economic conditions, we remain optimistic about our trajectory and dedicated to delivering value to our stakeholders.
+
+# Highlights:
+
+## 1. Product Development:
+
+- Enhanced our AI platform with various generative AI models, improving natural language processing capabilities and predictive analytics.
+- Successfully launched Wizad AI Version 2.0, incorporating user feedback and market trends for a more intuitive user experience.
+- Implemented advanced algorithms to optimize performance and scalability, ensuring seamless operation under high demand.
+
+## 2. Customer Acquisition and Retention:
+
+- Expanded our customer base through targeted marketing and strategic partnerships, with a focus on customer retention.
+- Achieved high customer retention rates through personalized support, continuous product updates, and proactive communication.
+- Users have created over 2 lakhs posters using Wizad AI, demonstrating widespread adoption and utility.
+
+## 3. Financial Performance:
+
+- Surpassed revenue targets, with total revenue exceeding 30 Lakhs.
+- Maintained healthy profit margins through efficient resource allocation and cost management strategies.
+- Raised an investment of 50 Lakhs, reinforcing investor confidence and providing additional capital for growth and innovation.
+
+## 4. Strategic Partnerships:
+
+- Forged strategic alliances with leading technology firms and industry organizations, enhancing market penetration and innovation.
+- Collaborated with academic institutions to drive research and innovation in artificial intelligence, positioning Wizad AI as a thought leader.
+
+## 5. Market Expansion:
+
+- Expanded presence in key regions, including North America, Europe, and Asia-Pacific, through targeted marketing and localization efforts.
+- Identified emerging market opportunities in healthcare, finance, and e-commerce, tailoring solutions to address specific industry needs.
+- Witnessed an influx of international customers, including those from the US, indicating growing global demand.
+
+# Future Outlook
+
+Wizad AI is poised to capitalize on the rising demand for AI-driven solutions across industries. We remain committed to driving innovation, delivering exceptional value to customers, and fostering strategic partnerships to fuel expansion and success in the dynamic marketplace.
+
+</ContentWrapper>
