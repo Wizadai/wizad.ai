@@ -7,6 +7,59 @@ summary: |
   In recent years, Instagram has become one of the most popular social media platforms for real estate marketing. With its visual nature, Instagram allows real estate agents and businesses to showcase properties and connect with potential buyers in a unique way. And with the introduction of Instagram Reels, there are even more creative ways to use the platform for real estate marketing.
 ---
 
+import BlogTitle from "@/app/blogs/_elements/BlogTitle";
+import path from "path";
+import { getReadingDuration } from "@/app/blogs/utils";
+import ContentWrapper from "@/app/blogs/_elements/ContentWrapper";
+import { baseUrl } from "@/app/sitemap";
+
+export const data = {
+  title: "11 Ideas on Instagram Reels Marketing For Real Estate Firms",
+  publishedAt: "May 24, 2024",
+  summary:
+    "In recent years, Instagram has become one of the most popular social media platforms for real estate marketing. With its visual nature, Instagram allows real estate agents and businesses to showcase properties and connect with potential buyers in a unique way. And with the introduction of Instagram Reels, there are even more creative ways to use the platform for real estate marketing.",
+  image: "/blog-cover/blog3.png",
+  category: "Social Media",
+  readingDuration: await getReadingDuration(path.basename(__dirname), true),
+};
+
+export async function generateMetadata() {
+  const title = data.title;
+  const description = data.summary;
+  const image = data.image;
+
+let ogImage = image
+? image
+: `${baseUrl}/og?title=${encodeURIComponent(title)}`;
+
+return {
+title,
+description,
+openGraph: {
+title,
+description,
+type: "article",
+publishedTime: data.publishedAt,
+url: `${baseUrl}/blogs/${path.basename(__dirname)}`,
+images: [{ url: ogImage }],
+},
+twitter: {
+card: "summary_large_image",
+title,
+description,
+images: [ogImage],
+},
+};
+}
+
+<BlogTitle
+  category={data.category}
+  publishedAt={data.publishedAt}
+  title={data.title}
+  readingDuration={data.readingDuration}
+/>
+
+<ContentWrapper imageSrc={data.image} slug={path.basename(__dirname)}>
 In recent years, Instagram has become one of the most popular social media platforms for real estate marketing. With its visual nature, Instagram allows real estate agents and businesses to showcase properties and connect with potential buyers in a unique way. And with the introduction of Instagram Reels, there are even more creative ways to use the platform for real estate marketing.
 
 Instagram Reels is a feature that allows users to create short, 15-second video clips that can be edited with music, text, and other effects. Here are some creative ways that real estate agents and businesses can use Instagram Reels to boost their marketing efforts:
@@ -56,3 +109,5 @@ Another way to use Instagram Reels in real estate marketing is to partner with l
 Agents can use Instagram Reels to create a series of videos on a specific topic. For example, an agent could create a series of Reels focused on home buying tips, featuring short clips on topics such as budgeting, negotiating, and home inspections. By creating a series, agents can provide valuable content to their audience and establish themselves as a go-to resource in the real estate industry.
 
 In conclusion, Instagram Reels provides a unique opportunity for real estate agents and businesses to connect with potential buyers in new and creative ways. By showcasing properties, sharing insights about the neighbourhood, providing home improvement tips, and partnering with local businesses, agents can build their brand and attract more clients. With the right approach and a little creativity, Instagram Reels can be a powerful tool for real estate marketing.
+
+</ContentWrapper>

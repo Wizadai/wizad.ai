@@ -8,6 +8,60 @@ summary: |
   Wizad AI has achieved significant progress in the past quarter, marked by notable milestones across various fronts. Our commitment to innovation, customer satisfaction, and strategic partnerships has fueled our growth and market expansion. Leveraging diverse generative AI models, we've automated numerous processes, enhancing efficiency and scalability. Despite challenges from the competitive landscape and global economic conditions, we remain optimistic about our trajectory and dedicated to delivering value to our stakeholders.
 ---
 
+import BlogTitle from "@/app/blogs/_elements/BlogTitle";
+import path from "path";
+import { getReadingDuration } from "@/app/blogs/utils";
+import ContentWrapper from "@/app/blogs/_elements/ContentWrapper";
+import { baseUrl } from "@/app/sitemap";
+
+export const data = {
+  title: "How to optimize your social media profiles for better engagement",
+  publishedAt: "May 24, 2024",
+  summary:
+    "Wizad AI has achieved significant progress in the past quarter, marked by notable milestones across various fronts. Our commitment to innovation, customer satisfaction, and strategic partnerships has fueled our growth and market expansion. Leveraging diverse generative AI models, we've automated numerous processes, enhancing efficiency and scalability. Despite challenges from the competitive landscape and global economic conditions, we remain optimistic about our trajectory and dedicated to delivering value to our stakeholders.",
+  image: "/blog-cover/blog1.png",
+  category: "Social Media",
+  readingDuration: await getReadingDuration(path.basename(__dirname), true),
+};
+
+export async function generateMetadata() {
+  const title = data.title;
+  const description = data.summary;
+  const image = data.image;
+
+let ogImage = image
+? image
+: `${baseUrl}/og?title=${encodeURIComponent(title)}`;
+
+return {
+title,
+description,
+openGraph: {
+title,
+description,
+type: "article",
+publishedTime: data.publishedAt,
+url: `${baseUrl}/blogs/${path.basename(__dirname)}`,
+images: [{ url: ogImage }],
+},
+twitter: {
+card: "summary_large_image",
+title,
+description,
+images: [ogImage],
+},
+};
+}
+
+<BlogTitle
+  category={data.category}
+  publishedAt={data.publishedAt}
+  title={data.title}
+  readingDuration={data.readingDuration}
+/>
+
+<ContentWrapper imageSrc={data.image} slug={path.basename(__dirname)}>
+
 Wizad AI has achieved significant progress in the past quarter, marked by notable milestones across various fronts. Our commitment to innovation, customer satisfaction, and strategic partnerships has fueled our growth and market expansion. Leveraging diverse generative AI models, we've automated numerous processes, enhancing efficiency and scalability. Despite challenges from the competitive landscape and global economic conditions, we remain optimistic about our trajectory and dedicated to delivering value to our stakeholders.
 
 # Highlights:
@@ -44,3 +98,5 @@ Wizad AI has achieved significant progress in the past quarter, marked by notabl
 # Future Outlook
 
 Wizad AI is poised to capitalize on the rising demand for AI-driven solutions across industries. We remain committed to driving innovation, delivering exceptional value to customers, and fostering strategic partnerships to fuel expansion and success in the dynamic marketplace.
+
+</ContentWrapper>

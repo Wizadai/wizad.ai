@@ -8,6 +8,60 @@ summary: |
   Are you a business owner trying to figure out how to design custom posters easily and market your products or services on social media? Don't worry we've got you!
 ---
 
+import BlogTitle from "@/app/blogs/_elements/BlogTitle";
+import path from "path";
+import { getReadingDuration } from "@/app/blogs/utils";
+import ContentWrapper from "@/app/blogs/_elements/ContentWrapper";
+import { baseUrl } from "@/app/sitemap";
+
+export const data = {
+  title: "Design Custom Posters in Seconds For Business Owners",
+  publishedAt: "June 06, 2024",
+  summary:
+    "Are you a business owner trying to figure out how to design custom posters easily and market your products or services on social media? Don't worry we've got you!",
+  image: "/blog-cover/blog5.jpg",
+  category: "Tutorials",
+  readingDuration: await getReadingDuration(path.basename(__dirname), true),
+};
+
+export async function generateMetadata() {
+  const title = data.title;
+  const description = data.summary;
+  const image = data.image;
+
+let ogImage = image
+? image
+: `${baseUrl}/og?title=${encodeURIComponent(title)}`;
+
+return {
+title,
+description,
+openGraph: {
+title,
+description,
+type: "article",
+publishedTime: data.publishedAt,
+url: `${baseUrl}/blogs/${path.basename(__dirname)}`,
+images: [{ url: ogImage }],
+},
+twitter: {
+card: "summary_large_image",
+title,
+description,
+images: [ogImage],
+},
+};
+}
+
+<BlogTitle
+  category={data.category}
+  publishedAt={data.publishedAt}
+  title={data.title}
+  readingDuration={data.readingDuration}
+/>
+
+<ContentWrapper imageSrc={data.image} slug={path.basename(__dirname)}>
+
 With the rise of new industries and businesses, small-scale business owners now have to compete with big brands in their industry. For example, the evolution of top-notch cosmetic brands like Maybelline or Dior has led to people opting for their products instead of their many other competitors’ products. This has everything to do with how well they advertise and market their products. Let’s say, every other business in the fashion sector wants to build a promotion strategy as effective as Zara, Calvin Klein, or any other big brands. Every food industry businesses want to market their products like how KFC or Pizza Hut does. The question is how?
 
 Social media marketing has come a long way throughout this decade. Did you know that more than 43% of consumers find products through social media? The involvement of technology in the marketing field has brought about a significant rise in using generative AI to create marketable content, which is extremely cost-effective and cheaper than traditional marketing strategies. Through this Artificial Intelligence technology, you can design and promote posters & adverts which serve as a medium to capture the attention of your potential customers.
@@ -82,3 +136,5 @@ Now, you have a poster designed for your requirement in such a short period:
 You can post these and make aware of your customers and potential customers about your new product!
 
 Business owners from different sectors like restaurants, education, construction & decor, jewellery & cosmetics, have used the Wizad application to create posters to market their products/ services. Particularly for businesses prone to frequent changes in their product, promotion, place or price mixes, Wizad can be of great use to generate posters conveying the same to their customers on short notice. As mentioned earlier, small and micro-scale business owners like you can also be strong competitors to big brands by using Wizad AI to enhance your marketing strategy. For your business to succeed, you must invest your interest in the right direction. That is what Wizad AI has to offer you- an AI poster maker that can create content for your social media, which can make marketing your products and service simpler and more efficient.
+
+</ContentWrapper>

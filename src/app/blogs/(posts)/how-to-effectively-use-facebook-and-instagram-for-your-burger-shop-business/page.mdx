@@ -8,6 +8,61 @@ summary: |
   Facebook and Instagram are two of the most popular social media platforms, with billions of users logging in every day. For burger shop owners, social media can be a powerful tool to promote their business, attract new customers, and engage with their existing audience. In this post, we'll explore some effective strategies for using Facebook and Instagram to promote your burger shop business.
 ---
 
+import BlogTitle from "@/app/blogs/_elements/BlogTitle";
+import path from "path";
+import { getReadingDuration } from "@/app/blogs/utils";
+import ContentWrapper from "@/app/blogs/_elements/ContentWrapper";
+import { baseUrl } from "@/app/sitemap";
+
+export const data = {
+  title:
+    "How to effectively use Facebook and Instagram for your burger shop business",
+  publishedAt: "May 24, 2024",
+  summary:
+    "Facebook and Instagram are two of the most popular social media platforms, with billions of users logging in every day. For burger shop owners, social media can be a powerful tool to promote their business, attract new customers, and engage with their existing audience. In this post, we'll explore some effective strategies for using Facebook and Instagram to promote your burger shop business.",
+  image: "/blog-cover/blog4.png",
+  category: "Social Media",
+  readingDuration: await getReadingDuration(path.basename(__dirname), true),
+};
+
+export async function generateMetadata() {
+  const title = data.title;
+  const description = data.summary;
+  const image = data.image;
+
+let ogImage = image
+? image
+: `${baseUrl}/og?title=${encodeURIComponent(title)}`;
+
+return {
+title,
+description,
+openGraph: {
+title,
+description,
+type: "article",
+publishedTime: data.publishedAt,
+url: `${baseUrl}/blogs/${path.basename(__dirname)}`,
+images: [{ url: ogImage }],
+},
+twitter: {
+card: "summary_large_image",
+title,
+description,
+images: [ogImage],
+},
+};
+}
+
+<BlogTitle
+  category={data.category}
+  publishedAt={data.publishedAt}
+  title={data.title}
+  readingDuration={data.readingDuration}
+/>
+
+<ContentWrapper imageSrc={data.image} slug={path.basename(__dirname)}>
+
 Facebook and Instagram are two of the most popular social media platforms, with billions of users logging in every day. For burger shop owners, social media can be a powerful tool to promote their business, attract new customers, and engage with their existing audience. In this post, we'll explore some effective strategies for using Facebook and Instagram to promote your burger shop business.
 
 ## 1. Share High-Quality Photos of Your Burgers
@@ -51,3 +106,5 @@ Use Facebook and Instagram to showcase your specials and promotions. Whether you
 Finally, it's important to monitor your analytics on Facebook and Instagram. Use the platform's built-in analytics tools to track your engagement, reach, and follower growth. Use this information to adjust your social media strategy and improve your performance over time. By analysing your data, you can make informed decisions about your social media marketing and maximise the impact of your burger shop business on Facebook and Instagram.
 
 In conclusion, Facebook and Instagram can be powerful tools for promoting your burger shop business. By sharing high-quality photos, posting regularly and consistently, using Stories, engaging with your audience, and using ads, you can attract new customers and build a loyal following for your burger shop. Just remember to stay authentic and true to your brand, and always provide value to your audience.
+
+</ContentWrapper>

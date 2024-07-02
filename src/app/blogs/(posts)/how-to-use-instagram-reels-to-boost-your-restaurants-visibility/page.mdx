@@ -7,6 +7,60 @@ summary: |
   Instagram Reels is a powerful tool for businesses looking to improve their social media visibility. With its ability to create engaging, short-form videos, Reels has quickly become one of the most popular features on Instagram. For restaurants, Reels offers a unique opportunity to showcase menu items, introduce staff, and provide an inside look at the restaurant. In this article, we will discuss how restaurants can use Instagram Reels to boost their visibility and attract more customers.
 ---
 
+import BlogTitle from "@/app/blogs/_elements/BlogTitle";
+import path from "path";
+import { getReadingDuration } from "@/app/blogs/utils";
+import ContentWrapper from "@/app/blogs/_elements/ContentWrapper";
+import { baseUrl } from "@/app/sitemap";
+
+export const data = {
+  title: "How to use Instagram Reels to boost your restaurants visibility",
+  publishedAt: "May 24, 2024",
+  summary:
+    "Instagram Reels is a powerful tool for businesses looking to improve their social media visibility. With its ability to create engaging, short-form videos, Reels has quickly become one of the most popular features on Instagram. For restaurants, Reels offers a unique opportunity to showcase menu items, introduce staff, and provide an inside look at the restaurant. In this article, we will discuss how restaurants can use Instagram Reels to boost their visibility and attract more customers.",
+  image: "/blog-cover/blog2.png",
+  category: "Social Media",
+  readingDuration: await getReadingDuration(path.basename(__dirname), true),
+};
+
+export async function generateMetadata() {
+  const title = data.title;
+  const description = data.summary;
+  const image = data.image;
+
+let ogImage = image
+? image
+: `${baseUrl}/og?title=${encodeURIComponent(title)}`;
+
+return {
+title,
+description,
+openGraph: {
+title,
+description,
+type: "article",
+publishedTime: data.publishedAt,
+url: `${baseUrl}/blogs/${path.basename(__dirname)}`,
+images: [{ url: ogImage }],
+},
+twitter: {
+card: "summary_large_image",
+title,
+description,
+images: [ogImage],
+},
+};
+}
+
+<BlogTitle
+  category={data.category}
+  publishedAt={data.publishedAt}
+  title={data.title}
+  readingDuration={data.readingDuration}
+/>
+
+<ContentWrapper imageSrc={data.image} slug={path.basename(__dirname)}>
+
 Instagram Reels is a powerful tool for businesses looking to improve their social media visibility. With its ability to create engaging, short-form videos, Reels has quickly become one of the most popular features on Instagram. For restaurants, Reels offers a unique opportunity to showcase menu items, introduce staff, and provide an inside look at the restaurant. In this article, we will discuss how restaurants can use Instagram Reels to boost their visibility and attract more customers.
 
 ## 1. Showcase Menu Items
@@ -52,3 +106,5 @@ Another way to use Instagram Reels to boost your restaurant's visibility is to c
 When collaborating with Influencers or other local businesses, it is important to find a good match for your brand. Look for Influencers or businesses with a similar target audience and values. Use Reels to showcase the collaboration and highlight any special promotions or events.
 
 Overall, Instagram Reels can be a powerful tool for restaurants looking to improve their social media visibility. By showcasing menu items, introducing staff, providing an inside look, engaging with customers, and trying out some of these additional ideas, restaurants can create a strong social media presence that drives traffic to their business.
+
+</ContentWrapper>
