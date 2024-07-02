@@ -45,7 +45,7 @@ export default async function Page() {
         </div>
       </section>
 
-      <section className="flex max-w-11xl flex-col px-4 py-10 md:py-20">
+      <section className="mx-auto flex max-w-11xl flex-col px-4 py-10 md:py-20">
         <FeaturedCarousel options={{ dragFree: true }}>
           {featuredBlogs.map((blog) => (
             <CarouselTile key={blog.slug} blog={blog} />
@@ -54,7 +54,7 @@ export default async function Page() {
       </section>
 
       {socialMediaBlogs.length > 0 && (
-        <section className="mx-auto flex max-w-11xl flex-col px-4 py-10 md:px-20 md:py-20">
+        <section className="mx-auto flex w-full max-w-11xl flex-col px-4 py-10 md:px-20 md:py-20">
           <h2 className="pb-8 font-hero text-2xl not-italic">Social Media</h2>
           <ul className="flex flex-col gap-8 md:gap-12">
             {socialMediaBlogs.map((blog) => (
@@ -67,7 +67,7 @@ export default async function Page() {
       )}
 
       {tutorialBlogs.length > 0 && (
-        <section className="mx-auto flex max-w-11xl flex-col px-4 py-10 md:px-20 md:py-24">
+        <section className="mx-auto flex w-full max-w-11xl flex-col px-4 py-10 md:px-20 md:py-20">
           <h2 className="pb-8 font-hero text-2xl not-italic">Tutorials</h2>
           <ul className="flex flex-col gap-8 md:gap-12">
             {tutorialBlogs.map((blog) => (

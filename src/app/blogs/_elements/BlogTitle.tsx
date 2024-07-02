@@ -1,4 +1,4 @@
-import ShareLinks from "./ShareLinks";
+import ShareLinks from "@/app/blogs/_elements/ShareLinks";
 
 export default function BlogTitle({
   publishedAt,

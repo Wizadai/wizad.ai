@@ -1,7 +1,6 @@
 import { readFile, readdir } from "fs/promises";
 import matter from "gray-matter";
 import path from "path";
-import fs from "fs";
 
 type Metadata = {
   title: string;
@@ -12,45 +11,45 @@ type Metadata = {
   image?: string;
 };
 
-export function getReadingDuration(content: string, wordsPerMinute = 200) {
-  // Remove HTML tags (e.g., if text was converted from Markdown)
-  const plainText = content
-    // Remove <code> elements
+export async function getReadingDuration(
+  contentOrDirName: string,
+  isDirectory: boolean = false,
+  wordsPerMinute: number = 200
+): Promise<number> {
+  let plainText: string;
+
+  if (isDirectory) {
+    // If it's a directory name, read the file and process its content
+    const filePath = path.join(
+      process.cwd(),
+      "src",
+      "app",
+      "blogs",
+      "(posts)",
+      contentOrDirName,
+      "page.mdx"
+    );
+    try {
+      const { content } = matter(await readFile(filePath, "utf-8"));
+      plainText = content;
+    } catch (error) {
+      console.error("Error reading MDX file:", error);
+      return 0;
+    }
+  } else {
+    // If it's content, use it directly
+    plainText = contentOrDirName;
+  }
+
+  // Process the text to remove HTML tags and code blocks
+  plainText = plainText
     .replace(/<code>.*?<\/code>/gs, "")
-    // Remove code blocks in Markdown (e.g., ```js ... ```)
     .replace(/```[^`]+```/gs, "")
-    // Remove other HTML tags
     .replace(/<[^>]*>/g, "");
 
   const words = plainText.split(/\s+/).length;
 
-  /*!
-   *  Assuming an average reader reads around 200-230 words per minute,
-   *  research can be found here: https://scholarwithin.com/average-reading-speed
-   */
   return Math.ceil(words / wordsPerMinute);
-}
-
-export async function getWordCount(dirName: string): Promise<number> {
-  const filePath = path.join(
-    process.cwd(),
-    "src",
-    "app",
-    "bog",
-    "(posts)",
-    dirName,
-    "page.mdx",
-  );
-  try {
-    const content = await fs.promises.readFile(filePath, "utf8");
-    const text = content.replace(/<\/?[^>]+(>|$)/g, ""); // Remove HTML/JSX tags
-    const words = text.trim().split(/\s+/); // Split by whitespace
-    console.log("Word count:", words.length);
-    return words.length;
-  } catch (error) {
-    console.error("Error reading MDX file:", error);
-    return 0;
-  }
 }
 
 async function getMDXFilesRecursively(dir: string): Promise<string[]> {
@@ -84,10 +83,5 @@ async function getMDXFiles(dir: string) {
 }
 
 export async function getBlogPosts() {
-  return await getMDXFiles(path.join(process.cwd(), "src", "app", "bog", "(posts)"));
-}
-
-export async function getBlogFromSlug(slug: string) {
-  const blogs = await getBlogPosts();
-  return blogs.find((blog) => blog.slug === slug);
+  return await getMDXFiles(path.join(process.cwd(), "src", "app", "blogs", "(posts)"));
 }

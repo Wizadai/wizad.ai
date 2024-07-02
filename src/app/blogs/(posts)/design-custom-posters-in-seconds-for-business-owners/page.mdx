@@ -8,13 +8,11 @@ summary: |
   Are you a business owner trying to figure out how to design custom posters easily and market your products or services on social media? Don't worry we've got you!
 ---
 
-import BlogTitle from "../../_components/BlogTitle";
+import BlogTitle from "@/app/blogs/_elements/BlogTitle";
 import path from "path";
-import { getWordCount, getReadingDuration } from "../../../blogs/utils";
-import ContentWrapper from "../../_components/ContentWrapper";
+import { getReadingDuration } from "@/app/blogs/utils";
+import ContentWrapper from "@/app/blogs/_elements/ContentWrapper";
 import { baseUrl } from "@/app/sitemap";
-
-export const wordCount = await getWordCount(path.basename(__dirname));
 
 export const data = {
   title: "Design Custom Posters in Seconds For Business Owners",
@@ -23,8 +21,7 @@ export const data = {
     "Are you a business owner trying to figure out how to design custom posters easily and market your products or services on social media? Don't worry we've got you!",
   image: "/blog-cover/blog5.jpg",
   category: "Tutorials",
-  featured: true,
-  readingDuration: Math.ceil(wordCount / 200),
+  readingDuration: await getReadingDuration(path.basename(__dirname), true),
 };
 
 export async function generateMetadata() {

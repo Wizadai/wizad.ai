@@ -8,13 +8,11 @@ summary: |
   Facebook and Instagram are two of the most popular social media platforms, with billions of users logging in every day. For burger shop owners, social media can be a powerful tool to promote their business, attract new customers, and engage with their existing audience. In this post, we'll explore some effective strategies for using Facebook and Instagram to promote your burger shop business.
 ---
 
-import BlogTitle from "../../_components/BlogTitle";
+import BlogTitle from "@/app/blogs/_elements/BlogTitle";
 import path from "path";
-import { getWordCount, getReadingDuration } from "../../../blogs/utils";
-import ContentWrapper from "../../_components/ContentWrapper";
+import { getReadingDuration } from "@/app/blogs/utils";
+import ContentWrapper from "@/app/blogs/_elements/ContentWrapper";
 import { baseUrl } from "@/app/sitemap";
-
-export const wordCount = await getWordCount(path.basename(__dirname));
 
 export const data = {
   title:
@@ -24,8 +22,7 @@ export const data = {
     "Facebook and Instagram are two of the most popular social media platforms, with billions of users logging in every day. For burger shop owners, social media can be a powerful tool to promote their business, attract new customers, and engage with their existing audience. In this post, we'll explore some effective strategies for using Facebook and Instagram to promote your burger shop business.",
   image: "/blog-cover/blog4.png",
   category: "Social Media",
-  featured: true,
-  readingDuration: Math.ceil(wordCount / 200),
+  readingDuration: await getReadingDuration(path.basename(__dirname), true),
 };
 
 export async function generateMetadata() {

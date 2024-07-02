@@ -8,13 +8,11 @@ summary: |
   Wizad AI has achieved significant progress in the past quarter, marked by notable milestones across various fronts. Our commitment to innovation, customer satisfaction, and strategic partnerships has fueled our growth and market expansion. Leveraging diverse generative AI models, we've automated numerous processes, enhancing efficiency and scalability. Despite challenges from the competitive landscape and global economic conditions, we remain optimistic about our trajectory and dedicated to delivering value to our stakeholders.
 ---
 
-import BlogTitle from "../../_components/BlogTitle";
+import BlogTitle from "@/app/blogs/_elements/BlogTitle";
 import path from "path";
-import { getWordCount, getReadingDuration } from "../../../blogs/utils";
-import ContentWrapper from "../../_components/ContentWrapper";
+import { getReadingDuration } from "@/app/blogs/utils";
+import ContentWrapper from "@/app/blogs/_elements/ContentWrapper";
 import { baseUrl } from "@/app/sitemap";
-
-export const wordCount = await getWordCount(path.basename(__dirname));
 
 export const data = {
   title: "How to optimize your social media profiles for better engagement",
@@ -23,8 +21,7 @@ export const data = {
     "Wizad AI has achieved significant progress in the past quarter, marked by notable milestones across various fronts. Our commitment to innovation, customer satisfaction, and strategic partnerships has fueled our growth and market expansion. Leveraging diverse generative AI models, we've automated numerous processes, enhancing efficiency and scalability. Despite challenges from the competitive landscape and global economic conditions, we remain optimistic about our trajectory and dedicated to delivering value to our stakeholders.",
   image: "/blog-cover/blog1.png",
   category: "Social Media",
-  featured: true,
-  readingDuration: Math.ceil(wordCount / 200),
+  readingDuration: await getReadingDuration(path.basename(__dirname), true),
 };
 
 export async function generateMetadata() {

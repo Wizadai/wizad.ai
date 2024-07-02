@@ -21,5 +21,11 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         className="hidden"
       />
     ),
+    hr: (props) => (
+      <hr
+        {...props}
+        className="hidden"
+      />
+    ),
   };
 }
