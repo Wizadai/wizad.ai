@@ -45,7 +45,7 @@ export default async function Page() {
         </div>
       </section>
 
-      <section className="mx-auto flex max-w-11xl flex-col px-4 py-10 md:py-20">
+      <section className="flex flex-col px-4 py-10 md:py-20">
         <FeaturedCarousel options={{ dragFree: true }}>
           {featuredBlogs.map((blog) => (
             <CarouselTile key={blog.slug} blog={blog} />

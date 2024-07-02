@@ -9,7 +9,7 @@ type Props = {
 
 export default function CarouselTile({ blog }: Props) {
   return (
-    <div className="flex w-[95%] shrink-0 items-center justify-center rounded-2xl bg-neutral-920 p-3 md:w-full md:py-10">
+    <div className="flex max-w-10xl w-[95%] shrink-0 items-center justify-center rounded-2xl bg-neutral-920 p-3 md:w-full md:py-10">
       <div className="relative flex flex-col overflow-hidden md:w-[89%] md:justify-center">
         <h2 className="mb-4 w-full text-2xl/tight font-medium text-white md:w-[60%] md:text-4xl/none">
           {blog.metadata.title}
