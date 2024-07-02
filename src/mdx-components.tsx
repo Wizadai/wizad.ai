@@ -15,5 +15,11 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         alt={props.alt as string}
       />
     ),
+    h2: (props) => (
+      <h2
+        {...props}
+        className="hidden"
+      />
+    ),
   };
 }

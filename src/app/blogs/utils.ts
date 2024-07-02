@@ -31,36 +31,6 @@ export function getReadingDuration(content: string, wordsPerMinute = 200) {
   return Math.ceil(words / wordsPerMinute);
 }
 
-async function getMDXFiles(dir: string) {
-  const files = await readdir(dir);
-
-  return Promise.all(
-    files
-      .filter((file) => path.extname(file) === ".mdx")
-      .map(async (file) => {
-        const { data: metadata, content } = matter(
-          await readFile(path.join(dir, file), "utf-8"),
-        );
-
-        return {
-          metadata: metadata as Metadata,
-          slug: path.basename(file, path.extname(file)),
-          readingDuration: getReadingDuration(content),
-          content,
-        };
-      }),
-  );
-}
-
-export async function getBlogPosts() {
-  return await getMDXFiles(path.join(process.cwd(), "content"));
-}
-
-export async function getBlogFromSlug(slug: string) {
-  const blogs = await getBlogPosts();
-  return blogs.find((blog) => blog.slug === slug);
-}
-
 export async function getWordCount(dirName: string): Promise<number> {
   const filePath = path.join(
     process.cwd(),
@@ -81,4 +51,43 @@ export async function getWordCount(dirName: string): Promise<number> {
     console.error("Error reading MDX file:", error);
     return 0;
   }
+}
+
+async function getMDXFilesRecursively(dir: string): Promise<string[]> {
+  let entries = await readdir(dir, { withFileTypes: true });
+  let files = await Promise.all(entries.map(async (entry) => {
+    const res = path.resolve(dir, entry.name);
+    return entry.isDirectory() ? getMDXFilesRecursively(res) : res;
+  }));
+  return files.flat();
+}
+
+async function getMDXFiles(dir: string) {
+  const allFiles = await getMDXFilesRecursively(dir);
+  const mdxFiles = allFiles.filter(file => path.extname(file) === '.mdx');
+
+  return Promise.all(
+    mdxFiles
+      // .filter((file) => path.extname(file) === ".mdx")
+      .map(async (file) => {
+        const { data: metadata, content } = matter(
+          await readFile(file, "utf-8"),
+        );
+
+        return {
+          metadata: metadata as Metadata,
+          slug: path.basename(path.dirname(file)),
+          readingDuration: getReadingDuration(content),
+        };
+      }),
+  );
+}
+
+export async function getBlogPosts() {
+  return await getMDXFiles(path.join(process.cwd(), "src", "app", "bog", "(posts)"));
+}
+
+export async function getBlogFromSlug(slug: string) {
+  const blogs = await getBlogPosts();
+  return blogs.find((blog) => blog.slug === slug);
 }
