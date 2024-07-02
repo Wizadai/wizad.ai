@@ -1,6 +1,6 @@
 import TestimonialsData from "@/../public/assets/testimonials.json";
 import Image from "next/image";
-import { TiSocialTwitter } from "react-icons/ti";
+import { RiProductHuntFill } from "react-icons/ri";
 import TestimonialsWrapper from "@/app/_elements/TestimonialsWrapper";
 
 type Testimonial = (typeof TestimonialsData)[number];
@@ -70,7 +70,7 @@ const TestimonialCard = ({ data }: { data: Testimonial }) => {
               </p>
             </span>
           </div>
-          <TiSocialTwitter className="text-2xl text-white/70" />
+          <RiProductHuntFill className="text-2xl text-white/70" />
         </div>
 
         <span className="break-inside-avoid md:text-[0.825rem]">
