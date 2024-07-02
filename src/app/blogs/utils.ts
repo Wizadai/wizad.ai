@@ -14,7 +14,7 @@ type Metadata = {
 export async function getReadingDuration(
   contentOrDirName: string,
   isDirectory: boolean = false,
-  wordsPerMinute: number = 200
+  wordsPerMinute: number = 200,
 ): Promise<number> {
   let plainText: string;
 
@@ -27,7 +27,7 @@ export async function getReadingDuration(
       "blogs",
       "(posts)",
       contentOrDirName,
-      "page.mdx"
+      "page.mdx",
     );
     try {
       const { content } = matter(await readFile(filePath, "utf-8"));
@@ -54,16 +54,18 @@ export async function getReadingDuration(
 
 async function getMDXFilesRecursively(dir: string): Promise<string[]> {
   let entries = await readdir(dir, { withFileTypes: true });
-  let files = await Promise.all(entries.map(async (entry) => {
-    const res = path.resolve(dir, entry.name);
-    return entry.isDirectory() ? getMDXFilesRecursively(res) : res;
-  }));
+  let files = await Promise.all(
+    entries.map(async (entry) => {
+      const res = path.resolve(dir, entry.name);
+      return entry.isDirectory() ? getMDXFilesRecursively(res) : res;
+    }),
+  );
   return files.flat();
 }
 
 async function getMDXFiles(dir: string) {
   const allFiles = await getMDXFilesRecursively(dir);
-  const mdxFiles = allFiles.filter(file => path.extname(file) === '.mdx');
+  const mdxFiles = allFiles.filter((file) => path.extname(file) === ".mdx");
 
   return Promise.all(
     mdxFiles
@@ -83,5 +85,7 @@ async function getMDXFiles(dir: string) {
 }
 
 export async function getBlogPosts() {
-  return await getMDXFiles(path.join(process.cwd(), "src", "app", "blogs", "(posts)"));
+  return await getMDXFiles(
+    path.join(process.cwd(), "src", "app", "blogs", "(posts)"),
+  );
 }

@@ -15,7 +15,6 @@ export default function ShareLinks() {
         <Image
           src={RiLink}
           alt="ri-link"
-          placeholder="blur"
           className="size-5 transform transition-transform duration-500 hover:scale-125"
           style={{ objectFit: "contain" }}
         />

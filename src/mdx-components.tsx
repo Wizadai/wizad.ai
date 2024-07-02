@@ -15,17 +15,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         alt={props.alt as string}
       />
     ),
-    h2: (props) => (
-      <h2
-        {...props}
-        className="hidden"
-      />
-    ),
-    hr: (props) => (
-      <hr
-        {...props}
-        className="hidden"
-      />
-    ),
+    h2: (props) => <h2 {...props} className="hidden" />,
+    hr: (props) => <hr {...props} className="hidden" />,
   };
 }
