@@ -28,7 +28,7 @@ export default function ShareLinks({title, summary}: {title: string, summary: st
 
   const shareOnLinkedIn = () => {
     const urlToShare = encodeURIComponent(getBaseUrl() + pathname);
-    const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?text=${title} - ${summary}\n${urlToShare}`;
+    const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?text=${title} - ${summary} Link:${urlToShare}`;
     window.open(linkedInUrl, '_blank');
   };
 
