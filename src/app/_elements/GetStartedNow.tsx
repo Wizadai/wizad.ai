@@ -13,7 +13,7 @@ export default function GetStartedNow() {
     } else if (os === "Android") {
       router.push(StoreLinks.playstore);
     } else {
-      router.push(StoreLinks.playstore);
+      router.push(process.env.NEXT_PUBLIC_APP_LINKTREE_URL!);
     }
   };
 
