@@ -1,0 +1,197 @@
+---
+title: An Effective Guide to Using the Wizad AI App
+publishedAt: July 03, 2024
+category: Tutorials
+image: "/blog-cover/blog6.jpg"
+featured: true
+summary: |
+  To be successful, every business needs effective marketing content. With that arises the most important question- How do you plan on delivering your ideas to your potential customers?
+---
+
+import BlogTitle from "@/app/blogs/_elements/BlogTitle";
+import path from "path";
+import { getReadingDuration } from "@/app/blogs/utils";
+import ContentWrapper from "@/app/blogs/_elements/ContentWrapper";
+import { baseUrl } from "@/app/sitemap";
+
+export const data = {
+  title: "An Effective Guide to Using the Wizad AI App",
+  publishedAt: "July 03, 2024",
+  summary:
+    "To be successful, every business needs effective marketing content. With that arises the most important question- How do you plan on delivering your ideas to your potential customers?",
+  image: "/blog-cover/blog6.jpg",
+  category: "Tutorials",
+  readingDuration: await getReadingDuration(path.basename(__dirname), true),
+};
+
+export async function generateMetadata() {
+  const title = data.title;
+  const description = data.summary;
+  const image = data.image;
+
+let ogImage = image
+? image
+: `${baseUrl}/og?title=${encodeURIComponent(title)}`;
+
+return {
+title,
+description,
+openGraph: {
+title,
+description,
+type: "article",
+publishedTime: data.publishedAt,
+url: `${baseUrl}/blogs/${path.basename(__dirname)}`,
+images: [{ url: ogImage }],
+},
+twitter: {
+card: "summary_large_image",
+title,
+description,
+images: [ogImage],
+},
+};
+}
+
+<BlogTitle
+  category={data.category}
+  publishedAt={data.publishedAt}
+  title={data.title}
+  readingDuration={data.readingDuration}
+  summary={data.summary}
+/>
+
+<ContentWrapper imageSrc={data.image} slug={path.basename(__dirname)} title={data.title} summary={data.summary}>
+[Wizad AI](https://wizad.ai) is a feasible answer to this question. Poster-making is an integral part of social media marketing and content creation that most businessmen fail to acknowledge. Are you tired of browsing through poster templates to create professional designs? Well, not anymore because now, Wizad AI is here to make your job ten times easier. Wizad is a mobile application which uses Generative AI to create content that you can post on your social media handles. It creates posters and designs without compromising on your brand’s identity and aesthetics.
+
+**This blog will guide you on how to use the app with minimum effort and maximum results. Follow these guidelines to get started:**
+
+- You can download the app from [Playstore](https://play.google.com/store/apps/details?id=co.wizad.wizad) or [Appstore](https://apps.apple.com/in/app/wizad-ai-poster-maker/id6458984305)
+- Initially, you have to _create an account._
+- Then, you can set up your business profile. You need to set them only once and it will help you create industry-specific content, appropriate for your business. This is how you can set it up:
+
+  1. Upload your _brand’s logo_ and remove the background.
+  2. Enter your _business entity’s name._
+  3. Give a brief _about/ introduction_ to your business.
+  4. Select your _Industry_ from the given options. If your line of work is not available on the list, click ‘other’ and type your industry name.
+  5. Give the _necessary contact details_ which you want to display in the posters/ stories.
+  6. Select a _brand style_. The brand style you choose will dictate the style of your poster- The font, imagery and tone of voice of the text will vary according to the chosen Brand Style. For eg: If you opt for ‘Mercedes’, You’ll get _luxurious_ and _classic designs_ AND If you opt for ‘McDonald's’, you’ll get _fun_ and _welcoming_ designs! Similarly, you can select a style which encapsulates the identity and theme of your brand. You can change these anytime to match the aesthetics of specific posters.
+  7. The colour palette used in the posters will be automatically extracted from the brand logo. However, you can customize them from the _‘Brand Colour’_ option.
+  8. Click _‘done’_ and now you have an updated _business profile_!
+
+  **Here are some illustrations of a few profiles from various industries:**
+
+  <div className="mx-auto flex w-full flex-wrap items-center justify-center gap-2">
+    <figure>
+      <img
+        src="/blog-assets/blog6/education-industry-profile.jpg"
+        alt="Education Industry Profile"
+        className="my-0"
+      />
+      <figcaption>(a) Education Industry</figcaption>
+    </figure>
+    <figure>
+      <img
+        src="/blog-assets/blog6/fashion-industry-profile.jpg"
+        alt="Fashion Industry Profile"
+        className="my-0"
+      />
+      <figcaption>(b) Fashion Industry</figcaption>
+    </figure>
+    <figure>
+      <img
+        src="/blog-assets/blog6/kids-product-industry-profile.jpg"
+        alt="Kids Product Industry Profile"
+        className="my-0"
+      />
+      <figcaption>(c) Kids Product Industry</figcaption>
+    </figure>
+  </div>
+
+- As you are redirected to the home page, you can now utilize the different features like: ‘Topic to Posters’, ‘Daily Fact’, ‘Product Photography’, ‘Daily Story’, and ‘Product Photography Poster’ to create advertisable content on your own!
+
+Now let us explore the ‘Topic to Poster’ feature and ‘Product Photography Poster’ and understand its purpose and learn how to use them efficiently:
+
+## Topic to Poster
+
+This feature allows you to type in, a particular topic or an idea phrase; which then will be used to generate posters. They’re useful to business owners who cannot afford to spend time and money to outsource a designer for the sake of content creation. It can be used to **create brand awareness, build a brand attitude and even for sales promotion**. You can use this feature to create designs for the same in less than sixty seconds.
+
+Let us understand this with the assumption that you’re the owner of a sweet shop and you want to introduce a product to your viewers.
+
+<div className="mx-auto flex w-full flex-wrap items-center justify-center gap-2">
+  <img
+    src="/blog-assets/blog6/topic-to-poster.jpg"
+    alt="Topic to Poster"
+    className="my-0 md:w-2/5"
+  />
+  <img
+    src="/blog-assets/blog6/add-a-topic.jpg"
+    alt="Add a Topic"
+    className="my-0 md:w-2/5"
+  />
+</div>
+
+As mentioned, you need to set up a business profile which matches the nature of your company. We’ve given the following details:
+
+- Nivia’ is the company’s name
+- Uploaded the logo.
+- Updated the industry as ‘Sports- Sports Shop’.
+- Gave the necessary contact details.
+- Selected the brand style as ‘Caterpillar’ and clicked done.
+
+Now, we have to choose the ‘topic to poster’ icon.\
+**Type a prompt;** (Here) We’ve written ‘Play like your idol with Nivia’s Soccer Studs’.\
+Now, **click Create**. In under sixty seconds, **three posters will be generated**. If you want more posters, click ‘Generate More’. We can choose the most apt design from them:
+
+<figure>
+  ![Football Posters](/blog-assets/blog6/football.png)
+  <figcaption className="italic">
+    Here are some of the posters we’ve generated. We can select them and save/
+    share them accordingly.
+  </figcaption>
+</figure>
+
+**PRO TIP: If you want to generate posters similar to a specific poster that you loved, click ‘Generate similar Posters’ instead of ‘Generate More’. You can also ‘like’ your favourite posters to create similar types of designs!**
+
+## Product Photography Poster
+
+A product photography poster can be utilized by a business owner **to display their product** along with an interesting tagline. One can use it to **introduce or launch a new product** introduce or launch a new product **to make the customers familiar with their products and services**. You can upload a picture taken from a mobile phone and this feature will convert it into a professional photo poster, with effective background removal & changing techniques using AI.
+
+As mentioned, you need to set up a business profile which matches the nature of your company. To create some product photography posters of a cake, we’ve given the following details in the company profile:
+
+- ‘Ceremony Cakes’ is the company’s name
+- Uploaded the logo.
+- Updated the industry as ‘Restaurants- Cake Shop’.
+- Gave the necessary contact details.
+- Selected the brand style as ‘Adidas’ and clicked done.
+
+<div className="mx-auto flex w-full flex-wrap items-center justify-center gap-2">
+  <img
+    src="/blog-assets/blog6/product-photography-poster.jpg"
+    alt="Product Photography Poster"
+    className="my-0 md:w-2/5"
+  />
+  <img
+    src="/blog-assets/blog6/select-product.jpg"
+    alt="Select Product"
+    className="my-0 md:w-2/5"
+  />
+</div>
+
+Now, we have to choose the ‘Product Photography Poster’ icon and upload a picture of our product. Here, we have chosen this picture:
+
+![Add a Product](/blog-assets/blog6/add-a-product.jpg)
+
+Within Sixty seconds, the picture will be processed and three posters will be generated. From them, we have to choose one & save/share them. You can always produce more designs by clicking ‘Generate More’.
+
+<figure>
+  ![Cake Posters](/blog-assets/blog6/cake.png)
+  <figcaption className="italic">
+    Here are some of the posters we’ve generated. We can select them and save/
+    share them accordingly.
+  </figcaption>
+</figure>
+
+**As you can observe, Wizad helps you create content that compliments your brand identity without compromising on its aesthetics. It is also extremely cost-efficient, which means that you can get a high return on marketing investments without emptying your pockets. With the help of Wizad AI and its features, a business owner can improve his/her social marketing strategy and make a way for themselves amidst the highly competitive market. So, do not waste any more time; go ahead and install the app to see the Wizardry for yourself!**
+
+</ContentWrapper>

@@ -32,7 +32,7 @@ export default function BlogTitle({
           <span className="font-extralight text-white/70 md:text-sm">
             Share to
           </span>
-          <ShareLinks title={title} summary={summary}/>
+          <ShareLinks title={title} summary={summary} />
         </div>
       </div>
     </section>

@@ -1,16 +1,19 @@
 "use client";
 import { BsTwitterX } from "react-icons/bs";
 import RiLink from "@/../public/assets/ri_link-m.png";
-import {
-  BiLogoLinkedinSquare,
-  BiLogoFacebookSquare,
-} from "react-icons/bi";
+import { BiLogoLinkedinSquare, BiLogoFacebookSquare } from "react-icons/bi";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { getBaseUrl } from "@/utils/getBaseUrl";
 import { useState } from "react";
 
-export default function ShareLinks({title, summary}: {title: string, summary: string}) {
+export default function ShareLinks({
+  title,
+  summary,
+}: {
+  title: string;
+  summary: string;
+}) {
   const pathname = usePathname();
 
   const [copied, setCopied] = useState(false);
@@ -29,19 +32,19 @@ export default function ShareLinks({title, summary}: {title: string, summary: st
   const shareOnLinkedIn = () => {
     const urlToShare = encodeURIComponent(getBaseUrl() + pathname);
     const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?text=${title} - ${summary} Link: ${urlToShare}`;
-    window.open(linkedInUrl, '_blank');
+    window.open(linkedInUrl, "_blank");
   };
 
   const shareOnTwitter = () => {
     const urlToShare = encodeURIComponent(getBaseUrl() + pathname);
     const twitterUrl = `https://twitter.com/share?url=${urlToShare}&text=${summary}`;
-    window.open(twitterUrl, '_blank');
+    window.open(twitterUrl, "_blank");
   };
 
   const shareOnFacebook = () => {
     const urlToShare = encodeURIComponent(getBaseUrl() + pathname);
     const facebookShareUrl = `https://www.facebook.com/sharer.php?u=${urlToShare}`;
-    window.open(facebookShareUrl, '_blank');
+    window.open(facebookShareUrl, "_blank");
   };
 
   return (
@@ -51,9 +54,9 @@ export default function ShareLinks({title, summary}: {title: string, summary: st
         onClick={copyLinkToClipboard}
       >
         {copied ? (
-          <span className="absolute min-w-max -top-8 left-1/2 z-10 -translate-x-1/2 rounded bg-neutral-920 px-3 py-1 text-xs text-white shadow-md after:absolute after:top-full after:left-1/2 after:-translate-x-1/2 after:border-x-transparent after:border-t-neutral-920 after:border-8 after:border-t-8 after:border-x-8 after:border-b-0 after:content-['']">
-          Copied to clipboard!
-        </span>
+          <span className="absolute -top-8 left-1/2 z-10 min-w-max -translate-x-1/2 rounded bg-neutral-920 px-3 py-1 text-xs text-white shadow-md after:absolute after:left-1/2 after:top-full after:-translate-x-1/2 after:border-8 after:border-x-8 after:border-b-0 after:border-t-8 after:border-x-transparent after:border-t-neutral-920 after:content-['']">
+            Copied to clipboard!
+          </span>
         ) : null}
         <Image
           src={RiLink}
