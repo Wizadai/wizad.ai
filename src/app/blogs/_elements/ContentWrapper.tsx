@@ -9,10 +9,14 @@ export default async function ContentWrapper({
   children,
   slug,
   imageSrc,
+  title,
+  summary
 }: {
   children: React.ReactNode;
   slug: string;
   imageSrc?: string;
+  title: string;
+  summary: string;
 }) {
   const blogs = await getBlogPosts();
   const otherBlogs = blogs.filter((b) => b.slug !== slug).slice(0, 4);
@@ -39,7 +43,7 @@ export default async function ContentWrapper({
           </article>
           <div className="mx-auto flex flex-col items-center justify-end gap-4 md:w-[60%] md:flex-row">
             <span className="font-light text-white/65">Share to</span>
-            <ShareLinks />
+            <ShareLinks title={title} summary={summary}/>
           </div>
         </div>
       </section>

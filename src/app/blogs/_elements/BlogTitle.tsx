@@ -5,11 +5,13 @@ export default function BlogTitle({
   category,
   title,
   readingDuration,
+  summary,
 }: {
   publishedAt: string;
   category: string;
   title: string;
   readingDuration: number;
+  summary: string;
 }) {
   return (
     <section className="flex w-full flex-col px-4 py-10 md:pb-12 md:pt-24">
@@ -30,7 +32,7 @@ export default function BlogTitle({
           <span className="font-extralight text-white/70 md:text-sm">
             Share to
           </span>
-          <ShareLinks />
+          <ShareLinks title={title} summary={summary}/>
         </div>
       </div>
     </section>
