@@ -10,12 +10,19 @@ export default async function sitemap() {
     priority: 0.7,
   }));
 
-  const routes = ["", "/blogs"].map((route) => ({
+  const staticRoutes = [""].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString().split("T")[0],
     frequency: "never",
     priority: 1,
   }));
 
-  return [...routes, ...blogs];
+  const dynamicRoutes = ["/blogs"].map((route) => ({
+    url: `${baseUrl}${route}`,
+    lastModified: new Date().toISOString().split("T")[0],
+    frequency: "weekly",
+    priority: 1,
+  }));
+
+  return [...staticRoutes, ...dynamicRoutes, ...blogs];
 }
