@@ -10,7 +10,11 @@ import Image from "next/image";
 export default async function Page() {
   const blogs = await getBlogPosts();
 
-  const featuredBlogs = blogs.filter((blog) => blog.metadata.featured);
+  const sortedBlogs = blogs.sort((a, b) => {
+    return Number(new Date(b.metadata.publishedAt)) - Number(new Date(a.metadata.publishedAt));
+  });
+
+  const featuredBlogs = blogs.filter((blog) => blog.metadata.featured).toSorted();
 
   const socialMediaBlogs = blogs.filter(
     (blog) => blog.metadata.category === "Social Media",
