@@ -6,11 +6,10 @@ import FeaturedCarousel from "@/app/blogs/_elements/FeaturedCarousel";
 import CarouselTile from "@/app/blogs/_elements/CarouselTile";
 import HeroGradient from "@/../public/bg-hero-gradient.png";
 import Image from "next/image";
+import Link from "next/link";
 
 export default async function Page() {
-  const blogs = await getBlogPosts();
-
-  const sortedBlogs = blogs.sort((a, b) => {
+  const blogs = (await getBlogPosts()).sort((a, b) => {
     return (
       Number(new Date(b.metadata.publishedAt)) -
       Number(new Date(a.metadata.publishedAt))
@@ -64,9 +63,19 @@ export default async function Page() {
 
       {socialMediaBlogs.length > 0 && (
         <section className="mx-auto flex w-full max-w-11xl flex-col px-4 py-10 md:px-20 md:py-20">
-          <h2 className="pb-8 font-hero text-2xl not-italic">Social Media</h2>
+          <div className="flex w-full items-center justify-between">
+            <h2 className="pb-8 font-hero text-2xl not-italic">Social Media</h2>
+            {socialMediaBlogs.length > 3 && (
+              <Link
+                href="/social-media"
+                className="mb-8 rounded-lg bg-[#2E2E2E] px-4 py-2 text-sm hover:bg-neutral-920"
+              >
+                View all
+              </Link>
+            )}
+          </div>
           <ul className="flex flex-col gap-8 md:gap-12">
-            {socialMediaBlogs.map((blog) => (
+            {socialMediaBlogs.slice(0, 3).map((blog) => (
               <li key={blog.slug} id={blog.slug}>
                 <BlogTile blog={blog} />
               </li>
@@ -77,9 +86,19 @@ export default async function Page() {
 
       {tutorialBlogs.length > 0 && (
         <section className="mx-auto flex w-full max-w-11xl flex-col px-4 py-10 md:px-20 md:py-20">
-          <h2 className="pb-8 font-hero text-2xl not-italic">Tutorials</h2>
+          <div className="flex w-full items-center justify-between">
+            <h2 className="pb-8 font-hero text-2xl not-italic">Tutorials</h2>
+            {tutorialBlogs.length > 3 && (
+              <Link
+                href="/tutorials"
+                className="mb-8 rounded-lg bg-[#2E2E2E] px-4 py-2 text-sm hover:bg-neutral-920"
+              >
+                View all
+              </Link>
+            )}
+          </div>
           <ul className="flex flex-col gap-8 md:gap-12">
-            {tutorialBlogs.map((blog) => (
+            {tutorialBlogs.slice(0, 3).map((blog) => (
               <li key={blog.slug} id={blog.slug}>
                 <BlogTile blog={blog} />
               </li>

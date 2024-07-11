@@ -16,12 +16,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     return site;
   });
 
-  const staticRoutes: MetadataRoute.Sitemap = [""].map((route) => {
+  const highPriorityStaticRoutes: MetadataRoute.Sitemap = [""].map((route) => {
     const site: Site = {
       url: `${baseUrl}${route}`,
       lastModified: new Date().toISOString().split("T")[0],
       changeFrequency: "never",
       priority: 1,
+    };
+    return site;
+  });
+
+  const midPriorityStaticRoutes: MetadataRoute.Sitemap = ["/tutorials", "/social-media"].map((route) => {
+    const site: Site = {
+      url: `${baseUrl}${route}`,
+      lastModified: new Date().toISOString().split("T")[0],
+      changeFrequency: "never",
+      priority: 0.7,
     };
     return site;
   });
@@ -36,5 +46,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     return site;
   });
 
-  return [...staticRoutes, ...dynamicRoutes, ...blogs];
+  return [...highPriorityStaticRoutes, ...midPriorityStaticRoutes, ...dynamicRoutes, ...blogs];
 }
