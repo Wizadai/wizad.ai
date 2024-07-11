@@ -11,10 +11,15 @@ export default async function Page() {
   const blogs = await getBlogPosts();
 
   const sortedBlogs = blogs.sort((a, b) => {
-    return Number(new Date(b.metadata.publishedAt)) - Number(new Date(a.metadata.publishedAt));
+    return (
+      Number(new Date(b.metadata.publishedAt)) -
+      Number(new Date(a.metadata.publishedAt))
+    );
   });
 
-  const featuredBlogs = blogs.filter((blog) => blog.metadata.featured).toSorted();
+  const featuredBlogs = blogs
+    .filter((blog) => blog.metadata.featured)
+    .toSorted();
 
   const socialMediaBlogs = blogs.filter(
     (blog) => blog.metadata.category === "Social Media",
