@@ -26,7 +26,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     return site;
   });
 
-  const midPriorityStaticRoutes: MetadataRoute.Sitemap = ["/tutorials", "/social-media"].map((route) => {
+  const midPriorityStaticRoutes: MetadataRoute.Sitemap = [
+    "/tutorials",
+    "/social-media",
+  ].map((route) => {
     const site: Site = {
       url: `${baseUrl}${route}`,
       lastModified: new Date().toISOString().split("T")[0],
@@ -46,5 +49,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     return site;
   });
 
-  return [...highPriorityStaticRoutes, ...midPriorityStaticRoutes, ...dynamicRoutes, ...blogs];
+  return [
+    ...highPriorityStaticRoutes,
+    ...midPriorityStaticRoutes,
+    ...dynamicRoutes,
+    ...blogs,
+  ];
 }

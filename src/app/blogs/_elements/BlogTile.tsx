@@ -10,7 +10,9 @@ type Props = {
 export default function BlogTile({ blog }: Props) {
   return (
     <div className="relative flex flex-col overflow-hidden rounded-2xl bg-neutral-920 p-3 md:flex-row md:justify-center md:gap-20 md:py-10">
-      <div className="z-10 flex flex-col pb-4 md:w-1/2 md:pb-0">
+      <div
+        className={`z-10 flex flex-col pb-4 ${blog.metadata.image ? "md:w-1/2" : "md:w-[89.5%]"} md:pb-0`}
+      >
         <span className="mb-4 text-sm text-zinc-500">
           {blog.readingDuration} Min •{" "}
           <time dateTime={blog.metadata.publishedAt}>
