@@ -345,7 +345,7 @@ export default function Features() {
           <span className="text-2xl font-medium text-white/80 md:text-5xl/tight">
             <p className="md:w-[80%]">
               Wizad is now used by{" "}
-              <span className="text-white">10K+ business owners</span> to create
+              <span className="text-white">50K+ business owners</span> to create
               designs, grow their social media and improve the brand positioning
               — without any extensive design knowledge.
             </p>
