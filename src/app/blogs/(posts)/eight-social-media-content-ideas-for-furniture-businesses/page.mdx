@@ -1,0 +1,209 @@
+---
+title: Eight Social Media Content Ideas for Furniture Businesses
+publishedAt: July 26, 2024
+category: Social Media
+summary: |
+  Getting into e-commerce as a furniture shop owner can be a rough game if you cannot deliver your products to your target customers’ vision. Strong Social Media presence helps to develop a positive brand attitude.
+---
+
+import BlogTitle from "@/app/blogs/_elements/BlogTitle";
+import path from "path";
+import { getReadingDuration } from "@/app/blogs/utils";
+import ContentWrapper from "@/app/blogs/_elements/ContentWrapper";
+import { baseUrl } from "@/app/sitemap";
+
+export const data = {
+  title: "Eight Social Media Content Ideas for Furniture Businesses",
+  publishedAt: "July 26, 2024",
+  summary:
+    "Getting into e-commerce as a furniture shop owner can be a rough game if you cannot deliver your products to your target customers’ vision. Strong Social Media presence helps to develop a positive brand attitude.",
+  category: "Social Media",
+  readingDuration: await getReadingDuration(path.basename(__dirname), true),
+};
+
+export async function generateMetadata() {
+  const title = data.title;
+  const description = data.summary;
+  const image = data.image;
+
+let ogImage = image
+? image
+: `${baseUrl}/og?title=${encodeURIComponent(title)}`;
+
+return {
+title,
+description,
+openGraph: {
+title,
+description,
+type: "article",
+publishedTime: data.publishedAt,
+url: `${baseUrl}/blogs/${path.basename(__dirname)}`,
+images: [{ url: ogImage }],
+},
+twitter: {
+card: "summary_large_image",
+title,
+description,
+images: [ogImage],
+},
+};
+}
+
+<BlogTitle
+  category={data.category}
+  publishedAt={data.publishedAt}
+  title={data.title}
+  readingDuration={data.readingDuration}
+  summary={data.summary}
+/>
+
+<ContentWrapper imageSrc={data.image} slug={path.basename(__dirname)} title={data.title} summary={data.summary}>
+**Getting into e-commerce as a furniture shop owner can be a rough game if you cannot deliver your products to your target customers’ vision. Strong Social Media presence helps to develop a positive brand attitude.**
+
+Unlike many other businesses, the customers of a furniture business are from diverse backgrounds. It could be a couple planning to furnish their new home or even an established company wanting to renovate their office space. An entrepreneur must understand the need of her/his customers to develop a customer-specific social media strategy.
+
+This is the Instagram feed of a popular Furniture Business- [Urban Ladder](https://www.instagram.com/urbanladder/). Notice how interactive and attractive their posts are?
+![Urban Ladder Instagram Feed](/blog-assets/blog10/urban-ladder.jpeg)
+
+<div className="gap-0 text-center">
+  <h2 className="my-0 md:my-0 lg:my-0 xl:my-0">
+    <div>Here are some tips and tricks,</div>
+    <div className="text-base/normal md:text-sm">
+      so that you can also make engaging content like these!!
+    </div>
+  </h2>
+</div>
+
+### **8. Captivating Images of Your Product**
+
+As they all say, the first impression is the best impression! A product photo is essential to growing your Instagram, website, and other platforms. You can hire a photographer to click a few pictures that can go to your social media. However, if you’re a business owner who lacks enough funds or resources to do so, you are free to check out [Wizad AI](https://wizad.ai/)'s product photography feature.
+
+You have to upload a picture taken from a mobile phone and then it will be converted into a professionally captured image with a standard background. See how we turned this ordinary-looking picture into this:
+
+<div className="mx-auto flex w-full flex-wrap items-start justify-center gap-2">
+  <div className="my-0 text-center md:w-2/5">
+    **BEFORE**
+    <img src="/blog-assets/blog10/chair-before.jpeg" alt="Before" />
+  </div>
+  <div className="my-0 text-center md:w-2/5">
+    **AFTER**
+    <img src="/blog-assets/blog10/chair-after.jpeg" alt="After" />
+  </div>
+</div>
+
+### **7. Home Tour Videos**
+
+Collaborate with influencers or even your customers to shoot a video of their home with your furniture. Capture how these furniture sets enhance the aesthetics of their home. You can upload these short videos on Instagram and convince your audience that their home can also be transformed.
+
+Watch this example video on IKEA’s YouTube channel to get some ideas: [A full life in a small apartment - IKEA home tour](https://youtu.be/kBPz-Vsytmk?si=5pjzgHxFKAm4aq38)
+
+### **6. Customer Testimonial**
+
+Most people who buy products after viewing social media, tend to take a risk of trust in customer reviews; which is why you should be keen on reposting your customers’ testimonials, ratings, reviews and user experiences.
+
+With Wizad’s newly updated feature, you can create testimonial posters in less than sixty seconds. You just have to upload the testimonial details and a picture and the rest will be done by AI. See how we created these review posters from customer testimonials:
+
+<div className="mx-auto flex w-full flex-wrap items-center justify-center gap-2">
+  <img
+    src="/blog-assets/blog10/testimonial1.jpeg"
+    alt="Testimonial 1"
+    className="my-0 md:w-2/5"
+  />
+  <img
+    src="/blog-assets/blog10/testimonial2.jpeg"
+    alt="Testimonial 2"
+    className="my-0 md:w-2/5"
+  />
+</div>
+
+### **5. Information about Good Furniture Sets**
+
+You can post information regarding your trade that is also valuable to your audience. It can target those who need clarification about what type of sofa or table they intend to buy. Or even just posting about the different kinds of materials used in your furniture, etc may help.
+
+If you feel that you lack consistency in posting content, try using Wizad's daily fact feature: It generates fact/information posters related to any topic that you suggest. See below for a few two examples, where we typed in the following topics:
+
+- **Best time to buy furniture for home**
+- **Advantages of using Mahogany for furniture sets**
+
+And this is what we generated:
+
+<div className="mx-auto flex w-full flex-wrap items-center justify-center gap-2">
+  <img
+    src="/blog-assets/blog10/set1.jpg"
+    alt="Set 1"
+    className="my-0 md:w-2/5"
+  />
+  <img
+    src="/blog-assets/blog10/set2.jpg"
+    alt="Set 2"
+    className="my-0 md:w-2/5"
+  />
+</div>
+
+### 4. ** Sales Promotion on Special Occasions**
+
+Discounts and offers thrill your customers. Most families in India tend to conduct housewarming ceremonies of their new houses, on the occasion of special ritualistic days. This can be utilised by furniture businesses to promote their special day offers.
+
+With Wizad's ‘Topic to Poster’ feature, you can just type in some ideas for AI to generate a sales promotion poster! For eg: let's type “Navarathri special 30% offer on Wardrobe” and see what and all posters can we get:
+
+<div className="mx-auto flex w-full flex-wrap items-center justify-center gap-2">
+  <img
+    src="/blog-assets/blog10/sofa1.jpg"
+    alt="Sofa 1"
+    className="my-0 md:w-2/5"
+  />
+  <img
+    src="/blog-assets/blog10/sofa2.jpg"
+    alt="Sofa 2"
+    className="my-0 md:w-2/5"
+  />
+</div>
+
+### **3. Home Decor Tips**
+
+People are always keen on finding new hacks to beautify their homes. As a furniture brand, you can offer tips and tricks to elevate their overall style with your products. Post about how your furniture complements a dynamic set of styles, whether minimalist or maximalist, traditional or contemporary. Indirectly market your products effectively using this method and the results stay for a longer time!
+
+Here is an Instagram post of a furniture brand, namely: [Bedazzle Interiors](https://www.instagram.com/bedazzle_interiors/)
+
+![Bedazzle Interiors Instagram Feed](/blog-assets/blog10/bedazzle-interiors.jpg)
+
+### **2. Q&A Session**
+
+Conduct Q&A sessions through Instagram stories to clarify your followers’ queries and doubts. Not only will it boost engagement, but also improve brand loyalty. With such interactive stories, the unfollow percentage of your audience will drastically decrease! Here is an example below of a popular furniture brand, [NOA Home](https://www.instagram.com/noafurnitureofficial/) using this strategy:
+
+<div className="mx-auto flex w-full flex-wrap items-center justify-center gap-2">
+  <img
+    src="/blog-assets/blog10/story1.jpg"
+    alt="Story 1"
+    className="my-0 md:w-2/5"
+  />
+  <img
+    src="/blog-assets/blog10/story2.jpg"
+    alt="Story 2"
+    className="my-0 md:w-2/5"
+  />
+</div>
+
+### **1. Special Days Poster**
+
+Greet your customers on special occasions like Independence Day, Onam, Christmas, Thanksgiving, New Year, etc. It makes your customers stay loyal to your brand, thereby increasing your brand attitude!
+
+With Wizad, you will not miss out on any special days. Not only that, you can just create these posters in a single click and it takes less than sixty seconds! Here, we created posters for ‘Dog Day’ and ‘Christmas’.
+
+<div className="mx-auto flex w-full flex-wrap items-center justify-center gap-2">
+  <img
+    src="/blog-assets/blog10/poster1.jpg"
+    alt="Poster 1"
+    className="my-0 md:w-2/5"
+  />
+  <img
+    src="/blog-assets/blog10/poster2.jpg"
+    alt="Poster 2"
+    className="my-0 md:w-2/5"
+  />
+</div>
+
+#### These tips and ideas will help you plan what type of content you can post, to welcome new audiences and customers. Posters are one of the most efficient ways to communicate with your target audience since they are brief and easy to process. Follow this link to access the Wizad App, in the [Play Store](https://play.google.com/store/apps/details?id=co.wizad.wizad) or [App Store](https://apps.apple.com/in/app/wizad-ai-poster-maker/id6458984305); through which you can create these adverts and posters ten times faster!!
+
+</ContentWrapper>
