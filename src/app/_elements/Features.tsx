@@ -169,7 +169,7 @@ export default function Features() {
           </div>
           <div className="bottom-0 mx-auto mt-10 min-h-max w-1/2 max-w-sm self-end justify-self-end overflow-clip rounded-t-3xl border-x-4 border-t-4 border-[#2A2A2A] md:border-x-8 md:border-t-8 lg:mx-0 lg:flex lg:w-[25%]">
             <video autoPlay muted loop>
-              <source src="dummy-video.mp4" type="video/mp4" />
+              <source src="video.MP4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
