@@ -16,9 +16,9 @@ export default async function Page() {
     );
   });
 
-  const featuredBlogs = blogs
-    .filter((blog) => blog.metadata.featured)
-    .toSorted();
+  const featuredBlogs = [
+    ...blogs.filter((blog) => blog.metadata.featured),
+  ].sort();
 
   const socialMediaBlogs = blogs.filter(
     (blog) => blog.metadata.category === "Social Media",
