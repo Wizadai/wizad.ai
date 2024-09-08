@@ -43,8 +43,11 @@ export async function getReadingDuration(
 
   // Process the text to remove HTML tags and code blocks
   plainText = plainText
-    .replace(/<code>.*?<\/code>/gs, "")
-    .replace(/```[^`]+```/gs, "")
+    // Remove <code> elements
+    .replace(/<code>[^]*?<\/code>/g, "")
+    // Remove code blocks in Markdown (e.g., ```js ... ```)
+    .replace(/```[^]*?```/g, "")
+    // Remove other HTML tags
     .replace(/<[^>]*>/g, "");
 
   const words = plainText.split(/\s+/).length;
