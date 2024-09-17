@@ -54,6 +54,7 @@ export default async function ContentWrapper({
           <ul className="flex flex-col gap-8 md:gap-12">
             {otherBlogs.map((blog) => (
               <li key={blog.slug} id={blog.slug}>
+                {/* @ts-ignore */}
                 <BlogTile blog={blog} />
               </li>
             ))}

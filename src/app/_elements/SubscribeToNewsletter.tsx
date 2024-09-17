@@ -4,6 +4,7 @@ export default function SubscribeToNewsletter() {
   return (
     <form
       className="flex flex-col items-center gap-2 pt-5 md:pt-12"
+      // @ts-ignore
       action={subscribeToNewsletter}
     >
       <input

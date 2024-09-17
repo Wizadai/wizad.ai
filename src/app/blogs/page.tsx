@@ -56,6 +56,7 @@ export default async function Page() {
       <section className="flex flex-col px-4 py-10 md:py-20">
         <FeaturedCarousel options={{ dragFree: true }}>
           {featuredBlogs.map((blog) => (
+            // @ts-ignore
             <CarouselTile key={blog.slug} blog={blog} />
           ))}
         </FeaturedCarousel>
@@ -77,6 +78,7 @@ export default async function Page() {
           <ul className="flex flex-col gap-8 md:gap-12">
             {socialMediaBlogs.slice(0, 3).map((blog) => (
               <li key={blog.slug} id={blog.slug}>
+                {/* @ts-ignore */}
                 <BlogTile blog={blog} />
               </li>
             ))}
@@ -100,6 +102,7 @@ export default async function Page() {
           <ul className="flex flex-col gap-8 md:gap-12">
             {tutorialBlogs.slice(0, 3).map((blog) => (
               <li key={blog.slug} id={blog.slug}>
+                {/* @ts-ignore */}
                 <BlogTile blog={blog} />
               </li>
             ))}

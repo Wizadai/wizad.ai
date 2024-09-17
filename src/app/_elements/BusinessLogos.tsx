@@ -8,6 +8,7 @@ export default function BusinessLogos() {
   return (
     <BusinessLogosWrapper options={{ loop: true }}>
       {businessLogos.map((logo, index) => (
+        // @ts-ignore
         <LogoImage
           className="aspect-video"
           key={index}

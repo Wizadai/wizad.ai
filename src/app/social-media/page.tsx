@@ -48,6 +48,7 @@ export default async function SocialMediaPage() {
           <ul className="flex flex-col gap-8 md:gap-12">
             {socialMediaBlogs.map((blog) => (
               <li key={blog.slug} id={blog.slug}>
+                {/* @ts-ignore */}
                 <BlogTile blog={blog} />
               </li>
             ))}

@@ -7,7 +7,8 @@ type Props = {
   blog: Awaited<ReturnType<typeof getBlogPosts>>[number];
 };
 
-export default function CarouselTile({ blog }: Props) {
+export default async function CarouselTile({ blog }: Props) {
+  const readingDuration = await blog.readingDuration;
   return (
     <div className="flex w-[95%] max-w-10xl shrink-0 items-center justify-center rounded-2xl bg-neutral-920 p-3 md:w-full md:py-10">
       <div className="relative flex flex-col overflow-hidden md:w-[89%] md:justify-center">
@@ -25,7 +26,7 @@ export default function CarouselTile({ blog }: Props) {
           </div>
         )}
         <span className="mb-4 pt-4 text-sm text-zinc-500 md:text-xs">
-          {blog.readingDuration} Min •{" "}
+          {readingDuration} Min •{" "}
           <time dateTime={blog.metadata.publishedAt}>
             {blog.metadata.publishedAt}
           </time>

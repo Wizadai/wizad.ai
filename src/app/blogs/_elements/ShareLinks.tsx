@@ -18,8 +18,10 @@ export default function ShareLinks({
 
   const [copied, setCopied] = useState(false);
 
+  // @ts-ignore
+  const linkToCopy = getBaseUrl() + pathname;
+
   const copyLinkToClipboard = async () => {
-    const linkToCopy = getBaseUrl() + pathname;
     try {
       await navigator.clipboard.writeText(linkToCopy);
       setCopied(true);
@@ -30,19 +32,19 @@ export default function ShareLinks({
   };
 
   const shareOnLinkedIn = () => {
-    const urlToShare = encodeURIComponent(getBaseUrl() + pathname);
+    const urlToShare = encodeURIComponent(linkToCopy);
     const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?text=${title} - ${summary} Link: ${urlToShare}`;
     window.open(linkedInUrl, "_blank");
   };
 
   const shareOnTwitter = () => {
-    const urlToShare = encodeURIComponent(getBaseUrl() + pathname);
+    const urlToShare = encodeURIComponent(linkToCopy);
     const twitterUrl = `https://twitter.com/share?url=${urlToShare}&text=${summary}`;
     window.open(twitterUrl, "_blank");
   };
 
   const shareOnFacebook = () => {
-    const urlToShare = encodeURIComponent(getBaseUrl() + pathname);
+    const urlToShare = encodeURIComponent(linkToCopy);
     const facebookShareUrl = `https://www.facebook.com/sharer.php?u=${urlToShare}`;
     window.open(facebookShareUrl, "_blank");
   };
