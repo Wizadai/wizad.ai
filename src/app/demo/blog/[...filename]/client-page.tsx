@@ -21,7 +21,7 @@ export default function Post(props: ClientPageProps) {
     <code>
       <pre
         style={{
-          backgroundColor: 'lightgray',
+          backgroundColor: 'black',
         }}
       >
         {JSON.stringify(data.post, null, 2)}

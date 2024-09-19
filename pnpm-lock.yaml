@@ -92,6 +92,12 @@ dependencies:
   unified:
     specifier: ^11.0.4
     version: 11.0.4
+  upstash-redis-level:
+    specifier: ^1.1.1
+    version: 1.1.1
+  wizad.ai:
+    specifier: 'link:'
+    version: 'link:'
 
 devDependencies:
   '@tinacms/cli':
@@ -7283,6 +7289,12 @@ packages:
 
   /@ungap/structured-clone@1.2.0:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
+    dev: false
+
+  /@upstash/redis@1.24.3:
+    resolution: {integrity: sha512-gw6d4IA1biB4eye5ESaXc0zOlVQI94aptsBvVcTghYWu1kRmOrJFoMFEDCa8p5uzluyYAOFCuY2GWLR6O4ZoIw==}
+    dependencies:
+      crypto-js: 4.2.0
     dev: false
 
   /@vitejs/plugin-react@3.1.0(vite@4.5.5):
@@ -15282,6 +15294,14 @@ packages:
     dependencies:
       tslib: 2.7.0
     dev: true
+
+  /upstash-redis-level@1.1.1:
+    resolution: {integrity: sha512-CAtuEJ/t0xaK7ZLY0OKMG5EUYXWx+q+BRPb+mT+1+Dy4x22gzI6wBN28gLnyCwC3NDaEeJifuKx0oohc2UbBQQ==}
+    dependencies:
+      '@upstash/redis': 1.24.3
+      abstract-level: 1.0.4
+      module-error: 1.0.2
+    dev: false
 
   /uri-js@4.4.1:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}

@@ -39,7 +39,9 @@
     "tinacms": "^2.2.3",
     "tinacms-authjs": "^5.0.3",
     "tinacms-gitprovider-github": "^2.0.2",
-    "unified": "^11.0.4"
+    "unified": "^11.0.4",
+    "upstash-redis-level": "^1.1.1",
+    "wizad.ai": "link:"
   },
   "devDependencies": {
     "@tinacms/cli": "^1.6.3",

@@ -8,9 +8,7 @@ const branch = process.env.GITHUB_BRANCH ||
     "main";
 export default defineConfig({
     contentApiUrlOverride: "/api/tina/gql",
-    authProvider: isLocal ? new LocalAuthProvider() : new 
-    // Your hosting provider likely exposes this as an environment variable
-    UsernamePasswordAuthJSProvider(),
+    authProvider: isLocal ? new LocalAuthProvider() : new UsernamePasswordAuthJSProvider(),
     branch,
     // Get this from tina.io
     clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
