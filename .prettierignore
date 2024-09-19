@@ -1,4 +1,8 @@
 *.yaml
 
 /node_modules
+/content
 /.next
+/public/admin
+/tina/__generated__
+/public

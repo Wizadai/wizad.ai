@@ -129,7 +129,6 @@ export default function Features() {
       </section>
 
       {/* Turn product images in your mobile gallery to professional posters */}
-      {/* INCOMPLETE!!! it will be completed after getting video to insert here */}
       <section className="flex w-full max-w-screen-2xl flex-col items-center justify-center py-6 md:py-20">
         <div className="relative flex min-h-max w-full flex-wrap justify-between rounded-3xl bg-neutral-920 px-3 pt-3 md:px-10 md:pt-10 lg:h-[52.5rem]">
           <div className="w-full lg:w-3/5">

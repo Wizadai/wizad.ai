@@ -15,7 +15,6 @@ export default async function BlogTile({ blog }: Props) {
         className={`z-10 flex flex-col pb-4 ${blog.metadata.image ? "md:w-1/2" : "md:w-[89.5%]"} md:pb-0`}
       >
         <span className="mb-4 text-sm text-zinc-500">
-          
           {readingDuration} Min •{" "}
           <time dateTime={blog.metadata.publishedAt}>
             {blog.metadata.publishedAt}

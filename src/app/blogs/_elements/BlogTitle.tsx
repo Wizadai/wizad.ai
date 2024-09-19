@@ -13,6 +13,12 @@ export default function BlogTitle({
   readingDuration: number;
   summary: string;
 }) {
+  const formattedDate = new Date(publishedAt).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
+
   return (
     <section className="flex w-full flex-col px-4 py-10 md:pb-12 md:pt-24">
       <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-10 px-4">
@@ -20,7 +26,7 @@ export default function BlogTitle({
           <span className="space-x-1 text-sm text-zinc-500 md:text-xs">
             <span>{readingDuration} Min</span>
             <span> • </span>
-            <time dateTime={publishedAt}>{publishedAt}</time>
+            <time dateTime={formattedDate}>{formattedDate}</time>
             <span> • </span>
             <span className="uppercase text-white/80">{category}</span>
           </span>
