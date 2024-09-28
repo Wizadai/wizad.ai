@@ -355,7 +355,7 @@ export default function Features() {
             <br />
             <p className="text-balance md:w-[80%]">
               Since we launched, people around the world have created{" "}
-              <span className="text-white">200K+ marketing collaterals</span>,{" "}
+              <span className="text-white">1M+ marketing collaterals</span>,{" "}
               inspiring us to make wizad even better.
             </p>
           </span>
