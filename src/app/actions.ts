@@ -30,7 +30,7 @@ export async function subscribeToNewsletter(form: FormData) {
   const email = form.get("email")?.toString();
   if (!email) return;
 
-  return await callGoogleAppScriptWebhook({
+  await callGoogleAppScriptWebhook({
     type: "subscribe_to_newsletter",
     email,
   });
@@ -43,7 +43,7 @@ export async function requestCustomerSupport(form: FormData) {
 
   if (!name || (!email && !phone)) return;
 
-  return await callGoogleAppScriptWebhook({
+  await callGoogleAppScriptWebhook({
     type: "async_customer_support",
     name,
     email,
