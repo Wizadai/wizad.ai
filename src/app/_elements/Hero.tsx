@@ -27,7 +27,7 @@ export default function HeroSection() {
           <p className="block md:hidden">
             Wizad gives you on brand posters in a click.
             <br />
-            Start creating form your mobile now.
+            Start creating from your mobile now.
           </p>
         </span>
         <div className="mx-auto flex flex-col items-center gap-4 md:flex-row md:gap-8">
