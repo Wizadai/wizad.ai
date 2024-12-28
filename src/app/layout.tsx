@@ -20,6 +20,22 @@ const exo = Exo({
 export const metadata: Metadata = {
   title: process.env.NEXT_PUBLIC_META_TITLE,
   description: process.env.NEXT_PUBLIC_META_DESCRIPTION,
+  metadataBase: new URL(
+    process.env.NODE_ENV === 'production'
+      ? process.env.NEXT_PUBLIC_URL as string
+      : 'http://localhost:3000'
+  ),
+  openGraph: {
+    images: [
+      {
+        url: "/meta-image.png",
+        width: 410,
+        height: 200,
+        alt: "Wizad.ai Logo",
+      },
+    ],
+  },
+
 };
 
 export default function RootLayout({
