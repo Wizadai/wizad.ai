@@ -35,7 +35,9 @@ export const metadata: Metadata = {
       },
     ],
   },
-
+  robots: {
+    googleBot: 'noimageindex',
+  },
 };
 
 export default function RootLayout({
