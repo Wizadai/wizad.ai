@@ -36,7 +36,9 @@ export const metadata: Metadata = {
     ],
   },
   robots: {
-    googleBot: 'noimageindex',
+    googleBot: {
+      noimageindex: true,
+    },
   },
 };
 
