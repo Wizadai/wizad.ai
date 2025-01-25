@@ -3,10 +3,15 @@ import HeroSection from "@/app/_elements/Hero";
 import Features from "@/app/_elements/Features";
 import CustomerSupport from "@/app/_elements/CustomerSupport";
 import Testimonials from "@/app/_elements/Testimonials";
+import { Metadata } from "next";
 
-// TODO:
-// - update envs
-// - https://nextjs.org/docs/getting-started/project-structure#seo
+export const metadata: Metadata = {
+  robots: {
+    googleBot: {
+      noimageindex: true,
+    },
+  },
+};
 
 export default function Home() {
   return (

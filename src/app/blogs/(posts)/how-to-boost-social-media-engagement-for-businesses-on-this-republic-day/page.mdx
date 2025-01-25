@@ -1,0 +1,147 @@
+---
+title: How to boost social media engagement for businesses on this Republic Day
+publishedAt: January 25, 2025
+category: Social Media
+image: "/blog-cover/blog12.jpg"
+featured: true
+summary: |
+  Want to celebrate this Republic Day with visually-appealing and engaging content for your business, but unsure what to share? Do not worry, for we’ve gotten your back with some exciting content ideas! Read along to get inspired for your next post/story and connect with your customers on Instagram, Facebook, X (formerly Twitter), Whatsapp and more.
+---
+
+import BlogTitle from "@/app/blogs/_elements/BlogTitle";
+import path from "path";
+import { getReadingDuration } from "@/app/blogs/utils";
+import ContentWrapper from "@/app/blogs/_elements/ContentWrapper";
+import { baseUrl } from "@/app/sitemap";
+
+export const data = {
+  title:
+    "How to boost social media engagement for businesses on this Republic Day",
+  publishedAt: "January 25, 2025",
+  summary:
+    "Want to celebrate this Republic Day with visually-appealing and engaging content for your business, but unsure what to share? Do not worry, for we’ve gotten your back with some exciting content ideas! Read along to get inspired for your next post/story and connect with your customers on Instagram, Facebook, X (formerly Twitter), Whatsapp and more.",
+  image: "/blog-cover/blog12.jpg",
+  category: "Social Media",
+  readingDuration: await getReadingDuration(path.basename(__dirname), true),
+};
+
+export async function generateMetadata() {
+  const title = data.title;
+  const description = data.summary;
+  const image = data.image;
+
+let ogImage = image
+? image
+: `${baseUrl}/og?title=${encodeURIComponent(title)}`;
+
+return {
+title,
+description,
+openGraph: {
+title,
+description,
+type: "article",
+publishedTime: data.publishedAt,
+url: `${baseUrl}/blogs/${path.basename(__dirname)}`,
+images: [{ url: ogImage }],
+},
+twitter: {
+card: "summary_large_image",
+title,
+description,
+images: [ogImage],
+},
+};
+}
+
+<BlogTitle
+  category={data.category}
+  publishedAt={data.publishedAt}
+  title={data.title}
+  readingDuration={data.readingDuration}
+  summary={data.summary}
+/>
+
+<ContentWrapper imageSrc={data.image} slug={path.basename(__dirname)} title={data.title} summary={data.summary}>
+
+Republic Day is a national holiday, observed to celebrate the adoption of the constitution of India on January 26th, 1950. This historic event marks the nation's shift to a Sovereign Republic, celebrating the sacrifices of freedom fighters and the contributions of the Constituent Assembly.
+
+Being one of the biggest commemorations in India, Republic Day is also a huge opportunity for small-scale business owners to increase their sales through effective marketing. If you post customer-specific content curated for the upcoming Republic Day of India, you can also grow your audience just like your competitors! **Here, are some ideas and examples to boost your social media presence during special days like Republic Day:**
+
+## 1. Celebration Posters
+
+This is the most basic and popular strategy used by most brand owners to feed their customers consistently. Greet your audience on the occasion along with presenting your brand’s identity in the poster.
+
+Let’s assume that you run a boutique and you want to greet your customers on this special occasion. First of all, create a profile for your business. [Click here to view a simple guide on how to do it](https://wizad.ai/blogs/an-effective-guide-to-using-the-wizad-ai-app "An Effective Guide to Using The Wizad AI App"). After you're done, you'll see a list of features and tools on the home page. Under 'Upcoming special days', Click on 'Happy Republic Day (India)'. (You can also Explore other poster types under the same tag) This tool will generate up to 3 designs, from which you can choose the most appropriate design. If you want to explore other options, you can click 'Generate more' and select the one you find most appealing.
+![Republic Day Poster](/blog-assets/blog12/happy-republic-day.jpg)
+
+## 2. Information Post regarding Republic Day
+
+Create posters that contain interesting information valuable to your customers, with regards to Republic Day. It should be catchy and easily hooking so that your audience linger longer on your page.
+
+For instance, you’re a proprietor who is the owner of a company that sells baby products. Follow the given details and market your brand by clicking on ‘daily fact’ in the home page itself. Type in a certain topic i.e., ‘Republic day of India’ and click ‘create’. You will get information/fact posters related to the Republic Day of India, just like these:
+
+<div className="mx-auto flex w-full flex-wrap items-center justify-center gap-2">
+  <img
+    src="/blog-assets/blog12/parade.jpg"
+    alt="Republic Day Parade Poster"
+    className="my-0 md:w-2/5"
+  />
+  <img
+    src="/blog-assets/blog12/awards.jpg"
+    alt="Awards and Honors on Republic Day Poster"
+    className="my-0 md:w-2/5"
+  />
+</div>
+
+## 3. Special Day Give Away posters
+
+Hold special events like lucky draws and giveaways on the occasion of Republic Day and circulate it through your social media. Not only will this attract more viewers to your page, but also the cost of the product you plan to giveaway is covered by the promotion your business receives.
+
+If you own a small-scale business in the food/beverage sector, you might as well be open to a lucky-draw where the winner gets a free drink of their choice. Head onto Wizad, and you’ll see a space that says, ‘enter a couple of keywords here’. Write some prompt, for example, “Republic Day Special Give Away on Drink” and click “Generate”. You can select the most preferred option from the generated designs.
+
+<div className="mx-auto flex w-full flex-wrap items-center justify-center gap-2">
+  <img
+    src="/blog-assets/blog12/lemonade.jpg"
+    alt="Mojito Giveaway Poster"
+    className="my-0 md:w-2/5"
+  />
+  <img
+    src="/blog-assets/blog12/orange-juice.jpg"
+    alt="Orange Juice Giveaway Poster"
+    className="my-0 md:w-2/5"
+  />
+</div>
+
+## 4. Vibrant and thematic pictures of your product
+
+Upload photographs of your products in a way that aligns with the occasion, i.e., Republic Day, as well as your brand identity. The pictures should be of high quality and should communicate with your audience effectively.
+
+## 5. Special Day Sale posters
+
+Any business owner shall agree on the fact that sales promotion is an integral part of marketing. Be open to putting up Republic Day special offers or discount posters. This will also cause an urgency among your potential customers to buy the particular product/service as soon as possible so that they don't miss out on these price reductions.
+
+Let’s say that you own a fast-food restaurant. If you're planning to give special discounts on a few particular food items, you can put up posters for them using Wizad. Go to the Wizad app & type “Republic Day Special Sale- 20% offer on burger” and click generate. Select the most appropriate design from the generated posters. [Click here](https://wizad.ai/blogs/9-instagram-content-ideas-for-restaurants "9 Instagram Content Ideas for Restaurants") to view other poster-content ideas for your restaurant business’ instagram.
+
+<div className="mx-auto flex w-full flex-wrap items-center justify-center gap-2">
+  <img
+    src="/blog-assets/blog12/burger2.jpg"
+    alt="Burger Discount Poster"
+    className="my-0 md:w-2/5"
+  />
+  <img
+    src="/blog-assets/blog12/burger1.jpg"
+    alt="Burger Discount Poster"
+    className="my-0 md:w-2/5"
+  />
+</div>
+
+## 6. Republic Day Special Quiz
+
+Conduct quizzes on your Instagram story related to Republic Day. A fun quizzing series not only engages your audience in a fun time but also provides them with interesting information. This is applicable to those brands who have already managed to capture a set of audience and wish to sustain their followers.
+
+For eg: If you are an entrepreneur focussing on a clothing brand of your own, you can create social media interaction by putting these quizzes on your stories/status. If possible, you can also reward those viewers who answer correctly. It serves both as an advertisement to your product as well as boosts engagement.
+
+_As mentioned, we created most of these designs using Wizad, an app that uses Generative AI to create multiple designs in a few clicks and under sixty seconds. Small-scale business owners and proprietors can utilise Wizad AI to advance their brand, using minimum time, money and effort. Hiring professional photographers, designers, editors, etc might not always be cost-efficient for local businesses for the creation of adverts and posters. If you’re such a business owner and want to make promotion posters to compliment your enterprise’s marketing strategy,_ **follow this link to access the Wizad App, in the [Play Store](https://play.google.com/store/apps/details?id=co.wizad.wizad "Wizad.ai Play Store link") or [App Store](https://apps.apple.com/in/app/wizad-ai-poster-maker/id6458984305 "Wizad.ai App Store link"); through which you can create these adverts and posters ten times faster!!**
+
+</ContentWrapper>

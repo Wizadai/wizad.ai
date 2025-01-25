@@ -21,9 +21,9 @@ export const metadata: Metadata = {
   title: process.env.NEXT_PUBLIC_META_TITLE,
   description: process.env.NEXT_PUBLIC_META_DESCRIPTION,
   metadataBase: new URL(
-    process.env.NODE_ENV === 'production'
-      ? process.env.NEXT_PUBLIC_URL as string
-      : 'http://localhost:3000'
+    process.env.NODE_ENV === "production"
+      ? (process.env.NEXT_PUBLIC_URL as string)
+      : "http://localhost:3000",
   ),
   openGraph: {
     images: [
@@ -34,11 +34,6 @@ export const metadata: Metadata = {
         alt: "Wizad.ai Logo",
       },
     ],
-  },
-  robots: {
-    googleBot: {
-      noimageindex: true,
-    },
   },
 };
 
