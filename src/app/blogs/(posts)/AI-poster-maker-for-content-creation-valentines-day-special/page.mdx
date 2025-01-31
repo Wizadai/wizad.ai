@@ -1,0 +1,169 @@
+---
+title: AI Poster-Maker for Content-Creation; Valentine's Day Special
+publishedAt: January 31, 2025
+category: Social Media
+image: "/blog-cover/blog13.jpg"
+featured: true
+summary: |
+  Valentine's Day is just around the corner. Have you yet planned what content you should post and how to design them? With an app like Wizad that helps you create customized designs, content-creation takes not more than a few minutes of your valuable time.
+---
+
+import BlogTitle from "@/app/blogs/_elements/BlogTitle";
+import path from "path";
+import { getReadingDuration } from "@/app/blogs/utils";
+import ContentWrapper from "@/app/blogs/_elements/ContentWrapper";
+import { baseUrl } from "@/app/sitemap";
+
+export const data = {
+  title: "AI Poster-Maker for Content-Creation; Valentine's Day Special",
+  publishedAt: "January 31, 2025",
+  summary:
+    "Valentine's Day is just around the corner. Have you yet planned what content you should post and how to design them? With an app like Wizad that helps you create customized designs, content-creation takes not more than a few minutes of your valuable time.",
+  image: "/blog-cover/blog13.jpg",
+  category: "Social Media",
+  readingDuration: await getReadingDuration(path.basename(__dirname), true),
+};
+
+export async function generateMetadata() {
+  const title = data.title;
+  const description = data.summary;
+  const image = data.image;
+
+let ogImage = image
+? image
+: `${baseUrl}/og?title=${encodeURIComponent(title)}`;
+
+return {
+title,
+description,
+openGraph: {
+title,
+description,
+type: "article",
+publishedTime: data.publishedAt,
+url: `${baseUrl}/blogs/${path.basename(__dirname)}`,
+images: [{ url: ogImage }],
+},
+twitter: {
+card: "summary_large_image",
+title,
+description,
+images: [ogImage],
+},
+};
+}
+
+<BlogTitle
+  category={data.category}
+  publishedAt={data.publishedAt}
+  title={data.title}
+  readingDuration={data.readingDuration}
+  summary={data.summary}
+/>
+
+<ContentWrapper imageSrc={data.image} slug={path.basename(__dirname)} title={data.title} summary={data.summary}>
+It is extremely important for business owners, especially small-scale business operators to invest in social-media marketing. One of the many key components of digital-marketing is ‘promotion on special days’. February 14th is one  such day when businesses can ensure that their product or service is visible to their potential customers with adequate online marketing. Wizad AI is an affordable and time-saving designing tool that uses Generative AI to create eye-catchy and unique posters. You can use Wizad to make creative designs which align with the theme and personality of not only the brand, but also the occasion, i.e. here, Valentine’s Day.
+
+**Here are some features in Wizad app that you can use to design posters and adverts in not more than sixty seconds for the upcoming Valentine’s Day:**
+
+<h2 className="text-center">Topic to Poster</h2>
+
+With this feature, you can now generate need-based posters in less than three clicks. First of all, you have to set up a business profile. You can upload your brand logo and other exclusive details. You can also customise the poster style and choose the one which stands more appropriate with the brand identity and the special day, i.e., here, Valentine’s Day. [Click here to know more about setting up your brand’s profile](https://wizad.ai/blogs/an-effective-guide-to-using-the-wizad-ai-app "An Effective Guide to Using The Wizad AI App"). Now, you can view a tab in the home page itself, which says ‘enter a couple of keywords here’. Write an idea or phrase, based on which the posters shall be generated. You can use this particular feature to create different types of Valentine’s Day special designs. You can create Greeting posters, Give Away posters, Offer Posters, and other kinds of designs with this specialised AI tool. Here are some useful prompts that might help you generate poster designs which will ease your efforts in digital marketing on this Valentine’s Day:
+
+<div className="px-2 md:px-4">
+Suppose you run a juice shop and you wish to design a poster through which you want to inform your social-media audience about a ‘buy one get one free’ offer on drinks; You can do so by typing in something like,
+
+<div className="text-center text-base md:text-sm/normal">
+  **“Buy one, Get one free- Drink; offer only on Valentine’s Day”**
+</div>
+
+Let’s assume that you have a market in the hospitality industry and you're the owner of a hotel/Resort. You can capture the attention of travelling couples by putting up posters indicating couple-discounts on your social media. You can give a prompt like:
+
+<div className="text-center text-base md:text-sm/normal">
+  **“Book Resorts- Valentine's day special package for couples”**
+</div>
+
+You own a Jewellery and you want to boost your social-media presence by conducting lucky-draws/Giveaways. Check out this particular prompt, for which you can generate posters curated for your brand’s instagram:
+
+<div className="text-center text-base md:text-sm/normal">**“Jewellery Set Giveaway- Valentine's Day special offers”**</div>
+</div>
+
+Here are some poster designs created with this feature in the Wizad AI app:
+
+<div className="mx-auto flex w-full flex-wrap items-center justify-center gap-2">
+  <img
+    src="/blog-assets/blog13/orange-juice-poster.jpg"
+    alt="Orange Juice Poster"
+    className="my-0 md:w-2/5"
+  />
+  <img
+    src="/blog-assets/blog13/strawberry-juice-poster.jpg"
+    alt="Strawberry Juice Poster"
+    className="my-0 md:w-2/5"
+  />
+  <img
+   src="/blog-assets/blog13/valentines-juice-poster.jpg"
+    alt="Valentine's Day Juice Poster"
+    className="my-0"
+  />
+</div>
+
+<h2 className="text-center">Upcoming Special Days</h2>
+
+As a business owner or digital marketing head, you might have marked the special-days in your calendar. But what-if you miss a special-day? You’re going to miss a whole new opportunity to make impressions of your brand. However:
+
+<div className="text-center text-base md:text-sm/normal">**“Join Wizad and Never miss out on any special day”**</div>
+
+![Upcoming Special Days](/blog-assets/blog13/special-days.jpg)
+
+There is a section in the home page of Wizad AI app, which lets you browse through upcoming special days and generate poster designs. With these feature,
+
+<div className="text-center text-base md:text-sm/normal">**You can now create Valentine’s Day special posters without even having to type a prompt or idea phrase!!!**</div>
+
+Let us assume that you run a startup company in the Home Decor/ Interior Design sector. Initially, you have to set up a brand profile in the Wizad App and go to the ‘Upcoming Special Days’ section. Click ‘Valentine’s Day-Feb 14’ and generate as many AI-based posters as you wish. Here are two posters made using this AI tool:
+
+<div className="mx-auto flex w-full flex-wrap items-center justify-center gap-2">
+  <img
+    src="/blog-assets/blog13/valentines-poster1.jpg"
+    alt="Valentine's Day Poster"
+    className="my-0 md:w-2/5"
+  />
+  <img
+    src="/blog-assets/blog13/valentines-poster2.jpg"
+    alt="Valentine's Day Poster"
+    className="my-0 md:w-2/5"
+  />
+</div>
+
+<h2 className="text-center">Information Posters</h2>
+
+With the ‘Facts Poster” feature available in Wizad, you can create specialised and informative content designs related to any Celebratory Day. In the home page of the app, you’ll see a section, “Daily Facts”. After you’re done creating your profile, you 
+
+![Daily Facts](/blog-assets/blog13/daily-facts.jpg)
+
+can click it and type an idea in the given space, on which the information should be based on. Here, let’s type “Valentine’s Day Special” and click generate. These are a few creations that are generated with this AI tool:
+
+<div className="mx-auto flex w-full flex-wrap items-center justify-center gap-2">
+  <img
+    src="/blog-assets/blog13/flowers-poster1.jpg"
+    alt="Flowers Poster"
+    className="my-0 md:w-2/5"
+  />
+  <img
+    src="/blog-assets/blog13/flowers-poster2.jpg"
+    alt="Flowers Poster"
+    className="my-0 md:w-2/5"
+  />
+</div>
+
+Apart from these poster design ideas, here are some **tips to enhance the social-media handle** of your business:
+
+- Valentine’s Day Special Reels that promote your product or service indirectly. If you can afford to bring in celebrities or influencers and collaborate with them, you can increase viewership and engagement in your profile.
+- Launch Valentine’s Day special editions of your product. Promote it through your page, labelling it as a limited stock. You should be able to create an urgency among your audience for them to buy the product before Valentine’s Day.
+- Conduct Valentine’s Day special Hashtag contests, by collaborating with your brand. The winning pair, with most likes or views can be rewarded with a special-edition product of yours.
+- Interact and engage with your social-media audience without hostility. Be open to suggestions, requests and customisation from them, as your viewers are your potential customers.
+
+For local  businesses, hiring professional  photographers, designers, or editors for Ads and posters is too costly or too time-consuming. As mentioned, Wizad is a quick, affordable, and hassle-free AI alternative for these small-scale business owners. [Click here to view a comparison between Wizad and Canva](https://wizad.ai/blogs/best-alternative-for-canva-to-generate-posters-online "Best Alternative for Canva to generate posters online").
+
+In conclusion, Wizad is a user-friendly application that uses Generative AI to create multiple poster designs in just a few clicks. If you’re such a business owner and want to make promotion posters to support your organisation’s marketing strategy, follow this link to access the Wizad App, in the [Play Store](https://play.google.com/store/apps/details?id=co.wizad.wizad "Wizad.ai Play Store link") or [App Store](https://apps.apple.com/in/app/wizad-ai-poster-maker/id6458984305 "Wizad.ai App Store link"); through which you can create these adverts and posters ten times faster!!
+</ContentWrapper>
