@@ -18,8 +18,6 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     h2: (props) => <h2 {...props} className="hidden" />,
     hr: (props) => <hr {...props} className="hidden" />,
     h3: (props) => <h3 {...props} className="font-normal" />,
-    a: (props) => (
-      <a {...props} target="_blank" rel="noopener noreferrer" />
-    ),
+    a: (props) => <a {...props} target="_blank" rel="noopener noreferrer" />,
   };
 }
