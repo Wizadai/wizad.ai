@@ -1,5 +1,5 @@
 import Image from "next/image";
-import HeroGradient from "@/../public/bg-hero-gradient.png";
+import HeroGradient from "@/../public/bg-hero-gradient.webp";
 import { getBlogPosts } from "@/app/blogs/utils";
 import BlogTile from "@/app/blogs/_elements/BlogTile";
 import CustomerSupport from "@/app/_elements/CustomerSupport";

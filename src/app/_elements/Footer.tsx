@@ -9,7 +9,7 @@ import { BsTwitterX } from "react-icons/bs";
 import SubscribeToNewsletter from "@/app/_elements/SubscribeToNewsletter";
 import AppDownloadQRCode from "@/app/_elements/AppDownloadQR";
 import AppDownloadButton from "@/app/_elements/AppDownloadButton";
-import HeroGradient from "@/../public/bg-hero-gradient.png";
+import HeroGradient from "@/../public/bg-hero-gradient.webp";
 import { FaCheck } from "react-icons/fa";
 
 export default function Footer() {

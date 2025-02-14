@@ -4,7 +4,7 @@ import BlogTile from "@/app/blogs/_elements/BlogTile";
 import { getBlogPosts } from "@/app/blogs/utils";
 import FeaturedCarousel from "@/app/blogs/_elements/FeaturedCarousel";
 import CarouselTile from "@/app/blogs/_elements/CarouselTile";
-import HeroGradient from "@/../public/bg-hero-gradient.png";
+import HeroGradient from "@/../public/bg-hero-gradient.webp";
 import Image from "next/image";
 import Link from "next/link";
 
