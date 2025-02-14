@@ -1,0 +1,157 @@
+---
+title: "Content ideas for Maha Shivratri: A guide to creating content for your business using AI"
+publishedAt: February 14, 2025
+category: Social Media
+image: "/blog-cover/blog16.webp"
+featured: true
+summary: |
+  Maha Shivratri offers a unique opportunity for businesses to engage with their audience through meaningful content. Whether you're a small business or a larger brand, this occasion provides a perfect chance to create relevant, eye-catching posts that resonate with your customers. February 26th is not too late to start planning and making posters for your social media!
+---
+
+import BlogTitle from "@/app/blogs/_elements/BlogTitle";
+import path from "path";
+import { getReadingDuration } from "@/app/blogs/utils";
+import ContentWrapper from "@/app/blogs/_elements/ContentWrapper";
+import { baseUrl } from "@/app/sitemap";
+
+export const data = {
+  title:
+    "Content ideas for Maha Shivratri: A guide to creating content for your business using AI",
+  publishedAt: "February 14, 2025",
+  summary:
+    "Maha Shivratri offers a unique opportunity for businesses to engage with their audience through meaningful content. Whether you're a small business or a larger brand, this occasion provides a perfect chance to create relevant, eye-catching posts that resonate with your customers. February 26th is not too late to start planning and making posters for your social media!",
+  image: "/blog-cover/blog16.webp",
+  category: "Social Media",
+  readingDuration: await getReadingDuration(path.basename(__dirname), true),
+};
+
+export async function generateMetadata() {
+  const title = data.title;
+  const description = data.summary;
+  const image = data.image;
+
+let ogImage = image
+? image
+: `${baseUrl}/og?title=${encodeURIComponent(title)}`;
+
+return {
+title,
+description,
+openGraph: {
+title,
+description,
+type: "article",
+publishedTime: data.publishedAt,
+url: `${baseUrl}/blogs/${path.basename(__dirname)}`,
+images: [{ url: ogImage }],
+},
+twitter: {
+card: "summary_large_image",
+title,
+description,
+images: [ogImage],
+},
+};
+}
+
+<BlogTitle
+  category={data.category}
+  publishedAt={data.publishedAt}
+  title={data.title}
+  readingDuration={data.readingDuration}
+  summary={data.summary}
+/>
+
+<ContentWrapper imageSrc={data.image} slug={path.basename(__dirname)} title={data.title} summary={data.summary}>
+
+Shivaratri, also known as Maha Shivaratri, is a significant Hindu festival dedicated to Lord Shiva, symbolizing the triumph of light over darkness and ignorance. The origin of Shivaratri is deeply rooted in ancient Hindu scriptures and mythology. It marks the night when Lord Shiva performed the cosmic dance of creation, preservation, and destruction, known as the Tandava. Some people also believe that it is the night when Shiva and Parvati were married. Celebrated annually on the 14th night of the waning moon in the Hindu month of Phalguna (February-March), devotees observe fasts, chant prayers, and offer milk, fruits, etc to Shiva lingams in temples. It holds profound religious and spiritual significance through self-reflection, overcoming ego, and aligning oneself with a higher consciousness. spiritual liberation.
+
+**In this article, we'll share some features in the Wizad app that you can use to design posters and adverts in not more than sixty seconds. Use these AI tools to market your products and services on social media platforms like Instagram, Facebook, WhatsApp, etc on this Shivratri. Let’s dive in:**
+
+<h2 className="text-center">Topic to Poster</h2>
+
+With this feature, you can now generate need-based posters in less than three clicks. First of all, you have to set up a business profile. You can upload your brand logo and other exclusive details. You can also customise the poster style and choose the one which stands more appropriate with the brand identity and the special day, i.e., here, Maha Shivratri. [Click here to learn more about setting up your brand’s profile](https://wizad.ai/blogs/an-effective-guide-to-using-the-wizad-ai-app "An effective guide to using the Wizad AI app").  Now, you can view a tab on the home page itself, which says ‘Enter a couple of keywords here’. Write an idea or phrase, based on which the posters shall be generated. You can use this feature to create different Shivratri special designs. You can generate Greeting posters, Giveaway posters, Offer Posters, and other kinds of designs with this specialised AI tool. Here are some useful prompts that might help you generate poster designs which will ease your efforts in digital marketing this Shivratri:
+
+<div className="px-2 md:px-4">
+Let’s assume that you own and direct an IELTS coaching centre. You can capture the attention of students aiming to move abroad through discount posters on your social media. You can give a prompt like:
+<div className="text-center text-base md:text-sm/normal">
+  **“Shivratri special- 20% Discount on IELTS crash course”**
+</div>
+
+Suppose you run a cosmetic store and you wish to design a poster through which you want to inform your social-media audience about a ‘buy one get one free’ offer on lipsticks; You can do so by typing in something like, 
+<div className="text-center text-base md:text-sm/normal">
+  **“Shivratri special offer- Buy one lipstick, Get another one free”**
+</div>
+
+You own a Stationery store and you want to boost your social media presence by conducting lucky draws/Giveaways. Check out this particular prompt, for which you can generate posters curated for your brand’s Instagram:
+
+<div className="text-center text-base md:text-sm/normal">
+**“Sketch Pencil Set Giveaway- Shivratri special offers”**
+</div>
+</div>
+
+Here are some poster designs created with this feature in the Wizad AI app:
+
+<div className="mx-auto flex w-full flex-wrap items-center justify-center gap-2">
+  <img
+    src="/blog-assets/blog16/maha-shivaratri-poster1.webp"
+    alt="Maha Shivaratri Poster"
+    className="my-0 md:w-2/5"
+  />
+  <img
+    src="/blog-assets/blog16/maha-shivaratri-poster2.webp"
+    alt="Maha Shivaratri Poster"
+    className="my-0 md:w-2/5"
+  />
+</div>
+
+<h2 className="text-center">Upcoming Special Days</h2>
+
+As a business owner or digital marketing head, you might have marked the special days in your calendar. But what if you miss a special day? You’re going to miss a whole new opportunity to make an impression on your brand. However:
+
+<div className="text-center text-base md:text-sm/normal">
+  **“Join Wizad and Never miss out on any special day”**
+</div>
+
+![Maha Shivaratri Feature](/blog-assets/blog16/maha-shivaratri-feature.webp)
+
+There is a section on the home page of the Wizad AI app, which lets you browse through upcoming special days and generate poster designs. With this feature,
+
+<div className="text-center text-base md:text-sm/normal">
+  **You can now create Maha Shivratri special posters without even typing a prompt or phrase!!!**
+</div>
+
+Let us assume that you run a startup company in the Home Decor/ Interior Design sector. Initially, you have to set up a brand profile in the Wizad App and go to the ‘Upcoming Special Days’ section. Click ‘Maha Shivratri’ and generate as many AI-based posters as you wish. Here are two posters made using this AI tool:
+
+![Maha Shivaratri Poster](/blog-assets/blog16/maha-shivaratri-poster3.webp)
+
+<h2 className="text-center">Cycle: Shivratri-special social media campaign</h2>
+
+Cycle Pure Agarbathi, the world’s largest incense manufacturer, launched an engaging social media campaign on Mahashivratri, celebrated on 1 March 2022. The campaign invited devotees to share stories of their neighbourhood Shiva temples, highlighting the rich diversity and spiritual significance of these sacred spaces. By encouraging users to share their experiences on Instagram with the hashtag #ShivaratriWithCycle, Cycle Pure fostered a sense of community and devotion. Participants also had the chance to win devotional gift hampers from [Cycle.in](http://www.cycle.in/ "Cycle.in website") further boosting engagement and creating a memorable brand experience rooted in spirituality.
+
+<h2 className="text-center">Information Posters</h2>
+
+With the "Facts Poster” feature available in Wizad, you can create specialised and informative content designs related to any Celebratory Day. On the home page of the app, you’ll see a section, “Daily Facts”. After you’re done creating your profile, you can click it and type an idea in the given space, on which the information should be based.
+
+![Daily Facts Feature](/blog-assets/blog16/daily-facts-feature.webp)
+
+Here, let’s type “Shivratri Special” and click generate. These are a few creations that are generated with this AI tool:
+
+<div className="mx-auto flex w-full flex-wrap items-center justify-center gap-2">
+  <img
+    src="/blog-assets/blog16/maha-shivaratri-fact-poster1.webp"
+    alt="Maha Shivaratri Fact Poster"
+    className="my-0 md:w-2/5"
+  />
+  <img
+    src="/blog-assets/blog16/maha-shivaratri-fact-poster2.webp"
+    alt="Maha Shivaratri Fact Poster"
+    className="my-0 md:w-2/5"
+  />
+</div>
+
+Hiring professional photographers, designers, or editors for Ads and posters is too costly or time-consuming for local businesses. As mentioned, Wizad is a quick, affordable, and hassle-free AI alternative for these small-scale business owners. [Click here to view a comparison between Wizad and Canva](https://wizad.ai/blogs/best-alternative-for-canva-to-generate-posters-online "Best alternative for Canva to generate posters online").
+
+In conclusion, Wizad is a user-friendly application that uses Generative AI to create multiple poster designs in just a few clicks. If you’re such a business owner and want to make promotional posters to support your organisation’s marketing strategy, follow this link to access the Wizad App, in the [Play Store](https://play.google.com/store/apps/details?id=co.wizad.wizad&pli=1 "Wizad App on Play Store") or [App Store](https://apps.apple.com/in/app/wizad-ai-poster-maker/id6458984305 "Wizad App on App Store"); through which you can create these adverts and posters ten times faster!!
+
+</ContentWrapper>
