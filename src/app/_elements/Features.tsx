@@ -1,19 +1,19 @@
-import FeaturesScreen1 from "@/../public/assets/feature-screen1.png";
-import FeaturesScreen2 from "@/../public/assets/feature-screen2.png";
-import FeaturesScreen3 from "@/../public/assets/feature-screen3.png";
-import FeaturesScreen4 from "@/../public/assets/feature-screen4.png";
-import TestimonialHighlightAuthor from "@/../public/assets/testimonial-highlight-author-avatar.png";
-import PartyPopper from "@/../public/assets/party-popper.png";
-import SpecialDays from "@/../public/assets/special-days.png";
-import SpecialDaysList from "@/../public/assets/special-days-list.png";
-import Boxes from "@/../public/assets/boxes.png";
-import Calender from "@/../public/assets/calender.png";
-import Thunderbolt from "@/../public/assets/thunderbolt.png";
-import Feature5M from "@/../public/assets/feature5-m.svg";
-import Feature5D from "@/../public/assets/feature5-d.png";
-import EmojiM from "@/../public/assets/emojis-M.png";
-import EmojiD from "@/../public/assets/emojis-D.png";
-import MagicLogo from "@/../public/assets/magic-logo.png";
+import FeaturesScreen1 from "@/../public/assets/feature-screen1.webp";
+import FeaturesScreen2 from "@/../public/assets/feature-screen2.webp";
+import FeaturesScreen3 from "@/../public/assets/feature-screen3.webp";
+import FeaturesScreen4 from "@/../public/assets/feature-screen4.webp";
+import TestimonialHighlightAuthor from "@/../public/assets/testimonial-highlight-author-avatar.webp";
+import PartyPopper from "@/../public/assets/party-popper.webp";
+import SpecialDays from "@/../public/assets/special-days.webp";
+import SpecialDaysList from "@/../public/assets/special-days-list.webp";
+import Boxes from "@/../public/assets/boxes.webp";
+import Calender from "@/../public/assets/calender.webp";
+import Thunderbolt from "@/../public/assets/thunderbolt.webp";
+import Feature5M from "@/../public/assets/feature5-m.webp";
+import Feature5D from "@/../public/assets/feature5-d.webp";
+import EmojiM from "@/../public/assets/emojis-M.webp";
+import EmojiD from "@/../public/assets/emojis-D.webp";
+import MagicLogo from "@/../public/assets/magic-logo.webp";
 
 import Image from "next/image";
 import { ReactNode } from "react";
@@ -58,6 +58,7 @@ export default function Features() {
         <Image
           className="w-full max-w-2xl md:w-2/5"
           src={FeaturesScreen1}
+          sizes="(max-width: 768px) 100vw, (max-width: 1536px) 40vw"
           alt="Features"
         />
       </section>
@@ -77,6 +78,7 @@ export default function Features() {
         <Image
           className="w-full max-w-2xl md:w-2/5"
           src={FeaturesScreen2}
+          sizes="(max-width: 768px) 100vw, (max-width: 1536px) 40vw"
           alt="Features"
         />
       </section>
@@ -111,12 +113,16 @@ export default function Features() {
             </span>
           </div>
           <div className="w-full pt-10 lg:w-3/5">
-            <Image src={SpecialDays} alt="Special Days" />
+            <Image
+              src={SpecialDays}
+              alt="Special Days"
+              sizes="(max-width: 1024px) 100vw, (max-width: 1536px) 60vw"
+            />
           </div>
         </div>
         <div className="relative h-30 w-full bg-neutral-920 md:h-64">
           <Image
-            // sizes="(max-width: 1536px) 100vw, 33vw"
+            sizes="(max-width: 1536px) 100vw"
             src={SpecialDaysList}
             fill
             style={{
@@ -129,7 +135,6 @@ export default function Features() {
       </section>
 
       {/* Turn product images in your mobile gallery to professional posters */}
-      {/* INCOMPLETE!!! it will be completed after getting video to insert here */}
       <section className="flex w-full max-w-screen-2xl flex-col items-center justify-center py-6 md:py-20">
         <div className="relative flex min-h-max w-full flex-wrap justify-between rounded-3xl bg-neutral-920 px-3 pt-3 md:px-10 md:pt-10 lg:h-[52.5rem]">
           <div className="w-full lg:w-3/5">
@@ -163,6 +168,7 @@ export default function Features() {
                 src={MagicLogo}
                 alt="MagicLogo"
                 style={{ objectFit: "fill" }}
+                sizes="(max-width: 1024px) 100vw, (max-width: 1536px) 72vw"
               />
               <span className="absolute bottom-0 left-0 h-1/2 w-full bg-gradient-to-t from-neutral-920 to-transparent" />
             </div>
@@ -216,10 +222,20 @@ export default function Features() {
             </span>
           </div>
           <div className="absolute bottom-0 left-0 mx-auto max-h-[21.875rem] w-full min-w-80 pt-10 md:hidden md:h-0 md:w-0">
-            <Image src={EmojiM} alt="Emojis" style={{ objectFit: "fill" }} />
+            <Image
+              src={EmojiM}
+              alt="Emojis"
+              style={{ objectFit: "fill" }}
+              sizes="(max-width: 768px) 100vw"
+            />
           </div>
           <div className="absolute hidden w-0 justify-end md:bottom-0 md:right-0 md:flex md:w-full">
-            <Image src={EmojiD} alt="Emoji" style={{ objectFit: "fill" }} />
+            <Image
+              src={EmojiD}
+              alt="Emoji"
+              style={{ objectFit: "fill" }}
+              sizes="(max-width: 1536px) 100vw"
+            />
           </div>
         </div>
       </section>
@@ -258,6 +274,7 @@ export default function Features() {
               src={Feature5M}
               alt="Feature Screen 5"
               style={{ objectFit: "fill" }}
+              sizes="(max-width: 768px) 100vw"
             />
           </div>
           <div className="absolute hidden w-0 md:bottom-0 md:right-0 md:flex md:w-[80%]">
@@ -265,6 +282,7 @@ export default function Features() {
               src={Feature5D}
               alt="Feature Screen 5"
               style={{ objectFit: "fill" }}
+              sizes="(max-width: 1536px) 80vw"
             />
           </div>
         </div>
@@ -297,7 +315,12 @@ export default function Features() {
           </div>
 
           <div className="flex md:row-span-2 md:flex-grow md:items-end md:justify-end md:self-center md:px-6">
-            <Image className="md:w-full" src={FeaturesScreen4} alt="Features" />
+            <Image
+              className="md:w-full"
+              src={FeaturesScreen4}
+              alt="Features"
+              sizes="(max-width: 768px) 100vw, (max-width: 1536px) 40vw"
+            />
           </div>
 
           <div className="flex flex-col items-start justify-end gap-10">

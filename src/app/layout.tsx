@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: [
       {
-        url: "/meta-image.png",
+        url: "/meta-image.webp",
         width: 410,
         height: 200,
         alt: "Wizad.ai Logo",

@@ -2,10 +2,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { IoMenu } from "react-icons/io5";
-import WhatsApp from "@/../public/assets/whatsapp.png";
+import WhatsApp from "@/../public/assets/whatsapp.webp";
 import { FaYoutube } from "react-icons/fa";
 
-import logo from "@/../public/assets/logo-full.png";
+import logo from "@/../public/assets/logo-full.webp";
 import { useState } from "react";
 import Slideover from "@/components/Slideover";
 

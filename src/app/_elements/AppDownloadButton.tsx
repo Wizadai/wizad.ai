@@ -1,7 +1,7 @@
 import Image from "next/image";
 
-import AppStoreDownload from "@/../public/assets/download-appstore.svg";
-import PlayStoreDownload from "@/../public/assets/download-playstore.png";
+import AppStoreDownload from "@/../public/assets/download-appstore.webp";
+import PlayStoreDownload from "@/../public/assets/download-playstore.webp";
 
 const StoreButton = {
   appstore: AppStoreDownload,

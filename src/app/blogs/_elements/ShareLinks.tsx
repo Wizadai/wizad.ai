@@ -1,6 +1,6 @@
 "use client";
 import { BsTwitterX } from "react-icons/bs";
-import RiLink from "@/../public/assets/ri_link-m.png";
+import RiLink from "@/../public/assets/ri_link-m.webp";
 import { BiLogoLinkedinSquare, BiLogoFacebookSquare } from "react-icons/bi";
 import Image from "next/image";
 import { usePathname } from "next/navigation";

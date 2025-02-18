@@ -8,7 +8,7 @@ export default async function LogoImage({
   ...props
 }: Omit<ImageProps, "blurDataUrl" | "placeholder" | "loading">) {
   const baseUrl = getBaseUrl();
-  const blurUrl = await getBase64Url(`${baseUrl}/assets/logo-footer.png`);
+  const blurUrl = await getBase64Url(`${baseUrl}/assets/logo-footer.webp`);
 
   return (
     <Image
