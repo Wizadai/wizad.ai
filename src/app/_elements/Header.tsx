@@ -2,7 +2,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { IoMenu } from "react-icons/io5";
-import WhatsApp from "@/../public/assets/whatsapp.webp";
 import { FaYoutube } from "react-icons/fa";
 
 import logo from "@/../public/assets/logo-full.webp";
@@ -52,17 +51,6 @@ export default function Header() {
               Watch demo
             </span>
             <FaYoutube className="hidden size-5 text-red-600 md:block md:size-6" />
-          </Link>
-          <Link
-            href={process.env.NEXT_PUBLIC_WHATSAPP_CHAT_URL || ""}
-            className="flex items-center gap-2 rounded-lg bg-[#181818] p-2 hover:bg-white/20 md:px-5"
-          >
-            <span className="hidden md:block md:text-sm md:font-normal">
-              Chat with us on
-            </span>
-            <div className="size-5 md:size-6">
-              <Image src={WhatsApp} alt="whatsapp" />
-            </div>
           </Link>
           <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#181818] md:hidden">
             <button onClick={() => setDrawerOpened(true)}>
