@@ -6,7 +6,7 @@ const nextConfig = {
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   images: {
     loader: "custom",
-    loaderFile: "./utils/imageLoader.ts",
+    loaderFile: "./imageLoader.ts",
     dangerouslyAllowSVG: true,
     remotePatterns: [
       {
