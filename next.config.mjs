@@ -5,6 +5,8 @@ import remarkGfm from "remark-gfm";
 const nextConfig = {
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   images: {
+    loader: "custom",
+    loaderFile: "./imageLoader.ts",
     dangerouslyAllowSVG: true,
     remotePatterns: [
       {
