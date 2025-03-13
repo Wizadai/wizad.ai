@@ -11,6 +11,7 @@ import AppDownloadQRCode from "@/app/_elements/AppDownloadQR";
 import AppDownloadButton from "@/app/_elements/AppDownloadButton";
 import HeroGradient from "@/../public/bg-hero-gradient.webp";
 import { FaCheck } from "react-icons/fa";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -88,22 +89,20 @@ export default function Footer() {
           <div className="my-9 h-px bg-zinc-800 md:my-8" />
 
           <div className="flex flex-wrap justify-between gap-4 text-sm">
-            <a
+            <Link
               className="text-zinc-500 transition-all duration-200 ease-in-out hover:text-zinc-400"
-              href={process.env.NEXT_PUBLIC_PRIVACY_POLICY_URL}
+              href="/privacy-policy"
               rel="license"
-              target="_blank"
             >
               Privacy Policy
-            </a>
-            <a
+            </Link>
+            <Link
               className="text-zinc-500 transition-all duration-200 ease-in-out hover:text-zinc-400"
-              href={process.env.NEXT_PUBLIC_TERMS_AND_CONDITIONS_URL}
+              href="/terms-and-conditions"
               rel="license"
-              target="_blank"
             >
               Terms & Conditions
-            </a>
+            </Link>
             <a
               className="text-zinc-500 transition-all duration-200 ease-in-out hover:text-zinc-400"
               href={`mailto:${process.env.NEXT_PUBLIC_SUPPORT_MAIL}`}
