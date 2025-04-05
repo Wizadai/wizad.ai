@@ -56,7 +56,7 @@ export default function Features() {
           </div>
         </div>
         <Image
-          className="w-full max-w-2xl md:w-2/5"
+          className="w-full max-w-2xl rounded-3xl md:w-2/5"
           src={FeaturesScreen1}
           sizes="(max-width: 768px) 100vw, (max-width: 1536px) 40vw"
           alt="Features"
@@ -76,7 +76,7 @@ export default function Features() {
           </span>
         </div>
         <Image
-          className="w-full max-w-2xl md:w-2/5"
+          className="w-full max-w-2xl rounded-3xl md:w-2/5"
           src={FeaturesScreen2}
           sizes="(max-width: 768px) 100vw, (max-width: 1536px) 40vw"
           alt="Features"
@@ -300,7 +300,7 @@ export default function Features() {
         </h1>
 
         <div className="grid grid-cols-1 gap-10 md:-mt-12 md:grid-cols-2 md:gap-12">
-          <div className="flex items-end text-pretty text-sm/normal font-light text-white/80 md:w-[80%] md:pt-20 md:text-xl">
+          <div className="flex items-center justify-center text-pretty text-sm/normal font-light text-white/80 md:w-[80%] md:pt-20 md:text-xl">
             <span>
               <p>
                 No need to hire expensive agencies and freelance designers
@@ -314,36 +314,13 @@ export default function Features() {
             </span>
           </div>
 
-          <div className="flex md:row-span-2 md:flex-grow md:items-end md:justify-end md:self-center md:px-6">
+          <div className="flex md:flex-grow md:items-end md:justify-end md:self-center md:px-6">
             <Image
-              className="md:w-full"
+              className="rounded-3xl md:w-full"
               src={FeaturesScreen4}
               alt="Features"
               sizes="(max-width: 768px) 100vw, (max-width: 1536px) 40vw"
             />
-          </div>
-
-          <div className="flex flex-col items-start justify-end gap-10">
-            <span className="text-xl font-light md:w-[90%] md:text-2xl">
-              {`“Best choice if you want to market online. Wizad will create daily posters for posts and stories, so you don’t need to worry on it! Thankyou team Wizad, long way to go!”`}
-            </span>
-
-            <div className="flex flex-col gap-4 md:flex-row md:items-center">
-              <Image
-                src={TestimonialHighlightAuthor}
-                className="size-10 overflow-clip rounded-full"
-                width={52}
-                height={52}
-                alt="Amrutha S Kammath"
-              />
-
-              <span className="flex flex-col justify-start text-xs">
-                <p className="font-medium">Amrutha S Kammath</p>
-                <p className="text-white/80">
-                  Owner and Operations Head of Over Treasures, Kochi
-                </p>
-              </span>
-            </div>
           </div>
         </div>
       </section>

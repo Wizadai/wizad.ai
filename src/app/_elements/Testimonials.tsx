@@ -1,21 +1,10 @@
+"use client";
 import TestimonialsData from "@/../public/assets/testimonials.json";
 import Image from "next/image";
 import { RiProductHuntFill } from "react-icons/ri";
 import TestimonialsWrapper from "@/app/_elements/TestimonialsWrapper";
 
 type Testimonial = (typeof TestimonialsData)[number];
-
-// type Testimonial = {
-//   source: "ProductHunt";
-//   ref: string;
-
-//   authorName: string;
-//   authorAlias: string;
-//   authorAvatarUrl: string;
-
-//   content: string;
-//   createdAt: string;
-// };
 
 export default function Testimonials() {
   const reversedTestimonialsData = [...TestimonialsData].reverse();
