@@ -11,23 +11,16 @@ export default function HeroSection() {
     <section className="relative flex w-full flex-col overflow-clip">
       <div className="mx-auto mt-24 flex max-w-6xl flex-col gap-6 px-4 text-center md:gap-10">
         <h1 className="max-w-[51.5625rem] font-hero text-4xl/none font-bold italic md:text-8xl/none">
-          <div>Never run out</div>
-          <div>of social media</div>
-          <div>designs, anymore.</div>
+          <div>Stay visible.</div>
+          <div>Stay trusted.</div>
+          <div>Stay connected every day.</div>
         </h1>
         <span className="text-base font-medium leading-relaxed text-white md:text-xl md:font-normal md:leading-7">
           <p>
-            Still messing with long prompts or spending hours editing canva
-            templates?
+            AI creates professional, ready-to-share content with your branding in one click.
           </p>
-          <p className="hidden md:block">
-            Wizad gives you on brand posters in a click. Start creating from
-            your mobile now.
-          </p>
-          <p className="block md:hidden">
-            Wizad gives you on brand posters in a click.
-            <br />
-            Start creating from your mobile now.
+          <p>
+            Download the app now.
           </p>
         </span>
         <div className="mx-auto flex flex-col items-center gap-4 md:flex-row md:gap-8">
