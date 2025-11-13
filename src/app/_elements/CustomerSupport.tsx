@@ -5,12 +5,10 @@ export default function CustomerSupport() {
     <section className="mx-4 my-12 flex flex-col gap-10 rounded-3xl bg-gradient-to-br from-[#FAECFF] to-[#38CEFB] p-5 md:mx-auto md:w-[95%] md:max-w-10xl md:flex-row md:justify-between md:p-16">
       <div className="flex flex-col gap-6 md:max-w-[65%] md:gap-14">
         <h2 className="font-hero text-3xl/tight font-bold italic text-black md:text-7xl">
-          Need industry experts to manage your designs and social media?
+          Want an AI Designer uniquely trained for your enterprise?
         </h2>
         <div className="text-lg leading-snug text-black md:w-[70%] md:text-xl md:font-medium">
-          We have a group of social media experts to help and guide you. Request
-          a call back now, to know more about the tailored services and packages
-          we have for you.
+          We help enterprises with multiple outlets and sales teams scale their design operations effortlessly. Maintain complete brand control from one place, while empowering your users with creative freedom to stay active and on-brand every day.
         </div>
       </div>
 

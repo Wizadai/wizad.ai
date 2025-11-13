@@ -29,23 +29,21 @@ export default function Features() {
       <section className="flex w-full flex-wrap items-center justify-evenly gap-6 py-12 md:gap-20">
         <div className="w-full md:w-1/3">
           <h1 className="text-pretty pb-4 text-3xl/tight font-medium md:self-start md:pb-7 md:text-5xl/tight lg:text-6xl/tight">
-            {"Built for one purpose - "}
+            {"Meet Buddy,   "}
             <span className="inline-block bg-gradient-to-r from-[#E293FE] to-[#38CEFB] bg-clip-text text-transparent md:inline">
-              to grow your brand.
+              Your AI Designer.
             </span>
           </h1>
           <div className="flex flex-col gap-12 md:flex-row md:justify-between">
             <div className="flex w-full flex-col justify-between gap-4 md:gap-7">
               <span className="text-base text-white/80 md:max-w-md md:pt-5 md:text-lg">
-                Wizad ensures brand identity by generating designs specific to
-                your industry by keeping the Colors, Fonts, Tone and Imagery in
-                mind.
+                Set up your AI designer by completing your profile. Buddy will automatically show you the most relevant poster types based on your business profile.
               </span>
               <div className="flex max-w-min flex-col space-y-4 divide-y whitespace-nowrap">
                 {[
-                  "100% Unique and creative licensing",
-                  "Generate multiple options in seconds",
-                  "Keep brand uniformity across all designs",
+                  "Always perfectly on-brand designs",
+                  "Multiple options with one click",
+                  "No templates, no prompts needed",
                 ].map((text, key) => (
                   <p key={key} className="flex items-center gap-4 pt-4">
                     <span className="font-light md:text-xl">{text}</span>
@@ -66,12 +64,11 @@ export default function Features() {
       <section className="flex w-full max-w-screen-2xl flex-col items-center justify-center gap-6 py-12 md:flex-row-reverse md:items-center md:gap-20 md:pb-24 md:pt-32">
         <div className="flex w-full flex-col justify-between gap-6 md:w-2/5 md:gap-8 md:self-start md:pt-6">
           <h1 className="text-balance text-3xl/tight font-medium md:text-5xl/tight lg:text-6xl/tight">
-            Optimized for all your social media design needs
+            Designs in One Click. Zero Effort.
           </h1>
           <span className="space-y-4 text-base font-light text-white/80 md:max-w-md md:pt-5 md:text-xl">
             <p>
-              Say goodbye to the hassle of hiring designers or spending hours
-              tweaking templates.
+              Set up your AI designer and get on-brand designs instantly. No templates or prompts needed. Generate options in one click or chat with your AI designer like working with a real designer.
             </p>
           </span>
         </div>
@@ -348,14 +345,14 @@ export default function Features() {
           <span className="text-2xl font-medium text-white/80 md:text-5xl/tight">
             <p className="md:w-[80%]">
               Wizad is now used by{" "}
-              <span className="text-white">50K+ business owners</span> to create
+              <span className="text-white">3,50,000+ business owners</span> to create
               designs, grow their social media and improve the brand positioning
               — without any extensive design knowledge.
             </p>
             <br />
             <p className="text-balance md:w-[80%]">
               Since we launched, people around the world have created{" "}
-              <span className="text-white">1M+ marketing collaterals</span>,{" "}
+              <span className="text-white">5 million+ marketing collaterals</span>,{" "}
               inspiring us to make wizad even better.
             </p>
           </span>

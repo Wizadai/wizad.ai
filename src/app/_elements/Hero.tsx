@@ -11,13 +11,12 @@ export default function HeroSection() {
     <section className="relative flex w-full flex-col overflow-clip">
       <div className="mx-auto mt-24 flex max-w-6xl flex-col gap-6 px-4 text-center md:gap-10">
         <h1 className="max-w-[51.5625rem] font-hero text-4xl/none font-bold italic md:text-8xl/none">
-          <div>Stay visible.</div>
-          <div>Stay trusted.</div>
-          <div>Stay connected every day.</div>
+          <div>Meet your AI Designer.</div>
+          <div>Design made Effortles.</div>
         </h1>
         <span className="text-base font-medium leading-relaxed text-white md:text-xl md:font-normal md:leading-7">
           <p>
-            AI creates professional, ready-to-share content with your branding in one click.
+            Save hours of design work. Generate unique branded designs instantly with AI.
           </p>
           <p>
             Download the app now.
