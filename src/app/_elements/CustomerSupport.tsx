@@ -8,7 +8,7 @@ export default function CustomerSupport() {
           Want an AI Designer uniquely trained for your enterprise?
         </h2>
         <div className="text-lg leading-snug text-black md:w-[70%] md:text-xl md:font-medium">
-          We help enterprises with multiple outlets and sales teams scale their design operations effortlessly. Maintain complete brand control from one place, while empowering your users with creative freedom to stay active and on-brand every day.
+          We help enterprises with multiple outlets and sales teams scale their design operations effortlessly. Maintain complete brand control from one place, while empowering your team with creative freedom to stay active and on-brand every day.
         </div>
       </div>
 
