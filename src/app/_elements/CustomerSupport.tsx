@@ -115,7 +115,7 @@ const CustomerSupportForm = () => {
 
       {submitStatus === "success" && (
         <div className="rounded-lg bg-green-500/20 p-3 text-sm text-green-400">
-          Your request has been sent successfully! We'll contact you soon.
+          Your request has been sent successfully! We&apos;ll contact you soon.
         </div>
       )}
 
