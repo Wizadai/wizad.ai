@@ -1,4 +1,7 @@
-import { requestCustomerSupport } from "@/app/actions";
+"use client";
+
+import { useState, FormEvent } from "react";
+import emailjs from "@emailjs/browser";
 
 export default function CustomerSupport() {
   return (
@@ -18,10 +21,45 @@ export default function CustomerSupport() {
 }
 
 const CustomerSupportForm = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
+
+    const form = e.currentTarget;
+
+    try {
+      // Send email using EmailJS
+      await emailjs.sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        form,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      );
+
+      setSubmitStatus("success");
+      form.reset();
+      
+      // Reset success message after 5 seconds
+      setTimeout(() => setSubmitStatus("idle"), 5000);
+    } catch (error) {
+      console.error("Failed to send email:", error);
+      setSubmitStatus("error");
+      
+      // Reset error message after 5 seconds
+      setTimeout(() => setSubmitStatus("idle"), 5000);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <form
       className="flex w-full max-w-md flex-col gap-4 self-center rounded-3xl bg-[#121212] p-6 text-zinc-100 md:w-[30%] md:p-10"
-      action={requestCustomerSupport}
+      onSubmit={handleSubmit}
     >
       <h2 className="text-xl font-medium md:text-lg">Request a call back</h2>
 
@@ -34,7 +72,8 @@ const CustomerSupportForm = () => {
         </label>
         <input
           id="support-form-name"
-          name="name"
+          name="from_name"
+          required
           className="w-full rounded-lg bg-[#1D1D1D] p-4 outline-none transition-all duration-200 ease-in-out placeholder:text-zinc-500 focus:ring-2 focus:ring-zinc-700 md:p-3 md:text-sm"
           placeholder="Enter your name"
         />
@@ -49,8 +88,9 @@ const CustomerSupportForm = () => {
         </label>
         <input
           id="support-form-email"
-          name="email"
+          name="from_email"
           type="email"
+          required
           className="w-full rounded-lg bg-[#1D1D1D] p-4 outline-none transition-all duration-200 ease-in-out placeholder:text-zinc-500 focus:ring-2 focus:ring-zinc-700 md:p-3 md:text-sm"
           placeholder="Enter your email"
         />
@@ -67,16 +107,30 @@ const CustomerSupportForm = () => {
           id="support-form-phone"
           name="phone"
           type="tel"
+          required
           className="w-full rounded-lg bg-[#1D1D1D] p-4 outline-none transition-all duration-200 ease-in-out placeholder:text-zinc-500 focus:ring-2 focus:ring-zinc-700 md:p-3 md:text-sm"
           placeholder="Enter your mobile number"
         />
       </div>
 
+      {submitStatus === "success" && (
+        <div className="rounded-lg bg-green-500/20 p-3 text-sm text-green-400">
+          Your request has been sent successfully! We'll contact you soon.
+        </div>
+      )}
+
+      {submitStatus === "error" && (
+        <div className="rounded-lg bg-red-500/20 p-3 text-sm text-red-400">
+          Failed to send your request. Please try again.
+        </div>
+      )}
+
       <button
         type="submit"
-        className="rounded-lg border-white bg-gradient-to-br from-[#E293FE] to-[#2DEFAE] px-6 py-2 text-lg font-medium text-black transition-all duration-200 ease-in-out hover:from-[#2DEFAE] hover:to-[#E293FE] hover:text-white md:rounded-md md:p-3 md:text-sm"
+        disabled={isSubmitting}
+        className="rounded-lg border-white bg-gradient-to-br from-[#E293FE] to-[#2DEFAE] px-6 py-2 text-lg font-medium text-black transition-all duration-200 ease-in-out hover:from-[#2DEFAE] hover:to-[#E293FE] hover:text-white disabled:cursor-not-allowed disabled:opacity-50 md:rounded-md md:p-3 md:text-sm"
       >
-        Request a call back
+        {isSubmitting ? "Sending..." : "Request a call back"}
       </button>
     </form>
   );
