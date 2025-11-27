@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { IoMenu } from "react-icons/io5";
 import { FaYoutube } from "react-icons/fa";
+import { IoChevronDown } from "react-icons/io5";
 
 import logo from "@/../public/assets/logo-full.webp";
 import { useState } from "react";
@@ -64,6 +65,8 @@ export default function Header() {
 }
 
 const NavLinks = ({ onClick }: { onClick: () => void }) => {
+  const [isEnterpriseOpen, setIsEnterpriseOpen] = useState(false);
+
   return (
     <>
       <Link
@@ -80,6 +83,43 @@ const NavLinks = ({ onClick }: { onClick: () => void }) => {
       >
         Blogs & News
       </Link>
+      <div className="relative">
+        <button
+          onClick={() => setIsEnterpriseOpen(!isEnterpriseOpen)}
+          className="flex items-center gap-1 transform transition-transform duration-500 hover:scale-110"
+        >
+          For Enterprises
+          <IoChevronDown
+            className={`size-4 transition-transform duration-300 ${
+              isEnterpriseOpen ? "rotate-180" : ""
+            }`}
+          />
+        </button>
+        {isEnterpriseOpen && (
+          <div className="absolute top-full left-0 mt-2 w-56 rounded-lg bg-[#181818] shadow-lg overflow-hidden z-50">
+            <Link
+              href="/enterprises/insurance-banking"
+              className="block px-4 py-3 hover:bg-white/10 transition-colors duration-200"
+              onClick={() => {
+                setIsEnterpriseOpen(false);
+                onClick();
+              }}
+            >
+              Insurance and Banking
+            </Link>
+            <Link
+              href="/enterprises/retail-chains"
+              className="block px-4 py-3 hover:bg-white/10 transition-colors duration-200"
+              onClick={() => {
+                setIsEnterpriseOpen(false);
+                onClick();
+              }}
+            >
+              Retail Chains
+            </Link>
+          </div>
+        )}
+      </div>
     </>
   );
 };
