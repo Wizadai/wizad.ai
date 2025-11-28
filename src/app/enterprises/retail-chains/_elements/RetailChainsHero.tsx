@@ -7,7 +7,7 @@ export default function RetailChainsHero() {
       <section className="flex w-full flex-wrap items-center justify-evenly gap-6 py-12 md:gap-20">
         <div className="w-full md:w-1/3">
           <h1 className="text-pretty pb-4 text-3xl/tight font-medium md:self-start md:pb-7 md:text-5xl/tight lg:text-6xl/tight">
-            {"AI Marketing System for Supermarkets"}
+            {"AI Designer for Supermarket chains"}
           </h1>
           <div className="flex flex-col gap-12 md:flex-row md:justify-between">
             <div className="flex w-full flex-col justify-between gap-4 md:gap-7">

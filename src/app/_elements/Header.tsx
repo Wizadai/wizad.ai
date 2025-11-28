@@ -105,7 +105,7 @@ const NavLinks = ({ onClick }: { onClick: () => void }) => {
                 onClick();
               }}
             >
-              Insurance and Banking
+              Insurance Brands
             </Link>
             <Link
               href="/enterprises/retail-chains"
@@ -115,7 +115,7 @@ const NavLinks = ({ onClick }: { onClick: () => void }) => {
                 onClick();
               }}
             >
-              Retail Chains
+              Supermarket Chains
             </Link>
           </div>
         )}

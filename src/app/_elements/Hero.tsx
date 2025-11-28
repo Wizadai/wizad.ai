@@ -12,7 +12,6 @@ export default function HeroSection() {
       <div className="mx-auto mt-24 flex max-w-6xl flex-col gap-6 px-4 text-center md:gap-10">
         <h1 className="max-w-[51.5625rem] font-hero text-4xl/none font-bold italic md:text-8xl/none">
           <div>Meet your AI Designer.</div>
-          <div>Design made Effortles.</div>
         </h1>
         <span className="text-base font-medium leading-relaxed text-white md:text-xl md:font-normal md:leading-7">
           <p>
