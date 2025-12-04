@@ -14,7 +14,7 @@ export default function InsuranceBusinessLogos() {
   ];
 
   return (
-    <div className="flex flex-col items-center gap-8 text-white/70 py-12 md:py-20">
+    <div className="flex flex-col items-center gap-16 md:gap-8 text-white/70 py-20 md:py-20">
       <span className="text-sm font-medium text-center md:text-xl">
           Backed by
         </span>
