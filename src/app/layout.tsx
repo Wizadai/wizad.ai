@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Exo } from "next/font/google";
 import "./globals.css";
-import Header from "./_elements/Header";
+import ConditionalHeader from "./_elements/ConditionalHeader";
 import Script from "next/script";
 
 const inter = Inter({
@@ -51,7 +51,7 @@ export default function RootLayout({
       />
       <body className={`${inter.variable} ${exo.variable} font-sans`}>
         <main className="flex flex-col">
-          <Header />
+          <ConditionalHeader />
           {children}
         </main>
       </body>
