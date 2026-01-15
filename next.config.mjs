@@ -3,8 +3,10 @@ import remarkGfm from "remark-gfm";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   images: {
+    unoptimized: true,
     loader: "custom",
     loaderFile: "./imageLoader.ts",
     dangerouslyAllowSVG: true,
