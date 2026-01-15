@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
+import Image from "next/image";
 import HomeHeader from "@/app/_elements/HomeHeader";
 import PosterCard from "@/app/_elements/PosterCard";
 import { VideoPlaybackProvider } from "@/app/_elements/VideoPlaybackContext";
@@ -107,7 +108,7 @@ export default function HomePage() {
           await response.json();
         
         console.log("Received data:", {
-          page: data.current_page,
+          page: data.page,
           total: data.total_count,
           items: data.poster_types.length
         });
@@ -201,10 +202,12 @@ export default function HomePage() {
             <div className="flex items-start gap-4">
               <div className="flex-shrink-0">
                 {selectedCreator.profile_photo_url ? (
-                  <img
+                  <Image
                     src={selectedCreator.profile_photo_url}
                     alt={selectedCreator.username}
-                    className="w-20 h-20 rounded-full object-cover border-2 border-purple-500"
+                    width={80}
+                    height={80}
+                    className="rounded-full object-cover border-2 border-purple-500"
                   />
                 ) : (
                   <div className="w-20 h-20 rounded-full bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center text-2xl">
