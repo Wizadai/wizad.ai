@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import HomeHeader from "@/app/_elements/HomeHeader";
@@ -16,7 +16,7 @@ import {
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "http://0.0.0.0:8000";
 
-export default function HomePage() {
+function HomePageContent() {
   const searchParams = useSearchParams();
   const urlSearchQuery = searchParams.get('search') || '';
   const urlCreatorId = searchParams.get('creator');
@@ -292,5 +292,17 @@ export default function HomePage() {
       </main>
       </div>
     </VideoPlaybackProvider>
+  );
+}
+
+export default function HomePage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">Loading...</div>
+      </div>
+    }>
+      <HomePageContent />
+    </Suspense>
   );
 }
