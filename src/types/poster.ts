@@ -15,6 +15,14 @@ export interface FAQSchema {
   order_to_display: number;
 }
 
+export interface PreviewVideoSchema {
+  preview_video_id: number;
+  poster_type_id: number;
+  video_url: string;
+  is_main_preview_video: boolean;
+  created_at: string;
+}
+
 export interface PublicPosterTypeSchema {
   poster_type_id: number;
   poster_type_name: string;
@@ -26,6 +34,7 @@ export interface PublicPosterTypeSchema {
   credit_required: number;
   tags: string[] | null;
   main_preview_video_url: string | null;
+  preview_videos: PreviewVideoSchema[] | null;
   creator: CreatorDetailSchema | null;
   faqs: FAQSchema[] | null;
 }
@@ -47,4 +56,8 @@ export interface TagSchema {
 
 export interface PublicTagListResponse {
   tags: TagSchema[];
+}
+
+export interface PublicCreatorListResponse {
+  creators: CreatorDetailSchema[];
 }

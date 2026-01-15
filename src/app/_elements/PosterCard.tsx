@@ -2,15 +2,16 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { PublicPosterTypeSchema } from "@/types/poster";
+import { PublicPosterTypeSchema, CreatorDetailSchema } from "@/types/poster";
 import { useRef, useState, useEffect } from "react";
 import { useVideoPlayback } from "./VideoPlaybackContext";
 
 interface PosterCardProps {
   poster: PublicPosterTypeSchema;
+  onCreatorClick?: (creator: CreatorDetailSchema) => void;
 }
 
-export default function PosterCard({ poster }: PosterCardProps) {
+export default function PosterCard({ poster, onCreatorClick }: PosterCardProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const { currentPlayingId, setCurrentPlaying } = useVideoPlayback();
@@ -88,7 +89,10 @@ export default function PosterCard({ poster }: PosterCardProps) {
             <span className="text-xs font-medium text-white">Model</span>
             <span className="text-xs font-semibold text-white">{poster.default_model_name}</span>
             <div className="flex items-center gap-1 bg-emerald-600 rounded px-1.5 py-0.5">
-              <span className="text-[10px] font-bold text-white">{poster.credit_required}+</span>
+              <span className="text-[10px] font-bold text-white">{poster.credit_required}</span>
+                <svg className="w-3 h-3 text-yellow-400" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+              </svg>
             </div>
           </div>
         </div>
@@ -98,7 +102,15 @@ export default function PosterCard({ poster }: PosterCardProps) {
           {/* Creator Info */}
           {poster.creator && (
             <div className="flex items-center gap-2 mb-2">
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-2 py-1">
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (onCreatorClick) {
+                    onCreatorClick(poster.creator!);
+                  }
+                }}
+                className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-2 py-1 hover:bg-white/20 transition-colors cursor-pointer"
+              >
                 {poster.creator.profile_photo_url ? (
                   <Image
                     src={poster.creator.profile_photo_url}
@@ -116,7 +128,7 @@ export default function PosterCard({ poster }: PosterCardProps) {
                 <span className="text-xs font-medium text-white">
                   {poster.creator.username || poster.creator.creator_name}
                 </span>
-              </div>
+              </button>
             </div>
           )}
 

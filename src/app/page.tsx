@@ -1,29 +1,37 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import HomeHeader from "@/app/_elements/HomeHeader";
 import PosterCard from "@/app/_elements/PosterCard";
 import { VideoPlaybackProvider } from "@/app/_elements/VideoPlaybackContext";
 import {
   PublicPaginatedPosterTypeListResponse,
   PublicTagListResponse,
+  PublicCreatorListResponse,
   TagSchema,
+  CreatorDetailSchema,
 } from "@/types/poster";
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "http://0.0.0.0:8000";
 
 export default function HomePage() {
+  const searchParams = useSearchParams();
+  const urlSearchQuery = searchParams.get('search') || '';
+  const urlCreatorId = searchParams.get('creator');
   const [posterTypes, setPosterTypes] =
     useState<PublicPaginatedPosterTypeListResponse | null>(null);
   const [tags, setTags] = useState<TagSchema[]>([]);
   const [selectedTags, setSelectedTags] = useState<number[]>([]);
-  const [searchInput, setSearchInput] = useState("");
-  const [searchQuery, setSearchQuery] = useState("");
+  const [creators, setCreators] = useState<CreatorDetailSchema[]>([]);
+  const [selectedCreator, setSelectedCreator] = useState<CreatorDetailSchema | null>(null);
+  const [searchInput, setSearchInput] = useState(urlSearchQuery);
+  const [searchQuery, setSearchQuery] = useState(urlSearchQuery);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
   const pageSize = 8;
 
-  // Fetch tags on mount
+  // Fetch tags and creators on mount
   useEffect(() => {
     const fetchTags = async () => {
       try {
@@ -35,8 +43,29 @@ export default function HomePage() {
       }
     };
 
+    const fetchCreators = async () => {
+      try {
+        const response = await fetch(`${API_BASE_URL}/poster/public/creators`);
+        const data: PublicCreatorListResponse = await response.json();
+        setCreators(data.creators);
+      } catch (error) {
+        console.error("Error fetching creators:", error);
+      }
+    };
+
     fetchTags();
+    fetchCreators();
   }, []);
+
+  // Set selected creator from URL params
+  useEffect(() => {
+    if (urlCreatorId && creators.length > 0) {
+      const creator = creators.find(c => c.creator_id === parseInt(urlCreatorId));
+      if (creator) {
+        setSelectedCreator(creator);
+      }
+    }
+  }, [urlCreatorId, creators]);
 
   // Debounced search - trigger search after 500ms pause
   useEffect(() => {
@@ -66,6 +95,10 @@ export default function HomePage() {
           params.append("tag_ids", tagId.toString());
         });
 
+        if (selectedCreator) {
+          params.append("creator_id", selectedCreator.creator_id.toString());
+        }
+
         const url = `${API_BASE_URL}/poster/public/poster-types?${params.toString()}`;
         console.log("Fetching:", url, "Page:", page);
         
@@ -88,7 +121,7 @@ export default function HomePage() {
     };
 
     fetchPosterTypes();
-  }, [page, searchQuery, selectedTags]);
+  }, [page, searchQuery, selectedTags, selectedCreator]);
 
   const handleTagClick = (tagId: number) => {
     setSelectedTags((prev) => {
@@ -103,6 +136,13 @@ export default function HomePage() {
 
   const handleSearchChange = (value: string) => {
     setSearchInput(value);
+  };
+
+  const handleCreatorClick = (creator: CreatorDetailSchema) => {
+    setSelectedCreator(creator);
+    setPage(1);
+    // Scroll to top to show creator info
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
@@ -143,6 +183,47 @@ export default function HomePage() {
           </div>
         </div>
 
+        {/* Selected Creator Info */}
+        {selectedCreator && (
+          <div className="mb-6 bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl border border-gray-700 p-6 relative">
+            <button
+              onClick={() => {
+                setSelectedCreator(null);
+                setPage(1);
+              }}
+              className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-gray-700 hover:bg-gray-600 rounded-full transition-colors"
+              aria-label="Clear filter"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0">
+                {selectedCreator.profile_photo_url ? (
+                  <img
+                    src={selectedCreator.profile_photo_url}
+                    alt={selectedCreator.username}
+                    className="w-20 h-20 rounded-full object-cover border-2 border-purple-500"
+                  />
+                ) : (
+                  <div className="w-20 h-20 rounded-full bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center text-2xl">
+                    👤
+                  </div>
+                )}
+              </div>
+              <div className="flex-1 min-w-0 pr-8">
+                <h2 className="text-xl font-bold text-white mb-1">{selectedCreator.username}</h2>
+                {selectedCreator.bio && (
+                  <p className="text-gray-300 text-sm leading-relaxed">
+                    {selectedCreator.bio}
+                  </p>
+                )}
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Loading State */}
         {loading && (
           <div className="flex justify-center items-center py-20">
@@ -155,7 +236,11 @@ export default function HomePage() {
           <>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
               {posterTypes.poster_types.map((poster) => (
-                <PosterCard key={poster.poster_type_id} poster={poster} />
+                <PosterCard 
+                  key={poster.poster_type_id} 
+                  poster={poster}
+                  onCreatorClick={handleCreatorClick}
+                />
               ))}
             </div>
 

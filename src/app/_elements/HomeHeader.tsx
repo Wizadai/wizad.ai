@@ -64,7 +64,7 @@ export default function HomeHeader({ onSearch, searchValue = "", showNavigation 
                 How to use?
               </Link>
               <Link
-                href="/join-creator"
+                href="https://forms.gle/K4d1ppAtMi7praja9"
                 className="hidden md:block text-sm font-medium hover:text-purple-400 transition-colors"
               >
                 Join as creator
