@@ -8,7 +8,7 @@ import HomeHeader from "@/app/_elements/HomeHeader";
 import Footer from "@/app/_elements/Footer";
 import { PublicPosterTypeSchema } from "@/types/poster";
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+const API_BASE_URL = "https://wizad-dev-backend.azurewebsites.net";
 
 export default function PosterTypeDetailPage() {
   const params = useParams();
