@@ -121,13 +121,6 @@ export default function PosterTypeDetailPage() {
                 {posterType.poster_type_name}
               </h1>
 
-              {/* Description */}
-              <div className="mb-6">
-                <p className="text-gray-300 leading-relaxed whitespace-pre-line">
-                  {posterType.description_to_display || "No description available."}
-                </p>
-              </div>
-
               {/* Details */}
               <div className="space-y-3 mb-8">
                 {/* Creator */}
@@ -194,6 +187,13 @@ export default function PosterTypeDetailPage() {
                     </div>
                   </div>
                 )}
+              </div>
+
+              {/* Description */}
+              <div className="mb-6">
+                <p className="text-gray-300 leading-relaxed whitespace-pre-line">
+                  {posterType.description_to_display || "No description available."}
+                </p>
               </div>
             </div>
 
