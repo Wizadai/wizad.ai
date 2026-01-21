@@ -134,7 +134,7 @@ export default function PosterCard({ poster, onCreatorClick }: PosterCardProps) 
 
           {/* Description */}
           <h3 className="text-sm font-medium text-white mb-3 line-clamp-2">
-            {poster.description_to_display || poster.poster_type_name}
+            {poster.poster_type_name}
           </h3>
           
           {/* Use this idea button */}
