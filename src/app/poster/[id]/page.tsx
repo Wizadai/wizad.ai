@@ -61,32 +61,11 @@ async function getPosterData(id: string): Promise<PublicPosterTypeSchema | null>
     
     // Validate ID
     if (isNaN(posterId) || posterId <= 0) {
-      console.error(`Invalid poster ID: ${id}`);
+      console.error(`[getPosterData] Invalid poster ID: ${id}`);
       return null;
     }
     
     console.log(`[getPosterData] Searching for poster ID: ${posterId}`);
-    
-    // First, try to fetch directly by ID (if such an endpoint exists)
-    try {
-      console.log(`[getPosterData] Attempting direct fetch for poster ${posterId}...`);
-      const directResponse = await fetch(
-        `${API_BASE_URL}/poster/public/poster-types/${posterId}`,
-        { 
-          next: { revalidate: 3600 }
-        }
-      );
-      
-      if (directResponse.ok) {
-        const posterData = await directResponse.json();
-        console.log(`[getPosterData] ✓ Found poster ${id} via direct API`);
-        return posterData;
-      } else {
-        console.log(`[getPosterData] Direct fetch failed with status ${directResponse.status}, falling back to pagination search`);
-      }
-    } catch (directError) {
-      console.log(`[getPosterData] Direct fetch not available, using pagination search`);
-    }
     
     // Fallback: Search through paginated listing
     let page = 1;
@@ -119,14 +98,7 @@ async function getPosterData(id: string): Promise<PublicPosterTypeSchema | null>
       const data = await response.json();
       const posters = data.poster_types || [];
       
-      // Log all poster IDs on this page
-      const posterIds = posters.map((p: any) => p.poster_type_id);
-      console.log(`[getPosterData] Page ${page} response:`, {
-        posterCount: posters.length,
-        totalPages: data?.total_pages,
-        currentPage: data?.page,
-        posterIds: posterIds.join(', ')
-      });
+      console.log(`[getPosterData] Page ${page}: found ${posters.length} posters`);
       
       // If we get 0 items, we've reached the end
       if (posters.length === 0) {
@@ -135,7 +107,6 @@ async function getPosterData(id: string): Promise<PublicPosterTypeSchema | null>
       }
       
       // Look for the poster with matching ID
-      console.log(`[getPosterData] Looking for poster ID ${posterId} in page ${page}...`);
       const poster = posters.find((p: PublicPosterTypeSchema) => p.poster_type_id === posterId);
       
       if (poster) {
