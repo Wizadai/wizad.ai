@@ -15,7 +15,9 @@ async function getPosterPages(): Promise<MetadataRoute.Sitemap> {
     while (true) {
       const response = await fetch(
         `${API_BASE_URL}/poster/public/poster-types?page=${page}&page_size=${pageSize}`,
-        { cache: 'no-store' }
+        { 
+          next: { revalidate: 3600 } // Cache for 1 hour, then refetch
+        }
       );
       
       if (!response.ok) break;
