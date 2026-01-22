@@ -142,11 +142,24 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
       title: "Poster Not Found",
     };
   }
+
+  const canonicalUrl = `${process.env.NEXT_PUBLIC_URL}/poster/${params.id}`;
   
   return {
     title: `${posterType.poster_type_name} - Wizad.ai`,
     description: posterType.description_to_display || `Create amazing ${posterType.poster_type_name} with Wizad.ai`,
+    alternates: {
+      canonical: canonicalUrl,
+    },
     openGraph: {
+      title: posterType.poster_type_name,
+      description: posterType.description_to_display || "",
+      images: posterType.icon_url ? [posterType.icon_url] : [],
+      url: canonicalUrl,
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
       title: posterType.poster_type_name,
       description: posterType.description_to_display || "",
       images: posterType.icon_url ? [posterType.icon_url] : [],

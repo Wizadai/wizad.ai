@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import Script from "next/script";
 import HomeHeader from "@/app/_elements/HomeHeader";
 import Footer from "@/app/_elements/Footer";
 import { PublicPosterTypeSchema } from "@/types/poster";
@@ -38,8 +39,53 @@ export default function ClientPosterPage({ posterType }: ClientPosterPageProps) 
     );
   };
 
+  // Generate FAQ Schema
+  const faqSchema = posterType.faqs && posterType.faqs.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": posterType.faqs
+      .sort((a, b) => a.order_to_display - b.order_to_display)
+      .map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer
+        }
+      }))
+  } : null;
+
+  // Generate Video Schema for main preview video
+  const videoSchema = posterType.main_preview_video_url ? {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": posterType.poster_type_name,
+    "description": posterType.description_to_display || "",
+    "thumbnailUrl": posterType.icon_url || "",
+    "contentUrl": posterType.main_preview_video_url,
+    "uploadDate": new Date().toISOString(),
+  } : null;
+
   return (
     <div className="min-h-screen bg-black text-white">
+      {/* FAQ Schema */}
+      {faqSchema && (
+        <Script
+          id="faq-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
+
+      {/* Video Schema */}
+      {videoSchema && (
+        <Script
+          id="video-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
+        />
+      )}
+
       <HomeHeader showNavigation={false} onSearch={handleSearchChange} searchValue={searchInput} />
 
       <main className="container mx-auto px-4 py-8 max-w-6xl">
@@ -71,6 +117,7 @@ export default function ClientPosterPage({ posterType }: ClientPosterPageProps) 
                           width={24}
                           height={24}
                           className="rounded-full"
+                          loading="lazy"
                           unoptimized
                         />
                       ) : (
