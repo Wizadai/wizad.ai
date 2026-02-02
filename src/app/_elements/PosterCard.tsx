@@ -11,6 +11,16 @@ interface PosterCardProps {
   onCreatorClick?: (creator: CreatorDetailSchema) => void;
 }
 
+// Convert poster name to URL-friendly slug
+function posterNameToSlug(name: string): string {
+  return name
+    .toLowerCase()
+    .trim()
+    .replace(/[^\w\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-');
+}
+
 export default function PosterCard({ poster, onCreatorClick }: PosterCardProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -102,12 +112,10 @@ export default function PosterCard({ poster, onCreatorClick }: PosterCardProps) 
           {/* Creator Info */}
           {poster.creator && (
             <div className="flex items-center gap-2 mb-2">
-              <button
+              <Link
+                href={`/creator/${poster.creator.username}`}
                 onClick={(e) => {
-                  e.preventDefault();
-                  if (onCreatorClick) {
-                    onCreatorClick(poster.creator!);
-                  }
+                  e.stopPropagation();
                 }}
                 className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-2 py-1 hover:bg-white/20 transition-colors cursor-pointer"
               >
@@ -128,7 +136,7 @@ export default function PosterCard({ poster, onCreatorClick }: PosterCardProps) 
                 <span className="text-xs font-medium text-white">
                   {poster.creator.username || poster.creator.creator_name}
                 </span>
-              </button>
+              </Link>
             </div>
           )}
 
@@ -139,7 +147,7 @@ export default function PosterCard({ poster, onCreatorClick }: PosterCardProps) 
           
           {/* Use this idea button */}
           <Link
-            href={`/poster/${poster.poster_type_id}`}
+            href={`/ideas/${posterNameToSlug(poster.poster_type_name)}`}
             onClick={() => {
               // Cache the poster data for instant loading on detail page
               sessionStorage.setItem(`poster_${poster.poster_type_id}`, JSON.stringify(poster));

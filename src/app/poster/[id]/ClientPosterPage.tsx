@@ -104,10 +104,8 @@ export default function ClientPosterPage({ posterType }: ClientPosterPageProps) 
                 {posterType.creator && (
                   <div className="flex items-center gap-3">
                     <span className="text-gray-400 font-medium min-w-[80px]">Creator</span>
-                    <button
-                      onClick={() => {
-                        router.push(`/?creator=${posterType.creator!.creator_id}`);
-                      }}
+                    <Link
+                      href={`/creator/${posterType.creator.username}`}
                       className="flex items-center gap-2 hover:bg-gray-800/50 rounded-full px-2 py-1 transition-colors cursor-pointer"
                     >
                       {posterType.creator.profile_photo_url ? (
@@ -128,7 +126,7 @@ export default function ClientPosterPage({ posterType }: ClientPosterPageProps) 
                       <span className="text-white font-medium">
                         {posterType.creator.username || posterType.creator.creator_name}
                       </span>
-                    </button>
+                    </Link>
                   </div>
                 )}
 

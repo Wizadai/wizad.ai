@@ -18,9 +18,10 @@ interface HomePageClientProps {
   initialPosters: PublicPaginatedPosterTypeListResponse;
   initialTags: TagSchema[];
   initialCreators: CreatorDetailSchema[];
+  preSelectedCreatorId?: number;
 }
 
-function HomePageContent({ initialPosters, initialTags, initialCreators }: HomePageClientProps) {
+function HomePageContent({ initialPosters, initialTags, initialCreators, preSelectedCreatorId }: HomePageClientProps) {
   const searchParams = useSearchParams();
   const router = useRouter();
   const urlSearchQuery = searchParams.get('search') || '';
@@ -37,15 +38,20 @@ function HomePageContent({ initialPosters, initialTags, initialCreators }: HomeP
   const [page, setPage] = useState(1);
   const pageSize = 8;
 
-  // Set selected creator from URL params
+  // Set selected creator from URL params or preSelectedCreatorId
   useEffect(() => {
-    if (urlCreatorId && creators.length > 0) {
+    if (preSelectedCreatorId && creators.length > 0) {
+      const creator = creators.find(c => c.creator_id === preSelectedCreatorId);
+      if (creator) {
+        setSelectedCreator(creator);
+      }
+    } else if (urlCreatorId && creators.length > 0) {
       const creator = creators.find(c => c.creator_id === parseInt(urlCreatorId));
       if (creator) {
         setSelectedCreator(creator);
       }
     }
-  }, [urlCreatorId, creators]);
+  }, [urlCreatorId, creators, preSelectedCreatorId]);
 
   // Debounced search
   useEffect(() => {
