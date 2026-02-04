@@ -1,28 +1,36 @@
-import Footer from "@/app/_elements/Footer";
-import HeroSection from "@/app/_elements/Hero";
-import Features from "@/app/_elements/Features";
-import CustomerSupport from "@/app/_elements/CustomerSupport";
-import Testimonials from "@/app/_elements/Testimonials";
-import BackedByLogos from "@/app/_elements/BackedByLogos";
-import { Metadata } from "next";
+import HomePageClient from "./HomePageClient";
+import {
+  PublicPaginatedPosterTypeListResponse,
+  PublicTagListResponse,
+  PublicCreatorListResponse,
+} from "@/types/poster";
 
-export const metadata: Metadata = {
-  robots: {
-    googleBot: {
-      noimageindex: true,
-    },
-  },
-};
+const API_BASE_URL = "https://wizad-dev-backend.azurewebsites.net";
 
-export default function Home() {
+// Server Component - fetches data at build/request time
+export default async function HomePage() {
+  // Fetch initial data server-side
+  const [postersRes, tagsRes, creatorsRes] = await Promise.all([
+    fetch(`${API_BASE_URL}/poster/public/poster-types?page=1&page_size=8`, {
+      next: { revalidate: 3600 } // Cache for 1 hour
+    }),
+    fetch(`${API_BASE_URL}/poster/public/tags`, {
+      next: { revalidate: 3600 }
+    }),
+    fetch(`${API_BASE_URL}/poster/public/creators`, {
+      next: { revalidate: 3600 }
+    })
+  ]);
+
+  const initialPosters: PublicPaginatedPosterTypeListResponse = await postersRes.json();
+  const tagsData: PublicTagListResponse = await tagsRes.json();
+  const creatorsData: PublicCreatorListResponse = await creatorsRes.json();
+
   return (
-    <>
-      <HeroSection />
-      <Features />
-      <CustomerSupport />
-      <Testimonials />
-      <BackedByLogos />
-      <Footer />
-    </>
+    <HomePageClient
+      initialPosters={initialPosters}
+      initialTags={tagsData.tags}
+      initialCreators={creatorsData.creators}
+    />
   );
 }
