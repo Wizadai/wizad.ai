@@ -15,6 +15,9 @@ export const dynamicParams = true;
 // Revalidate every 1 hour - pages will be regenerated in background when accessed
 export const revalidate = 3600;
 
+// Required for Cloudflare Pages
+export const runtime = 'edge';
+
 // Fetch all creators for static generation at build time
 export async function generateStaticParams() {
   try {

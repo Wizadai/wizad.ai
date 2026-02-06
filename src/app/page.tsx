@@ -10,6 +10,7 @@ const API_BASE_URL = "https://wizad-dev-backend.azurewebsites.net";
 // Force dynamic rendering - no static generation
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
+export const runtime = 'edge'; // Required for Cloudflare Pages
 
 // Server Component - fetches data at request time
 export default async function HomePage() {
