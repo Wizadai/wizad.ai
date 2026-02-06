@@ -19,9 +19,10 @@ interface HomePageClientProps {
   initialTags: TagSchema[];
   initialCreators: CreatorDetailSchema[];
   preSelectedCreatorId?: number;
+  totalPages: number;
 }
 
-function HomePageContent({ initialPosters, initialTags, initialCreators, preSelectedCreatorId }: HomePageClientProps) {
+function HomePageContent({ initialPosters, initialTags, initialCreators, preSelectedCreatorId, totalPages }: HomePageClientProps) {
   const searchParams = useSearchParams();
   const router = useRouter();
   const urlSearchQuery = searchParams.get('search') || '';
@@ -35,8 +36,11 @@ function HomePageContent({ initialPosters, initialTags, initialCreators, preSele
   const [searchInput, setSearchInput] = useState(urlSearchQuery);
   const [searchQuery, setSearchQuery] = useState(urlSearchQuery);
   const [loading, setLoading] = useState(false);
-  const [page, setPage] = useState(1);
+  const [displayPage, setDisplayPage] = useState(1); // User-facing page number
   const pageSize = 8;
+
+  // Check if filters are active
+  const hasFilters = searchQuery.trim() !== '' || selectedTags.length > 0 || selectedCreator !== null;
 
   // Set selected creator from URL params or preSelectedCreatorId
   useEffect(() => {
@@ -57,7 +61,7 @@ function HomePageContent({ initialPosters, initialTags, initialCreators, preSele
   useEffect(() => {
     const timer = setTimeout(() => {
       setSearchQuery(searchInput);
-      setPage(1);
+      setDisplayPage(1);
     }, 500);
 
     return () => clearTimeout(timer);
@@ -66,15 +70,25 @@ function HomePageContent({ initialPosters, initialTags, initialCreators, preSele
   // Fetch poster types when filters change
   useEffect(() => {
     // Skip initial load - we already have initialPosters
-    if (page === 1 && !searchQuery && selectedTags.length === 0 && !selectedCreator) {
+    if (displayPage === 1 && !searchQuery && selectedTags.length === 0 && !selectedCreator) {
       return;
     }
 
     const fetchPosterTypes = async () => {
       setLoading(true);
       try {
+        // Determine actual API page
+        // If filters are active, use normal pagination (1, 2, 3...)
+        // If no filters, use reversed pagination (show newest first)
+        let actualApiPage: number;
+        if (hasFilters) {
+          actualApiPage = displayPage;
+        } else {
+          actualApiPage = totalPages - displayPage + 1;
+        }
+
         const params = new URLSearchParams({
-          page: page.toString(),
+          page: actualApiPage.toString(),
           page_size: pageSize.toString(),
         });
 
@@ -102,7 +116,7 @@ function HomePageContent({ initialPosters, initialTags, initialCreators, preSele
     };
 
     fetchPosterTypes();
-  }, [page, searchQuery, selectedTags, selectedCreator]);
+  }, [displayPage, searchQuery, selectedTags, selectedCreator, hasFilters, totalPages]);
 
   const handleTagClick = (tagId: number) => {
     setSelectedTags((prev) => {
@@ -112,7 +126,7 @@ function HomePageContent({ initialPosters, initialTags, initialCreators, preSele
         return [...prev, tagId];
       }
     });
-    setPage(1);
+    setDisplayPage(1);
   };
 
   const handleSearchChange = (value: string) => {
@@ -121,7 +135,7 @@ function HomePageContent({ initialPosters, initialTags, initialCreators, preSele
 
   const handleCreatorClick = (creator: CreatorDetailSchema) => {
     setSelectedCreator(creator);
-    setPage(1);
+    setDisplayPage(1);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -137,7 +151,7 @@ function HomePageContent({ initialPosters, initialTags, initialCreators, preSele
               <button
                 onClick={() => {
                   setSelectedTags([]);
-                  setPage(1);
+                  setDisplayPage(1);
                 }}
                 className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors ${
                   selectedTags.length === 0
@@ -169,7 +183,7 @@ function HomePageContent({ initialPosters, initialTags, initialCreators, preSele
               <button
                 onClick={() => {
                   setSelectedCreator(null);
-                  setPage(1);
+                  setDisplayPage(1);
                 }}
                 className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-gray-700 hover:bg-gray-600 rounded-full transition-colors"
                 aria-label="Clear filter"
@@ -230,18 +244,18 @@ function HomePageContent({ initialPosters, initialTags, initialCreators, preSele
               {posterTypes.total_pages > 1 && (
                 <div className="flex justify-center items-center gap-4 mt-8">
                   <button
-                    onClick={() => setPage((p) => Math.max(1, p - 1))}
-                    disabled={page === 1}
+                    onClick={() => setDisplayPage((p) => Math.max(1, p - 1))}
+                    disabled={displayPage === 1}
                     className="px-4 py-2 bg-gray-800 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-700 transition-colors"
                   >
                     Previous
                   </button>
                   <span className="text-sm text-gray-400">
-                    Page {page} of {posterTypes.total_pages}
+                    Page {displayPage} of {hasFilters ? posterTypes.total_pages : totalPages}
                   </span>
                   <button
-                    onClick={() => setPage((p) => Math.min(posterTypes.total_pages, p + 1))}
-                    disabled={page === posterTypes.total_pages}
+                    onClick={() => setDisplayPage((p) => Math.min(hasFilters ? posterTypes.total_pages : totalPages, p + 1))}
+                    disabled={displayPage === (hasFilters ? posterTypes.total_pages : totalPages)}
                     className="px-4 py-2 bg-gray-800 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-700 transition-colors"
                   >
                     Next
@@ -251,8 +265,8 @@ function HomePageContent({ initialPosters, initialTags, initialCreators, preSele
 
               {/* Results Count */}
               <div className="text-center mt-4 text-sm text-gray-400">
-                Showing {(page - 1) * pageSize + 1} to{" "}
-                {Math.min(page * pageSize, posterTypes.total_count)} of{" "}
+                Showing {(displayPage - 1) * pageSize + 1} to{" "}
+                {Math.min(displayPage * pageSize, posterTypes.total_count)} of{" "}
                 {posterTypes.total_count} poster types
               </div>
             </>

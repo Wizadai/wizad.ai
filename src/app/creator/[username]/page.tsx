@@ -133,6 +133,7 @@ export default async function CreatorPage({ params }: { params: { username: stri
       initialTags={tagsData.tags}
       initialCreators={creatorsData.creators}
       preSelectedCreatorId={creator.creator_id}
+      totalPages={initialPosters.total_pages || 1}
     />
   );
 }

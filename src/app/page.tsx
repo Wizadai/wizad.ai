@@ -7,18 +7,30 @@ import {
 
 const API_BASE_URL = "https://wizad-dev-backend.azurewebsites.net";
 
-// Server Component - fetches data at build/request time
+// Force dynamic rendering - no static generation
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
+// Server Component - fetches data at request time
 export default async function HomePage() {
-  // Fetch initial data server-side
+  // First, fetch to get total pages
+  const initialFetch = await fetch(
+    `${API_BASE_URL}/poster/public/poster-types?page=1&page_size=8`,
+    { cache: 'no-store' }
+  );
+  const initialData: PublicPaginatedPosterTypeListResponse = await initialFetch.json();
+  const totalPages = initialData.total_pages || 1;
+
+  // Fetch initial data server-side from the LAST page (newest content)
   const [postersRes, tagsRes, creatorsRes] = await Promise.all([
-    fetch(`${API_BASE_URL}/poster/public/poster-types?page=1&page_size=8`, {
-      next: { revalidate: 3600 } // Cache for 1 hour
+    fetch(`${API_BASE_URL}/poster/public/poster-types?page=${totalPages}&page_size=8`, {
+      cache: 'no-store'
     }),
     fetch(`${API_BASE_URL}/poster/public/tags`, {
-      next: { revalidate: 3600 }
+      cache: 'no-store'
     }),
     fetch(`${API_BASE_URL}/poster/public/creators`, {
-      next: { revalidate: 3600 }
+      cache: 'no-store'
     })
   ]);
 
@@ -31,6 +43,7 @@ export default async function HomePage() {
       initialPosters={initialPosters}
       initialTags={tagsData.tags}
       initialCreators={creatorsData.creators}
+      totalPages={totalPages}
     />
   );
 }
