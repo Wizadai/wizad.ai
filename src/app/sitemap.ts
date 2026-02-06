@@ -50,7 +50,7 @@ async function getPosterPages(): Promise<MetadataRoute.Sitemap> {
       url: `${baseUrl}/ideas/${posterNameToSlug(poster.poster_type_name)}`,
       lastModified: new Date(),
       changeFrequency: "daily" as const,
-      priority: 0.9,
+      priority: 1.0,
     }));
   } catch (error) {
     console.error("Error generating poster sitemap:", error);
@@ -73,7 +73,7 @@ async function getCreatorPages(): Promise<MetadataRoute.Sitemap> {
     return creators.map((creator: CreatorDetailSchema) => ({
       url: `${baseUrl}/creator/${creator.username}`,
       lastModified: new Date(),
-      changeFrequency: "weekly" as const,
+      changeFrequency: "daily" as const,
       priority: 0.7,
     }));
   } catch (error) {
@@ -87,8 +87,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const site: Site = {
       url: `${baseUrl}/blogs/${post.slug}`,
       lastModified: new Date(post.metadata.publishedAt),
-      changeFrequency: "never",
-      priority: 0.7,
+      changeFrequency: "daily",
+      priority: 0.5,
     };
     return site;
   });
@@ -100,8 +100,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const site: Site = {
       url: `${baseUrl}${route}`,
       lastModified: new Date(),
-      changeFrequency: "never",
-      priority: 1,
+      changeFrequency: "daily",
+      priority: 0.9,
     };
     return site;
   });
@@ -113,8 +113,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const site: Site = {
       url: `${baseUrl}${route}`,
       lastModified: new Date(),
-      changeFrequency: "never",
-      priority: 0.7,
+      changeFrequency: "daily",
+      priority: 0.5,
     };
     return site;
   });
@@ -123,8 +123,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const site: Site = {
       url: `${baseUrl}${route}`,
       lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 1,
+      changeFrequency: "daily",
+      priority: 0.6,
     };
     return site;
   });
