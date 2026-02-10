@@ -5,6 +5,7 @@ import { useSearchParams, useRouter } from "next/navigation";
 import Image from "next/image";
 import HomeHeader from "@/app/_elements/HomeHeader";
 import PosterCard from "@/app/_elements/PosterCard";
+import Footer from "@/app/_elements/Footer";
 import { VideoPlaybackProvider } from "@/app/_elements/VideoPlaybackContext";
 import {
   PublicPaginatedPosterTypeListResponse,
@@ -176,11 +177,11 @@ function HomePageContent({ initialPosters, initialTags, initialCreators, preSele
         <main className="container mx-auto px-4 py-6">
           {/* Hero Section - Only show when no filters are active */}
           {!hasFilters && (
-            <div className="relative mb-8 max-w-4xl mx-auto">
-              <div className="relative bg-gradient-to-br from-purple-900/20 via-gray-900/40 to-pink-900/20 rounded-3xl border border-purple-500/20 overflow-hidden p-6 md:p-10">
-                <div className="flex flex-col items-center text-center gap-6">
+            <div className="relative mb-8 max-w-7xl mx-auto">
+              <div className="relative bg-gradient-to-br from-purple-900/20 via-gray-900/40 to-pink-900/20 rounded-3xl border border-purple-500/20 overflow-hidden p-10 md:p-16">
+                <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8">
                   {/* Image */}
-                  <div className="relative max-w-[280px]">
+                  <div className="relative flex-shrink-0 max-w-[280px]">
                     <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-2xl blur-2xl"></div>
                     <Image
                       src="/assets/hero-ai-creators.jpg"
@@ -193,7 +194,7 @@ function HomePageContent({ initialPosters, initialTags, initialCreators, preSele
                   </div>
 
                   {/* Text */}
-                  <div className="relative z-10">
+                  <div className="relative z-10 text-center md:text-left flex-1">
                     <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 leading-tight">
                       <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
                         AI Designer
@@ -204,8 +205,8 @@ function HomePageContent({ initialPosters, initialTags, initialCreators, preSele
                       </span>
                     </h1>
                     
-                    <h2 className="text-base md:text-lg text-gray-400 leading-relaxed max-w-2xl mx-auto">
-                      Build your brand with personalized content in one click — powered by ideas from premium global creators.
+                    <h2 className="text-base md:text-lg text-gray-400 leading-relaxed">
+                      Build your brand with personalized content in one click — powered by hand-picked global creators.
                     </h2>
                   </div>
                 </div>
@@ -353,6 +354,9 @@ function HomePageContent({ initialPosters, initialTags, initialCreators, preSele
             </div>
           )}
         </main>
+
+        {/* Footer */}
+        <Footer />
       </div>
     </VideoPlaybackProvider>
   );

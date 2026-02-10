@@ -11,7 +11,8 @@ export default function ConditionalHeader() {
     pathname === "/" || 
     pathname.startsWith("/poster/") || 
     pathname.startsWith("/ideas/") || 
-    pathname.startsWith("/creator/")
+    pathname.startsWith("/creator/") ||
+    pathname === "/join-creator"
   ) {
     return null;
   }
