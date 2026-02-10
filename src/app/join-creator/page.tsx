@@ -28,7 +28,7 @@ export default function JoinCreatorPage() {
               </span>
             </h1>
             <p className="text-2xl md:text-3xl text-gray-300 mb-4 font-semibold">
-              Your portfolio, reimagined for the age of AI
+              Earn while building your AI Portfolio
             </p>
             <p className="text-xl md:text-2xl text-gray-400 mb-10">
               Show your creative thinking. Let it earn — from one place.

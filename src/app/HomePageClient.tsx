@@ -206,7 +206,7 @@ function HomePageContent({ initialPosters, initialTags, initialCreators, preSele
                     </h1>
                     
                     <h2 className="text-base md:text-lg text-gray-400 leading-relaxed">
-                      Build your brand with personalized content in one click — powered by hand-picked global creators.
+                      Build your brand with personalized content in one click — powered by global creators.
                     </h2>
                   </div>
                 </div>
