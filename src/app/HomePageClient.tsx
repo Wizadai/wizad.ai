@@ -19,10 +19,9 @@ interface HomePageClientProps {
   initialTags: TagSchema[];
   initialCreators: CreatorDetailSchema[];
   preSelectedCreatorId?: number;
-  totalPages: number;
 }
 
-function HomePageContent({ initialPosters, initialTags, initialCreators, preSelectedCreatorId, totalPages }: HomePageClientProps) {
+function HomePageContent({ initialPosters, initialTags, initialCreators, preSelectedCreatorId }: HomePageClientProps) {
   const searchParams = useSearchParams();
   const router = useRouter();
   const urlSearchQuery = searchParams.get('search') || '';
@@ -37,10 +36,36 @@ function HomePageContent({ initialPosters, initialTags, initialCreators, preSele
   const [searchQuery, setSearchQuery] = useState(urlSearchQuery);
   const [loading, setLoading] = useState(false);
   const [displayPage, setDisplayPage] = useState(1); // User-facing page number
+  const [totalPages, setTotalPages] = useState(initialPosters.total_pages || 1); // Client-side totalPages
   const pageSize = 8;
 
   // Check if filters are active
   const hasFilters = searchQuery.trim() !== '' || selectedTags.length > 0 || selectedCreator !== null;
+
+  // Fetch totalPages on mount to ensure correct pagination in production
+  useEffect(() => {
+    const fetchTotalPages = async () => {
+      try {
+        const response = await fetch(`${API_BASE_URL}/poster/public/poster-types?page=1&page_size=8`);
+        const data: PublicPaginatedPosterTypeListResponse = await response.json();
+        const freshTotalPages = data.total_pages || 1;
+        setTotalPages(freshTotalPages);
+        
+        // If no filters, fetch the last page (newest content)
+        if (!hasFilters) {
+          const lastPageResponse = await fetch(
+            `${API_BASE_URL}/poster/public/poster-types?page=${freshTotalPages}&page_size=8`
+          );
+          const lastPageData: PublicPaginatedPosterTypeListResponse = await lastPageResponse.json();
+          setPosterTypes(lastPageData);
+        }
+      } catch (error) {
+        console.error("Error fetching total pages:", error);
+      }
+    };
+
+    fetchTotalPages();
+  }, []); // Run once on mount
 
   // Set selected creator from URL params or preSelectedCreatorId
   useEffect(() => {
@@ -116,7 +141,7 @@ function HomePageContent({ initialPosters, initialTags, initialCreators, preSele
     };
 
     fetchPosterTypes();
-  }, [displayPage, searchQuery, selectedTags, selectedCreator, hasFilters, totalPages]);
+  }, [displayPage, searchQuery, selectedTags, selectedCreator, hasFilters, totalPages, pageSize]);
 
   const handleTagClick = (tagId: number) => {
     setSelectedTags((prev) => {
@@ -145,6 +170,49 @@ function HomePageContent({ initialPosters, initialTags, initialCreators, preSele
         <HomeHeader onSearch={handleSearchChange} searchValue={searchInput} />
 
         <main className="container mx-auto px-4 py-6">
+          {/* Hero Section - Only show when no filters are active */}
+          {!hasFilters && (
+            <div className="relative mb-8 max-w-4xl mx-auto">
+              <div className="relative bg-gradient-to-br from-purple-900/20 via-gray-900/40 to-pink-900/20 rounded-3xl border border-purple-500/20 overflow-hidden p-6 md:p-10">
+                <div className="flex flex-col items-center text-center gap-6">
+                  {/* Image */}
+                  <div className="relative max-w-[280px]">
+                    <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-2xl blur-2xl"></div>
+                    <Image
+                      src="/assets/hero-ai-creators.jpg"
+                      alt="AI design tool generating branded social media content for small businesses powered by ideas from real creators across the globe"
+                      width={280}
+                      height={210}
+                      className="relative z-10 rounded-2xl object-cover w-full h-auto shadow-2xl border border-purple-500/30"
+                      priority
+                    />
+                  </div>
+
+                  {/* Text */}
+                  <div className="relative z-10">
+                    <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 leading-tight">
+                      <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
+                        AI Designer
+                      </span>
+                      <span className="text-gray-200"> Powered by </span>
+                      <span className="bg-gradient-to-r from-pink-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                        Real Creators
+                      </span>
+                    </h1>
+                    
+                    <h2 className="text-base md:text-lg text-gray-400 leading-relaxed max-w-2xl mx-auto">
+                      Build your brand with personalized content in one click — powered by ideas from premium global creators.
+                    </h2>
+                  </div>
+                </div>
+
+                {/* Decorative background elements */}
+                <div className="absolute top-0 right-0 w-64 h-64 bg-purple-600/10 rounded-full blur-3xl -z-10"></div>
+                <div className="absolute bottom-0 left-0 w-64 h-64 bg-pink-600/10 rounded-full blur-3xl -z-10"></div>
+              </div>
+            </div>
+          )}
+
           {/* Category/Tag Filter Bar */}
           <div className="mb-6 overflow-x-auto">
             <div className="flex gap-3 pb-2">
