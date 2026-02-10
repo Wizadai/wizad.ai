@@ -5,6 +5,7 @@ import { useSearchParams, useRouter } from "next/navigation";
 import Image from "next/image";
 import HomeHeader from "@/app/_elements/HomeHeader";
 import PosterCard from "@/app/_elements/PosterCard";
+import Footer from "@/app/_elements/Footer";
 import { VideoPlaybackProvider } from "@/app/_elements/VideoPlaybackContext";
 import {
   PublicPaginatedPosterTypeListResponse,
@@ -353,6 +354,9 @@ function HomePageContent({ initialPosters, initialTags, initialCreators, preSele
             </div>
           )}
         </main>
+
+        {/* Footer */}
+        <Footer />
       </div>
     </VideoPlaybackProvider>
   );
