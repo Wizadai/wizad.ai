@@ -51,8 +51,11 @@ function HomePageContent({ initialPosters, initialTags, initialCreators, preSele
         const freshTotalPages = data.total_pages || 1;
         setTotalPages(freshTotalPages);
         
+        // Check if filters are active at the time of this effect
+        const currentHasFilters = searchQuery.trim() !== '' || selectedTags.length > 0 || selectedCreator !== null;
+        
         // If no filters, fetch the last page (newest content)
-        if (!hasFilters) {
+        if (!currentHasFilters) {
           const lastPageResponse = await fetch(
             `${API_BASE_URL}/poster/public/poster-types?page=${freshTotalPages}&page_size=8`
           );
@@ -65,6 +68,7 @@ function HomePageContent({ initialPosters, initialTags, initialCreators, preSele
     };
 
     fetchTotalPages();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []); // Run once on mount
 
   // Set selected creator from URL params or preSelectedCreatorId
