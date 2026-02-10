@@ -7,18 +7,23 @@ import {
 
 const API_BASE_URL = "https://wizad-dev-backend.azurewebsites.net";
 
-// Server Component - fetches data at build/request time
+// Force dynamic rendering - no static generation
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+export const runtime = 'edge'; // Required for Cloudflare Pages
+
+// Server Component - fetches data at request time
 export default async function HomePage() {
-  // Fetch initial data server-side
+  // Fetch initial data server-side (page 1 for now, client will reverse)
   const [postersRes, tagsRes, creatorsRes] = await Promise.all([
     fetch(`${API_BASE_URL}/poster/public/poster-types?page=1&page_size=8`, {
-      next: { revalidate: 3600 } // Cache for 1 hour
+      cache: 'no-store'
     }),
     fetch(`${API_BASE_URL}/poster/public/tags`, {
-      next: { revalidate: 3600 }
+      cache: 'no-store'
     }),
     fetch(`${API_BASE_URL}/poster/public/creators`, {
-      next: { revalidate: 3600 }
+      cache: 'no-store'
     })
   ]);
 

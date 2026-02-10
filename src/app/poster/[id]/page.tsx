@@ -9,6 +9,9 @@ export const dynamicParams = true;
 // Revalidate every 1 hour - pages will be regenerated in background when accessed
 export const revalidate = 3600;
 
+// Required for Cloudflare Pages
+export const runtime = 'edge';
+
 // Convert poster name to URL-friendly slug
 function posterNameToSlug(name: string): string {
   return name

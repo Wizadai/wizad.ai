@@ -48,9 +48,9 @@ async function getPosterPages(): Promise<MetadataRoute.Sitemap> {
     // Return only /ideas/[poster_type_name] URLs
     return allPosters.map((poster) => ({
       url: `${baseUrl}/ideas/${posterNameToSlug(poster.poster_type_name)}`,
-      lastModified: new Date().toISOString().split("T")[0],
+      lastModified: new Date(),
       changeFrequency: "daily" as const,
-      priority: 0.9,
+      priority: 1.0,
     }));
   } catch (error) {
     console.error("Error generating poster sitemap:", error);
@@ -72,8 +72,8 @@ async function getCreatorPages(): Promise<MetadataRoute.Sitemap> {
     
     return creators.map((creator: CreatorDetailSchema) => ({
       url: `${baseUrl}/creator/${creator.username}`,
-      lastModified: new Date().toISOString().split("T")[0],
-      changeFrequency: "weekly" as const,
+      lastModified: new Date(),
+      changeFrequency: "daily" as const,
       priority: 0.7,
     }));
   } catch (error) {
@@ -86,9 +86,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const blogs: MetadataRoute.Sitemap = (await getBlogPosts()).map((post) => {
     const site: Site = {
       url: `${baseUrl}/blogs/${post.slug}`,
-      lastModified: post.metadata.publishedAt,
-      changeFrequency: "never",
-      priority: 0.7,
+      lastModified: new Date(post.metadata.publishedAt),
+      changeFrequency: "daily",
+      priority: 0.5,
     };
     return site;
   });
@@ -99,9 +99,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const highPriorityStaticRoutes: MetadataRoute.Sitemap = [""].map((route) => {
     const site: Site = {
       url: `${baseUrl}${route}`,
-      lastModified: new Date().toISOString().split("T")[0],
-      changeFrequency: "never",
-      priority: 1,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.9,
     };
     return site;
   });
@@ -112,9 +112,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ].map((route) => {
     const site: Site = {
       url: `${baseUrl}${route}`,
-      lastModified: new Date().toISOString().split("T")[0],
-      changeFrequency: "never",
-      priority: 0.7,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.5,
     };
     return site;
   });
@@ -122,9 +122,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const dynamicRoutes: MetadataRoute.Sitemap = ["/blogs"].map((route) => {
     const site: Site = {
       url: `${baseUrl}${route}`,
-      lastModified: new Date().toISOString().split("T")[0],
-      changeFrequency: "weekly",
-      priority: 1,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.6,
     };
     return site;
   });
