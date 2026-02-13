@@ -38,6 +38,7 @@ function HomePageContent({ initialPosters, initialTags, initialCreators, preSele
   const [loading, setLoading] = useState(false);
   const [displayPage, setDisplayPage] = useState(1); // User-facing page number
   const [totalPages, setTotalPages] = useState(initialPosters.total_pages || 1); // Client-side totalPages
+  const [hasIncompleteLastPage, setHasIncompleteLastPage] = useState(false); // Track if last page is incomplete
   const pageSize = 8;
 
   // Check if filters are active
@@ -50,19 +51,17 @@ function HomePageContent({ initialPosters, initialTags, initialCreators, preSele
         const response = await fetch(`${API_BASE_URL}/poster/public/poster-types?page=1&page_size=8`);
         const data: PublicPaginatedPosterTypeListResponse = await response.json();
         const freshTotalPages = data.total_pages || 1;
+        const totalCount = data.total_count || 0;
+        
+        // Check if the last page is incomplete (has fewer than pageSize items)
+        const lastPageItemCount = totalCount % pageSize;
+        const isLastPageIncomplete = lastPageItemCount > 0 && lastPageItemCount < pageSize;
+        
         setTotalPages(freshTotalPages);
+        setHasIncompleteLastPage(isLastPageIncomplete);
         
-        // Check if filters are active at the time of this effect
-        const currentHasFilters = searchQuery.trim() !== '' || selectedTags.length > 0 || selectedCreator !== null;
-        
-        // If no filters, fetch the last page (newest content)
-        if (!currentHasFilters) {
-          const lastPageResponse = await fetch(
-            `${API_BASE_URL}/poster/public/poster-types?page=${freshTotalPages}&page_size=8`
-          );
-          const lastPageData: PublicPaginatedPosterTypeListResponse = await lastPageResponse.json();
-          setPosterTypes(lastPageData);
-        }
+        // No need to fetch again - server already fetched the correct page
+        // Just update the state variables for pagination logic
       } catch (error) {
         console.error("Error fetching total pages:", error);
       }
@@ -114,7 +113,22 @@ function HomePageContent({ initialPosters, initialTags, initialCreators, preSele
         if (hasFilters) {
           actualApiPage = displayPage;
         } else {
-          actualApiPage = totalPages - displayPage + 1;
+          // When last page is incomplete, swap it to the end
+          if (hasIncompleteLastPage) {
+            if (displayPage === totalPages) {
+              // Last display page shows the incomplete page (actual API page totalPages)
+              actualApiPage = totalPages;
+            } else if (displayPage === 1) {
+              // First display page shows second-to-last API page
+              actualApiPage = totalPages - 1;
+            } else {
+              // Other pages: reverse order, skipping the incomplete page
+              actualApiPage = totalPages - displayPage;
+            }
+          } else {
+            // Normal reverse pagination when all pages are complete
+            actualApiPage = totalPages - displayPage + 1;
+          }
         }
 
         const params = new URLSearchParams({
@@ -146,7 +160,7 @@ function HomePageContent({ initialPosters, initialTags, initialCreators, preSele
     };
 
     fetchPosterTypes();
-  }, [displayPage, searchQuery, selectedTags, selectedCreator, hasFilters, totalPages, pageSize]);
+  }, [displayPage, searchQuery, selectedTags, selectedCreator, hasFilters, totalPages, hasIncompleteLastPage, pageSize]);
 
   const handleTagClick = (tagId: number) => {
     setSelectedTags((prev) => {

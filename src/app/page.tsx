@@ -14,9 +14,26 @@ export const runtime = 'edge'; // Required for Cloudflare Pages
 
 // Server Component - fetches data at request time
 export default async function HomePage() {
-  // Fetch initial data server-side (page 1 for now, client will reverse)
+  // First fetch page 1 to get total count and determine the correct starting page
+  const metadataRes = await fetch(
+    `${API_BASE_URL}/poster/public/poster-types?page=1&page_size=8`,
+    { cache: 'no-store' }
+  );
+  const metadata: PublicPaginatedPosterTypeListResponse = await metadataRes.json();
+  
+  // Calculate which page to fetch (last complete page if last page is incomplete)
+  const totalCount = metadata.total_count || 0;
+  const pageSize = 8;
+  const totalPages = metadata.total_pages || 1;
+  const lastPageItemCount = totalCount % pageSize;
+  const isLastPageIncomplete = lastPageItemCount > 0 && lastPageItemCount < pageSize;
+  
+  // Fetch from the last complete page to avoid content flash
+  const startingPage = isLastPageIncomplete && totalPages > 1 ? totalPages - 1 : totalPages;
+  
+  // Fetch initial data server-side
   const [postersRes, tagsRes, creatorsRes] = await Promise.all([
-    fetch(`${API_BASE_URL}/poster/public/poster-types?page=1&page_size=8`, {
+    fetch(`${API_BASE_URL}/poster/public/poster-types?page=${startingPage}&page_size=8`, {
       cache: 'no-store'
     }),
     fetch(`${API_BASE_URL}/poster/public/tags`, {

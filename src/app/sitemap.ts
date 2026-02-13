@@ -23,27 +23,42 @@ async function getPosterPages(): Promise<MetadataRoute.Sitemap> {
     let page = 1;
     const pageSize = 100;
     
+    // Fetch 2 pages at a time for better performance
     while (true) {
-      const response = await fetch(
-        `${API_BASE_URL}/poster/public/poster-types?page=${page}&page_size=${pageSize}`,
-        { 
-          next: { revalidate: 3600 }
-        }
-      );
+      const [response1, response2] = await Promise.all([
+        fetch(
+          `${API_BASE_URL}/poster/public/poster-types?page=${page}&page_size=${pageSize}`,
+          { next: { revalidate: 3600 } }
+        ),
+        fetch(
+          `${API_BASE_URL}/poster/public/poster-types?page=${page + 1}&page_size=${pageSize}`,
+          { next: { revalidate: 3600 } }
+        )
+      ]);
       
-      if (!response.ok) break;
+      const data1 = response1.ok ? await response1.json() : null;
+      const posters1 = data1?.poster_types || [];
       
-      const data = await response.json();
-      const posters = data.poster_types || [];
+      if (posters1.length === 0) break;
       
-      if (posters.length === 0) break;
+      allPosters.push(...posters1);
       
-      allPosters.push(...posters);
+      if (posters1.length < pageSize) break;
       
-      if (posters.length < pageSize) break;
+      const data2 = response2.ok ? await response2.json() : null;
+      const posters2 = data2?.poster_types || [];
       
-      page++;
+      if (posters2.length === 0) break;
+      
+      allPosters.push(...posters2);
+      
+      if (posters2.length < pageSize) break;
+      
+      page += 2;
     }
+    
+    // Reverse the array so the last page (with potentially fewer items) becomes first
+    allPosters.reverse();
     
     // Return only /ideas/[poster_type_name] URLs
     return allPosters.map((poster) => ({
