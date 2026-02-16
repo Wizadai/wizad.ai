@@ -4,8 +4,34 @@ import {
   PublicTagListResponse,
   PublicCreatorListResponse,
 } from "@/types/poster";
+import { Metadata } from "next";
 
 const API_BASE_URL = "https://wizad-dev-backend.azurewebsites.net";
+
+// Metadata for the homepage
+export const metadata: Metadata = {
+  title: "Wizad - AI Designer Powered by Real Creators",
+  description: "Build your brand with personalized content in one click — powered by global creators.",
+  openGraph: {
+    title: "Wizad - AI Designer Powered by Real Creators",
+    description: "Build your brand with personalized content in one click — powered by global creators.",
+    images: [
+      {
+        url: "/assets/hero-ai-creators.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Wizad AI Designer",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Wizad - AI Designer Powered by Real Creators",
+    description: "Build your brand with personalized content in one click — powered by global creators.",
+    images: ["/assets/hero-ai-creators.jpg"],
+  },
+};
 
 // Force dynamic rendering - no static generation
 export const dynamic = 'force-dynamic';
