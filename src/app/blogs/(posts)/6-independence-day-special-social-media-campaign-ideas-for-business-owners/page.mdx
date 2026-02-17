@@ -34,6 +34,9 @@ let ogImage = image
 return {
 title,
 description,
+alternates: {
+canonical: `${baseUrl}/blogs/${path.basename(__dirname)}`,
+},
 openGraph: {
 title,
 description,

@@ -2,9 +2,20 @@ import Title from "@/app/_elements/Title";
 import Wrapper from "@/app/_elements/Wrapper";
 import { title } from "process";
 
+const baseUrl = process.env.NEXT_PUBLIC_URL || "https://wizad.ai";
+
 export const metadata = {
-  title: "Terms and Conditions",
-  summary: "Terms and Conditions of Wizad.ai",
+  title: "Terms and Conditions - Wizad.ai",
+  description: "Terms and Conditions of Wizad.ai",
+  alternates: {
+    canonical: `${baseUrl}/terms-and-conditions`,
+  },
+  openGraph: {
+    title: "Terms and Conditions",
+    description: "Terms and Conditions of Wizad.ai",
+    url: `${baseUrl}/terms-and-conditions`,
+    type: "website",
+  },
 };
 
 <Title title={metadata.title} />
