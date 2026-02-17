@@ -135,24 +135,37 @@ export async function generateMetadata({ params }: { params: { poster_type_name:
 
   const canonicalUrl = `${process.env.NEXT_PUBLIC_URL}/ideas/${params.poster_type_name}`;
   
+  const currentVideoUrl = posterType.preview_videos && posterType.preview_videos.length > 0
+    ? posterType.preview_videos[0].video_url
+    : posterType.main_preview_video_url;
+  
+  const description = posterType.description_to_display || `Watch how to create amazing ${posterType.poster_type_name} with Wizad.ai. Video tutorial and examples.`;
+  
   return {
-    title: `${posterType.poster_type_name} - Wizad.ai`,
-    description: posterType.description_to_display || `Create amazing ${posterType.poster_type_name} with Wizad.ai`,
+    title: `${posterType.poster_type_name} Video Tutorial - Wizad.ai`,
+    description,
     alternates: {
       canonical: canonicalUrl,
     },
     openGraph: {
-      title: posterType.poster_type_name,
-      description: posterType.description_to_display || "",
+      title: `${posterType.poster_type_name} - Video Tutorial`,
+      description,
       images: posterType.icon_url ? [posterType.icon_url] : [],
       url: canonicalUrl,
-      type: 'website',
+      type: 'video.other',
+      videos: currentVideoUrl ? [{ url: currentVideoUrl }] : [],
     },
     twitter: {
-      card: 'summary_large_image',
+      card: 'player',
       title: posterType.poster_type_name,
-      description: posterType.description_to_display || "",
+      description,
       images: posterType.icon_url ? [posterType.icon_url] : [],
+      players: currentVideoUrl ? {
+        playerUrl: currentVideoUrl,
+        streamUrl: currentVideoUrl,
+        width: 1080,
+        height: 1920,
+      } : undefined,
     },
   };
 }

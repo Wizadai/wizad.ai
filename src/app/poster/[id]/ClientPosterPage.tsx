@@ -56,14 +56,31 @@ export default function ClientPosterPage({ posterType }: ClientPosterPageProps) 
   } : null;
 
   // Generate Video Schema for main preview video
-  const videoSchema = posterType.main_preview_video_url ? {
+  const currentVideoUrl = posterType.preview_videos && posterType.preview_videos.length > 0
+    ? posterType.preview_videos[0].video_url
+    : posterType.main_preview_video_url;
+
+  const videoSchema = currentVideoUrl ? {
     "@context": "https://schema.org",
     "@type": "VideoObject",
     "name": posterType.poster_type_name,
-    "description": posterType.description_to_display || "",
+    "description": posterType.description_to_display || `Create stunning ${posterType.poster_type_name} with Wizad.ai. Easy-to-use AI-powered video creation tool.`,
     "thumbnailUrl": posterType.icon_url || "",
-    "contentUrl": posterType.main_preview_video_url,
+    "contentUrl": currentVideoUrl,
+    "embedUrl": currentVideoUrl,
     "uploadDate": new Date().toISOString(),
+    "publisher": {
+      "@type": "Organization",
+      "name": "Wizad.ai",
+      "logo": {
+        "@type": "ImageObject",
+        "url": `${process.env.NEXT_PUBLIC_URL || 'https://wizad.ai'}/logo.png`
+      }
+    },
+    "potentialAction": {
+      "@type": "WatchAction",
+      "target": currentVideoUrl
+    }
   } : null;
 
   return (
