@@ -6,7 +6,7 @@ import {
 } from "@/types/poster";
 import { Metadata } from "next";
 
-const API_BASE_URL = "https://wizad-dev-backend.azurewebsites.net";
+const API_BASE_URL = "https://wizad-2-0-backend.wonderfulpebble-1c1273c4.centralindia.azurecontainerapps.io";
 
 // Metadata for the homepage
 export const metadata: Metadata = {

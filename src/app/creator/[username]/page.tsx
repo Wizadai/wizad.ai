@@ -7,7 +7,7 @@ import {
   PublicCreatorListResponse,
 } from "@/types/poster";
 
-const API_BASE_URL = "https://wizad-dev-backend.azurewebsites.net";
+const API_BASE_URL = "https://wizad-2-0-backend.wonderfulpebble-1c1273c4.centralindia.azurecontainerapps.io";
 
 // Enable dynamic params to handle new creators not pre-rendered at build time
 export const dynamicParams = true;

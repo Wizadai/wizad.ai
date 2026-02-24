@@ -13,7 +13,7 @@ import {
   CreatorDetailSchema,
 } from "@/types/poster";
 
-const API_BASE_URL = "https://wizad-dev-backend.azurewebsites.net";
+const API_BASE_URL = "https://wizad-2-0-backend.wonderfulpebble-1c1273c4.centralindia.azurecontainerapps.io";
 
 interface HomePageClientProps {
   initialPosters: PublicPaginatedPosterTypeListResponse;

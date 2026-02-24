@@ -55,7 +55,7 @@ jobs:
           github_id_token: ${{ steps.idtoken.outputs.result }}
           ###### End of Repository/Build Configurations ######
         env:
-          NEXT_PUBLIC_API_BASE_URL: https://wizad-dev-backend.azurewebsites.net
+          NEXT_PUBLIC_API_BASE_URL: https://wizad-2-0-backend.wonderfulpebble-1c1273c4.centralindia.azurecontainerapps.io
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
